@@ -37,22 +37,12 @@
 #define FUNC 29
 #define FUNC_HD 30
 
-#define ADAPTIVE_DELAY 335 
-#define MACRO_WAIT 12
-#define MACRO_WAIT_LONG 95
-
-
-
-
-
 
 
 // Sticky layer
 &sl {
 	release-after-ms = <1500>;
 };
-
-
 
 
 
