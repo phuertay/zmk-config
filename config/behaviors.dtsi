@@ -1,0 +1,84 @@
+/ { behaviors {
+	// Hold-tap for F-keys
+	fn: fn_mod {
+		compatible = "zmk,behavior-hold-tap";
+		label = "F_MOD";
+		tapping-term-ms = <295>;
+		flavor = "balanced";
+		#binding-cells = <2>;
+		bindings = <&kp>, <&kp>;
+	};
+	
+	// Hold-tap for Upper F-keys
+	fm: high_fn_mod {
+		compatible = "zmk,behavior-hold-tap";
+		label = "HF_MOD";
+		tapping-term-ms = <580>;
+		flavor = "balanced";
+		#binding-cells = <2>;
+		bindings = <&kp>, <&kp>;
+	};
+
+	// Hold-tap for layer-space with retro-tap - not fully using until macros are ready
+	lts: layer_tap_sfn {
+		compatible = "zmk,behavior-hold-tap";
+		label = "LAYER_TAP_SFN";
+		#binding-cells = <2>;
+		flavor = "hold-preferred";		// hold behavior when tapping-term-ms expired or another key is pressed
+		tapping-term-ms = <10000>;
+		bindings = <&mo>, <&kp>;
+		retro-tap;						// tap behavior triggered when releasing if no other key was pressed
+	};
+	
+	// Hold-tap for ctlr/esc
+	cesc: hold_tap_ctrl_esc {
+		compatible = "zmk,behavior-hold-tap";
+		label = "CTRL_ESC";
+		#binding-cells = <2>;
+		tapping-term-ms = <240>;
+		flavor = "balanced";		// hold behavior when tapping-term-ms expired or another key is pressed
+		bindings = <&kp>, <&kp>;
+	};
+	
+	
+	hmf: homerow_mods_fast {
+		compatible = "zmk,behavior-hold-tap";
+		label = "HOMEROW_MODS_FAST";
+		#binding-cells = <2>;
+		tapping-term-ms = <130>;
+		quick-tap-ms = <0>;
+		flavor = "balanced";			// hold behavior when tapping-term-ms has expired or another key is pressed and released
+		bindings = <&kp>, <&kp>;
+	};
+	
+	hm: homerow_mods {
+		compatible = "zmk,behavior-hold-tap";
+		label = "HOMEROW_MODS";
+		#binding-cells = <2>;
+		tapping-term-ms = <156>;
+		quick-tap-ms = <0>;
+		flavor = "balanced";			// hold behavior when tapping-term-ms has expired or another key is pressed and released
+		bindings = <&kp>, <&kp>;
+	};
+	
+	hms: homerow_mod_slow {
+		compatible = "zmk,behavior-hold-tap";
+		label = "HOMEROW_MOD_SLOW";
+		#binding-cells = <2>;
+		tapping-term-ms = <220>;
+		quick-tap-ms = <0>;
+		flavor = "balanced";			// hold behavior when tapping-term-ms has expired or another key is pressed and released
+		bindings = <&kp>, <&kp>;
+	};
+	
+	// For that zpecial finger
+	hmss: homerow_mod_sup_slow {
+		compatible = "zmk,behavior-hold-tap";
+		label = "HOMEROW_MOD_SUP_SLOW";
+		#binding-cells = <2>;
+		tapping-term-ms = <249>;
+		quick-tap-ms = <0>;
+		flavor = "tap-preferred";		// hold behavior when tapping-term-ms has expired. tap behavior when another key is pressed
+		bindings = <&kp>, <&kp>;
+	};
+}; };
