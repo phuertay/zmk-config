@@ -109,5 +109,288 @@
 		bindings = <&kp>, <&prog_caps>;
 	};
 	
+	sq: sticky_q {
+		compatible = "zmk,behavior-sticky-key";
+		label = "STICKY_Q";
+		quick-release;
+		#binding-cells = <1>;
+		release-after-ms = <1500>;
+		bindings = <&kp>;
+	};
 	
+	sk_m: sticky_q {
+		compatible = "zmk,behavior-sticky-key";
+		label = "SK_FOR_MACRO";
+		// quick-release;
+		#binding-cells = <1>;
+		release-after-ms = <MACRO_WAIT_LONG>;
+		bindings = <&kp>;
+	};
+	
+	sk_mq: sticky_mq {
+		compatible = "zmk,behavior-sticky-key";
+		label = "SK_FOR_MACRO_QR";
+		quick-release;
+		#binding-cells = <1>;
+		release-after-ms = <MACRO_WAIT_LONG>;
+		bindings = <&kp>;
+	};
+
+	slad: adaptive_l {
+		compatible = "zmk,behavior-sticky-key";
+		label = "SL_AL";
+		quick-release;
+		#binding-cells = <1>;
+		release-after-ms = <ADAPTIVE_DELAY>;
+		bindings = <&mo>;
+	};
+
+	ak_Q: adapt_key_Q {
+		compatible = "zmk,behavior-macro";
+		label = "AK_Q";
+		#binding-cells = <0>;
+		sleep = <3>;
+		bindings = <&kp Q>, <&slad AL_Q>;
+	};
+
+	ak_W: adapt_key_W {
+		compatible = "zmk,behavior-macro";
+		label = "AK_W";
+		#binding-cells = <0>;
+		sleep = <3>;
+		bindings = <&kp W>, <&slad AL_W>;
+	};
+
+	ak_E: adapt_key_E {
+		compatible = "zmk,behavior-macro";
+		label = "AK_E";
+		#binding-cells = <0>;
+		sleep = <3>;
+		bindings = <&kp E>, <&slad AL_E>;
+	};
+	
+	ak_R: adapt_key_R {
+		compatible = "zmk,behavior-macro";
+		label = "AK_R";
+		#binding-cells = <0>;
+		sleep = <3>;
+		bindings = <&kp R>, <&slad AL_R>;
+	};
+
+	ak_O: adapt_key_O {
+		compatible = "zmk,behavior-macro";
+		label = "AK_O";
+		#binding-cells = <0>;
+		sleep = <3>;
+		bindings = <&kp O>, <&slad AL_O>;
+	};
+
+	ak_P: adapt_key_P {
+		compatible = "zmk,behavior-macro";
+		label = "AK_P";
+		#binding-cells = <0>;
+		sleep = <3>;
+		bindings = <&kp P>, <&slad AL_P>;
+	};
+
+	ak_SEMI: adapt_key_SEMI {
+		compatible = "zmk,behavior-macro";
+		label = "AK_SEMI";
+		#binding-cells = <0>;
+		sleep = <3>;
+		bindings = <&kp SEMI>, <&slad AL_SEMI>;
+	};
+
+	ak_Z: adapt_key_Z {
+		compatible = "zmk,behavior-macro";
+		label = "AK_Z";
+		#binding-cells = <0>;
+		sleep = <3>;
+		bindings = <&kp Z>, <&slad AL_Z>;
+	};
+
+	ak_X: adapt_key_X {
+		compatible = "zmk,behavior-macro";
+		label = "AK_X";
+		#binding-cells = <0>;
+		sleep = <3>;
+		bindings = <&kp X>, <&slad AL_X>;
+	};
+
+	ak_C: adapt_key_C {
+		compatible = "zmk,behavior-macro";
+		label = "AK_C";
+		#binding-cells = <0>;
+		sleep = <3>;
+		bindings = <&kp C>, <&slad AL_C>;
+	};
+
+	ak_M: adapt_key_M {
+		compatible = "zmk,behavior-macro";
+		label = "AK_M";
+		#binding-cells = <0>;
+		sleep = <3>;
+		bindings = <&kp M>, <&slad AL_M>;
+	};
+		
+	ak_FSLH: adapt_key_FSLH {
+		compatible = "zmk,behavior-macro";
+		label = "AK_FSLH";
+		#binding-cells = <0>;
+		sleep = <3>;
+		bindings = <&kp FSLH>, <&slad AL_FSLH>;
+	};
+
+	ak_DOT: adaptive_key_DOT {
+		compatible = "zmk,behavior-macro";
+		label = "AK_DOT";
+		#binding-cells = <0>;
+		sleep = <3>;
+		bindings = <&kp DOT>, <&slad AL_DOT>;
+	};
+
+	m_hd_on: m_hd_on {
+		compatible = "zmk,behavior-macro";
+		label = "M_HD_ON";
+		#binding-cells = <0>;
+		sleep = <MACRO_WAIT_LONG>;
+		bindings = <&tog DEFAULT_HD>, <&sk_mq RCTRL>, <&kp C_AC_REFRESH>;
+	};
+
+	m_hd_off: m_hd_off {
+		compatible = "zmk,behavior-macro";
+		label = "M_HD_OFF";
+		#binding-cells = <0>;
+		sleep = <MACRO_WAIT_LONG>;
+		bindings = <&tog DEFAULT_HD>, <&sk_mq LCTRL>, <&kp C_AC_REFRESH>;
+	};
+
+
+	m_dba: m_dba {
+		compatible = "zmk,behavior-macro";
+		label = "M_DBA";
+		#binding-cells = <0>;
+		sleep = <MACRO_WAIT>;
+		bindings = <&kp BSPC>, <&kp B>, <&kp A>;
+	};
+
+	m_dbc: m_dbc {
+		compatible = "zmk,behavior-macro";
+		label = "M_DBC";
+		#binding-cells = <0>;
+		sleep = <MACRO_WAIT>;
+		bindings = <&kp BSPC>, <&kp B>, <&kp C>;
+	};
+
+	m_ddw: m_ddw {
+		compatible = "zmk,behavior-macro";
+		label = "M_DDW";
+		#binding-cells = <0>;
+		sleep = <MACRO_WAIT>;
+		bindings = <&kp BSPC>, <&kp D>, <&kp W>;
+	};
+
+	m_djm: m_djm {
+		compatible = "zmk,behavior-macro";
+		label = "M_DJM";
+		#binding-cells = <0>;
+		sleep = <MACRO_WAIT>;
+		bindings = <&kp BSPC>, <&kp J>, <&kp M>;
+	};
+
+	m_dge: m_dge {
+		compatible = "zmk,behavior-macro";
+		label = "M_DGE";
+		#binding-cells = <0>;
+		sleep = <MACRO_WAIT>;
+		bindings = <&kp BSPC>, <&kp G>, <&kp E>;
+	};
+
+	m_dgc: m_dgc {
+		compatible = "zmk,behavior-macro";
+		label = "M_DGC";
+		#binding-cells = <0>;
+		sleep = <MACRO_WAIT>;
+		bindings = <&kp BSPC>, <&kp G>, <&kp C>;
+	};
+
+	m_dvy: m_dvy {
+		compatible = "zmk,behavior-macro";
+		label = "M_DVY";
+		#binding-cells = <0>;
+		sleep = <MACRO_WAIT>;
+		bindings = <&kp BSPC>, <&kp V>, <&kp Y>;
+	};
+
+	m_dga: m_dga {
+		compatible = "zmk,behavior-macro";
+		label = "M_DGA";
+		#binding-cells = <0>;
+		sleep = <MACRO_WAIT>;
+		bindings = <&kp BSPC>, <&kp G>, <&kp A>;
+	};
+
+	m_dkk: m_dkk {
+		compatible = "zmk,behavior-macro";
+		label = "M_WDW";
+		#binding-cells = <0>;
+		sleep = <MACRO_WAIT>;
+		bindings = <&kp BSPC>, <&kp Y>;
+	};
+
+	m_dqt: m_dqt {
+		compatible = "zmk,behavior-macro";
+		label = "M_DSQT";
+		#binding-cells = <0>;
+		sleep = <MACRO_WAIT>;
+		bindings = <&kp BSPC>, <&kp SQT>;
+	};
+
+	m_mk: m_mk {
+		compatible = "zmk,behavior-macro";
+		label = "M_MK";
+		#binding-cells = <0>;
+		sleep = <3>;
+		bindings = <&kp M>, <&kp K>;
+	};
+
+	hms_m_dot: homerow_mod_w_macro {
+		compatible = "zmk,behavior-hold-tap";
+		label = "HOMEROW_MOD_SLOW_W_MACRO";
+		#binding-cells = <2>;
+		tapping-term-ms = <220>;
+		quick-tap-ms = <0>;
+		flavor = "balanced";
+		bindings = <&kp>, <&ak_DOT>;
+	};
+
+	hms_m_m: homerow_mod_m_macro {
+		compatible = "zmk,behavior-hold-tap";
+		label = "HOMEROW_MOD_SLOW_M_MACRO";
+		#binding-cells = <2>;
+		tapping-term-ms = <220>;
+		quick-tap-ms = <0>;
+		flavor = "balanced";
+		bindings = <&kp>, <&ak_M>;
+	};
+
+	hms_m_x: homerow_mod_x_macro {
+		compatible = "zmk,behavior-hold-tap";
+		label = "HOMEROW_MOD_SLOW_X_MACRO";
+		#binding-cells = <2>;
+		tapping-term-ms = <220>;
+		quick-tap-ms = <0>;
+		flavor = "balanced";
+		bindings = <&kp>, <&ak_X>;
+	};
+	
+	hms_m_c: homerow_mod_c_macro {
+		compatible = "zmk,behavior-hold-tap";
+		label = "HOMEROW_MOD_SLOW_C_MACRO";
+		#binding-cells = <2>;
+		tapping-term-ms = <220>;
+		quick-tap-ms = <0>;
+		flavor = "balanced";
+		bindings = <&kp>, <&ak_C>;
+	};
 }; };
