@@ -1,5 +1,4 @@
-/ {
-behaviors {
+/ { behaviors {
 	// Hold-tap for F-keys
 	fn: fn_mod {
 		compatible = "zmk,behavior-hold-tap";
@@ -82,5 +81,4 @@ behaviors {
 		flavor = "tap-preferred";		// hold behavior when tapping-term-ms has expired. tap behavior when another key is pressed
 		bindings = <&kp>, <&kp>;
 	};
-};
-};
+}; };
