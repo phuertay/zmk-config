@@ -2,7 +2,7 @@
 #define MACRO_WAIT 12
 #define MACRO_WAIT_LONG 95
 
-behaviors {
+/ { behaviors {
 	// Hold-tap for F-keys
 	fn: fn_mod {
 		compatible = "zmk,behavior-hold-tap";
@@ -397,4 +397,4 @@ behaviors {
 		flavor = "balanced";
 		bindings = <&kp>, <&ak_C>;
 	};
-};
+}; };
