@@ -82,10 +82,40 @@
 		bindings = <&kp>, <&kp>;
 	};
 	
+	snake: behavior_snake {
+		compatible = "zmk,behavior-caps-word";
+		label = "SNAKE";
+		#binding-cells = <0>;
+		continue-list = <LSHIFT RSHIFT N1 N2 N3 N4 N5 N5 N6 N7 N8 N9 N0 SPACE>;
+		mods = <>;
+	};
+	
 	prog_caps: behavior_prog_caps_word {
 		compatible = "zmk,behavior-caps-word";
 		label = "PROG_CAPS";
 		#binding-cells = <0>;
-		continue-list = <N1 N2 N3 N4 N5 N5 N6 N7 N8 N9 N0 SPACE>;
+		continue-list = <LSHIFT RSHIFT N1 N2 N3 N4 N5 N5 N6 N7 N8 N9 N0 SPACE>;
 	};
+
+	hm_LS_CW: lshift_or_caps {
+		compatible = "zmk,behavior-hold-tap";
+		label = "LS_PC";
+		#binding-cells = <0>;
+		tapping-term-ms = <156>;
+		quick-tap-ms = <0>;
+		flavor = "balanced";			// hold behavior when tapping-term-ms has expired or another key is pressed and released
+		bindings = <&kp LSHFT>, <&caps_word>;
+	};
+
+	hm_RS_PCW: rshift_or_prog_caps {
+		compatible = "zmk,behavior-hold-tap";
+		label = "RS_PCW";
+		#binding-cells = <0>;
+		tapping-term-ms = <156>;
+		quick-tap-ms = <0>;
+		flavor = "balanced";			// hold behavior when tapping-term-ms has expired or another key is pressed and released
+		bindings = <&kp RSHFT>, <&prog_caps>;
+	};
+	
+	
 }; };
