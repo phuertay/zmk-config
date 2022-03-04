@@ -5,7 +5,6 @@
 
 &caps_word {
 	continue-list = <CAPS_CONT>;
-	mods = <MOD_LSFT>;
 };
 
 &sl {
@@ -96,34 +95,7 @@
 		flavor = "tap-preferred";		// hold behavior when tapping-term-ms has expired. tap behavior when another key is pressed
 		bindings = <&kp>, <&kp>;
 	};
-	
-	prog_caps: behavior_prog_caps_word {
-		compatible = "zmk,behavior-caps-word";
-		label = "PROG_CAPS";
-		#binding-cells = <0>;
-		continue-list = <CAPS_CONT LSHIFT RSHIFT SPACE>;
-	};
-
-	hm_LS_CW: kp_or_caps_word {
-		compatible = "zmk,behavior-hold-tap";
-		label = "LS_PC";
-		#binding-cells = <2>;
-		tapping-term-ms = <156>;
-		quick-tap-ms = <0>;
-		flavor = "balanced";			// hold behavior when tapping-term-ms has expired or another key is pressed and released
-		bindings = <&kp>, <&caps_word>;
-	};
-
-	hm_RS_PCW: kp_or_prog_caps {
-		compatible = "zmk,behavior-hold-tap";
-		label = "RS_PCW";
-		#binding-cells = <2>;
-		tapping-term-ms = <156>;
-		quick-tap-ms = <0>;
-		flavor = "balanced";			// hold behavior when tapping-term-ms has expired or another key is pressed and released
-		bindings = <&kp>, <&prog_caps>;
-	};
-	
+		
 	sq: sticky_q {
 		compatible = "zmk,behavior-sticky-key";
 		label = "STICKY_Q";
