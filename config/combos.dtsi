@@ -1,0 +1,164 @@
+combos {
+	compatible = "zmk,combos";
+	
+	// combo_numeric {
+		// timeout-ms = <200>;
+		// key-positions = <32 57 58>;				// Ctrl 1U L, Ctrl 1U R, y el 5
+		// bindings = <&tog NUM>;
+	// };
+	
+	// combo_hard_dvorak_enable {
+		// timeout-ms = <200>;
+		// key-positions = <27 57 58>;				// Ctrl 1U L, Ctrl 1U R, y la E
+		// bindings = <&tog NEWVO>;
+	// };
+	
+	// combo_pinyin_enable {
+		// timeout-ms = <200>;
+		// key-positions = <34 57 58>;				// Ctrl 1U L, Ctrl 1U R, y la S
+		// bindings = <&tog PRPINY>;
+	// };
+	
+	combo_bootloader {
+		timeout-ms = <COMB_MS>;
+		layers = <COMB_LAY_ALL>;
+		key-positions = <32 47 63>;				// Última de abajo, el 5, y shift derecho
+		bindings = <&bootloader>;
+	};
+	
+	
+	combo_EXCL {
+		timeout-ms = <COMB_MS>;
+		layers = <COMB_LAY_ALL>;
+		key-positions = <13 25>;				// ' y A
+		bindings = <&kp EXCL>;
+	};
+	
+	combo_INV_EXCL {
+		timeout-ms = <COMB_MS>;
+		layers = <COMB_LAY_ALL>;
+		key-positions = <49 13 25>;				// \, ' y A
+		bindings = <&kp RA(N1)>;
+	};
+	
+	combo_AT {
+		timeout-ms = <COMB_MS>;
+		layers = <COMB_LAY_ALL>;
+		key-positions = <14 26>;				// , y O
+		bindings = <&kp AT>;
+	};
+	
+	combo_HASH {
+		timeout-ms = <COMB_MS>;
+		layers = <COMB_LAY_ALL>;
+		key-positions = <15 27>;				// . y E
+		bindings = <&kp HASH>;
+	};
+	
+	combo_DLLR {
+		timeout-ms = <COMB_MS>;
+		layers = <COMB_LAY_ALL>;
+		key-positions = <16 28>;				// P y I
+		bindings = <&kp DLLR>;
+	};
+	
+	combo_PRCNT {
+		timeout-ms = <COMB_MS>;
+		layers = <COMB_LAY_ALL>;
+		key-positions = <17 29>;				// Y y U
+		bindings = <&kp PRCNT>;
+	};
+	
+	combo_CARET {
+		timeout-ms = <COMB_MS>;
+		layers = <COMB_LAY_ALL>;
+		key-positions = <18 30>;				// F y D
+		bindings = <&kp CARET>;
+	};
+	
+	combo_AMPS {
+		timeout-ms = <COMB_MS>;
+		layers = <COMB_LAY_ALL>;
+		key-positions = <19 31>;				// G y H
+		bindings = <&kp AMPERSAND>;
+	};
+	
+	combo_STAR {
+		timeout-ms = <COMB_MS>;
+		layers = <COMB_LAY_ALL>;
+		key-positions = <20 32>;				// L y T
+		bindings = <&kp STAR>;
+	};
+	
+	combo_LPAR {
+		timeout-ms = <COMB_MS>;
+		layers = <COMB_LAY_ALL>;
+		key-positions = <21 33>;				// R y N
+		bindings = <&kp LPAR>;
+	};
+	
+	combo_RPAR {
+		timeout-ms = <COMB_MS>;
+		layers = <COMB_LAY_ALL>;
+		key-positions = <22 34>;				// C y S
+		bindings = <&kp RPAR>;
+	};
+	
+	combo_TAB_L {
+		timeout-ms = <COMB_MS>;
+		layers = <COMB_LAY_ALL>;
+		key-positions = <28 40>;				// I y K
+		bindings = <&kp TAB>;
+	};
+	
+	combo_ESC_L {
+		timeout-ms = <COMB_MS>;
+		layers = <COMB_LAY_ALL>;
+		key-positions = <29 41>;				// U y X
+		bindings = <&kp ESC>;
+	};
+	
+	combo_ESC_R {
+		timeout-ms = <COMB_MS>;
+		layers = <COMB_LAY_ALL>;
+		key-positions = <30 42>;				// U y X
+		bindings = <&kp ESC>;
+	};
+	
+	combo_TAB_R {
+		timeout-ms = <COMB_MS>;
+		layers = <COMB_LAY_ALL>;
+		key-positions = <31 43>;				// H y M
+		bindings = <&kp TAB>;
+	};
+	
+	combo_PIPE2 {
+		timeout-ms = <COMB_MS>;
+		layers = <COMB_LAY_ALL>;
+		key-positions = <38 48>;				// Q y `
+		bindings = <&kp PIPE2>;
+	};
+	
+	combo_PIPE {
+		timeout-ms = <COMB_MS>;
+		layers = <COMB_LAY_ALL>;
+		key-positions = <39 49>;				// \ y J
+		bindings = <&kp PIPE>;
+	};
+	
+	// Específicos para cada distribución		
+	combo_QW_SEMI {
+		timeout-ms = <COMB_MS_FST>;
+		layers = <COMB_LAY_QW>;
+		key-positions = <25 37>;				// A y ;
+		bindings = <&kp LS(Z)>;
+	};
+	
+	combo_NV_SEMI {
+		timeout-ms = <COMB_MS_FST>;
+		layers = <COMB_LAY_NV>;
+		key-positions = <25 37>;				// A y ;
+		bindings = <&kp SEMI>;
+	};
+
+};
