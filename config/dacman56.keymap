@@ -430,7 +430,7 @@
 &trans 		&kp TAB		   &kp PG_UP  &kp UP       &kp PG_DN	 &kp LA(TAB)					&kp LA(TAB) &kp PG_UP	   &kp UP 	    &kp PG_DN  &kp TAB		 &fm F24 F12
 &trans 		&hm RCTRL HOME &kp LEFT   &kp DOWN     &kp RIGHT	 &kp END						&kp HOME 	  &kp LEFT	   &kp DOWN     &kp RIGHT  &hm RCTRL END &kp NON_US_BSLH
 &trans		&kp ENTER	   &hms LALT ESC	&hm LSHFT RC(DEL)  &hms RCTRL RC(BSPC)  &kp BSPC			&kp BSPC	  &hms RCTRL RC(BSPC) &hm LSHFT RC(DEL)  &hms LALT ESC	   &kp ENTER	 &trans
-						   &kp SPACE  &kp RC(FSLH)															 			   &kp RC(FSLH) &kp DEL
+						   &kp SPACE  &kp RC(X)															 			   &kp RC(FSLH) &kp DEL
 																&trans &lts MOUSE INS		&lts MOUSE ENTER &trans
 																	&trans &kp INT1		&kp INT1 &trans
 																	&trans &kp INT2		&kp INT2 &trans
