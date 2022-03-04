@@ -1,6 +1,16 @@
 #define ADAPTIVE_DELAY 335 
 #define MACRO_WAIT 12
 #define MACRO_WAIT_LONG 95
+#define CAPS_CONT N1 N2 N3 N4 N5 N5 N6 N7 N8 N9 N0 BSPC
+
+&caps_word {
+	continue-list = <CAPS_CONT>;
+};
+
+&sl {
+	release-after-ms = <1500>;
+};
+
 
 / { behaviors {
 	// Hold-tap for F-keys
@@ -90,7 +100,7 @@
 		compatible = "zmk,behavior-caps-word";
 		label = "PROG_CAPS";
 		#binding-cells = <0>;
-		continue-list = <LSHIFT RSHIFT N1 N2 N3 N4 N5 N5 N6 N7 N8 N9 N0 SPACE>;
+		continue-list = <CAPS_CONT LSHIFT RSHIFT SPACE>;
 	};
 
 	hm_LS_CW: kp_or_caps_word {
