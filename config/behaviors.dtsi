@@ -81,4 +81,11 @@
 		flavor = "tap-preferred";		// hold behavior when tapping-term-ms has expired. tap behavior when another key is pressed
 		bindings = <&kp>, <&kp>;
 	};
+	
+	prog_caps: behavior_prog_caps_word {
+		compatible = "zmk,behavior-caps-word";
+		label = "PROG_CAPS";
+		#binding-cells = <0>;
+		continue-list = <N1 N2 N3 N4 N5 N5 N6 N7 N8 N9 N0 SPACE>;
+	};
 }; };
