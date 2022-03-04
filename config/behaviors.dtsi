@@ -1,3 +1,7 @@
+#define ADAPTIVE_DELAY 335 
+#define MACRO_WAIT 12
+#define MACRO_WAIT_LONG 95
+
 behaviors {
 	// Hold-tap for F-keys
 	fn: fn_mod {
