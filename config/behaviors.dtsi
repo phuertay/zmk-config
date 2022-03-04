@@ -1,4 +1,4 @@
-/ { behaviors {
+behaviors {
 	// Hold-tap for F-keys
 	fn: fn_mod {
 		compatible = "zmk,behavior-hold-tap";
@@ -393,4 +393,4 @@
 		flavor = "balanced";
 		bindings = <&kp>, <&ak_C>;
 	};
-}; };
+};
