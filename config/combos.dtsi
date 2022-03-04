@@ -5,26 +5,8 @@
 #define COMB_LAY_NV FN
 #define COMB_LAY_ALL COMB_LAY_QW COMB_LAY_NV
 
-/{ combos {
+/ { combos {
 	compatible = "zmk,combos";
-	
-	// combo_numeric {
-		// timeout-ms = <200>;
-		// key-positions = <32 57 58>;				// Ctrl 1U L, Ctrl 1U R, y el 5
-		// bindings = <&tog NUM>;
-	// };
-	
-	// combo_hard_dvorak_enable {
-		// timeout-ms = <200>;
-		// key-positions = <27 57 58>;				// Ctrl 1U L, Ctrl 1U R, y la E
-		// bindings = <&tog NEWVO>;
-	// };
-	
-	// combo_pinyin_enable {
-		// timeout-ms = <200>;
-		// key-positions = <34 57 58>;				// Ctrl 1U L, Ctrl 1U R, y la S
-		// bindings = <&tog PRPINY>;
-	// };
 	
 	combo_bootloader {
 		timeout-ms = <COMB_MS>;
@@ -32,7 +14,6 @@
 		key-positions = <32 47 63>;				// Última de abajo, el 5, y shift derecho
 		bindings = <&bootloader>;
 	};
-	
 	
 	combo_EXCL {
 		timeout-ms = <COMB_MS>;
