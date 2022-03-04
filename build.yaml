@@ -13,9 +13,11 @@
 #     shield: dacman56_left
 #     shield: dacman56_right
 #
----
-include:
-  - board: nice_nano
-    shield: dacman56_left
-  - board: nice_nano
-    shield: dacman56_right
+#---
+#include:
+#  - board: nice_nano
+#    shield: dacman56_left
+#  - board: nice_nano
+#    shield: dacman56_right
+ board: [ "nice_nano" ]
+ shield: [ "dacman56_left", "dacman56_right", "settings_reset" ]
