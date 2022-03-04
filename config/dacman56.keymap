@@ -36,13 +36,6 @@
 #define FUNC 28
 #define FUNC_HD 29
 
-#define COMB_MS 96
-#define COMB_MS_FST 66
-
-#define COMB_LAY_QW DEFAULT DEFAULT_HD
-#define COMB_LAY_NV FN
-#define COMB_LAY_ALL COMB_LAY_QW COMB_LAY_NV
-
 #define ADAPTIVE_DELAY 335 
 #define MACRO_WAIT 12
 #define MACRO_WAIT_LONG 95
