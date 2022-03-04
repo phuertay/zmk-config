@@ -41,6 +41,7 @@
 
 #include "combos.dtsi"
 #include "behaviors.dtsi"
+#include "adaptive.dtsi"
 
 / {
 	keymap {
