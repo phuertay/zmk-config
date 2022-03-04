@@ -5,7 +5,8 @@
 #define COMB_LAY_NV FN
 #define COMB_LAY_ALL COMB_LAY_QW COMB_LAY_NV
 
-\{ combos {
+\{
+combos {
 	compatible = "zmk,combos";
 	
 	// combo_numeric {
@@ -168,4 +169,5 @@
 		bindings = <&kp SEMI>;
 	};
 
-}; };
+};
+};
