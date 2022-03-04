@@ -89,24 +89,24 @@
 		continue-list = <LSHIFT RSHIFT N1 N2 N3 N4 N5 N5 N6 N7 N8 N9 N0 SPACE>;
 	};
 
-	hm_LS_CW: lshift_or_caps {
+	hm_LS_CW: kp_or_caps_word {
 		compatible = "zmk,behavior-hold-tap";
 		label = "LS_PC";
-		#binding-cells = <0>;
+		#binding-cells = <2>;
 		tapping-term-ms = <156>;
 		quick-tap-ms = <0>;
 		flavor = "balanced";			// hold behavior when tapping-term-ms has expired or another key is pressed and released
-		bindings = <&kp LSHFT>, <&caps_word>;
+		bindings = <&kp>, <&caps_word>;
 	};
 
-	hm_RS_PCW: rshift_or_prog_caps {
+	hm_RS_PCW: kp_or_prog_caps {
 		compatible = "zmk,behavior-hold-tap";
 		label = "RS_PCW";
-		#binding-cells = <0>;
+		#binding-cells = <2>;
 		tapping-term-ms = <156>;
 		quick-tap-ms = <0>;
 		flavor = "balanced";			// hold behavior when tapping-term-ms has expired or another key is pressed and released
-		bindings = <&kp RSHFT>, <&prog_caps>;
+		bindings = <&kp>, <&prog_caps>;
 	};
 	
 	
