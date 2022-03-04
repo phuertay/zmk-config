@@ -65,7 +65,7 @@
 &trans	&fn F9 N1  &fn F3 N2  &fn F1 N3 &fn F5 N4  &fn F7 N5			&fn F6 N6 &fn F2 N7 &fn F10 N8  &fn F4 N9	&fn F8 N0   &fn F11 DEL
 &trans	&ak_Q &ak_W  &ak_E  &ak_R  &trans								&trans &trans &trans &ak_O  &ak_P  &trans
 &trans	&trans &trans &trans &trans &trans								&trans &trans &trans &trans &ak_SEMI &trans
-&hms LSHFT LS(RSHIFT) &ak_Z &hms_m_x LALT 0  &hms_m_c LSHFT 0 &trans &lt NUM_HD B					&lt NUM_HD N &hms_m_m RCTRL 0 &hm RSHFT COMMA &hms_m_dot LALT 0 &ak_FSLH &hms RSHFT KP_NUM
+&hms LSHFT LS(RSHIFT) &ak_Z &hms_m_x LALT 0  &hms_m_c LSHFT 0 &trans &lt NUM_HD B					&lt NUM_HD N &hms_m_m RCTRL 0 &hms RSHFT COMMA &hms_m_dot LALT 0 &ak_FSLH &hms RSHFT KP_NUM
 				    &hm TILDE RBKT &hm H BSLH												   &trans &trans
 						&hmss SPACE GRAVE &kp BSPC				&lts SPFN_HD ENTER  &trans
 							&trans &kp DEL				&tog NUM_HD &trans
