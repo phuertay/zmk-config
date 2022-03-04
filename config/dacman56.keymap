@@ -65,7 +65,7 @@
 &trans	&fn F9 N1  &fn F3 N2  &fn F1 N3 &fn F5 N4  &fn F7 N5			&fn F6 N6 &fn F2 N7 &fn F10 N8  &fn F4 N9	&fn F8 N0   &fn F11 DEL
 &trans	&ak_Q &ak_W  &ak_E  &ak_R  &trans								&trans &trans &trans &ak_O  &ak_P  &trans
 &trans	&trans &trans &trans &trans &trans								&trans &trans &trans &trans &ak_SEMI &trans
-&k_or_lay LS(RSHFT) NUM_HD  &ak_Z &hms_m_x LALT 0  &hms_m_c LSHFT 0 &trans &lt NUM_HD B					&lt NUM_HD N &hms_m_m RCTRL 0 &hms RSHFT COMMA &hms_m_dot LALT 0 &ak_FSLH &hms RSHFT KP_NUM
+&k_or_lay NUM_HD LS(RSHFT)  &ak_Z &hms_m_x LALT 0  &hms_m_c LSHFT 0 &trans &lt NUM_HD B					&lt NUM_HD N &hms_m_m RCTRL 0 &hms RSHFT COMMA &hms_m_dot LALT 0 &ak_FSLH &hms RSHFT KP_NUM
 				    &hm TILDE RBKT &hm H BSLH												   &trans &trans
 						&hm SPACE GRAVE &kp BSPC				&lts SPFN_HD ENTER  &trans
 							&trans &kp DEL				&tog NUM_HD &trans
@@ -300,7 +300,7 @@
 &trans	&fm F21 F9	 &fm F15 F3	   &fm F13 F1	 &fm F17 F5		&fm F19 F7	 	  		&kp N7	&fm F14 F2	  &kp KP_DIVIDE &kp KP_MULTIPLY &kp RBKT &fm F23 F11
 &trans	&kp TAB			 &kp PG_UP  &kp UP       &kp PG_DN	  &kp LA(TAB)					&kp LA(N2)	&fm F7 LS(N5) &fm F8 LS(N0) &fm F9 LS(N1)	&fm F12 KP_MINUS &fm F12 MINUS
 &trans	&lts LCNUM ENTER &kp LEFT   &kp DOWN	 &kp RIGHT	  &kp LA(N1)						&kp RC(INS)	&fm F4 LS(N9) &fm F5 LS(N4) &fm F6 LS(N6)	&kp KP_PLUS	&fm F24 EQUAL
-&lay_or_lay NUM_HD DEFAULT_HD_2 &kp LSHFT &hms LALT ESC	&hms LSHFT RC(DEL)  &hms LCTRL RC(BSPC) &kp LA(N7)					&kp	LS(INS)	&fm F1 LS(N3) &fm F2 LS(N7) &fm F3 LS(N2)	&kp ENTER	&lay_or_lay NUM_HD DEFAULT_HD_2
+&lay_or_lay DEFAULT_HD_2 NUM_HD &kp LSHFT &hms LALT ESC	&hms LSHFT RC(DEL)  &hms LCTRL RC(BSPC) &kp LA(N7)					&kp	LS(INS)	&fm F1 LS(N3) &fm F2 LS(N7) &fm F3 LS(N2)	&kp ENTER	&lay_or_lay DEFAULT_HD_2 NUM_HDD_2
 						 &kp RBKT	&hm H RC(X)									 &fm F10 LS(N8) &fm F11 KP_DOT
 									&kp H &lts SPFN_HD BSPC					&lts SPFN_HD  ENTER &lts SPFN_HD SPACE
 											&trans &kp DEL		&to DEFAULT_HD	&trans
