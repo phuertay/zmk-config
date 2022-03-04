@@ -130,6 +130,16 @@
 		tapping-term-ms = <156>;
 		quick-tap-ms = <0>;
 		flavor = "balanced";			// hold behavior when tapping-term-ms has expired or another key is pressed and released
-		bindings = <&kp>, <&mo>;
+		bindings = <&kp>, <&tog>;
+	};
+		
+	lay_or_lay: layer_or_layer {
+		compatible = "zmk,behavior-hold-tap";
+		label = "K_OR_NUM";
+		#binding-cells = <2>;
+		tapping-term-ms = <156>;
+		quick-tap-ms = <0>;
+		flavor = "balanced";			// hold behavior when tapping-term-ms has expired or another key is pressed and released
+		bindings = <&mo>, <&tog>;
 	};
 }; };
