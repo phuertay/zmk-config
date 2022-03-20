@@ -441,7 +441,7 @@
 		
 		mouse_layer {
 			bindings = <
-&to DEFAULT	&trans &trans			&trans			 &trans			   &trans					&trans &trans			&trans		  	 &trans			   &trans &trans
+&to DEFAULT_HD	&trans &trans			&trans			 &trans			   &trans					&trans &trans			&trans		  	 &trans			   &trans &trans
 &trans 		&trans &trans			&kp LG(RC(UP))	 &trans			   &trans					&trans &trans			&kp RG(RC(UP))   &trans			   &trans &trans
 &trans 		&trans &kp LG(RC(LEFT)) &kp LG(RC(DOWN)) &kp LG(RC(RIGHT)) &trans					&trans &kp RG(RC(LEFT))	&kp RG(RC(DOWN)) &kp RG(RC(RIGHT)) &trans &trans
 &trans 		&trans &trans			&trans			 &trans			   &trans					&trans &trans			&trans		  	 &trans			   &trans &trans
