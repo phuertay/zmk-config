@@ -111,7 +111,7 @@
 		sleep = <3>;
 		bindings = <&kp DOT>, <&slad AL_DOT>;
 	};
-
+/*
 	m_hd_on: m_hd_on {
 		compatible = "zmk,behavior-macro";
 		label = "M_HD_ON";
@@ -127,6 +127,7 @@
 		sleep = <MACRO_WAIT_LONG>;
 		bindings = <&tog DEFAULT_HD>, <&sk_mq LCTRL>, <&kp C_AC_REFRESH>;
 	};
+*/
 
 
 	m_dba: m_dba {
