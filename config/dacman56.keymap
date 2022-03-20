@@ -428,7 +428,7 @@
 
 		spacefn_layer_hd {
 			bindings = <
-&to DEFAULT	&fm F21 F9	 &fm F15 F3	  &fm F13 F1	&fm F17 F5 	&fm F19 F7	    				 &fm F18 F6  &fm F14 F2	 &fm F22 F10 	  &fm F16 F4 &fm F20 F8    &fm F23 F11
+&to DEFAULT_HD	&fm F21 F9	 &fm F15 F3	  &fm F13 F1	&fm F17 F5 	&fm F19 F7	    				 &fm F18 F6  &fm F14 F2	 &fm F22 F10 	  &fm F16 F4 &fm F20 F8    &fm F23 F11
 &trans 		&kp TAB		   &kp PG_UP  &kp UP       &kp PG_DN	 &kp LA(TAB)					&kp LA(TAB) &kp PG_UP	   &kp UP 	    &kp PG_DN  &kp TAB		 &fm F24 F12
 &trans 		&hm RCTRL HOME &kp LEFT   &kp DOWN     &kp RIGHT	 &kp END						&kp HOME 	  &kp LEFT	   &kp DOWN     &kp RIGHT  &hm RCTRL END &kp NON_US_BSLH
 &trans		&kp ENTER	   &hms LALT ESC	&hm LSHFT RC(DEL)  &hms RCTRL RC(BSPC)  &kp BSPC			&kp BSPC	  &hms RCTRL RC(BSPC) &hm LSHFT RC(DEL)  &hms LALT ESC	   &kp ENTER	 &trans
