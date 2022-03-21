@@ -475,8 +475,8 @@
 &kp C_AL_CONTACTS &kp C_AL_MAIL &kp C_AL_CCC &kp C_AL_CAL &kp C_AL_WWW	  &kp C_AC_SEARCH			&kp C_AC_SEARCH &kp C_AC_STOP &kp C_AL_CALC &kp C_AC_FAVORITES &kp C_AC_SEND   &kp C_AL_MY_COMPUTER
 								&kp C_BRI_DN &kp C_BRI_UP																		   &kp C_AC_BACK &kp C_AC_FORWARD
 														&kp C_AL_SELECT_TASK &kp INS					&kp C_AC_HOME &kp C_AC_BACK
-																	&tog SPFN_HD	&tog NUM_HD		&tog NUM_HD   &tog SPFN_HD
-																	&to DEFAULT_HD 	&tog NUM_L_HD		&tog NUM_L_HD &to DEFAULT_HD 
+																	&tog SPFN_HD	&kp INS			&tog NUM_HD   &tog SPFN_HD
+																	&to DEFAULT_HD 	&tog NUM_HD		&tog NUM_L_HD &to DEFAULT_HD 
 			>;
 		};
 
