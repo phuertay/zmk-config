@@ -194,6 +194,14 @@
 		bindings = <&kp BSPC>, <&kp G>, <&kp A>;
 	};
 
+	m_dg_gr: m_dg_gr {
+		compatible = "zmk,behavior-macro";
+		label = "M_DG_GR";
+		#binding-cells = <0>;
+		sleep = <MACRO_WAIT>;
+		bindings = <&kp BSPC>, <&kp G>, <&kp GRAVE>;
+	};
+
 	m_dkk: m_dkk {
 		compatible = "zmk,behavior-macro";
 		label = "M_WDW";
