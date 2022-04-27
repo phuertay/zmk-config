@@ -162,7 +162,7 @@
 			bindings = <
 &trans	&trans &trans &trans &trans &trans						&trans &trans &trans &trans &trans &trans
 &trans	&trans &trans &trans &trans &trans						&trans &trans &trans &trans &trans &trans
-&trans	&m_dga &trans &trans &trans &trans						&trans &trans &trans &trans &trans &trans
+&trans	&m_dga &trans &trans &trans &m_dg_gr						&trans &trans &trans &trans &trans &trans
 &trans	&trans &trans &trans &trans &trans						&trans &trans &trans &trans &trans &trans
 				   &trans &trans										   &trans &trans
 									&trans &trans			&trans &trans
