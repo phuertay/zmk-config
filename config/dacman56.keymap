@@ -241,53 +241,12 @@
 		};		
 
 
-/*		
-		pre_pinyin_layer {
-			bindings = <
-&to DEFAULT &trans &trans &trans &trans &trans						&trans &trans &trans &trans &trans &trans
-&trans		&trans &trans &trans &trans &trans						&trans &trans &trans &trans &trans &trans
-&trans		&trans &trans &trans &trans &trans						&trans &trans &trans &trans &trans &trans
-&trans		&trans &trans &trans &trans &trans						&trans &trans &trans &trans &trans &trans
-				   &trans &trans												  &trans &trans
-									&trans &lts PINY DEL		&lts PINY ENTER &trans
-										&trans &trans		&trans &trans
-										&trans &trans		&trans &trans
-			>;
-		};
-		
-		pinyin_layer {
-			bindings = <
-&trans &trans	 &trans	   &trans		&trans		 &trans								&trans		&trans		 &trans		  &trans	 &trans		   &trans
-&trans &kp N1	 &kp N2	   &kp N3		&kp N4		 &trans								&kp LA(TAB) &kp PG_UP	 &kp UP 	  &kp PG_DN  &kp TAB	   &trans
-&trans &kp N1	 &kp N2	   &kp N3		&kp N4		 &trans								&kp HOME 	&kp LEFT	 &kp DOWN     &kp RIGHT  &hm RCTRL END &kp NON_US_BSLH
-&trans &trans	 &trans	   &trans		&trans		 &trans								&kp BSPC	&kp RC(BSPC) &kp RC(DEL)  &kp ESC	 &kp ENTER	   &trans
-				 &trans	   &trans																	 			 &kp RC(FSLH) &kp SPACE		 
-														&trans &trans				&trans &trans
-															&trans &trans		&trans &trans
-															&trans &trans		&trans &trans
-			>;
-		};
 
-		
-		numeric_layer {
-			bindings = <
-&to DEFAULT	&fm F19 F7		 &fm F17 F5 &fm F15 F3   &fm F13 F1	  &fm F21 F9	 				&fm F20 F8	&fm F14 F2	  &kp KP_DIVIDE &kp KP_MULTIPLY &kp GRAVE		 &fm F23 F11
-&trans		&kp TAB			 &kp PG_UP  &kp UP       &kp PG_DN	  &kp LA(TAB)					&kp LA(N3)	&fm F7 LS(N1) &fm F8 LS(N6) &fm F9 LS(N5)	&fm F12 KP_MINUS &fm F24 F12
-&trans		&lts LCNUM ENTER &kp LEFT   &kp DOWN	 &kp RIGHT	  &kp LA(N1)					&kp RC(INS)	&fm F4 LS(N9) &fm F5 LS(N2) &fm F6 LS(N0)	&kp KP_PLUS		 &trans
-&trans		&trans			 &kp ESC	&kp RC(DEL)  &kp RC(BSPC) &kp LA(N2)					&kp	LS(INS)	&fm F1 LS(N4) &fm F2 LS(N8) &fm F3 LS(N3)	&kp ENTER		 &trans
-							 &kp SPACE  &kp RC(FSLH)												  					  &fm F10 LS(N7) &fm F11 KP_DOT
-																	&trans &mo FN			&mo FN &trans
-																		&trans &mo FN	&mo FN &trans
-																		&trans &mo FN	&mo FN &trans
-			>;
-		};
-		
-*/
 		numeric_layer_hd {
 			bindings = <
 &trans	&fm F21 F9	 &fm F15 F3	   &fm F13 F1	 &fm F17 F5		&fm F19 F7	 	  		&kp N7	&fm F14 F2	  &kp KP_DIVIDE &kp KP_MULTIPLY &kp RBKT &fm F23 F11
 &trans	&kp TAB			 &kp PG_UP  &kp UP       &kp PG_DN	  &kp LA(TAB)					&kp LA(N2)	&fm F7 LS(N5) &fm F8 LS(N0) &fm F9 LS(N1)	&fm F12 KP_MINUS &fm F12 MINUS
-&trans	&lts LCNUM ENTER &kp LEFT   &kp DOWN	 &kp RIGHT	  &kp LA(N1)						&kp RC(INS)	&fm F4 LS(N9) &fm F5 LS(N4) &fm F6 LS(N6)	&kp KP_PLUS	&fm F24 EQUAL
+&trans	&lts LCNUM ENTER &kp LEFT   &kp DOWN	 &kp RIGHT	  &kp LA(N1)						&kp RC(INS)	&fm F4 LS(N9) &fm F5 LS(N4) &fm F6 LS(N6)	&td_plus_sum	&fm F24 EQUAL
 &lay_or_lay DEFAULT_HD_2 NUM_HD &kp LSHFT &hms LALT ESC	&hms LSHFT RC(DEL)  &hms LCTRL RC(BSPC) &kp LA(N7)					&kp	LS(INS)	&fm F1 LS(N3) &fm F2 LS(N7) &fm F3 LS(N2)	&kp ENTER	&lay_or_lay DEFAULT_HD_2 NUM_HD
 						 &kp RBKT	&hm H RC(X)									 &fm F10 LS(N8) &fm F11 KP_DOT
 									&kp H &lts SPFN_HD BSPC					&lts SPFN_HD  ENTER &lts SPFN_HD SPACE
