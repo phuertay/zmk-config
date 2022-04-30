@@ -8,223 +8,109 @@
 		bindings = <&mo>;
 	};
 
-	ak_Q: adapt_key_Q {
-		compatible = "zmk,behavior-macro";
-		label = "AK_Q";
-		#binding-cells = <0>;
-		sleep = <3>;
-		bindings = <&kp Q>, <&slad AL_Q>;
-	};
+	ZMK_MACRO(ak_Q,
+		bindings = <&kp Q &slad AL_Q>;
+	)
 
-	ak_W: adapt_key_W {
-		compatible = "zmk,behavior-macro";
-		label = "AK_W";
-		#binding-cells = <0>;
-		sleep = <3>;
-		bindings = <&kp W>, <&slad AL_W>;
-	};
+	ZMK_MACRO(ak_W,
+		bindings = <&kp W &slad AL_W>;
+	)
 
-	ak_E: adapt_key_E {
-		compatible = "zmk,behavior-macro";
-		label = "AK_E";
-		#binding-cells = <0>;
-		sleep = <3>;
-		bindings = <&kp E>, <&slad AL_E>;
-	};
+	ZMK_MACRO(ak_E,
+		bindings = <&kp E &slad AL_E>;
+	)
+
+	ZMK_MACRO(ak_R,
+		bindings = <&kp R &slad AL_R>;
+	)
+
+	ZMK_MACRO(ak_O,
+		bindings = <&kp O &slad AL_O>;
+	)
+
+	ZMK_MACRO(ak_P,
+		bindings = <&kp P &slad AL_P>;
+	)
+
+	ZMK_MACRO(ak_SEMI,
+		bindings = <&kp SEMI &slad AL_SEMI>;
+	)
+
+	ZMK_MACRO(ak_Z,
+		bindings = <&kp Z &slad AL_Z>;
+	)
+
+	ZMK_MACRO(ak_X,
+		bindings = <&kp X &slad AL_X>;
+	)
+
+	ZMK_MACRO(ak_C,
+		bindings = <&kp C &slad AL_C>;
+	)
+
+	ZMK_MACRO(ak_M,
+		bindings = <&kp M &slad AL_M>;
+	)
+
+	ZMK_MACRO(ak_FSLH,
+		bindings = <&kp FSLH &slad AL_FSLH>;
+	)
+
+	ZMK_MACRO(ak_DOT,
+		bindings = <&kp DOT &slad AL_DOT>;
+	)
+
+	ZMK_MACRO(m_dba,
+		bindings = <&kp BSPC &kp B &kp A>;
+	)
+
+	ZMK_MACRO(m_dbc,
+		bindings = <&kp BSPC &kp B &kp C>;
+	)
+
+	ZMK_MACRO(m_ddw,
+		bindings = <&kp BSPC &kp D &kp W>;
+	)
+
+	ZMK_MACRO(m_djm,
+		bindings = <&kp BSPC &kp J &kp M>;
+	)
+
+	ZMK_MACRO(m_dge,
+		bindings = <&kp BSPC &kp G &kp E>;
+	)
+
+	ZMK_MACRO(m_dgc,
+		bindings = <&kp BSPC &kp G &kp C>;
+	)
+
+	ZMK_MACRO(m_dvy,
+		bindings = <&kp BSPC &kp V &kp Y>;
+	)
+
+	ZMK_MACRO(m_dga,
+		bindings = <&kp BSPC &kp G &kp A>;
+	)
+
+	ZMK_MACRO(m_dg_gr,
+		bindings = <&kp BSPC &kp G &kp GRAVE>;
+	)
+
+	ZMK_MACRO(m_dkk,
+		bindings = <&kp BSPC &kp Y>;
+	)
+
+	ZMK_MACRO(m_dqt,
+		bindings = <&kp BSPC &kp SQT>;
+	)
+
+	ZMK_MACRO(m_mk,
+		bindings = <&kp M &kp K>;
+	)
 	
-	ak_R: adapt_key_R {
-		compatible = "zmk,behavior-macro";
-		label = "AK_R";
-		#binding-cells = <0>;
-		sleep = <3>;
-		bindings = <&kp R>, <&slad AL_R>;
-	};
-
-	ak_O: adapt_key_O {
-		compatible = "zmk,behavior-macro";
-		label = "AK_O";
-		#binding-cells = <0>;
-		sleep = <3>;
-		bindings = <&kp O>, <&slad AL_O>;
-	};
-
-	ak_P: adapt_key_P {
-		compatible = "zmk,behavior-macro";
-		label = "AK_P";
-		#binding-cells = <0>;
-		sleep = <3>;
-		bindings = <&kp P>, <&slad AL_P>;
-	};
-
-	ak_SEMI: adapt_key_SEMI {
-		compatible = "zmk,behavior-macro";
-		label = "AK_SEMI";
-		#binding-cells = <0>;
-		sleep = <3>;
-		bindings = <&kp SEMI>, <&slad AL_SEMI>;
-	};
-
-	ak_Z: adapt_key_Z {
-		compatible = "zmk,behavior-macro";
-		label = "AK_Z";
-		#binding-cells = <0>;
-		sleep = <3>;
-		bindings = <&kp Z>, <&slad AL_Z>;
-	};
-
-	ak_X: adapt_key_X {
-		compatible = "zmk,behavior-macro";
-		label = "AK_X";
-		#binding-cells = <0>;
-		sleep = <3>;
-		bindings = <&kp X>, <&slad AL_X>;
-	};
-
-	ak_C: adapt_key_C {
-		compatible = "zmk,behavior-macro";
-		label = "AK_C";
-		#binding-cells = <0>;
-		sleep = <3>;
-		bindings = <&kp C>, <&slad AL_C>;
-	};
-
-	ak_M: adapt_key_M {
-		compatible = "zmk,behavior-macro";
-		label = "AK_M";
-		#binding-cells = <0>;
-		sleep = <3>;
-		bindings = <&kp M>, <&slad AL_M>;
-	};
-		
-	ak_FSLH: adapt_key_FSLH {
-		compatible = "zmk,behavior-macro";
-		label = "AK_FSLH";
-		#binding-cells = <0>;
-		sleep = <3>;
-		bindings = <&kp FSLH>, <&slad AL_FSLH>;
-	};
-
-	ak_DOT: adaptive_key_DOT {
-		compatible = "zmk,behavior-macro";
-		label = "AK_DOT";
-		#binding-cells = <0>;
-		sleep = <3>;
-		bindings = <&kp DOT>, <&slad AL_DOT>;
-	};
-/*
-	m_hd_on: m_hd_on {
-		compatible = "zmk,behavior-macro";
-		label = "M_HD_ON";
-		#binding-cells = <0>;
-		sleep = <MACRO_WAIT_LONG>;
-		bindings = <&tog DEFAULT_HD>, <&sk_mq RCTRL>, <&kp C_AC_REFRESH>;
-	};
-
-	m_hd_off: m_hd_off {
-		compatible = "zmk,behavior-macro";
-		label = "M_HD_OFF";
-		#binding-cells = <0>;
-		sleep = <MACRO_WAIT_LONG>;
-		bindings = <&tog DEFAULT_HD>, <&sk_mq LCTRL>, <&kp C_AC_REFRESH>;
-	};
-*/
-
-
-	m_dba: m_dba {
-		compatible = "zmk,behavior-macro";
-		label = "M_DBA";
-		#binding-cells = <0>;
-		sleep = <MACRO_WAIT>;
-		bindings = <&kp BSPC>, <&kp B>, <&kp A>;
-	};
-
-	m_dbc: m_dbc {
-		compatible = "zmk,behavior-macro";
-		label = "M_DBC";
-		#binding-cells = <0>;
-		sleep = <MACRO_WAIT>;
-		bindings = <&kp BSPC>, <&kp B>, <&kp C>;
-	};
-
-	m_ddw: m_ddw {
-		compatible = "zmk,behavior-macro";
-		label = "M_DDW";
-		#binding-cells = <0>;
-		sleep = <MACRO_WAIT>;
-		bindings = <&kp BSPC>, <&kp D>, <&kp W>;
-	};
-
-	m_djm: m_djm {
-		compatible = "zmk,behavior-macro";
-		label = "M_DJM";
-		#binding-cells = <0>;
-		sleep = <MACRO_WAIT>;
-		bindings = <&kp BSPC>, <&kp J>, <&kp M>;
-	};
-
-	m_dge: m_dge {
-		compatible = "zmk,behavior-macro";
-		label = "M_DGE";
-		#binding-cells = <0>;
-		sleep = <MACRO_WAIT>;
-		bindings = <&kp BSPC>, <&kp G>, <&kp E>;
-	};
-
-	m_dgc: m_dgc {
-		compatible = "zmk,behavior-macro";
-		label = "M_DGC";
-		#binding-cells = <0>;
-		sleep = <MACRO_WAIT>;
-		bindings = <&kp BSPC>, <&kp G>, <&kp C>;
-	};
-
-	m_dvy: m_dvy {
-		compatible = "zmk,behavior-macro";
-		label = "M_DVY";
-		#binding-cells = <0>;
-		sleep = <MACRO_WAIT>;
-		bindings = <&kp BSPC>, <&kp V>, <&kp Y>;
-	};
-
-	m_dga: m_dga {
-		compatible = "zmk,behavior-macro";
-		label = "M_DGA";
-		#binding-cells = <0>;
-		sleep = <MACRO_WAIT>;
-		bindings = <&kp BSPC>, <&kp G>, <&kp A>;
-	};
-
-	m_dg_gr: m_dg_gr {
-		compatible = "zmk,behavior-macro";
-		label = "M_DG_GR";
-		#binding-cells = <0>;
-		sleep = <MACRO_WAIT>;
-		bindings = <&kp BSPC>, <&kp G>, <&kp GRAVE>;
-	};
-
-	m_dkk: m_dkk {
-		compatible = "zmk,behavior-macro";
-		label = "M_WDW";
-		#binding-cells = <0>;
-		sleep = <MACRO_WAIT>;
-		bindings = <&kp BSPC>, <&kp Y>;
-	};
-
-	m_dqt: m_dqt {
-		compatible = "zmk,behavior-macro";
-		label = "M_DSQT";
-		#binding-cells = <0>;
-		sleep = <MACRO_WAIT>;
-		bindings = <&kp BSPC>, <&kp SQT>;
-	};
-
-	m_mk: m_mk {
-		compatible = "zmk,behavior-macro";
-		label = "M_MK";
-		#binding-cells = <0>;
-		sleep = <3>;
-		bindings = <&kp M>, <&kp K>;
-	};
+	ZMK_MACRO(eq_sum,
+		bindings = <&kp RBKT &kp S &kp U &kp M &kp MINUS>;
+	)
 
 	hms_m_dot: homerow_mod_w_macro {
 		compatible = "zmk,behavior-hold-tap";
