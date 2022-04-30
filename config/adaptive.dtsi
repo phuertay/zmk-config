@@ -107,10 +107,6 @@
 	ZMK_MACRO(m_mk,
 		bindings = <&kp M &kp K>;
 	)
-	
-	ZMK_MACRO(eq_sum,
-		bindings = <&kp RBKT &kp S &kp U &kp M &kp MINUS>;
-	)
 
 	hms_m_dot: homerow_mod_w_macro {
 		compatible = "zmk,behavior-hold-tap";
