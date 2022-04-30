@@ -142,4 +142,17 @@
 		flavor = "balanced";			// hold behavior when tapping-term-ms has expired or another key is pressed and released
 		bindings = <&mo>, <&tog>;
 	};
+	
+        td_plus_sum: tap_dance_plus_sum {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_PLUS_SUM";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp KP_PLUS>, <&m_eq_sum>;
+	};
+	
+		
+	ZMK_MACRO(m_eq_sum,
+		bindings = <&kp RBKT &kp S &kp U &kp M &kp MINUS>;
+	)
 }; };
