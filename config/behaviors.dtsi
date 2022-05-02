@@ -11,6 +11,13 @@
 	release-after-ms = <1500>;
 };
 
+&macro {
+	wait-ms = <0>;
+	tap-ms = <0>;
+};
+
+
+
 
 / { behaviors {
 	// Hold-tap for F-keys
@@ -153,6 +160,6 @@
 	
 		
 	ZMK_MACRO(m_eq_sum,
-		bindings = <&kp RBKT &kp S &kp U &kp M &kp MINUS>;
+		bindings = <&kp RBKT &kp S &kp M &kp E &kp MINUS>;
 	)
 }; };
