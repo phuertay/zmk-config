@@ -8,103 +8,103 @@
 		bindings = <&mo>;
 	};
 
-	ZMK_MACRO(ak_Q,
+	ZMK_MACRO_F(ak_Q,
 		bindings = <&kp Q &slad AL_Q>;
 	)
 
-	ZMK_MACRO(ak_W,
+	ZMK_MACRO_F(ak_W,
 		bindings = <&kp W &slad AL_W>;
 	)
 
-	ZMK_MACRO(ak_E,
+	ZMK_MACRO_F(ak_E,
 		bindings = <&kp E &slad AL_E>;
 	)
 
-	ZMK_MACRO(ak_R,
+	ZMK_MACRO_F(ak_R,
 		bindings = <&kp R &slad AL_R>;
 	)
 
-	ZMK_MACRO(ak_O,
+	ZMK_MACRO_F(ak_O,
 		bindings = <&kp O &slad AL_O>;
 	)
 
-	ZMK_MACRO(ak_P,
+	ZMK_MACRO_F(ak_P,
 		bindings = <&kp P &slad AL_P>;
 	)
 
-	ZMK_MACRO(ak_SEMI,
+	ZMK_MACRO_F(ak_SEMI,
 		bindings = <&kp SEMI &slad AL_SEMI>;
 	)
 
-	ZMK_MACRO(ak_Z,
+	ZMK_MACRO_F(ak_Z,
 		bindings = <&kp Z &slad AL_Z>;
 	)
 
-	ZMK_MACRO(ak_X,
+	ZMK_MACRO_F(ak_X,
 		bindings = <&kp X &slad AL_X>;
 	)
 
-	ZMK_MACRO(ak_C,
+	ZMK_MACRO_F(ak_C,
 		bindings = <&kp C &slad AL_C>;
 	)
 
-	ZMK_MACRO(ak_M,
+	ZMK_MACRO_F(ak_M,
 		bindings = <&kp M &slad AL_M>;
 	)
 
-	ZMK_MACRO(ak_FSLH,
+	ZMK_MACRO_F(ak_FSLH,
 		bindings = <&kp FSLH &slad AL_FSLH>;
 	)
 
-	ZMK_MACRO(ak_DOT,
+	ZMK_MACRO_F(ak_DOT,
 		bindings = <&kp DOT &slad AL_DOT>;
 	)
 
-	ZMK_MACRO(m_dba,
+	ZMK_MACRO_F(m_dba,
 		bindings = <&kp BSPC &kp B &kp A>;
 	)
 
-	ZMK_MACRO(m_dbc,
+	ZMK_MACRO_F(m_dbc,
 		bindings = <&kp BSPC &kp B &kp C>;
 	)
 
-	ZMK_MACRO(m_ddw,
+	ZMK_MACRO_F(m_ddw,
 		bindings = <&kp BSPC &kp D &kp W>;
 	)
 
-	ZMK_MACRO(m_djm,
+	ZMK_MACRO_F(m_djm,
 		bindings = <&kp BSPC &kp J &kp M>;
 	)
 
-	ZMK_MACRO(m_dge,
+	ZMK_MACRO_F(m_dge,
 		bindings = <&kp BSPC &kp G &kp E>;
 	)
 
-	ZMK_MACRO(m_dgc,
+	ZMK_MACRO_F(m_dgc,
 		bindings = <&kp BSPC &kp G &kp C>;
 	)
 
-	ZMK_MACRO(m_dvy,
+	ZMK_MACRO_F(m_dvy,
 		bindings = <&kp BSPC &kp V &kp Y>;
 	)
 
-	ZMK_MACRO(m_dga,
+	ZMK_MACRO_F(m_dga,
 		bindings = <&kp BSPC &kp G &kp A>;
 	)
 
-	ZMK_MACRO(m_dg_gr,
+	ZMK_MACRO_F(m_dg_gr,
 		bindings = <&kp BSPC &kp G &kp GRAVE>;
 	)
 
-	ZMK_MACRO(m_dkk,
+	ZMK_MACRO_F(m_dkk,
 		bindings = <&kp BSPC &kp Y>;
 	)
 
-	ZMK_MACRO(m_dqt,
+	ZMK_MACRO_F(m_dqt,
 		bindings = <&kp BSPC &kp SQT>;
 	)
 
-	ZMK_MACRO(m_mk,
+	ZMK_MACRO_F(m_mk,
 		bindings = <&kp M &kp K>;
 	)
 
