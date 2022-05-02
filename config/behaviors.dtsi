@@ -11,11 +11,16 @@
 	release-after-ms = <1500>;
 };
 
-&macro {
-	wait-ms = <10>;
-	tap-ms = <10>;
-};
 
+#define ZMK_MACRO_F(name,...) \
+	name: name { \
+			label = ZMK_MACRO_STRINGIFY(ZM_ ## name); \
+			compatible = "zmk,behavior-macro"; \
+			#binding-cells = <0>; \
+			wait-ms = <10>; \
+			tap-ms = <10>; \
+			__VA_ARGS__ \
+		};
 
 
 
@@ -159,7 +164,7 @@
 	};
 	
 		
-	ZMK_MACRO(m_eq_sum,
+	ZMK_MACRO_F(m_eq_sum,
 		bindings = <&kp RBKT &kp S &kp M &kp E &kp MINUS>;
 	)
 }; };
