@@ -250,7 +250,7 @@
 &lay_or_lay DEFAULT_HD_2 NUM_HD &kp LSHFT &hms LALT ESC	&hms LSHFT RC(DEL)  &hms LCTRL RC(BSPC) &kp LA(N7)					&kp	LS(INS)	&fm F1 LS(N3) &fm F2 LS(N7) &fm F3 LS(N2)	&kp ENTER	&lay_or_lay DEFAULT_HD_2 NUM_HD
 						 &kp RC(ENTER)	&hm H RC(X)									 &fm F10 LS(N8) &fm F11 KP_DOT
 									&kp H &lts SPFN_HD BSPC					&lts SPFN_HD  TAB &lts SPFN_HD SPACE
-											&td_resize &kp DEL		&to DEFAULT_HD	&trans
+											&trans &kp DEL		&to DEFAULT_HD	&trans
 											&trans &mo FN		&mo FN &trans
 			>;
 		};
@@ -420,7 +420,7 @@
 &kp C_AL_CONTACTS &kp C_AL_MAIL &kp C_AL_CCC &kp C_AL_CAL &kp C_AL_WWW	  &kp C_AC_SEARCH			&kp C_AC_SEARCH &kp C_AC_STOP &kp C_AL_CALC &kp C_AC_FAVORITES &kp C_AC_SEND   &kp C_AL_MY_COMPUTER
 								&kp C_BRI_DN &kp C_BRI_UP																		   &kp C_AC_BACK &kp C_AC_FORWARD
 														&kp C_AL_SELECT_TASK &kp INS					&kp C_AC_HOME &kp C_AC_BACK
-																	&tog SPFN_HD	&kp INS			&tog NUM_HD   &tog SPFN_HD
+																	&m_9_16	&kp INS			&tog NUM_HD   &tog SPFN_HD
 																	&to DEFAULT_HD 	&tog NUM_HD		&tog NUM_L_HD &to DEFAULT_HD 
 			>;
 		};
