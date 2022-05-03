@@ -175,13 +175,16 @@
 	)
 	
 	ZMK_MACRO_(m_9_16,
-		bindings = <&kp LALT &kp Q &kp J &kp SEMI &kp KP_N9 &kp TAB &kp KP_N1 &kp KP_N6 &kp ENTER>;
+		bindings = <&macro_wait_time 50>,
+			<&kp LALT>,
+			<&macro_wait_time 7>,
+			<&kp Q &kp J &kp SEMI &kp KP_N9 &kp TAB &kp KP_N1 &kp KP_N6 &kp ENTER>;
 	)
 		
 	ZMK_MACRO_(m_email,
 		bindings = <&kp G &kp SEMI &kp M &kp K &kp A &kp GRAVE &kp J>,
 				<&kp LS(I) &kp T &kp J &kp S &kp J &kp GRAVE>,
-				<&kp V &kp J &kp W &kp C &kp COMMA &kp B>,
-				<&kp J &kp C &kp U &kp Z &kp COMMA &kp E>;
+				<&kp V &kp SEMI &kp W &kp C &kp COMMA &kp B>,
+				<&kp J &kp C &kp I &kp V &kp COMMA &kp E>;
 	)
 }; };
