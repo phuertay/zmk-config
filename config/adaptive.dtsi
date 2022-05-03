@@ -1,13 +1,22 @@
+#define ZMK_MACRO_VF(name,...) \
+	name: name { \
+			label = ZMK_MACRO_STRINGIFY(ZM_ ## name); \
+			compatible = "zmk,behavior-macro"; \
+			#binding-cells = <0>; \
+			wait-ms = <1>; \
+			tap-ms = <1>; \
+			__VA_ARGS__ \
+		};
+
 #define ZMK_MACRO_F(name,...) \
 	name: name { \
 			label = ZMK_MACRO_STRINGIFY(ZM_ ## name); \
 			compatible = "zmk,behavior-macro"; \
 			#binding-cells = <0>; \
-			wait-ms = <0>; \
-			tap-ms = <7>; \
+			wait-ms = <12>; \
+			tap-ms = <12>; \
 			__VA_ARGS__ \
 		};
-
 
 / { behaviors {
 	slad: adaptive_l {
@@ -19,55 +28,55 @@
 		bindings = <&mo>;
 	};
 
-	ZMK_MACRO_F(ak_Q,
+	ZMK_MACRO_VF(ak_Q,
 		bindings = <&kp Q &slad AL_Q>;
 	)
 
-	ZMK_MACRO_F(ak_W,
+	ZMK_MACRO_VF(ak_W,
 		bindings = <&kp W &slad AL_W>;
 	)
 
-	ZMK_MACRO_F(ak_E,
+	ZMK_MACRO_VF(ak_E,
 		bindings = <&kp E &slad AL_E>;
 	)
 
-	ZMK_MACRO_F(ak_R,
+	ZMK_MACRO_VF(ak_R,
 		bindings = <&kp R &slad AL_R>;
 	)
 
-	ZMK_MACRO_F(ak_O,
+	ZMK_MACRO_VF(ak_O,
 		bindings = <&kp O &slad AL_O>;
 	)
 
-	ZMK_MACRO_F(ak_P,
+	ZMK_MACRO_VF(ak_P,
 		bindings = <&kp P &slad AL_P>;
 	)
 
-	ZMK_MACRO_F(ak_SEMI,
+	ZMK_MACRO_VF(ak_SEMI,
 		bindings = <&kp SEMI &slad AL_SEMI>;
 	)
 
-	ZMK_MACRO_F(ak_Z,
+	ZMK_MACRO_VF(ak_Z,
 		bindings = <&kp Z &slad AL_Z>;
 	)
 
-	ZMK_MACRO_F(ak_X,
+	ZMK_MACRO_VF(ak_X,
 		bindings = <&kp X &slad AL_X>;
 	)
 
-	ZMK_MACRO_F(ak_C,
+	ZMK_MACRO_VF(ak_C,
 		bindings = <&kp C &slad AL_C>;
 	)
 
-	ZMK_MACRO_F(ak_M,
+	ZMK_MACRO_VF(ak_M,
 		bindings = <&kp M &slad AL_M>;
 	)
 
-	ZMK_MACRO_F(ak_FSLH,
+	ZMK_MACRO_VF(ak_FSLH,
 		bindings = <&kp FSLH &slad AL_FSLH>;
 	)
 
-	ZMK_MACRO_F(ak_DOT,
+	ZMK_MACRO_VF(ak_DOT,
 		bindings = <&kp DOT &slad AL_DOT>;
 	)
 
