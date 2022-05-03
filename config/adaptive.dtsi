@@ -138,11 +138,11 @@
 		bindings = <&kp>, <&ak_X>;
 	};
 	
-	hms_m_c: homerow_mod_c_macro {
+	hm_m_c: homerow_mod_c_macro {
 		compatible = "zmk,behavior-hold-tap";
 		label = "HOMEROW_MOD_SLOW_C_MACRO";
 		#binding-cells = <2>;
-		tapping-term-ms = <220>;
+		tapping-term-ms = <156>;
 		quick-tap-ms = <0>;
 		flavor = "balanced";
 		bindings = <&kp>, <&ak_C>;
