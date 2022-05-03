@@ -14,8 +14,6 @@
 		};
 
 
-
-
 &caps_word {
 	continue-list = <CAPS_CONT>;
 };
@@ -23,8 +21,6 @@
 &sl {
 	release-after-ms = <1500>;
 };
-
-
 
 
 / { behaviors {
@@ -171,7 +167,7 @@
             label = "TAP_DANCE_RESIZE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp LALT>, <&none>, <&m_9_16>;
+            bindings = <&kp LALT>, <&kp LALT &kp LALT>, <&m_9_16>;
 	};
 		
 	ZMK_MACRO_(m_eq_sum,
