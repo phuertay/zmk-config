@@ -9,55 +9,55 @@
 	};
 
 	ZMK_MACRO_F(ak_Q,
-		bindings = <&kp Q &slad AL_Q>;
+		bindings = <&slad AL_Q &kp Q>;
 	)
 
 	ZMK_MACRO_F(ak_W,
-		bindings = <&kp W &slad AL_W>;
+		bindings = <&slad AL_W &kp W>;
 	)
 
 	ZMK_MACRO_F(ak_E,
-		bindings = <&kp E &slad AL_E>;
+		bindings = <&slad AL_E &kp E>;
 	)
 
 	ZMK_MACRO_F(ak_R,
-		bindings = <&kp R &slad AL_R>;
+		bindings = <&slad AL_R &kp R>;
 	)
 
 	ZMK_MACRO_F(ak_O,
-		bindings = <&kp O &slad AL_O>;
+		bindings = <&slad AL_O &kp O>;
 	)
 
 	ZMK_MACRO_F(ak_P,
-		bindings = <&kp P &slad AL_P>;
+		bindings = <&slad AL_P &kp P>;
 	)
 
 	ZMK_MACRO_F(ak_SEMI,
-		bindings = <&kp SEMI &slad AL_SEMI>;
+		bindings = <&slad AL_SEMI &kp SEMI>;
 	)
 
 	ZMK_MACRO_F(ak_Z,
-		bindings = <&kp Z &slad AL_Z>;
+		bindings = <&slad AL_Z &kp Z>;
 	)
 
 	ZMK_MACRO_F(ak_X,
-		bindings = <&kp X &slad AL_X>;
+		bindings = <&slad AL_X &kp X>;
 	)
 
 	ZMK_MACRO_F(ak_C,
-		bindings = <&kp C &slad AL_C>;
+		bindings = <&slad AL_C &kp C>;
 	)
 
 	ZMK_MACRO_F(ak_M,
-		bindings = <&kp M &slad AL_M>;
+		bindings = <&slad AL_M &kp M>;
 	)
 
 	ZMK_MACRO_F(ak_FSLH,
-		bindings = <&kp FSLH &slad AL_FSLH>;
+		bindings = <&slad AL_FSLH &kp FSLH>;
 	)
 
 	ZMK_MACRO_F(ak_DOT,
-		bindings = <&kp DOT &slad AL_DOT>;
+		bindings = <&slad AL_DOT &kp DOT>;
 	)
 
 	ZMK_MACRO_F(m_dba,
@@ -142,7 +142,7 @@
 		compatible = "zmk,behavior-hold-tap";
 		label = "HOMEROW_MOD_SLOW_C_MACRO";
 		#binding-cells = <2>;
-		tapping-term-ms = <156>;
+		tapping-term-ms = <166>;
 		quick-tap-ms = <0>;
 		flavor = "balanced";
 		bindings = <&kp>, <&ak_C>;
