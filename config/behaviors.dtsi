@@ -12,18 +12,6 @@
 };
 
 
-#define ZMK_MACRO_F(name,...) \
-	name: name { \
-			label = ZMK_MACRO_STRINGIFY(ZM_ ## name); \
-			compatible = "zmk,behavior-macro"; \
-			#binding-cells = <0>; \
-			wait-ms = <1>; \
-			tap-ms = <12>; \
-			__VA_ARGS__ \
-		};
-
-
-
 / { behaviors {
 	// Hold-tap for F-keys
 	fn: fn_mod {
@@ -164,7 +152,9 @@
 	};
 	
 		
-	ZMK_MACRO_F(m_eq_sum,
+	ZMK_MACRO(m_eq_sum,
+		wait-ms = <10>;
+		tap-ms = <10>;
 		bindings = <&kp RBKT &kp S &kp M &kp E &kp MINUS>;
 	)
 }; };
