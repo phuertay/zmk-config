@@ -166,8 +166,8 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_RESIZE";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp LALT>, <&kp LALT &kp LALT>, <&m_9_16>;
+            tapping-term-ms = <100>;
+            bindings = <&kp LALT>, <&m_9_16>;
 	};
 		
 	ZMK_MACRO_(m_eq_sum,
