@@ -2,62 +2,62 @@
 	slad: adaptive_l {
 		compatible = "zmk,behavior-sticky-key";
 		label = "SL_AL";
-		quick-release;
+		// quick-release;
 		#binding-cells = <1>;
 		release-after-ms = <ADAPTIVE_DELAY>;
 		bindings = <&mo>;
 	};
 
 	ZMK_MACRO_F(ak_Q,
-		bindings = <&slad AL_Q &kp Q>;
+		bindings = <&kp Q &slad AL_Q>;
 	)
 
 	ZMK_MACRO_F(ak_W,
-		bindings = <&slad AL_W &kp W>;
+		bindings = <&kp W &slad AL_W>;
 	)
 
 	ZMK_MACRO_F(ak_E,
-		bindings = <&slad AL_E &kp E>;
+		bindings = <&kp E &slad AL_E>;
 	)
 
 	ZMK_MACRO_F(ak_R,
-		bindings = <&slad AL_R &kp R>;
+		bindings = <&kp R &slad AL_R>;
 	)
 
 	ZMK_MACRO_F(ak_O,
-		bindings = <&slad AL_O &kp O>;
+		bindings = <&kp O &slad AL_O>;
 	)
 
 	ZMK_MACRO_F(ak_P,
-		bindings = <&slad AL_P &kp P>;
+		bindings = <&kp P &slad AL_P>;
 	)
 
 	ZMK_MACRO_F(ak_SEMI,
-		bindings = <&slad AL_SEMI &kp SEMI>;
+		bindings = <&kp SEMI &slad AL_SEMI>;
 	)
 
 	ZMK_MACRO_F(ak_Z,
-		bindings = <&slad AL_Z &kp Z>;
+		bindings = <&kp Z &slad AL_Z>;
 	)
 
 	ZMK_MACRO_F(ak_X,
-		bindings = <&slad AL_X &kp X>;
+		bindings = <&kp X &slad AL_X>;
 	)
 
 	ZMK_MACRO_F(ak_C,
-		bindings = <&slad AL_C &kp C>;
+		bindings = <&kp C &slad AL_C>;
 	)
 
 	ZMK_MACRO_F(ak_M,
-		bindings = <&slad AL_M &kp M>;
+		bindings = <&kp M &slad AL_M>;
 	)
 
 	ZMK_MACRO_F(ak_FSLH,
-		bindings = <&slad AL_FSLH &kp FSLH>;
+		bindings = <&kp FSLH &slad AL_FSLH>;
 	)
 
 	ZMK_MACRO_F(ak_DOT,
-		bindings = <&slad AL_DOT &kp DOT>;
+		bindings = <&kp DOT &slad AL_DOT>;
 	)
 
 	ZMK_MACRO_F(m_dba,
