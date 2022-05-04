@@ -200,7 +200,7 @@
 		bindings = <&kp G &kp SEMI &kp M &kp K &kp A &kp GRAVE &kp J>,
 				<&kp LS(I)>,
 				<&kp T &kp J &kp S &kp J &kp GRAVE &kp V &kp SEMI &kp J>,
-				<&kp F &kp FSLH &kp J &kp L &kp S &kp COMMA &kp A &kp S>,
+				<&kp F &kp FSLH &kp L &kp S &kp COMMA &kp A &kp S>,
 				<&kp I &kp V &kp COMMA &kp E>;
 	)
 		
