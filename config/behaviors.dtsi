@@ -167,7 +167,7 @@
             label = "TAP_DANCE_EMAILS";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&m_email_w>, <&m_email_g>, <&m_email_ph>;
+            bindings = <&m_email_w>, <&m_email_g>, <&m_email_w_old>, <&m_email_ph>;
 	};
 		
 	ZMK_MACRO_(m_eq_sum,
@@ -183,21 +183,32 @@
 		
 	ZMK_MACRO_(m_email_w,
 		bindings = <&kp G &kp SEMI &kp M &kp K &kp A &kp GRAVE &kp J>,
-				<&kp LS(I) &kp T &kp J &kp S &kp J &kp GRAVE>,
-				<&kp V &kp SEMI &kp W &kp C &kp COMMA &kp B>,
-				<&kp J &kp C &kp I &kp V &kp COMMA &kp E>;
+				<&kp LS(I)>,
+				<&kp T &kp J &kp S &kp J &kp GRAVE &kp V &kp SEMI>,
+				<&kp W &kp C &kp COMMA &kp B &kp J &kp C>,
+				<&kp I &kp V &kp COMMA &kp E>;
 	)
 		
 	ZMK_MACRO_(m_email_g,
 		bindings = <&kp G &kp SEMI &kp M &kp K &kp A &kp GRAVE &kp J &kp DOT>,
-				<&kp LS(I) &kp W &kp E &kp J &kp L &kp C>,
+				<&kp LS(I)>,
+				<&kp W &kp E &kp J &kp L &kp C>,
 				<&kp I &kp V &kp COMMA &kp E>;
 	)
-	
+		
+	ZMK_MACRO_(m_email_w_old,
+		bindings = <&kp G &kp SEMI &kp M &kp K &kp A &kp GRAVE &kp J>,
+				<&kp LS(I)>,
+				<&kp T &kp J &kp S &kp J &kp GRAVE &kp V &kp SEMI &kp J>,
+				<&kp F &kp FSLH &kp J &kp L &kp S &kp COMMA &kp A &kp S>,
+				<&kp I &kp V &kp COMMA &kp E>;
+	)
+		
 	ZMK_MACRO_(m_email_ph,
 		bindings = <&kp G &kp SEMI>,
-				<&kp LS(I) &kp T &kp J &kp S &kp J &kp GRAVE>,
-				<&kp V &kp SEMI &kp W &kp C &kp COMMA &kp B>,
-				<&kp J &kp C &kp I &kp V &kp COMMA &kp E>;
+				<&kp LS(I)>,
+				<&kp T &kp J &kp S &kp J &kp GRAVE &kp V &kp SEMI>,
+				<&kp W &kp C &kp COMMA &kp B &kp J &kp C>,
+				<&kp I &kp V &kp COMMA &kp E>;
 	)
 }; };
