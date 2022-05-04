@@ -166,7 +166,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_EMAILS";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <420>;
             bindings = <&m_email_w>, <&m_email_g>, <&m_email_w_old>, <&m_email_ph>;
 	};
 		
