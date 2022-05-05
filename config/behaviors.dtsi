@@ -170,6 +170,14 @@
             bindings = <&m_email_w>, <&m_email_g>, <&m_email_w_old>, <&m_email_ph>;
 	};
 		
+        td_names: tap_dance_namess {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_NAMES";
+            #binding-cells = <0>;
+            tapping-term-ms = <420>;
+            bindings = <&m_phuerta>, <&m_ph>, <&m_pihy>;
+	};
+		
 	ZMK_MACRO_(m_eq_sum,
 		bindings = <&kp RBKT &kp S &kp M &kp E &kp MINUS>;
 	)
@@ -210,5 +218,25 @@
 				<&kp T &kp J &kp S &kp J &kp GRAVE &kp V &kp SEMI>,
 				<&kp W &kp C &kp COMMA &kp B &kp J &kp C>,
 				<&kp I &kp V &kp COMMA &kp E>;
+	)
+	
+	ZMK_MACRO_(m_phuerta,
+		bindings = <&kp G &kp SEMI &kp M &kp K &kp A &kp GRAVE &kp J>;
+	)
+	
+	ZMK_MACRO_(m_ph,
+		bindings = <&kp LS(G) &kp K &kp F &kp A &kp COMMA>,
+				<&kp SPACE>,
+				<&kp LS(SEMI) &kp M &kp K &kp A &kp GRAVE &kp J>;
+	)
+	
+	ZMK_MACRO_(m_pihy,
+		bindings = <&kp LS(G) &kp K &kp F &kp A &kp COMMA>,
+				<&kp SPACE>,
+				<&kp LS(L) &kp I>,
+				<&kp SPACE>,
+				<&kp LS(SEMI) &kp M &kp K &kp A &kp GRAVE &kp J>,
+				<&kp SPACE>,
+				<&kp LS(FSLH) &kp M &kp E &kp SEMI &kp J>;
 	)
 }; };
