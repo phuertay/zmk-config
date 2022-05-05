@@ -259,8 +259,8 @@
 			bindings = <
 &trans	&trans &trans &trans &trans &trans						&trans &trans &trans &trans &trans &trans
 &tog NUM_HD_ULTRA &trans &trans &trans &trans &trans					&trans &trans &trans &trans &trans &trans
-&trans	&trans &trans &tog NUM_HD_UP &tog NUM_HD_MID &trans				&trans &fm F1 LS(N3) &fm F2 LS(N7) &fm F3 LS(N2) &trans &trans
-&trans	&trans &trans &trans &trans &trans						&trans &fm F4 LS(N9) &fm F5 LS(N4) &fm F6 LS(N6) &trans &trans
+&trans	&trans &trans &lt NUM_HD_UP &lt NUM_HD_MID &trans				&trans &fm F1 LS(N3) &fm F2 LS(N7) &fm F3 LS(N2) &kp ENTER &trans
+&trans	&trans &trans &trans &trans &trans						&trans &fm F4 LS(N9) &fm F5 LS(N4) &fm F6 LS(N6) &td_plus_sum &trans
 				   &trans &trans										   &trans &trans
 									&trans &trans			&trans &trans
 	 									&trans &trans	&trans &trans
@@ -273,8 +273,8 @@
 			bindings = <
 &trans	&trans &trans &trans &trans &trans						&trans &trans &trans &trans &trans &trans
 &trans	&trans &trans &trans &trans &trans						&trans &trans &trans &trans &trans &trans
-&trans	&trans &trans &trans &trans &trans						&trans &fm F4 LS(N9) &fm F5 LS(N4) &fm F6 LS(N6) &trans &trans
-&trans	&trans &trans &trans &trans &trans						&trans &fm F1 LS(N3) &fm F2 LS(N7) &fm F3 LS(N2) &trans &trans
+&trans	&trans &trans &trans &trans &trans						&trans &fm F4 LS(N9) &fm F5 LS(N4) &fm F6 LS(N6) &td_plus_sum &trans
+&trans	&trans &trans &trans &trans &trans						&trans &fm F1 LS(N3) &fm F2 LS(N7) &fm F3 LS(N2) &kp ENTER &trans
 				   &trans &trans										   &trans &trans
 									&trans &trans			&trans &trans
 	 									&trans &trans	&trans &trans
@@ -286,8 +286,8 @@
 		num_hd_up {
 			bindings = <
 &trans	&trans &trans &trans &trans &trans						&trans &trans &trans &trans &trans &trans
-&trans	&trans &trans &trans &trans &trans						&trans &fm F4 LS(N9) &fm F5 LS(N4) &fm F6 LS(N6) &trans &trans
-&trans	&trans &trans &trans &trans &trans						&trans &fm F7 LS(N5) &fm F8 LS(N0) &fm F9 LS(N1) &trans
+&trans	&trans &trans &trans &trans &trans						&trans &fm F4 LS(N9) &fm F5 LS(N4) &fm F6 LS(N6) &td_plus_sum &trans
+&trans	&trans &trans &trans &trans &trans						&trans &fm F7 LS(N5) &fm F8 LS(N0) &fm F9 LS(N1) &fm F12 KP_MINUS
 &trans	&trans &trans &trans &trans &trans						&trans &trans &trans &trans &trans &trans
 				   &trans &trans										   &trans &trans
 									&trans &trans			&trans &trans
