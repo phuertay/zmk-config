@@ -23,7 +23,7 @@
 #define NUM_HD 14
 #define NUM_HD_ULTRA 15
 #define NUM_HD_MID 16
-#define NUM_HD_HIGH 17
+#define NUM_HD_UP 17
 #define DEFAULT_HD_2 18
 #define LCNUM 19
 #define FN 20
@@ -258,8 +258,8 @@
 		num_hd_ultra {
 			bindings = <
 &trans	&trans &trans &trans &trans &trans						&trans &trans &trans &trans &trans &trans
-&trans	&trans &trans &trans &trans &trans						&trans &trans &trans &trans &trans &trans
-&trans	&trans &trans &tog NUM_HD_UP &tog NUM_HD_MID &trans						&trans &fm F1 LS(N3) &fm F2 LS(N7) &fm F3 LS(N2) &trans &trans
+&tog NUM_HD_ULTRA &trans &trans &trans &trans &trans					&trans &trans &trans &trans &trans &trans
+&trans	&trans &trans &tog NUM_HD_UP &tog NUM_HD_MID &trans				&trans &fm F1 LS(N3) &fm F2 LS(N7) &fm F3 LS(N2) &trans &trans
 &trans	&trans &trans &trans &trans &trans						&trans &fm F4 LS(N9) &fm F5 LS(N4) &fm F6 LS(N6) &trans &trans
 				   &trans &trans										   &trans &trans
 									&trans &trans			&trans &trans
