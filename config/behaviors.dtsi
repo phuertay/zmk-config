@@ -237,6 +237,6 @@
 				<&kp SPACE>,
 				<&kp LS(SEMI) &kp M &kp K &kp A &kp GRAVE &kp J>,
 				<&kp SPACE>,
-				<&kp LS(FSLH) &kp M &kp E &kp SEMI &kp J>;
+				<&kp LS(DOT) &kp M &kp E &kp SEMI &kp J>;
 	)
 }; };
