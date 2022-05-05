@@ -1,15 +1,3 @@
-
-
-#define ZMK_MACRO_(name,...) \
-	name: name { \
-			label = ZMK_MACRO_STRINGIFY(ZM_ ## name); \
-			compatible = "zmk,behavior-macro"; \
-			#binding-cells = <0>; \
-			wait-ms = <7>; \
-			tap-ms = <7>; \
-			__VA_ARGS__ \
-		};
-
 &sl {
 	release-after-ms = <1500>;
 };
