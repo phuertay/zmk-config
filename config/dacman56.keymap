@@ -41,6 +41,7 @@
 
 #include "combos.dtsi"
 #include "behaviors.dtsi"
+#include "macros.dtsi"
 #include "adaptive.dtsi"
 
 / {
