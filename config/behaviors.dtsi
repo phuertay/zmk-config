@@ -96,24 +96,6 @@
 		bindings = <&kp>;
 	};
 	
-	sk_m: sticky_q {
-		compatible = "zmk,behavior-sticky-key";
-		label = "SK_FOR_MACRO";
-		// quick-release;
-		#binding-cells = <1>;
-		release-after-ms = <MACRO_WAIT_LONG>;
-		bindings = <&kp>;
-	};
-	
-	sk_mq: sticky_mq {
-		compatible = "zmk,behavior-sticky-key";
-		label = "SK_FOR_MACRO_QR";
-		quick-release;
-		#binding-cells = <1>;
-		release-after-ms = <MACRO_WAIT_LONG>;
-		bindings = <&kp>;
-	};
-	
 	k_or_lay: key_or_layer {
 		compatible = "zmk,behavior-hold-tap";
 		label = "K_OR_NUM";
