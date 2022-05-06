@@ -1,4 +1,4 @@
-#define ADAPTIVE_DELAY 335
+#define ADAPTIVE_DELAY 235
 
 
 #define ZMK_MACRO_VF(name,...) \
