@@ -259,7 +259,7 @@
 			bindings = <
 &trans	&trans &trans &trans &trans &trans						&trans &trans &trans &trans &trans &trans
 &tog NUM_HD_ULTRA &trans &trans &trans &trans &trans					&trans &trans &trans &trans &trans &trans
-&trans	&lts LCNUM KP_DOT &hm LEFT LS(N8) &lts NUM_HD_UP DOWN &lts NUM_HD_MID RIGHT &trans				&trans &fm F1 LS(N3) &fm F2 LS(N7) &fm F3 LS(N2) &kp ENTER &trans
+&trans	&lts LCNUM KP_DOT &hmf LEFT LS(N8) &lts NUM_HD_UP DOWN &lts NUM_HD_MID RIGHT &trans				&trans &fm F1 LS(N3) &fm F2 LS(N7) &fm F3 LS(N2) &kp ENTER &trans
 &trans	&trans &trans &trans &trans &trans						&trans &fm F4 LS(N9) &fm F5 LS(N4) &fm F6 LS(N6) &td_plus_sum &trans
 				   &trans &trans										   &trans &trans
 									&trans &trans			&trans &trans
