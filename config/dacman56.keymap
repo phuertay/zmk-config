@@ -43,6 +43,17 @@
 #include "adaptive.dtsi"
 
 / {
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <DEFAULT_HD NUM_HD>;
+            then-layer = <NUM_HD_ULTRA>;
+        };
+    };
+};
+
+
+/ {
 	keymap {
 		compatible = "zmk,keymap";
 
@@ -259,7 +270,7 @@
 			bindings = <
 &trans	&trans &trans &trans &trans &trans						&trans &trans &trans &trans &trans &trans
 &tog NUM_HD_ULTRA &trans &trans &trans &trans &trans					&trans &trans &trans &trans &trans &trans
-&trans	&lts LCNUM KP_DOT &trans &lts NUM_HD_UP DOWN &lts NUM_HD_MID RIGHT &trans				&trans &fm F1 LS(N3) &fm F2 LS(N7) &fm F3 LS(N2) &kp ENTER &trans
+&trans	&lts LCNUM KP_DOT &lts NUM_HD_UP LEFT &lts NUM_HD_MID DOWN &trans		&trans &fm F1 LS(N3) &fm F2 LS(N7) &fm F3 LS(N2) &kp ENTER &trans
 &trans	&trans &trans &trans &trans &trans						&trans &fm F4 LS(N9) &fm F5 LS(N4) &fm F6 LS(N6) &td_plus_sum &trans
 				   &trans &trans										   &trans &trans
 									&trans &trans			&trans &hmf SPACE LS(N8)
