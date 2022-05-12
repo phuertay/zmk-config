@@ -96,8 +96,9 @@
 	)
 	
 	ZMK_MACRO_(m_excel_go_to,
-		bindings = <&macro_press &mo DEFAULT_HD_2 &kp LS(W)>,
+		bindings = <&kp LC(W)>,
+			<&macro_press &mo DEFAULT_HD_2>,
 			<&macro_pause_for_release>,
-			<&macro_release &kp LS(W) &mo DEFAULT_HD_2>;
+			<&macro_release &mo DEFAULT_HD_2>;
 	)
 }; };
