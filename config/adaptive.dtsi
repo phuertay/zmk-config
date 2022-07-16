@@ -170,4 +170,15 @@
 		flavor = "balanced";
 		bindings = <&kp>, <&ak_C>;
 	};
+	
+	
+	hm_m_j: homerow_mod_j_macro {
+		compatible = "zmk,behavior-hold-tap";
+		label = "HOMEROW_MOD_SLOW_J_MACRO";
+		#binding-cells = <2>;
+		tapping-term-ms = <186>;
+		quick-tap-ms = <0>;
+		flavor = "balanced";
+		bindings = <&kp>, <&m_c_spfn>;
+	};
 }; };
