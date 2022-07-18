@@ -115,4 +115,16 @@
 		flavor = "balanced";			// hold behavior when tapping-term-ms has expired or another key is pressed and released
 		bindings = <&mo>, <&tog>;
 	};
+	
+		
+	
+	hm_m_cspfn: homerow_mod_cspfn {
+		compatible = "zmk,behavior-hold-tap";
+		label = "HOMEROW_MOD_SLOW_CSPFN";
+		#binding-cells = <2>;
+		tapping-term-ms = <186>;
+		quick-tap-ms = <0>;
+		flavor = "balanced";
+		bindings = <&m_c_spfn>, <&kp>;
+	};
 }; };
