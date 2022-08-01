@@ -251,7 +251,7 @@
 						 &kp RC(ENTER)	&hm H RC(X)									 &fm F10 LS(N8) &fm F11 KP_DOT
 									&kp H &lts SPFN_HD BSPC					&lts SPFN_HD  TAB &lts SPFN_HD SPACE
 											&trans &kp DEL		&to DEFAULT_HD	&trans
-											&trans &mo FN		&mo FN &trans
+											&trans &trans		&mo FN &trans
 			>;
 		};
 
@@ -265,7 +265,7 @@
 						 &kp RC(ENTER)	&hm H RC(X)									 &fm F10 LS(N8) &fm F11 KP_DOT
 									&kp H &lts SPFN_HD BSPC					&lts SPFN_HD  TAB &hms SPACE LS(N8)
 											&trans &kp DEL		&to DEFAULT_HD	&trans
-											&trans &mo FN		&mo FN &trans
+											&trans &trans		&mo FN &trans
 			>;
 		};
 	
@@ -280,7 +280,7 @@
 						 &kp RC(ENTER)	&hm H RC(X)									 &fm F10 LS(N8) &fm F11 KP_DOT
 									&kp H &lts SPFN_HD BSPC					&lts SPFN_HD  TAB &hms SPACE LS(N8)
 											&trans &kp DEL		&to DEFAULT_HD	&trans
-											&trans &mo FN		&mo FN &trans
+											&trans &trans		&mo FN &trans
 			>;
 		};
 
@@ -294,7 +294,7 @@
 						 &kp RC(ENTER)	&hm H RC(X)									 &fm F10 LS(N8) &fm F11 KP_DOT
 									&kp H &lts SPFN_HD BSPC					&lts SPFN_HD  TAB &hms SPACE LS(N8)
 											&trans &kp DEL		&to DEFAULT_HD	&trans
-											&trans &mo FN		&mo FN &trans
+											&trans &trans		&mo FN &trans
 			>;
 		};
 		
