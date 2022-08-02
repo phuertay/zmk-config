@@ -107,4 +107,8 @@
     				<&macro_pause_for_release>,
 				<&macro_release &mo SPFN_HD &kp LCTRL>;
 	)
+	
+	ZMK_MACRO_(m_paste_t,
+		bindings = <&kp RC(LA(DOT)) &kp LA(DOT) &kp D &kp ENTER>;
+	)
 }; };
