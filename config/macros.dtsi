@@ -109,6 +109,6 @@
 	)
 	
 	ZMK_MACRO_(m_paste_t,
-		bindings = <&kp RC(LA(DOT)) &kp LA(DOT) &kp D &kp ENTER>;
+		bindings = <&kp RC(LA(FSLH)) &kp LA(FSLH) &kp K &kp ENTER>;
 	)
 }; };
