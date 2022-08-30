@@ -55,7 +55,7 @@
 &cesc LCTRL ESC &kp A	&lt NUM_HD_UP S	&lt NUM_HD_MID D &lt NUM_HD_ULTRA F	&hms RALT G					&hms RALT H		 &hm_m_cspfn 0 J		  &kp K			  &kp L			&ak_SEMI &kp SQT
 &hms LSHFT LS(RSHIFT) &ak_Z &hms_m_x LALT 0  &hm_m_c LSHFT 0 &hms LCTRL V &lt NUM_HD_ULTRA B			&lt NUM_HD_ULTRA N &hms_m_m RCTRL 0 &hmf RSHFT COMMA &hms_m_dot LALT 0 &ak_FSLH &hms RSHFT KP_NUM
 				    &hm TILDE RBKT &hm H BSLH									   &kp MINUS		  &kp EQUAL
-						&hmss SPACE GRAVE &kp BSPC				&lts SPFN_HD ENTER  &kp SPACE
+						&hmss SPACE GRAVE &lts SPFN_HD BSPC			&lts SPFN_HD ENTER  &kp SPACE
 							&kp LALT &kp DEL				&tog NUM_HD_ULTRA &kp LWIN
 							&sl FUNC_L &kp	C_AL_CALC	&kp C_AC_REFRESH &sl FUNC_HD
 			>;
@@ -306,7 +306,7 @@
 &cesc LCTRL ESC &kp A	&lt NUM_HD_UP S	&lt NUM_HD_MID D &lt NUM_HD_ULTRA F	&hms RALT G					&hms RALT H		 &lt NUM_HD J		  &kp K			  &kp L			&ak_SEMI &kp SQT
 &hms LSHFT LS(RSHIFT) &ak_Z &hms_m_x LALT 0  &hm_m_c LSHFT 0 &hms LCTRL V &lt NUM_HD B			&lt NUM_HD N &hms_m_m RCTRL 0 &hmf RSHFT COMMA &hms_m_dot LALT 0 &ak_FSLH &hms RSHFT KP_NUM
 				    &hm TILDE RBKT &hm H BSLH									   &kp MINUS		  &kp EQUAL
-						&hmss SPACE GRAVE &kp BSPC				&lts SPFN_HD ENTER  &kp SPACE
+						&hmss SPACE GRAVE &lts SPFN_HD BSPC				&lts SPFN_HD ENTER  &kp SPACE
 							&kp LALT &kp DEL				&tog NUM_HD &kp LWIN
 							&sl FUNC_L &kp	C_AL_CALC	&kp C_AC_REFRESH &sl FUNC_HD
 			>;
