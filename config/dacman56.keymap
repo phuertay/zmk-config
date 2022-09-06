@@ -218,7 +218,7 @@
 			bindings = <
 &kp ESC	&trans &trans &trans &trans &trans						&trans &trans &trans &trans &trans &trans
 &trans	&trans &trans &trans &trans &trans						&trans &trans &trans &trans &trans &trans
-&trans	&m_dba &trans &trans &trans &trans						&trans &trans &trans &trans &trans &trans
+&trans	&m_dba &m_dbs &trans &trans &trans						&trans &trans &trans &trans &trans &trans
 &trans	&trans &trans &m_dbc &trans &trans						&trans &m_djm &trans &trans &trans &trans
 				   &trans &trans										   &trans &trans
 									&m_dg_gr &trans			&trans &trans
