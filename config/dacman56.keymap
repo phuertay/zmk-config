@@ -331,7 +331,7 @@
 &trans	&kp GRAVE		 &kp KP_MULTIPLY &kp KP_DIVIDE	&fm F17 F5	  &fm F19 F7 				&fm F18 F6	 &fm F14 F2	 &fn F10 N0 &fm F16 F4		 &fm F20 F8	 &fm F23 F11
 &trans		&fm F12 KP_MINUS &fm F9 LS(N1)	 &fm F8 LS(N0)	&fm F7 LS(N5) &kp LA(TAB)				&kp LA(TAB)	&kp PG_UP	 &kp UP		 &kp PG_DN	  &kp TAB	 &fm F24 F12
 &trans		&kp ENTER	 &fm F3 LS(N2)	 &fm F2 LS(N7)	&fm F1 LS(N3) &kp RC(INS)				&kp LA(N1)	&kp LEFT	 &kp DOWN	 &kp RIGHT	  &lts RCNUM_L ENTER &trans
-&&lay_or_lay DEFAULT_HD_2 NUM_HD	&td_plus_sum	 &fm F6 LS(N6)	 &fm F5 LS(N4)	&fm F4 LS(N9) &kp LS(INS)	&kp LA(N2)	&kp RC(BSPC)	&kp RC(DEL)	 &kp ESC	  &trans 	&m_excel_go_to
+&lay_or_lay DEFAULT_HD_2 NUM_HD	&td_plus_sum	 &fm F6 LS(N6)	 &fm F5 LS(N4)	&fm F4 LS(N9) &kp LS(INS)	&kp LA(N2)	&kp RC(BSPC)	&kp RC(DEL)	 &kp ESC	  &trans 	&m_excel_go_to
 							 &fm F11 KP_DOT  &fm F10 LS(N8) 						 &kp SPACE	 &kp RC(FSLH)
 									&kp LS(N8) &lts SPFN_HD BSPC			&mo FN_L &trans
 										&kp LALT &kp DEL		&&tog NUM_L_HD  &trans
