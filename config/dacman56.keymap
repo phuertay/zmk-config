@@ -334,7 +334,7 @@
 &lay_or_lay DEFAULT_HD_2 NUM_HD	&td_plus_sum	 &fm F6 LS(N6)	 &fm F5 LS(N4)	&fm F4 LS(N9) &kp LS(INS)	&kp LA(N2)	&kp RC(BSPC)	&kp RC(DEL)	 &kp ESC	  &trans 	&m_excel_go_to
 							 &fm F11 KP_DOT  &fm F10 LS(N8) 						 &kp SPACE	 &kp RC(FSLH)
 									&kp LS(N8) &lts SPFN_HD BSPC			&mo FN_L &trans
-										&kp LALT &kp DEL		&&tog NUM_L_HD  &trans
+										&kp LALT &kp DEL		&tog NUM_L_HD  &trans
 										&trans &trans	&mo FN_L &trans
 			>;
 		};
