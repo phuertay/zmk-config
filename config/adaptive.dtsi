@@ -90,6 +90,10 @@
 	ZMK_MACRO_F(m_dbc,
 		bindings = <&kp BSPC &kp B &kp C>;
 	)
+	
+	ZMK_MACRO_F(m_dbs,
+		bindings = <&kp BSPC &kp B &kp S>;
+	)
 
 	ZMK_MACRO_F(m_ddw,
 		bindings = <&kp BSPC &kp D &kp W>;
