@@ -116,6 +116,6 @@
 	
 	
 	ZMK_MACRO(m_equity,
-		bindings = <&kp LS(K) &kp O &kp M &kp L &kp GRAVE &kp DOT>;
+		bindings = <&kp SPACE &kp LS(K) &kp O &kp M &kp L &kp GRAVE &kp DOT>;
 	)
 }; };
