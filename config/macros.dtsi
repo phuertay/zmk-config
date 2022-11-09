@@ -113,4 +113,9 @@
 		wait-ms = <20>;
 		bindings = <&kp RC(LA(FSLH)) &kp LA(FSLH) &kp K &kp ENTER>;
 	)
+	
+	
+	ZMK_MACRO(m_equity,
+		bindings = <&kp LS(K) &kp O &kp M &kp L &kp GRAVE &kp DOT>;
+	)
 }; };
