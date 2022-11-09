@@ -109,13 +109,12 @@
 				<&macro_release &mo SPFN_HD &kp LCTRL>;
 	)
 	
-	ZMK_MACRO(m_paste_t,
+	ZMK_MACRO_(m_paste_t,
 		wait-ms = <20>;
 		bindings = <&kp RC(LA(FSLH)) &kp LA(FSLH) &kp K &kp ENTER>;
 	)
 	
-	
-	ZMK_MACRO(m_equity,
+	ZMK_MACRO_(m_equity,
 		bindings = <&kp SPACE &kp LS(K) &kp O &kp M &kp L &kp GRAVE &kp DOT>;
 	)
 }; };
