@@ -115,6 +115,9 @@
 	)
 	
 	ZMK_MACRO_(m_equity,
-		bindings = <&kp SPACE &kp LS(K) &kp O &kp M &kp L &kp GRAVE &kp DOT>;
+		wait-ms = <30>;
+		bindings = <&kp SPACE &kp LS(K)>,
+				<&macro_wait_time 9>,
+				<&kp O &kp M &kp L &kp GRAVE &kp DOT>;
 	)
 }; };
