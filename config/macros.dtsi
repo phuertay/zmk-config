@@ -41,7 +41,7 @@
 		bindings = <&macro_wait_time 50>,
 				<&kp LALT>,
 				<&macro_wait_time 12>,
-				<&kp Q &kp J &kp SEMI &kp KP_N9 &kp TAB &kp KP_N1 &kp KP_N6 &kp ENTER>;
+				<&kp Q &kp J &kp SEMI &kp KP_N9 &kp TAB &kp KP_N1 &kp KP_N6 &kp ENTER &kp ESC>;
 	)
 		
 	ZMK_MACRO_(m_email_w,
