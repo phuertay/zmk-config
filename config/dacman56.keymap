@@ -276,8 +276,8 @@
 &kp TAB		&m_paste_t			 &kp PG_UP  &kp UP       &kp PG_DN	  &kp LA(TAB)			&kp LA(N2)	&fm F7 KP_N7 &fm F8 KP_N8 &fm F9 KP_N9	&fm F12 KP_MINUS &fm F12 MINUS
 &trans	&lts LCNUM KP_DOT &kp LEFT &kp DOWN 	 &kp RIGHT	  &kp LA(N3)			&kp LC(INS)	&fm F1 KP_N1 &fm F2 KP_N2 &fm F3 KP_N3	&kp ENTER	&fm F24 EQUAL
 &m_excel_go_to &kp LSHFT &hms LALT ESC	&hms LSHFT RC(DEL)  &hms LCTRL RC(BSPC) &kp LA(N7)				&kp LS(INS)	&fm F4 KP_N4 &fm F5 KP_N5 &fm F6 KP_N6 	&td_plus_sum	&lay_or_lay DEFAULT_HD_2 NUM_HD
-						 &kp RC(ENTER)	&hm H RC(X)									 &fm F10 LS(N8) &fm F11 KP_DOT
-									&kp H &lts SPFN_HD BSPC					&lts SPFN_HD  TAB &hms SPACE LS(N8)
+						 &kp RC(ENTER)	&hm H RC(X)									 &fm F10 KP_N0 &fm F11 G
+									&kp H &lts SPFN_HD BSPC					&lts SPFN_HD  TAB &hms SPACE KP_N0
 											&trans &kp DEL		&to DEFAULT_HD	&trans
 											&trans &trans		&mo FN &trans
 			>;
