@@ -422,7 +422,7 @@
 		};
 
 		
-		function_layer_hd {
+		function_layer_right {
 			bindings = <
 &to DEFAULT_HD	  &none &none	 &none   &none	  &tog MOUSE				&out OUT_TOG	 &bt BT_SEL 0  &bt BT_SEL 1	 &bt BT_SEL 2	    &bt BT_SEL 3	&bt BT_CLR
 &reset	  &kp KP_NUM    &kp CAPS	 &kp SLCK 	  &kp PSCRN		  &kp PAUSE_BREAK			&kp KP_NUM		 &kp CAPS	   &kp SLCK      &kp PSCRN			&kp PAUSE_BREAK &kp K_PWR
