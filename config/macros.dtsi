@@ -14,7 +14,7 @@
             label = "TAP_DANCE_PLUS_SUM";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp KP_PLUS>, <&m_eq_sum>;
+            bindings = <&kp KP_PLUS>, <&m_sum>;
 	};
 		
         td_emails: tap_dance_emails {
@@ -35,6 +35,10 @@
 		
 	ZMK_MACRO_(m_eq_sum,
 		bindings = <&kp RBKT &kp S &kp M &kp E &kp MINUS>;
+	)
+		
+	ZMK_MACRO_(m_sum,
+		bindings = <&kp S &kp M &kp E &kp MINUS>;
 	)
 	
 	ZMK_MACRO_(m_9_16,
