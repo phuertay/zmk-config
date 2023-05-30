@@ -137,7 +137,7 @@
 		tap-ms = <70>;
 		bindings = <&macro_press &kp RGUI>,
 				<&macro_press &kp RSHFT>,
-				<&kp N3>,
+				<&macro_tap &kp N3>,
 				<&macro_release &kp RGUI>,
 				<&macro_release &kp RSHFT>;
 	)
