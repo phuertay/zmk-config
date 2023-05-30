@@ -131,4 +131,13 @@
 				<&macro_tap &kp RSHFT>,
 				<&macro_release &kp LSHFT>;
 	)
+	
+	ZMK_MACRO_(m_calc,
+		wait-ms = <40>;
+		bindings = <&macro_press &kp LGUI>,
+				<&macro_press &kp LSHFT>,
+				<&kp N3>,
+				<&macro_release &kp LGUI>,
+				<&macro_release &kp LSHFT>;
+	)
 }; };
