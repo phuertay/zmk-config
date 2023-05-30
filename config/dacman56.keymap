@@ -57,7 +57,7 @@
 				    &hm TILDE RBKT &hm H BSLH									   &kp MINUS		  &kp EQUAL
 						&hmss SPACE GRAVE &lts SPFN_HD BSPC			&lts SPFN_HD ENTER  &kp SPACE
 							&kp LALT &kp DEL				&tog NUM_HD_ULTRA &kp LWIN
-							&sl FUNC_L &kp LG(S(N3))	&kp C_AC_REFRESH &sl FUNC_HD
+							&sl FUNC_L &kp LG(LS(N3))	&kp C_AC_REFRESH &sl FUNC_HD
 			>;
 		};
 
