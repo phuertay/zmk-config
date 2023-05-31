@@ -133,11 +133,8 @@
 	)
 	
 	ZMK_MACRO_(m_calc,
-
-		bindings = <&macro_press &kp RGUI>,
-				<&macro_press &kp RSHFT>,
+		bindings = <&macro_press &kp RGUI &kp RSHFT>,
 				<&macro_tap &kp N3>,
-				<&macro_release &kp RGUI>,
-				<&macro_release &kp RSHFT>;
+				<&macro_release &kp RGUI &kp RSHFT>;
 	)
 }; };
