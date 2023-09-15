@@ -36,9 +36,9 @@
 	};
 
 	// Hold-tap for layer-space with retro-tap
-	lts_tp: layer_tap_sfn {
+	lts_tp: layer_tap_sfn_tp {
 		compatible = "zmk,behavior-hold-tap";
-		label = "LAYER_TAP_SFN";
+		label = "LAYER_TAP_SFN_TP";
 		#binding-cells = <2>;
 		flavor = "tap-preferred";		// hold behavior when tapping-term-ms expired or another key is pressed
 		tapping-term-ms = <250>;
