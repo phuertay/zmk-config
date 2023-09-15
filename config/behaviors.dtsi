@@ -34,6 +34,17 @@
 		bindings = <&mo>, <&kp>;
 		retro-tap;						// tap behavior triggered when releasing if no other key was pressed
 	};
+
+	// Hold-tap for layer-space with retro-tap
+	lts_tp: layer_tap_sfn {
+		compatible = "zmk,behavior-hold-tap";
+		label = "LAYER_TAP_SFN";
+		#binding-cells = <2>;
+		flavor = "tap-preferred";		// hold behavior when tapping-term-ms expired or another key is pressed
+		tapping-term-ms = <250>;
+		bindings = <&mo>, <&kp>;
+		retro-tap;						// tap behavior triggered when releasing if no other key was pressed
+	};
 	
 	// Hold-tap for ctlr/esc
 	cesc: hold_tap_ctrl_esc {
