@@ -145,6 +145,10 @@
 		bindings = <&kp M &kp K>;
 	)
 
+	ZMK_MACRO_F(m_gc,
+		bindings = <&kp G &kp C>;
+	)
+
 	hms_m_dot: homerow_mod_w_macro {
 		compatible = "zmk,behavior-hold-tap";
 		label = "HOMEROW_MOD_SLOW_W_MACRO";
