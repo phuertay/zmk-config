@@ -94,7 +94,7 @@
 			bindings = <
 &trans	&trans &trans &trans &trans &trans						&trans &trans &trans &trans &trans &trans
 &trans	&kp G  &m_ddw &trans &trans &trans						&trans &trans &trans &trans &trans &trans
-&trans	&trans &trans &trans &trans &trans						&trans &trans &trans &trans &trans &trans
+&trans	&trans &trans &trans &trans &trans						&trans &trans &trans &trans &m_gc  &trans
 &trans	&trans &trans &trans &trans &trans						&trans &trans &trans &trans &kp B  &trans
 				   &trans &trans										   &trans &trans
 									&trans &trans			&trans &trans
