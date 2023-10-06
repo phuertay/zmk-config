@@ -82,9 +82,10 @@
 	)
 
 	ZMK_MACRO_VF(ak_M,
-		bindings = <&slad AL_M &macro_press &kp M>,
-				<&macro_wait_time 30>,
-				<&macro_release &kp M>;
+		bindings = <&macro_press &kp M>
+				, <&slad AL_M>
+				, <&macro_wait_time 30>
+				, <&macro_release &kp M>;
 	)
 
 	ZMK_MACRO_VF(ak_FSLH,
