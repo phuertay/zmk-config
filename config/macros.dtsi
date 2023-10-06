@@ -3,8 +3,8 @@
 			label = ZMK_MACRO_STRINGIFY(ZM_ ## name); \
 			compatible = "zmk,behavior-macro"; \
 			#binding-cells = <0>; \
-			wait-ms = <9>; \
-			tap-ms = <9>; \
+			wait-ms = <40>; \
+			tap-ms = <40>; \
 			__VA_ARGS__ \
 		};
 
@@ -44,7 +44,7 @@
 	ZMK_MACRO_(m_9_16,
 		bindings = <&macro_wait_time 50>,
 				<&kp LALT>,
-				<&macro_wait_time 20>,
+				<&macro_wait_time 30>,
 				<&kp Q &kp J &kp SEMI &kp KP_N9 &kp TAB &kp KP_N1 &kp KP_N6 &kp ENTER &kp ESC>;
 	)
 		
@@ -107,26 +107,26 @@
 	)
 	
 	ZMK_MACRO_(m_c_spfn,
-		wait-ms = <20>;
+		wait-ms = <40>;
 		bindings = <&macro_press &mo SPFN_HD &kp LCTRL>,
     				<&macro_pause_for_release>,
 				<&macro_release &mo SPFN_HD &kp LCTRL>;
 	)
 	
 	ZMK_MACRO_(m_paste_t,
-		wait-ms = <20>;
+		wait-ms = <40>;
 		bindings = <&kp RC(LA(FSLH)) &kp LA(FSLH) &kp K &kp ENTER>;
 	)
 	
 	ZMK_MACRO_(m_equity,
-		wait-ms = <30>;
+		wait-ms = <40>;
 		bindings = <&kp SPACE &kp LS(K)>,
 				<&macro_wait_time 9>,
 				<&kp O &kp M &kp L &kp GRAVE &kp DOT>;
 	)
 	
 	ZMK_MACRO_(m_ls_rs,
-		wait-ms = <30>;
+		wait-ms = <40>;
 		bindings = <&macro_press &kp LSHFT>,
 				<&macro_tap &kp RSHFT>,
 				<&macro_release &kp LSHFT>;
