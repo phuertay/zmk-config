@@ -52,7 +52,7 @@
 	ZMK_MACRO_VF(ak_E,
 		bindings = <&macro_tap_time 0>
 				, <&macro_press &kp E>
-				, <&slad AL_E>
+				, <&macro_tap &slad AL_E>
 				, <&macro_wait_time 30>
 				, <&macro_release &kp E>;
 	)
@@ -88,7 +88,7 @@
 	ZMK_MACRO_VF(ak_M,
 		bindings = <&macro_tap_time 0>
 				, <&macro_press &kp M>
-				, <&slad AL_M>
+				, <&macro_tap &slad AL_M>
 				, <&macro_wait_time 30>
 				, <&macro_release &kp M>;
 	)
