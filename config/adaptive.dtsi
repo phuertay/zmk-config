@@ -8,7 +8,7 @@
 			compatible = "zmk,behavior-macro"; \
 			#binding-cells = <0>; \
 			wait-ms = <1>; \
-			tap-ms = <20>; \
+			tap-ms = <10>; \
 			__VA_ARGS__ \
 		};
 
@@ -50,11 +50,7 @@
 	)
 
 	ZMK_MACRO_VF(ak_E,
-		bindings = <&macro_tap_time 1>
-				, <&macro_press &kp E>
-				, <&macro_tap &slad AL_E>
-				, <&macro_wait_time 30>
-				, <&macro_release &kp E>;
+		bindings = <&kp E &slad AL_E>;
 	)
 
 	ZMK_MACRO_VF(ak_R,
