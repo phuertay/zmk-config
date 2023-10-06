@@ -1,5 +1,5 @@
-#define ADAPTIVE_DELAY 235
-#define ADAPTIVE_DELAY_FAST 205
+#define ADAPTIVE_DELAY 225
+#define ADAPTIVE_DELAY_FAST 195
 
 
 #define ZMK_MACRO_VF(name,...) \
@@ -7,7 +7,7 @@
 			label = ZMK_MACRO_STRINGIFY(ZM_ ## name); \
 			compatible = "zmk,behavior-macro"; \
 			#binding-cells = <0>; \
-			wait-ms = <1>; \
+			wait-ms = <10>; \
 			tap-ms = <10>; \
 			__VA_ARGS__ \
 		};
