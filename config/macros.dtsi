@@ -3,8 +3,8 @@
 			label = ZMK_MACRO_STRINGIFY(ZM_ ## name); \
 			compatible = "zmk,behavior-macro"; \
 			#binding-cells = <0>; \
-			wait-ms = <40>; \
-			tap-ms = <40>; \
+			wait-ms = <10>; \
+			tap-ms = <10>; \
 			__VA_ARGS__ \
 		};
 
