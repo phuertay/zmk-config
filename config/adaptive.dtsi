@@ -78,7 +78,11 @@
 	)
 
 	ZMK_MACRO_VF(ak_X,
-		bindings = <&kp X &slad AL_X>;
+		bindings = <&macro_tap_time 1>
+				, <&macro_press &kp X>
+				, <&macro_tap &slad AL_X>
+				, <&macro_wait_time 10>
+				, <&macro_release &kp X>;
 	)
 
 	ZMK_MACRO_VF(ak_C,
