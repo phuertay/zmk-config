@@ -1,6 +1,6 @@
-#define ZMK_MACRO_B(name,...) \
+#define ZMK_MACRO_(name,...) \
 	name: name { \
-			label = ZMK_MACRO_STRINGIFY(ZM_ ## name); \
+			// label = ZMK_MACRO_STRINGIFY(ZM_ ## name); \
 			compatible = "zmk,behavior-macro"; \
 			#binding-cells = <0>; \
 			wait-ms = <1>; \
@@ -33,22 +33,22 @@
             bindings = <&m_phuerta>, <&m_ph>, <&m_pihy>;
 	};
 		
-	ZMK_MACRO_B(m_eq_sum,
+	ZMK_MACRO_(m_eq_sum,
 		bindings = <&kp RBKT &kp S &kp M &kp E &kp MINUS>;
 	)
 		
-	ZMK_MACRO_B(m_sum,
+	ZMK_MACRO_(m_sum,
 		bindings = <&kp S &kp M &kp E &kp MINUS>;
 	)
 	
-	ZMK_MACRO_B(m_9_16,
+	ZMK_MACRO_(m_9_16,
 		bindings = <&macro_wait_time 50>,
 				<&kp LALT>,
 				<&macro_wait_time 30>,
 				<&kp Q &kp J &kp SEMI &kp KP_N9 &kp TAB &kp KP_N1 &kp KP_N6 &kp ENTER &kp ESC>;
 	)
 		
-	ZMK_MACRO_B(m_email_w,
+	ZMK_MACRO_(m_email_w,
 		bindings = <&kp G &kp SEMI &kp M &kp K &kp A &kp GRAVE &kp J>,
 				<&kp LS(I)>,
 				<&kp T &kp J &kp S &kp J &kp GRAVE &kp V &kp SEMI>,
@@ -56,14 +56,14 @@
 				<&kp I &kp V &kp COMMA &kp E>;
 	)
 		
-	ZMK_MACRO_B(m_email_g,
+	ZMK_MACRO_(m_email_g,
 		bindings = <&kp G &kp SEMI &kp M &kp K &kp A &kp GRAVE &kp J &kp DOT>,
 				<&kp LS(I)>,
 				<&kp W &kp E &kp J &kp L &kp C>,
 				<&kp I &kp V &kp COMMA &kp E>;
 	)
 		
-	ZMK_MACRO_B(m_email_w_old,
+	ZMK_MACRO_(m_email_w_old,
 		bindings = <&kp G &kp SEMI &kp M &kp K &kp A &kp GRAVE &kp J>,
 				<&kp LS(I)>,
 				<&kp T &kp J &kp S &kp J &kp GRAVE &kp V &kp SEMI &kp J>,
@@ -71,7 +71,7 @@
 				<&kp I &kp V &kp COMMA &kp E>;
 	)
 		
-	ZMK_MACRO_B(m_email_ph,
+	ZMK_MACRO_(m_email_ph,
 		bindings = <&kp G &kp SEMI>,
 				<&kp LS(I)>,
 				<&kp T &kp J &kp S &kp J &kp GRAVE &kp V &kp SEMI>,
@@ -79,17 +79,17 @@
 				<&kp I &kp V &kp COMMA &kp E>;
 	)
 	
-	ZMK_MACRO_B(m_phuerta,
+	ZMK_MACRO_(m_phuerta,
 		bindings = <&kp G &kp SEMI &kp M &kp K &kp A &kp GRAVE &kp J>;
 	)
 	
-	ZMK_MACRO_B(m_ph,
+	ZMK_MACRO_(m_ph,
 		bindings = <&kp LS(G) &kp K &kp F &kp A &kp COMMA>,
 				<&kp SPACE>,
 				<&kp LS(SEMI) &kp M &kp K &kp A &kp GRAVE &kp J>;
 	)
 	
-	ZMK_MACRO_B(m_pihy,
+	ZMK_MACRO_(m_pihy,
 		bindings = <&kp LS(G) &kp K &kp F &kp A &kp COMMA>,
 				<&kp SPACE>,
 				<&kp LS(L) &kp I>,
@@ -99,40 +99,40 @@
 				<&kp LS(DOT) &kp M &kp E &kp SEMI &kp J>;
 	)
 	
-	ZMK_MACRO_B(m_excel_go_to,
+	ZMK_MACRO_(m_excel_go_to,
 		bindings = <&kp LC(W)>,
 				<&macro_press &mo DEFAULT_HD_2>,
 				<&macro_pause_for_release>,
 				<&macro_release &mo DEFAULT_HD_2>;
 	)
 	
-	ZMK_MACRO_B(m_c_spfn,
+	ZMK_MACRO_(m_c_spfn,
 		wait-ms = <40>;
 		bindings = <&macro_press &mo SPFN_HD &kp LCTRL>,
     				<&macro_pause_for_release>,
 				<&macro_release &mo SPFN_HD &kp LCTRL>;
 	)
 	
-	ZMK_MACRO_B(m_paste_t,
+	ZMK_MACRO_(m_paste_t,
 		wait-ms = <40>;
 		bindings = <&kp RC(LA(FSLH)) &kp LA(FSLH) &kp K &kp ENTER>;
 	)
 	
-	ZMK_MACRO_B(m_equity,
+	ZMK_MACRO_(m_equity,
 		wait-ms = <40>;
 		bindings = <&kp SPACE &kp LS(K)>,
 				<&macro_wait_time 9>,
 				<&kp O &kp M &kp L &kp GRAVE &kp DOT>;
 	)
 	
-	ZMK_MACRO_B(m_ls_rs,
+	ZMK_MACRO_(m_ls_rs,
 		wait-ms = <40>;
 		bindings = <&macro_press &kp LSHFT>,
 				<&macro_tap &kp RSHFT>,
 				<&macro_release &kp LSHFT>;
 	)
 	
-	ZMK_MACRO_B(m_calc,
+	ZMK_MACRO_(m_calc,
 		bindings = <&macro_press &kp RGUI &kp RSHFT>,
 				<&macro_tap &kp N3>,
 				<&macro_release &kp RGUI &kp RSHFT>;
