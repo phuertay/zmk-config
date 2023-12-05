@@ -144,9 +144,7 @@
 	)
 
 	ZMK_MACRO_F(m_dga,
-		bindings = <&macro_tap_time 1>
-			, <&macro_wait_time FT>
-			, <&kp BSPC &kp G &kp A>;
+		bindings = <&kp BSPC &kp G &kp A>;
 	)
 
 	ZMK_MACRO_F(m_dg_gr,
