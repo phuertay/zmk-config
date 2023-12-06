@@ -1,6 +1,5 @@
 #define ZMK_MACRO_(name,...) \
 	name: name { \
-			// label = ZMK_MACRO_STRINGIFY(ZM_ ## name); \
 			compatible = "zmk,behavior-macro"; \
 			#binding-cells = <0>; \
 			wait-ms = <1>; \
