@@ -21,7 +21,8 @@
 			__VA_ARGS__ \
 		};
 
-/ { behaviors {
+/ { 
+behaviors {
 	slad: adaptive_l {
 		compatible = "zmk,behavior-sticky-key";
 		label = "SL_AL";
@@ -218,4 +219,5 @@
 		bindings = <&kp>, <&ak_C>;
 	};
 
-}; };
+};
+};
