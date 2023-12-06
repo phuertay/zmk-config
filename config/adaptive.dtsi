@@ -5,7 +5,7 @@
 
 #define ZMK_MACRO_VF(name,...) \
 	name: name { \
-			label = ZMK_MACRO_STRINGIFY(ZM_ ## name); \
+			//label = ZMK_MACRO_STRINGIFY(ZM_ ## name); \
 			compatible = "zmk,behavior-macro"; \
 			#binding-cells = <0>; \
 			wait-ms = <0>; \
@@ -15,7 +15,7 @@
 
 #define ZMK_MACRO_F(name,...) \
 	name: name { \
-			label = ZMK_MACRO_STRINGIFY(ZM_ ## name); \
+			//label = ZMK_MACRO_STRINGIFY(ZM_ ## name); \
 			compatible = "zmk,behavior-macro"; \
 			#binding-cells = <0>; \
 			wait-ms = <10>; \
