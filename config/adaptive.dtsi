@@ -1,6 +1,6 @@
 #define ADAPTIVE_DELAY 225
 #define ADAPTIVE_DELAY_FAST 195
-#define FT 10
+#define FT 15
 
 
 #define ZMK_MACRO_VF(name,...) \
@@ -129,6 +129,12 @@
 		bindings = <&kp BSPC &kp J &kp M>;
 	)
 
+	ZMK_MACRO_F(m_dga,
+		bindings = <&macro_tap_time 1>
+			, <&macro_wait_time FT>
+			, <&kp BSPC &kp G &kp A>;
+	)
+
 	ZMK_MACRO_F(m_dge,
 		bindings = <&kp BSPC &kp G &kp E>;
 	)
@@ -139,12 +145,6 @@
 
 	ZMK_MACRO_F(m_dvy,
 		bindings = <&kp BSPC &kp V &kp Y>;
-	)
-
-	ZMK_MACRO_F(m_dga,
-		bindings = <&macro_tap_time 1>
-			, <&macro_wait_time FT>
-			, <&kp BSPC &kp G &kp A>;
 	)
 
 	ZMK_MACRO_F(m_dg_gr,
