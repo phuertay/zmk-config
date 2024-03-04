@@ -1,6 +1,6 @@
 #define ADAPTIVE_DELAY 225
 #define ADAPTIVE_DELAY_FAST 195
-#define FT 15
+#define FT 20
 
 
 #define ZMK_MACRO_VF(name,...) \
