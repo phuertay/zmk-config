@@ -65,14 +65,14 @@
 
 		steno {
 			bindings = <
-&trans	&trans &trans &trans &trans &trans							&trans &trans &trans &trans &trans &trans
-&kp TAB	&kp Q &kp W  &kp E  &kp R  &hmss LWIN T							&hmss RWIN Y	&kp U	&kp I	&kp O	&kp P		&fn F12 LBKT
-&cesc LCTRL ESC &kp A &kp S &kp D &lt NUM_HD_ULTRA F &hms RALT G				&hms RALT H	&kp J	&kp K	&kp L	&kp SEMI	&kp SQT
-&hms_m_lsrs LSHFT 0 &kp Z &hms_m_x LALT 0  &hm_m_c LSHFT 0 &hms LCTRL V &kp B			&kp N &hms_m_m RCTRL 0 &hmf RSHFT COMMA &hms_m_dot LALT 0 &kp FSLH &hms RSHFT KP_NUM
-				   &trans &trans					   &trans &trans
-					&trans &trans				&trans &trans
-						&trans &trans		&trans &trans
-						&trans &trans		&trans &trans
+&trans		&trans &trans &trans &trans &trans			&trans	&trans	&trans	&trans	&trans		&trans
+&kp TAB		&kp Q &kp W  &kp E  &kp R  &kp T			&kp Y	&kp U	&kp I	&kp O	&kp P		&fn F12 LBKT
+&cesc LCTRL ESC &kp A &kp S &kp D &kp F &kp G				&kp H	&kp J	&kp K	&kp L	&kp SEMI	&kp SQT
+&kp LSHFT	&kp Z &kp X  &kp C &kp V &kp B				&kp N	&kp M	&kp COMMA &kp DOT &kp FSLH	&kp RSHFT
+				   &trans &trans				&trans &trans
+					&trans &trans			&trans &trans
+						&trans &trans	&trans &trans
+						&trans &trans	&trans &trans
 			>;
 		};
 
