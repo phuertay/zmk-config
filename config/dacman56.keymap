@@ -7,7 +7,7 @@
 
 // #define DEFAULT 0
 #define DEFAULT_HD 0
-#define CLEAR 1
+#define STENO 1
 #define AL_Q 2
 #define AL_W 3
 #define AL_E 4
@@ -34,7 +34,7 @@
 #define SPFN_HD 25
 #define MOUSE 26
 #define FUNC_HD 27
-#define FUNC_L 28
+#define FUNC_MACR 28
 
 
 
@@ -58,14 +58,14 @@
 				    &hm TILDE RBKT &hm H BSLH									   &kp MINUS		  &kp EQUAL
 						&hmss SPACE GRAVE &lts SPFN_HD BSPC			&lts SPFN_HD ENTER  &kp SPACE
 							&kp LALT &kp DEL				&tog NUM_HD_ULTRA &kp LWIN
-							&sl FUNC_L &m_calc	&kp C_AC_REFRESH &sl FUNC_HD
+							&sl FUNC_MACR &m_calc	&kp C_AC_REFRESH &sl FUNC_HD
 			>;
 		};
 
 
-		clear {
+		steno {
 			bindings = <
-&trans	&trans &trans &trans &trans &trans						&trans &trans &trans &trans &trans &trans
+&trans	&trans &trans &trans &trans &trans							&trans &trans &trans &trans &trans &trans
 &kp TAB	&kp Q &kp W  &kp E  &kp R  &hmss LWIN T							&hmss RWIN Y	&kp U	&kp I	&kp O	&kp P		&fn F12 LBKT
 &cesc LCTRL ESC &kp A &kp S &kp D &lt NUM_HD_ULTRA F &hms RALT G				&hms RALT H	&kp J	&kp K	&kp L	&kp SEMI	&kp SQT
 &hms_m_lsrs LSHFT 0 &kp Z &hms_m_x LALT 0  &hm_m_c LSHFT 0 &hms LCTRL V &kp B			&kp N &hms_m_m RCTRL 0 &hmf RSHFT COMMA &hms_m_dot LALT 0 &kp FSLH &hms RSHFT KP_NUM
@@ -447,7 +447,7 @@
 								&kp C_BRI_DN &kp C_BRI_UP																		   &kp C_AC_BACK &kp C_AC_FORWARD
 									&kp C_AL_SELECT_TASK &kp INS					&kp C_AC_HOME &kp C_AC_BACK
 										&m_9_16	&kp INS			&tog NUM_L_HD   &tog SPFN_HD
-									&to DEFAULT_HD 	&tog NUM_HD		&tog NUM_HD &to DEFAULT_HD 
+									&to DEFAULT_HD 	&tog STENO		&tog NUM_HD &to DEFAULT_HD 
 			>;
 		};
 
