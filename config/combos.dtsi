@@ -5,6 +5,7 @@
 #define COMB_LAY_NV FN
 #define COMB_LAY_ALL COMB_LAY_QW COMB_LAY_NV
 
+
 / { combos {
 	compatible = "zmk,combos";
 	
@@ -94,7 +95,7 @@
 	
 	combo_TAB_L {
 		timeout-ms = <COMB_MS>;
-		layers = <COMB_LAY_ALL>;
+		layers = <COMB_LAY_ALL NUM_HD NUM_HD_ULTRA>;
 		key-positions = <28 40>;				// I y K
 		bindings = <&kp TAB>;
 	};
