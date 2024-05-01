@@ -1,5 +1,5 @@
 #define ADAPTIVE_DELAY 225
-#define ADAPTIVE_DELAY_FAST 195
+#define ADAPTIVE_DELAY_FAST 165
 #define FT 20
 
 
