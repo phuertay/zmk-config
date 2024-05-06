@@ -102,7 +102,7 @@
 	
 	combo_ESC_L {
 		timeout-ms = <COMB_MS>;
-		layers = <COMB_LAY_ALL>;
+		layers = <COMB_LAY_ALL NUM_HD NUM_HD_ULTRA>;
 		key-positions = <29 41>;				// U y X
 		bindings = <&kp ESC>;
 	};
