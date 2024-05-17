@@ -71,7 +71,7 @@
 		compatible = "zmk,behavior-hold-tap";
 		label = "HOMEROW_MODS";
 		#binding-cells = <2>;
-		tapping-term-ms = <165>;
+		tapping-term-ms = <175>;
 		quick-tap-ms = <0>;
 		flavor = "balanced";			// hold behavior when tapping-term-ms has expired or another key is pressed and released
 		bindings = <&kp>, <&kp>;
@@ -81,7 +81,7 @@
 		compatible = "zmk,behavior-hold-tap";
 		label = "HOMEROW_MOD_SLOW";
 		#binding-cells = <2>;
-		tapping-term-ms = <200>;
+		tapping-term-ms = <180>;
 		quick-tap-ms = <0>;
 		flavor = "balanced";			// hold behavior when tapping-term-ms has expired or another key is pressed and released
 		bindings = <&kp>, <&kp>;
