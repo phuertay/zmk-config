@@ -137,11 +137,15 @@
 				<&macro_release &kp RGUI &kp RSHFT>;
 	)
 	
-	ZMK_MACRO_(m_back_steno,
-		bindings = <&macro_tap &kp LC(DOT) &tog STENO>;
+	ZMK_MACRO_(m_toggle_steno,
+		bindings = <&macro_press &kp E &kp R &kp F &kp V &kp O &kp L>,
+				<&macro_release &kp E &kp R &kp F &kp V &kp O &kp L>;
+				<&tog STENO>;
 	)
 
-	ZMK_MACRO_(m_steno_numpad,
-		bindings = <&macro_tap &kp LC(DOT) &tog NUM_HD_ULTRA>;
+	ZMK_MACRO_(m_switch_plover,
+		bindings = <&macro_press &kp E &kp R &kp F &kp V &kp O &kp L>,
+				<&macro_release &kp E &kp R &kp F &kp V &kp O &kp L>;
 	)
+
 }; };
