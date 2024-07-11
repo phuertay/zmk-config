@@ -44,12 +44,15 @@
 #include "macros.dtsi"
 #include "adaptive.dtsi"
 
+
+
+
 / {
 	conditional_layers {
 	compatible = "zmk,conditional-layers";
 	tri_layer {
 		if-layers = <STENO NUM_HD_ULTRA>;
-		then-layer = <3>;
+		then-layer = <NUM_HD_STENO_MOD>;
 	};
 };};
 
