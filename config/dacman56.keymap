@@ -89,7 +89,7 @@
 
 		steno {
 			bindings = <
-&m_tog_steno	&none	&none	&none	&none	&none			&none	&none	&none	&none	&none		&none
+&sys_reset	&none	&none	&none	&none	&none			&none	&none	&none	&none	&none		&none
 &none		&kp N1	&kp N2	&kp N3	&kp N4	&kp N5			&kp N6	&kp N7	&kp N8	&kp N9	&kp N0		&kp MINUS
 &kp LCTRL	&kp Q	&kp W	&kp E	&kp R	&kp T			&kp Y	&kp U	&kp I	&kp O	&kp P		&kp LBKT
 &none		&kp A	&kp S	&kp D	&kp F	&kp G			&kp H	&kp J	&kp K	&kp L	&kp SEMI	&kp SQT
@@ -486,7 +486,7 @@
 								&kp C_BRI_DN &kp C_BRI_UP																		   &kp C_AC_BACK &kp C_AC_FORWARD
 									&kp C_AL_SELECT_TASK &kp INS					&kp C_AC_HOME &kp C_AC_BACK
 										&m_9_16	&kp INS			&tog NUM_L_HD   &tog SPFN_HD
-									&to DEFAULT_HD 	&tog STENO		&tog NUM_HD &to DEFAULT_HD 
+									&to DEFAULT_HD 	&m_tog_steno		&tog NUM_HD &to DEFAULT_HD 
 			>;
 		};
 
@@ -501,7 +501,7 @@
 		 &trans	&trans					  	  &trans &trans
 			&trans &trans				&trans &trans
 				&trans &trans		&trans &trans
-				&trans &tog STENO	&trans &trans
+				&trans &m_tog_steno	&trans &trans
 			>;
 		};
 
