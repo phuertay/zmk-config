@@ -24,7 +24,7 @@
 #define NUM_HD 15
 #define NUM_HD_ULTRA 16
 #define NUM_HD_MID 17
-#define NUM_HD_STENO 18
+#define NUM_HD_STENO_MOD 18
 #define LCNUM 19
 #define FN 20
 #define NUM_L_HD 21
