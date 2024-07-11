@@ -24,7 +24,7 @@
 #define NUM_HD 15
 #define NUM_HD_ULTRA 16
 #define NUM_HD_MID 17
-#define NUM_HD_UP 18
+#define NUM_HD_STENO 18
 #define LCNUM 19
 #define FN 20
 #define NUM_L_HD 21
@@ -38,10 +38,22 @@
 
 
 
+
 #include "combos.dtsi"
 #include "behaviors.dtsi"
 #include "macros.dtsi"
 #include "adaptive.dtsi"
+
+/ {
+	conditional_layers {
+	compatible = "zmk,conditional-layers";
+	tri_layer {
+		if-layers = <STENO NUM_HD_ULTRA>;
+		then-layer = <3>;
+	};
+};};
+
+
 
 
 / {
@@ -300,7 +312,21 @@
 		};
 
 
-		num_hd_up {
+		num_hd_ultra_mod_steno {
+			bindings = <
+&trans &trans &trans &trans &trans &trans		&trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans		&trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans		&trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans		&trans &trans &trans &trans &trans &trans
+		 &trans	&trans				  	  &trans &trans
+			&trans &trans			&trans &trans
+				&trans &trans	&m_steno_numpad &trans
+				&trans &trans	&trans &trans
+			>;
+		};
+
+
+/*		num_hd_up {
 			bindings = <
 &trans	&fm F21 F9	 &fm F15 F3	   &fm F13 F1	 &fm F17 F5		&fm F19 F7	 	  		&kp N7	&fm F14 F2	  &kp KP_DIVIDE &kp KP_MULTIPLY &kp RBKT &fm F23 F11
 &kp TAB		&m_paste_t			 &kp PG_UP  &kp UP       &kp PG_DN	  &kp LA(TAB)			&kp LA(N2)	&fm F4 LS(N9) &fm F5 LS(N4) &fm F6 LS(N6) 	&td_plus_sum		&fm F12 MINUS
@@ -312,7 +338,7 @@
 											&trans &trans		&mo FN &trans
 			>;
 		};
-		
+*/		
 				
 		left_ctrl_num_layer {
 			bindings = <
