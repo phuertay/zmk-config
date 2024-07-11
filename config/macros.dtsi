@@ -143,9 +143,23 @@
 				<&tog STENO>;
 	)
 
-	ZMK_MACRO_(m_switch_plover,
+	ZMK_MACRO_(m_plo_tog,
 		bindings = <&macro_press &kp E &kp R &kp F &kp V &kp O &kp L>,
 				<&macro_release &kp E &kp R &kp F &kp V &kp O &kp L>;
 	)
 
+	ZMK_MACRO_(m_plo_look,
+		bindings = <&macro_press &kp E &kp R &kp F &kp G &kp M &kp I>,
+				<&macro_release &kp E &kp R &kp F &kp G &kp M &kp I>;
+	)
+
+	ZMK_MACRO_(m_plo_add,
+		bindings = <&macro_press &kp W &kp S &kp M &kp I &kp P>,
+				<&macro_release &kp W &kp S &kp M &kp I &kp P>;
+	)
+
+	ZMK_MACRO_(m_plo_focus,
+		bindings = <&macro_press &kp E &kp R &kp F &kp V &kp N &kp U &kp K &kp L>,
+				<&macro_release &kp E &kp R &kp F &kp V &kp N &kp U &kp K &kp L>;
+	)
 }; };
