@@ -138,6 +138,10 @@
 	)
 	
 	ZMK_MACRO_(m_back_steno,
-		bindings = <&macro_tap LC(DOT) &tog STENO>;
+		bindings = <&macro_tap &kp LC(DOT) &tog STENO>;
+	)
+
+	ZMK_MACRO_(m_steno_numpad,
+		bindings = <&macro_tap &kp LC(DOT) &tog NUM_HD_ULTRA>;
 	)
 }; };
