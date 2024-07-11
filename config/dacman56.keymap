@@ -35,6 +35,7 @@
 #define MOUSE 26
 #define FUNC_HD 27
 #define FUNC_MACR 28
+#define FUNC_STENO_MODS 29
 
 
 
@@ -50,9 +51,17 @@
 / {
 	conditional_layers {
 	compatible = "zmk,conditional-layers";
-	tri_layer {
+	num_hd_steno {
 		if-layers = <STENO NUM_HD_ULTRA>;
 		then-layer = <NUM_HD_STENO_MOD>;
+	};
+	function_hd_steno {
+		if-layers = <STENO FUNC_HD>;
+		then-layer = <FUNC_STENO_MODS>;
+	};
+	function_macro_steno {
+		if-layers = <STENO FUNC_MACR>;
+		then-layer = <FUNC_STENO_MODS>;
 	};
 };};
 
@@ -315,7 +324,8 @@
 		};
 
 
-		num_hd_ultra_mod_steno {
+
+		num_hd_steno_mods {
 			bindings = <
 &trans &trans &trans &trans &trans &trans		&trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans		&trans &trans &trans &trans &trans &trans
@@ -341,7 +351,7 @@
 											&trans &trans		&mo FN &trans
 			>;
 		};
-*/		
+*/	
 				
 		left_ctrl_num_layer {
 			bindings = <
@@ -477,6 +487,21 @@
 									&kp C_AL_SELECT_TASK &kp INS					&kp C_AC_HOME &kp C_AC_BACK
 										&m_9_16	&kp INS			&tog NUM_L_HD   &tog SPFN_HD
 									&to DEFAULT_HD 	&tog STENO		&tog NUM_HD &to DEFAULT_HD 
+			>;
+		};
+
+
+
+		function_steno_mods {
+			bindings = <
+&trans &trans &trans &trans &trans &trans			&trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans			&trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans			&trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans			&trans &trans &trans &trans &trans &trans
+		 &trans	&trans					  	  &trans &trans
+			&trans &trans				&trans &trans
+				&trans &trans		&trans &trans
+				&trans &m_back_steno	&trans &trans
 			>;
 		};
 
