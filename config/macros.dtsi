@@ -136,4 +136,8 @@
 				<&macro_tap &kp N3>,
 				<&macro_release &kp RGUI &kp RSHFT>;
 	)
+	
+	ZMK_MACRO_(m_back_steno,
+		bindings = <&macro_tap LC(DOT) &tog STENO>;
+	)
 }; };
