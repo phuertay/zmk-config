@@ -53,7 +53,7 @@
 	compatible = "zmk,conditional-layers";
 	num_hd_steno {
 		if-layers = <STENO NUM_HD_ULTRA>;
-		then-layer = <NUM_HD_STENO_MOD>;
+		then-layer = <NUM_HD_STENO_MODS>;
 	};
 	function_hd_steno {
 		if-layers = <STENO FUNC_HD>;
