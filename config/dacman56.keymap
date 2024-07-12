@@ -333,7 +333,7 @@
 &trans &trans &trans &trans &trans &trans		&trans &trans &trans &trans &trans &trans
 		 &trans	&trans				  	  &trans &trans
 			&trans &trans			&trans &trans
-				&trans &trans	&m_steno_numpad &trans
+				&trans &trans	&to STENO &trans
 				&trans &trans	&trans &trans
 			>;
 		};
