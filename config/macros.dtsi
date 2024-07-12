@@ -137,7 +137,7 @@
 				<&macro_release &kp RGUI &kp RSHFT>;
 	)
 	
-	ZMK_MACRO_(m_toggle_steno,
+	ZMK_MACRO_(m_tog_steno,
 		bindings = <&macro_press &kp E &kp R &kp F &kp V &kp O &kp L>,
 				<&macro_release &kp E &kp R &kp F &kp V &kp O &kp L>,
 				<&tog STENO>;
