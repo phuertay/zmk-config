@@ -1,6 +1,6 @@
 Aparentemente, en keybdname.conf hay que agregar `CONFIG_ZMK_PLOVER_HID=y`
 
-Los códigos:
+Los códigos (están en `app/include/dt-bindings/zmk/keys.h`, usando `#define PLV_ST (ZMK_HID_USAGE(HID_USAGE_VENDOR_PLOVER, 9))`)
  | Key | Code | 
  | --- | --- |
  | PLV_SL | 0 | 
