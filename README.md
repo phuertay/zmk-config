@@ -2,6 +2,7 @@ Aparentemente, en keybdname.conf hay que agregar `CONFIG_ZMK_PLOVER_HID=y`
 
 Los códigos:
  | Key | Code | 
+ | --- | --- |
  | PLV_SL | 0 | 
  | PLV_TL | 1 | 
  | PLV_KL | 2 | 
