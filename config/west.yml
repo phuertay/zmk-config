@@ -1,7 +1,7 @@
 manifest:
   remotes:
     - name: lazer
-      url-base: https://github.com/lazerwalker/zmk
+      url-base: https://github.com/lazerwalker
   projects:
     - name: zmk
       remote: lazer
