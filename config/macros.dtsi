@@ -137,20 +137,10 @@
 				<&macro_release &kp RGUI &kp RSHFT>;
 	)
 	
-	ZMK_MACRO_(m_tog_steno,
-		bindings = <&tog STENO>,
-				<&macro_press &kp E &kp R &kp F &kp V &kp O &kp L>,
-				<&macro_release &kp E &kp R &kp F &kp V &kp O &kp L>;
-	)
-
-	ZMK_MACRO_(m_plo_tog,
-		bindings = <&macro_press &kp E &kp R &kp F &kp V &kp O &kp L>,
-				<&macro_release &kp E &kp R &kp F &kp V &kp O &kp L>;
-	)
 
 	ZMK_MACRO_(m_plo_look,
-		bindings = <&macro_press &kp E &kp R &kp F &kp G &kp M &kp I>,
-				<&macro_release &kp E &kp R &kp F &kp G &kp M &kp I>;
+		bindings = <&macro_press &kp PLV_PL &kp PLV_HL &kp PLV_RL &kp PLV_U &kp PLV_PR>,
+				<&macro_release &kp PLV_PL &kp PLV_HL &kp PLV_RL &kp PLV_U &kp PLV_PR>;
 	)
 
 	ZMK_MACRO_(m_plo_add,
