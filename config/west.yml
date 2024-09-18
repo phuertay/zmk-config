@@ -1,11 +1,11 @@
 manifest:
   remotes:
-    - name: lazer
-      url-base: https://github.com/lazerwalker
+    - name: ph
+      url-base: https://github.com/phuertay
   projects:
-    - name: zmk
-      remote: lazer
-      revision: plover-hid-hog-attempt
+    - name: zmk-plover-hid
+      remote: ph
+      revision: main
       import: app/west.yml
   self:
     path: config
