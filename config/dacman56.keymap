@@ -92,7 +92,7 @@
 			&none	&none 								&none	&none
 				&kp PLV_A  &kp PLV_O						&kp PLV_E &kp PLV_U
 						&m_plo_look &mo NUM_HD_ULTRA		&trans &m_plo_add
-						&sl FUNC_MACR &m_calc		&kp F23 &sl FUNC_HD
+						&sl FUNC_MACR &m_calc		&kp LG(F7) &sl FUNC_HD
 			>;
 		};
 
