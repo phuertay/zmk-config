@@ -482,7 +482,7 @@
 								&kp C_BRI_DN &kp C_BRI_UP																		   &kp C_AC_BACK &kp C_AC_FORWARD
 									&kp C_AL_SELECT_TASK &kp INS					&kp C_AC_HOME &kp C_AC_BACK
 										&m_9_16	&kp INS			&tog NUM_L_HD   &tog SPFN_HD
-									&to DEFAULT_HD 	&m_enable_steno		&tog NUM_HD &to DEFAULT_HD 
+									&to DEFAULT_HD 	&m_tog_steno		&tog NUM_HD &to DEFAULT_HD 
 			>;
 		};
 
@@ -497,7 +497,7 @@
 		 &trans	&trans					  	  &trans &trans
 			&trans &trans				&trans &trans
 				&trans &trans		&trans &trans
-				&trans &m_disable_steno	&trans &trans
+				&trans &m_tog_steno	&trans &trans
 			>;
 		};
 
