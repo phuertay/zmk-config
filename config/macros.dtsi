@@ -144,12 +144,7 @@
 	)
 
 	ZMK_MACRO_(m_plo_add,
-		bindings = <&macro_press &kp W &kp S &kp M &kp I &kp P>,
-				<&macro_release &kp W &kp S &kp M &kp I &kp P>;
-	)
-
-	ZMK_MACRO_(m_plo_focus,
-		bindings = <&macro_press &kp E &kp R &kp F &kp V &kp N &kp U &kp K &kp L>,
-				<&macro_release &kp E &kp R &kp F &kp V &kp N &kp U &kp K &kp L>;
+		bindings = <&macro_press &kp PLV_TL &kp PLV_KL &kp PLV_U &kp PLV_PR &kp PLV_TR>,
+				<&macro_release &kp PLV_TL &kp PLV_KL &kp PLV_U &kp PLV_PR &kp PLV_TR>;
 	)
 }; };
