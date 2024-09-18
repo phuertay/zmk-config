@@ -91,8 +91,8 @@
 &none      &kp PLV_SL &kp PLV_KL &kp PLV_WL &kp PLV_RL &kp PLV_X4 			&kp PLV_X5 &kp PLV_RR &kp PLV_BR &kp PLV_GR &kp PLV_SR &kp PLV_ZR
 			&none	&none 								&none	&none
 				&kp PLV_A  &kp PLV_O						&kp PLV_E &kp PLV_U
-						&m_plo_look &kp F23		&trans &m_plo_add
-						&sl FUNC_MACR &m_calc		&kp C_AC_REFRESH &sl FUNC_HD
+						&m_plo_look &mo NUM_HD_ULTRA		&trans &m_plo_add
+						&sl FUNC_MACR &m_calc		&kp F23 &sl FUNC_HD
 			>;
 		};
 
