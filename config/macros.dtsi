@@ -138,7 +138,9 @@
 	)
 	
 	ZMK_MACRO_(m_tog_steno,
-		bindings = <&tog STENO>, <&macro_tap &kp F23>;
+		bindings = <&tog STENO>,
+				<&macro_wait_time 30>,
+				<&macro_tap &kp F23>;
 	)
 
 	ZMK_MACRO_(m_plo_look,
