@@ -1,10 +1,10 @@
 manifest:
   remotes:
-    - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
+    - name: zmk-plover-hid
+      url-base: https://github.com/phuertay
   projects:
-    - name: zmk
-      remote: zmkfirmware
+    - name: zmk-plover-hid
+      remote: zmk-plover-hid
       revision: main
       import: app/west.yml
   self:
