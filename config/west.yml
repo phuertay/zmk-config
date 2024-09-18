@@ -1,7 +1,7 @@
 manifest:
   remotes:
     - name: zmk
-      url-base: https://github.com/lazerwalker/zmk
+      url-base: https://github.com/lazerwalker/zmk/tree
   projects:
     - name: zmk-plover-hid
       remote: zmk
