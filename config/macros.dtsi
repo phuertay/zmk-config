@@ -139,7 +139,7 @@
 	
 	ZMK_MACRO_(m_tog_steno,
 		bindings = <&tog STENO>,
-				<&macro_tap_time 30>
+				<&macro_tap_time 30>,
 				<&macro_tap &kp F23>;
 	)
 
