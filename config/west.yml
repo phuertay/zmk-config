@@ -1,11 +1,11 @@
 manifest:
   remotes:
     - name: zmk
-      url-base: https://github.com/lazerwalker/zmk/tree
+      url-base: https://github.com/lazerwalker
   projects:
     - name: zmk-plover-hid
       remote: zmk
-      revision: plover-hid-hog-attempt
+      revision: zmk/tree/plover-hid-hog-attempt
       import: app/west.yml
   self:
     path: config
