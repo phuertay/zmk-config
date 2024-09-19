@@ -324,9 +324,9 @@
 		num_hd_steno_mods {
 			bindings = <
 &trans &trans &trans &trans &trans &trans		&trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans		&trans &fm F7 N7 &fm F8 N8 &fm F9 N9 &trans &trans
-&trans &trans &trans &trans &trans &trans		&trans &fm F1 N1 &fm F2 N2 &fm F3 N3 &trans &trans
-&trans &trans &trans &trans &trans &trans		&trans &fm F4 N4 &fm F5 N5 &fm F6 N6 &trans &trans
+&trans &trans &trans &trans &trans &trans		&trans &fm F7 LS(N5) &fm F8 LS(N0) &fm F9 LS(N1) &trans &trans
+&trans &trans &trans &trans &trans &trans		&trans &fm F4 LS(N9) &fm F5 LS(N4) &fm F6 LS(N6) &trans &trans
+&trans &trans &trans &trans &trans &trans		&trans &fm F1 LS(N3) &fm F2 LS(N7) &fm F3 LS(N2) &trans &trans
 		 &trans	&trans				  	  &trans &trans
 			&trans &trans			&trans &trans
 				&trans &trans	&to STENO &trans
