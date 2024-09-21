@@ -1,6 +1,9 @@
 In keybdname.conf you need to add `CONFIG_ZMK_PLOVER_HID=y`
 
-PloverHID keycodes (fro  `app/include/dt-bindings/zmk/keys.h`, using `#define PLV_ST (ZMK_HID_USAGE(HID_USAGE_VENDOR_PLOVER, 9))`)
+Make sure the west.yaml file compiles against the right repo
+
+Here's a list of the PloverHID keycodes (from `app/include/dt-bindings/zmk/keys.h`, using `#define PLV_ST (ZMK_HID_USAGE(HID_USAGE_VENDOR_PLOVER, 9))`)
+
  | Key | Code | 
  | --- | --- |
  | PLV_SL | 0 | 
