@@ -5,7 +5,6 @@
 #include <dt-bindings/zmk/outputs.h>
 
 
-// #define DEFAULT 0
 #define DEFAULT_HD 0
 #define STENO 1
 #define AL_Q 2
@@ -85,14 +84,14 @@
 
 		steno {
 			bindings = <
-&trans	&trans	   &trans	&trans	   &trans     &trans			&trans	       &trans     &trans	 &trans	    &trans     &trans
-&trans	&kp N1     &kp N2	&kp N3	   &kp N4     &&hmss LWIN N5		&hmss RWIN N6  &kp N7     &kp N8	 &kp N9	    &kp N0     &none
-&none	&kp PLV_X1 &kp PLV_TL	&kp PLV_PL &kp PLV_HL &kp PLV_X2 		&kp PLV_X3     &kp PLV_FR &kp PLV_PR &kp PLV_LR &kp PLV_TR &kp PLV_DR
-&none   &kp PLV_SL &kp PLV_KL	&kp PLV_WL &kp PLV_RL &kp PLV_X4 		&kp PLV_X5     &kp PLV_RR &kp PLV_BR &kp PLV_GR &kp PLV_SR &kp PLV_ZR
-		   &none	&none 								      &none	 &none
-				&kp PLV_A  &kp PLV_O					   &kp PLV_E  &kp PLV_U
-					&m_plo_look &mo NUM_HD_ULTRA	&trans &m_plo_add
-						&sl FUNC_MACR &m_calc	&kp LG(F7) &sl FUNC_HD
+&trans	&kp F9	   &kp F3	&kp F1	   &kp F5		&kp F7			&kp F6		&kp F2	   &kp F10    &kp F4	 &kp F8	    &kp F11
+&trans	&kp N1     &kp N2	&kp N3	   &lt NUM_HD_ULTRA N4  &hmss LWIN N5		&hmss RWIN N6	&kp N7     &kp N8     &kp N9	 &kp N0     &kp F12
+&trans	&kp PLV_X1 &kp PLV_TL	&kp PLV_PL &kp PLV_HL 		&kp PLV_X2 		&kp PLV_X3	&kp PLV_FR &kp PLV_PR &kp PLV_LR &kp PLV_TR &kp PLV_DR
+&none   &kp PLV_SL &kp PLV_KL	&kp PLV_WL &kp PLV_RL 		&kp PLV_X4 		&kp PLV_X5	&kp PLV_RR &kp PLV_BR &kp PLV_GR &kp PLV_SR &kp PLV_ZR
+		   &none	&none 										   &none      &none
+				&kp PLV_A  &kp PLV_O							&kp PLV_E  &kp PLV_U
+					&m_plo_look &mo NUM_HD_ULTRA		&trans &m_plo_add
+						&sl FUNC_MACR &m_calc		&kp LG(F7) &sl FUNC_HD
 			>;
 		};
 
