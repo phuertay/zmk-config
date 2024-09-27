@@ -495,7 +495,7 @@
 &trans &trans &trans &trans &trans &trans			&trans &trans &trans &trans &trans &trans
 		 &trans	&trans					  	  &trans &trans
 			&trans &trans				&trans &trans
-				&trans &trans		&trans &trans
+			&m_9_16_steno	&trans		&trans &trans
 				&trans &m_tog_steno	&trans &trans
 			>;
 		};
