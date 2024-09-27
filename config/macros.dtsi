@@ -46,6 +46,13 @@
 				<&macro_wait_time 30>,
 				<&kp Q &kp J &kp SEMI &kp KP_N9 &kp TAB &kp KP_N1 &kp KP_N6 &kp ENTER &kp ESC>;
 	)
+	
+	ZMK_MACRO_(m_9_16_steno,
+		bindings = <&macro_wait_time 50>,
+				<&kp LALT>,
+				<&macro_wait_time 30>,
+				<&kp Q &kp J &kp SEMI &kp LS(N1) &kp TAB &kp LS(N3) &kp LS(N6) &kp ENTER &kp ESC>;
+	)
 		
 	ZMK_MACRO_(m_email_w,
 		bindings = <&kp G &kp SEMI &kp M &kp K &kp A &kp GRAVE &kp J>,
