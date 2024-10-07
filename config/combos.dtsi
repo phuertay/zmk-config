@@ -1,9 +1,8 @@
 #define COMB_MS 96
 #define COMB_MS_FST 66
 
-#define COMB_LAY_QW DEFAULT_HD
-#define COMB_LAY_NV FN
-#define COMB_LAY_ALL COMB_LAY_QW COMB_LAY_NV
+#define COMB_LAY_ALL DEFAULT_HD FN
+#define COMB_LAY_NUM NUM_HD NUM_HD_ULTRA NUM_HD_STENO_MODS
 
 
 / { combos {
@@ -14,6 +13,20 @@
 		layers = <COMB_LAY_ALL>;
 		key-positions = <32 47 63>;				// Última de abajo, el 5, y shift derecho
 		bindings = <&bootloader>;
+	};
+	
+	combo_TAB_L {
+		timeout-ms = <COMB_MS>;
+		layers = <COMB_LAY_ALL COMB_LAY_NUM>;
+		key-positions = <28 40>;				// I y K
+		bindings = <&kp TAB>;
+	};
+	
+	combo_ESC_L {
+		timeout-ms = <COMB_MS>;
+		layers = <COMB_LAY_ALL COMB_LAY_NUM>;
+		key-positions = <29 41>;				// U y X
+		bindings = <&kp ESC>;
 	};
 	
 	combo_EXCL {
@@ -93,20 +106,6 @@
 		bindings = <&kp RPAR>;
 	};
 	
-	combo_TAB_L {
-		timeout-ms = <COMB_MS>;
-		layers = <COMB_LAY_ALL NUM_HD NUM_HD_ULTRA>;
-		key-positions = <28 40>;				// I y K
-		bindings = <&kp TAB>;
-	};
-	
-	combo_ESC_L {
-		timeout-ms = <COMB_MS>;
-		layers = <COMB_LAY_ALL NUM_HD NUM_HD_ULTRA>;
-		key-positions = <29 41>;				// U y X
-		bindings = <&kp ESC>;
-	};
-	
 	combo_ESC_R {
 		timeout-ms = <COMB_MS>;
 		layers = <COMB_LAY_ALL>;
@@ -135,18 +134,10 @@
 		bindings = <&kp PIPE>;
 	};
 	
-	// Específicos para cada distribución		
-	combo_QW_SEMI {
+	combo_HD_SEMI {
 		timeout-ms = <COMB_MS_FST>;
-		layers = <COMB_LAY_QW>;
+		layers = <COMB_LAY_ALL>;
 		key-positions = <25 37>;				// A y ;
 		bindings = <&kp LS(Z)>;
-	};
-	
-	combo_NV_SEMI {
-		timeout-ms = <COMB_MS_FST>;
-		layers = <COMB_LAY_NV>;
-		key-positions = <25 37>;				// A y ;
-		bindings = <&kp SEMI>;
 	};
 }; };
