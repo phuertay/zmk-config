@@ -3,7 +3,7 @@ manifest:
     - name: ph
       url-base: https://github.com/phuertay
   projects:
-    - name: zmk-plover-hid
+    - name: zmk
       remote: ph
       revision: main
       import: app/west.yml
