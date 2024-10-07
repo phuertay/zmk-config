@@ -2,5 +2,5 @@ on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
-    uses: phuertay/zmk-plover-hid/.github/workflows/build-user-config.yml@main
+    uses: phuertay/zmk/.github/workflows/build-user-config.yml@main
     #uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
