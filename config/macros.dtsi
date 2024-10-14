@@ -144,9 +144,14 @@
 				<&macro_release &kp RGUI &kp RSHFT>;
 	)
 	
-	ZMK_MACRO_(m_tog_steno,
+	ZMK_MACRO_(m_to_steno,
 		bindings = <&tog STENO>,
 				<&macro_tap &kp LG(F7)>;
+	)
+	
+	ZMK_MACRO_(m_from_steno,
+		bindings = <&tog STENO>,
+				<&macro_tap &kp LS(LG(F7))>;
 	)
 
 	ZMK_MACRO_(m_plo_look,
