@@ -83,11 +83,11 @@
 
 		steno {
 			bindings = <
-&trans	    &kp F9     &kp F3	   &kp F1	   &kp F5		&kp F7					&kp F6		&kp F2			&kp F10    &kp F4	 &kp F8	    &kp F11
-&trans	    &kp N1     &kp N2	   &kp N3	   &lt NUM_HD_ULTRA N4  &hmss LWIN N5				&hmss RWIN N6	&lt NUM_HD_ULTRA N7     &kp N8     &kp N9	 &kp N0     &fn F12 LS(P)
-&kp PLV_X3 &kp PLV_NM &kp PLV_TL	   &kp PLV_PL &kp PLV_HL 		&kp PLV_STR 				&kp PLV_STR	&kp PLV_FR		&kp PLV_PR &kp PLV_LR &kp PLV_TR &kp PLV_DR
-&kp PLV_X4 &kp PLV_SL &kp PLV_KL	   &kp PLV_WL &kp PLV_RL 		&kp PLV_STR 				&kp PLV_STR	&kp PLV_RR		&kp PLV_BR &kp PLV_GR &kp PLV_SR &kp PLV_ZR
-		     &kp RC(ENTER) &hm H RC(X) 														&m_pren    &m_pren_s
+&trans	    &kp F9      &kp F3	      &kp F1     &kp F5		     &kp F7				&kp F6		&kp F2			&kp F10    &kp F4	 &kp F8	    &kp F11
+&trans	    &kp N1      &kp N2	      &kp N3     &lt NUM_HD_ULTRA N4 &hmss LWIN N5			&hmss RWIN N6	&lt NUM_HD_ULTRA N7     &kp N8     &kp N9	 &kp N0     &fn F12 LS(P)
+&kp PLV_X3  &kp PLV_NUM &kp PLV_TL    &kp PLV_PL &kp PLV_HL 	     &kp PLV_STR 			&kp PLV_STR	&kp PLV_FR		&kp PLV_PR &kp PLV_LR &kp PLV_TR &kp PLV_DR
+&kp PLV_X4  &kp PLV_SL  &kp PLV_KL    &kp PLV_WL &kp PLV_RL 	     &kp PLV_STR 			&kp PLV_STR	&kp PLV_RR		&kp PLV_BR &kp PLV_GR &kp PLV_SR &kp PLV_ZR
+			&kp RC(ENTER) &hm H RC(X) 												&m_pren    &m_pren_s
 				&kp PLV_A  &kp PLV_O										&kp PLV_E  &kp PLV_U
 					&m_plo_look &lay_or_lay NUM_HD_ULTRA NUM_HD_ULTRA		&trans &m_plo_add
 					&sl FUNC_MACR &m_calc						&kp LG(F7) &sl FUNC_HD
