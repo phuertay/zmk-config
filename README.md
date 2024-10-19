@@ -28,7 +28,7 @@ Here's a list of the PloverHID keycodes (from `app/include/dt-bindings/zmk/keys.
  | PLV_SR | 19 | 
  | PLV_DR | 20 | 
  | PLV_ZR | 21 | 
- | PLV_NM | 22 | 
+ | PLV_NUM | 22 | 
  | PLV_X1 | 23 | 
  | PLV_X2 | 24 | 
  | PLV_X3 | 25 | 
