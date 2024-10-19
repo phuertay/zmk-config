@@ -15,7 +15,7 @@ Here's a list of the PloverHID keycodes (from `app/include/dt-bindings/zmk/keys.
  | PLV_RL | 6 | 
  | PLV_A | 7 | 
  | PLV_O | 8 | 
- | PLV_ST | 9 | 
+ | PLV_STR | 9 | 
  | PLV_E | 10 | 
  | PLV_U | 11 | 
  | PLV_FR | 12 | 
