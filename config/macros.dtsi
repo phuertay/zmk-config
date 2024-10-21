@@ -170,7 +170,7 @@
 	)
 
 	ZMK_MACRO_(m_pren_s,
-		bindings = <&macro_press &kp PLV_PL &kp PLV_RL &kp PLV_E &kp PLV_PR &kp PLV_BR &kp PLV_X3>,
-				<&macro_release &kp PLV_PL &kp PLV_RL &kp PLV_E &kp PLV_PR &kp PLV_BR &kp PLV_X3>;
+		bindings = <&macro_press &kp PLV_PL &kp PLV_RL &kp PLV_E &kp PLV_PR &kp PLV_BR &kp PLV_ST>,
+				<&macro_release &kp PLV_PL &kp PLV_RL &kp PLV_E &kp PLV_PR &kp PLV_BR &kp PLV_ST>;
 	)
 }; };
