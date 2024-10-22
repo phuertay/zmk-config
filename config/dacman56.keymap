@@ -296,7 +296,7 @@
 &trans	&lts_tp LCNUM KP_DOT &kp LEFT &kp DOWN 	 &kp RIGHT	  &kp LA(N3)			&kp LC(INS)	&fm F1 KP_N1 &fm F2 KP_N2 &fm F3 KP_N3	&kp ENTER	&fm F24 EQUAL
 &m_excel_go_to &kp LSHFT &hms LALT ESC	&hms LSHFT RC(DEL)  &hms LCTRL RC(BSPC) &kp LA(N7)				&kp LS(INS)	&fm F4 KP_N4 &fm F5 KP_N5 &fm F6 KP_N6 	&td_plus_sum	&lay_or_lay DEFAULT_HD_2 NUM_HD
 						 &kp RC(ENTER)	&hm H RC(X)									 &fm F10 KP_N0 &fm F11 H
-								&kp SPACE &lts SPFN_HD BSPC				&lts SPFN_HD  TAB &hms SPACE KP_N0
+								&kp SPACE &lts SPFN_HD BSPC				&lts SPFN_HD  KP_N0 &hms SPACE TAB
 											&trans &kp DEL		&to DEFAULT_HD	&trans
 											&trans &trans		&mo FN &trans
 			>;
@@ -310,7 +310,7 @@
 &trans	&lts LCNUM KP_DOT &kp LEFT &kp DOWN 	 &kp RIGHT	  &kp LA(N3)			&kp LC(INS)	&fm F4 LS(N9) &fm F5 LS(N4) &fm F6 LS(N6)	&td_plus_sum	 &fm F24 EQUAL
 &m_excel_go_to &kp LSHFT &hms LALT ESC	&hms LSHFT RC(DEL)  &hms LCTRL RC(BSPC) &kp LA(N7)		&kp LS(INS)	&fm F1 LS(N3) &fm F2 LS(N7) &fm F3 LS(N2)	&kp ENTER	 &lay_or_lay DEFAULT_HD_2 NUM_HD
 						 &kp RC(ENTER)	&hm H RC(X)									 &fm F10 LS(N8) &fm F11 KP_DOT
-								&kp SPACE &lts SPFN_HD BSPC					&lts SPFN_HD  TAB &hms SPACE LS(N8)
+								&kp SPACE &lts SPFN_HD BSPC					&lts SPFN_HD  LS(N8) &hms SPACE TAB
 											&trans &kp DEL		&to DEFAULT_HD	&trans
 											&trans &trans		&mo FN &trans
 			>;
