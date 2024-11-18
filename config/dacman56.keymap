@@ -310,7 +310,7 @@
 &trans	&lts LCNUM KP_DOT &kp LEFT &kp DOWN 	 &kp RIGHT	  &kp LA(N3)			&kp RC(INS)	&fm F4 LS(N9) &fm F5 LS(N4) &fm F6 LS(N6)	&td_plus_sum	 &fm F24 EQUAL
 &m_excel_go_to &kp LSHFT &hms LALT ESC	&hms LSHFT RC(DEL)  &hms RCTRL RC(BSPC) &kp LA(N7)		&kp LS(INS)	&fm F1 LS(N3) &fm F2 LS(N7) &fm F3 LS(N2)	&kp ENTER	 &lay_or_lay DEFAULT_HD_2 NUM_HD
 						 &kp RC(ENTER)	&hm H RC(X)									 &fm F10 LS(N8) &fm F11 KP_DOT
-								&kp SPACE &lts SPFN_HD BSPC					&kp  LS(N8) &lts SPFN_HD TAB
+								&kp SPACE &lts SPFN_HD BSPC					&kp LS(N8) &lts SPFN_HD TAB
 											&trans &kp DEL		&to DEFAULT_HD	&trans
 											&trans &trans		&mo FN &trans
 			>;
@@ -325,7 +325,7 @@
 &trans &lts LCNUM I &trans &trans &trans &trans					&trans &fm F1 LS(N3) &fm F2 LS(N7) &fm F3 LS(N2) &trans &trans
 &trans &trans 	    &trans &trans &trans &trans					&trans &fm F4 LS(N9) &fm F5 LS(N4) &fm F6 LS(N6) &trans &trans
 			 &trans	&trans				  			&fm F10 LS(N8) &trans
-				&trans &trans				&trans &lts SPFN_HD LS(N8)
+				&trans &trans				&kp LS(N8) &lts SPFN_HD TAB
 					&trans &to STENO	&to STENO &trans
 					&trans &trans		&trans &trans
 			>;
