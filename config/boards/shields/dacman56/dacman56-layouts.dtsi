@@ -1,7 +1,7 @@
 #include <physical_layouts.dtsi>
 
 / {
-    physical_transform: physical_transform0 {
+    physical_layout: physical_layout0 {
         compatible = "zmk,physical-layout";
         display-name = "default transform";
 
@@ -67,7 +67,7 @@
         complete;
 
         default_transform {
-            physical-layout = <&physical_transform>;
+            physical-layout = <&physical_layout>;
             positions = <>;
         };
     };
