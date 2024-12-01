@@ -1,10 +1,10 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include "dacman56-layouts.dtsi"
 
-
-&physical_layout {
-    kscan = <&kscan0>;
-    transform = <&matrix_transform>;
+/ {
+    &physical_layout {
+        transform = <&matrix_transform>;
+    };
 };
 
 / {
