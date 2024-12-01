@@ -5,9 +5,7 @@
     &physical_layout {
         transform = <&matrix_transform>;
     };
-};
 
-/ {
     chosen {
         zmk,kscan = &kscan0;
         zmk,matrix_transform = &matrix_transform;
