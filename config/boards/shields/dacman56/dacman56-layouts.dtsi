@@ -1,3 +1,5 @@
+#include <physical_layouts.dtsi>
+
 / {
     default_transform: default_transform {
         compatible = "zmk,physical-layout";
