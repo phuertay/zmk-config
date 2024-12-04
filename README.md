@@ -70,3 +70,100 @@ Here's a list of the PloverHID keycodes (from `app/include/dt-bindings/zmk/keys.
  | PLV_X39 | 61 | 
  | PLV_X40 | 62 | 
  | PLV_X41 | 63 | 
+
+
+
+## Summary
+
+The Antecedent-Morph behavior (adaptive keys) sends different behaviors, depending on which key was most recently
+released before the antecedent-morph behavior was pressed, if this occurs within a configurable time period.
+
+## Usage
+
+To load the module, either use a ZMK version from phuertay that includes it, or add the following entries
+to `projects` in `config/west.yml`.
+
+```yaml
+manifest:
+  remotes:
+    - name: phzmk
+      url-base: https://github.com/phuertay
+  projects:
+    - name: zmk
+      remote: phzmk
+      revision: main
+      import: app/west.yml
+    - name: zmk-antecedent-morph
+      remote: phzmk
+      revision: v1
+  self:
+    path: config
+```
+
+
+## Antecedent-Morph
+
+The configuration of the behavior consists of an array of `antecedents`, key codes with implicit modifiers, as well as
+of a delay `max-delay-ms` in milli-seconds. If none of the `antecedents` was released during the `max-delay-ms` before
+the antecedent-morph behavior is pressed, the behavior invokes the `defaults` binding. If, however, the `n`-th of the
+key codes (with implicit modifiers) listed in the array `antecedents` was released within `max-delay-ms`, the behavior
+invokes the `n`-th of the bindings of the `bindings` property.
+
+### Configuration
+
+If the key A is assigned the behavior `&ad_a` defined as follows, for example,
+
+```dts
+/ {
+    behaviors {
+        ad_a: adaptive_a {
+            compatible = "zmk,behavior-antecedent-morph";
+            label = "ADAPTIVE_A";
+            #binding-cells = <0>;
+			defaults = <&kp A>;
+            bindings = <&kp U>, <&kp O>;
+			antecedents = <Q Z>;
+			max-delay-ms = <250>;
+        };
+    };
+};
+```
+
+then by default, pressing this key issues the key press `&kp A`. But if it is preceded within 250 milli-seconds by Q or
+Z, then `&kp U` or `&kp O`, respectively, are issued instead.
+
+### Behavior Binding
+
+- Reference: `&ad_a`
+- Parameter: None
+
+Example:
+
+```dts
+&ad_a
+```
+
+### Dead Antecedents
+
+If some binding somewhere issues an illegal key code in the range beyond 0x00ff, this illegal key code is recognized and
+tested as an antecedent, but then immediately discarded from the event queue. It therefore functions similarly to a dead
+key. Note that these illegal key codes are specified with the *usage page* 0x07 as in the following example. If some key
+is bound to `&kp DEAD_ANTE`, then it does not print anything, but still turns a subsequent A into a U.
+
+```dts
+#define DEAD_ANTE 0x070100
+
+/ {
+    behaviors {
+        ad_a: adaptive_a {
+            compatible = "zmk,behavior-antecedent-morph";
+            label = "ADAPTIVE_A";
+            #binding-cells = <0>;
+			defaults = <&kp A>;
+            bindings = <&kp U>, <&kp O>;
+			antecedents = <DEAD_ANTE Z>;
+			max-delay-ms = <250>;
+        };
+    };
+};
+```
