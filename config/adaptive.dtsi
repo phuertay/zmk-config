@@ -22,6 +22,16 @@
 		};
 
 / { behaviors {
+	ad_q: adaptive_q {
+            compatible = "zmk,behavior-antecedent-morph";
+            label = "ADAPTIVE_Q";
+            #binding-cells = <0>;
+			defaults = <&kp Q>;
+            bindings = <&m_dqt>, <&m_dge>;
+			antecedents = <W E>;
+			max-delay-ms = <250>;
+        };
+
 	slad: adaptive_l {
 		compatible = "zmk,behavior-sticky-key";
 		label = "SL_AL";
