@@ -57,7 +57,65 @@
 		bindings = <&m_dqt>, <&m_dge>, <&m_gc>, <&kp B>;
 	)
 
+	ZMK_ADAPTIVE(_R,
+		defaults = <&kp R>;
+		antecedents = <E>;
+		bindings = <&kp C>;
+	)
 
+	ZMK_ADAPTIVE(_O,
+		defaults = <&kp O>;
+		antecedents = <U I P>;
+		bindings = <&kp M>, <&m_mk>, <&kp L>;
+	)
+
+	ZMK_ADAPTIVE(_P,
+		defaults = <&kp P>;
+		antecedents = <Q W SEMI FSLH>;
+		bindings = <&m_dqt>, <&m_dge>, <&m_gc>, <&kp B>;
+	)
+
+	ZMK_ADAPTIVE(_SEMI,
+		defaults = <&kp SEMI>;
+		antecedents = <A>;
+		bindings = <&m_dga>;
+	)
+
+	ZMK_ADAPTIVE(_Z,
+		defaults = <&kp Z>;
+		antecedents = <C FSLH>;
+		bindings = <&m_dgc>, <&kp B>;
+	)
+
+	ZMK_ADAPTIVE(_X,
+		defaults = <&kp X>;
+		antecedents = <Z>;
+		bindings = <&m_dvy>;
+	)
+
+	ZMK_ADAPTIVE(_C,
+		defaults = <&kp C>;
+		antecedents = <Z>;
+		bindings = <&kp G>;
+	)
+
+	ZMK_ADAPTIVE(_M,
+		defaults = <&kp M>;
+		antecedents = <Q FSLH>;
+		bindings = <&kp G>, <&kp J>;
+	)
+
+	ZMK_ADAPTIVE(_FLSH,
+		defaults = <&kp FLSH>;
+		antecedents = <A S C M>;
+		bindings = <&m_dba>, <&m_dbs>, <&m_dbc>, <&m_djm>;
+	)
+
+	ZMK_ADAPTIVE(_DOT,
+		defaults = <&kp DOT>;
+		antecedents = <FLSH>;
+		bindings = <&kp L>;
+	)
 
 
 	slad: adaptive_l {
