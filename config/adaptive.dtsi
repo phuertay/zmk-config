@@ -23,10 +23,7 @@
 
 
 #define AD_SNAME(x) ad ## x
-#define AD_LNAME(x) adaptive ## x
-#define AD_LBL(x) ADAPTIVE ## x
-#define PRE_QUOTE(x) #x
-#define QUOTE(x) PRE_QUOTE(x)
+#define AD_LNAME(x) adapt ## x
 
 #define ZMK_ADAPTIVE(the_key,...) \
 	AD_SNAME(the_key): AD_LNAME(the_key) { \
@@ -169,7 +166,6 @@
 	};
 
 
-	
 	ZMK_MACRO_F(m_dba,
 		bindings = <&kp BSPC &kp B &kp A>;
 	)
@@ -186,30 +182,22 @@
 		bindings = <&kp BSPC &kp D &kp W>;
 	)
 
-	ZMK_MACRO_F(m_djm,
-		bindings = <&kp BSPC &kp J &kp M>;
-	)
-
 	ZMK_MACRO_F(m_dga,
 		bindings = <&macro_tap_time 1>
 			, <&macro_wait_time FT>
 			, <&kp BSPC &kp G &kp A>;
 	)
 
-	ZMK_MACRO_F(m_dge,
-		bindings = <&kp BSPC &kp G &kp E>;
-	)
-
 	ZMK_MACRO_F(m_dgc,
 		bindings = <&kp BSPC &kp G &kp C>;
 	)
 
-	ZMK_MACRO_F(m_dvy,
-		bindings = <&kp BSPC &kp V &kp Y>;
+	ZMK_MACRO_F(m_dge,
+		bindings = <&kp BSPC &kp G &kp E>;
 	)
 
-	ZMK_MACRO_F(m_dg_gr,
-		bindings = <&kp BSPC &kp G &kp GRAVE>;
+	ZMK_MACRO_F(m_djm,
+		bindings = <&kp BSPC &kp J &kp M>;
 	)
 
 	ZMK_MACRO_F(m_dkk,
@@ -220,98 +208,15 @@
 		bindings = <&kp BSPC &kp SQT>;
 	)
 
-	ZMK_MACRO_F(m_mk,
-		bindings = <&kp M &kp K>;
+	ZMK_MACRO_F(m_dvy,
+		bindings = <&kp BSPC &kp V &kp Y>;
 	)
 
 	ZMK_MACRO_F(m_gc,
 		bindings = <&kp G &kp C>;
 	)
 
-
-	slad: adaptive_l {
-		compatible = "zmk,behavior-sticky-key";
-		label = "SL_AL";
-		// quick-release;
-		#binding-cells = <1>;
-		release-after-ms = <ADAPTIVE_DELAY>;
-		bindings = <&mo>;
-	};
-	
-	slad_f: adaptive_l_fast {
-		compatible = "zmk,behavior-sticky-key";
-		label = "SL_AL_F";
-		// quick-release;
-		#binding-cells = <1>;
-		release-after-ms = <ADAPTIVE_DELAY_FAST>;
-		bindings = <&mo>;
-	};
-
-	ZMK_MACRO_VF(ak_Q,
-		bindings = <&kp Q &slad AL_Q>;
-	)
-
-	ZMK_MACRO_VF(ak_W,
-		bindings = <&kp W &slad AL_W>;
-	)
-
-	ZMK_MACRO_VF(ak_E,
-		bindings = <&macro_tap_time 1>
-				, <&macro_press &kp E>
-				, <&macro_tap &slad AL_E>
-				, <&macro_wait_time FT>
-				, <&macro_release &kp E>;
-	)
-
-	ZMK_MACRO_VF(ak_R,
-		bindings = <&kp R &slad AL_R>;
-	)
-
-	ZMK_MACRO_VF(ak_O,
-		bindings = <&kp O &slad AL_O>;
-	)
-
-	ZMK_MACRO_VF(ak_P,
-		bindings = <&kp P &slad AL_P>;
-	)
-
-	ZMK_MACRO_VF(ak_SEMI,
-		bindings = <&kp SEMI &slad_f AL_SEMI>;
-	)
-
-	ZMK_MACRO_VF(ak_Z,
-		bindings = <&kp Z &slad AL_Z>;
-	)
-
-	ZMK_MACRO_VF(ak_X,
-		bindings = <&macro_tap_time 1>
-				, <&macro_press &kp X>
-				, <&macro_tap &slad AL_X>
-				, <&macro_wait_time FT>
-				, <&macro_release &kp X>;
-	)
-
-	ZMK_MACRO_VF(ak_C,
-		bindings = <&macro_tap_time 1>
-				, <&macro_press &kp C>
-				, <&macro_tap &slad AL_C>
-				, <&macro_wait_time FT>
-				, <&macro_release &kp C>;
-	)
-
-	ZMK_MACRO_VF(ak_M,
-		bindings = <&macro_tap_time 1>
-				, <&macro_press &kp M>
-				, <&macro_tap &slad AL_M>
-				, <&macro_wait_time FT>
-				, <&macro_release &kp M>;
-	)
-
-	ZMK_MACRO_VF(ak_FSLH,
-		bindings = <&kp FSLH &slad AL_FSLH>;
-	)
-
-	ZMK_MACRO_VF(ak_DOT,
-		bindings = <&kp DOT &slad AL_DOT>;
+	ZMK_MACRO_F(m_mk,
+		bindings = <&kp M &kp K>;
 	)
 }; };
