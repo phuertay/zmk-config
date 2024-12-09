@@ -27,7 +27,7 @@
 #define PRE_QUOTE(x) #x
 #define QUOTE(x) PRE_QUOTE(x)
 
-#define ZMK_ADAPTIVE(the_key, ...) \
+#define ZMK_ADAPTIVE(the_key,...) \
 	AD_SNAME(the_key): AD_LNAME(the_key) { \
 		compatible = "zmk,behavior-antecedent-morph"; \
 		label = QUOTE(AD_LBL(the_key)); \
