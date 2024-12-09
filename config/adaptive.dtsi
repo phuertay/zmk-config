@@ -21,10 +21,10 @@
 			__VA_ARGS__ \
 		};
 
-#define NEV(A) ## A
-#define AD_SNAME(A) ad_ ## NEV(A)
-#define AD_LNAME(A) adaptive_ ## NEV(A)
-#define AD_LBL(A) ADAPTIVE_ ## NEV(A)
+
+#define AD_SNAME(x) ad ## x
+#define AD_LNAME(x) adaptive ## x
+#define AD_LBL(x) ADAPTIVE ## x
 #define PRE_QUOTE(x) #x
 #define QUOTE(x) PRE_QUOTE(x)
 
@@ -34,7 +34,6 @@
 		label = QUOTE(AD_LBL(the_key)); \
 		#binding-cells = <0>; \
 		max-delay-ms = <ADAPTIVE_DELAY>; \
-		defaults = <&kp the_key>; \
 		__VA_ARGS__ \
 	};
 
@@ -50,7 +49,6 @@
 			max-delay-ms = <ADAPTIVE_DELAY>;
         };
 
-
 	ad_W: adaptive_w {
             compatible = "zmk,behavior-antecedent-morph";
             label = "ADAPTIVE_W";
@@ -61,12 +59,8 @@
 			max-delay-ms = <ADAPTIVE_DELAY>;
         };
 
-	ZMK_ADAPTIVE(F,
-		antecedents = <Q>;
-		bindings = <&m_dqt>;
-	)
-
-	ZMK_ADAPTIVE(E,
+	ZMK_ADAPTIVE(_E,
+		defaults = <&kp E>;
 		antecedents = <Q W SEMI FSLH>;
 		bindings = <&m_dqt>, <&m_dge>, <&m_gc>, <&kp B>;
 	)
