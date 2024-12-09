@@ -113,7 +113,7 @@
 
 	ZMK_ADAPTIVE(_DOT,
 		defaults = <&kp DOT>;
-		antecedents = <FLSH>;
+		antecedents = <FSLH>;
 		bindings = <&kp L>;
 	)
 
