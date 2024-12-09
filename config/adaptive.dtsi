@@ -41,81 +41,81 @@
 / { behaviors {
 	ZMK_ADAPTIVE(_Q,
 		defaults = <&kp Q>;
-		antecedents = <W E>;
-		bindings = <&m_dqt>, <&m_dge>;
+		antecedents = <E W>;
+		bindings = <&m_dge>, <&m_dqt>;
         )
 
 	ZMK_ADAPTIVE(_W,
 		defaults = <&kp W>;
-		antecedents = <W E>;
-		bindings = <&m_dqt>, <&m_dge>;
+		antecedents = <E W>;
+		bindings = <&m_dkk>, <&m_dqt>;
         )
 
 	ZMK_ADAPTIVE(_E,
 		defaults = <&kp E>;
-		antecedents = <Q W SEMI FSLH>;
-		bindings = <&m_dqt>, <&m_dge>, <&m_gc>, <&kp B>;
-	)
+		antecedents = <FSLH Q SEMI W>;
+		bindings = <&kp B>, <&kp G>, <&m_gc>, <&m_ddw>;
+        )
 
 	ZMK_ADAPTIVE(_R,
 		defaults = <&kp R>;
 		antecedents = <E>;
 		bindings = <&kp C>;
-	)
+        )
 
 	ZMK_ADAPTIVE(_O,
 		defaults = <&kp O>;
-		antecedents = <U I P>;
-		bindings = <&kp M>, <&m_mk>, <&kp L>;
-	)
+		antecedents = <I P U>;
+		bindings = <&m_mk>, <&kp L>, <&kp M>;
+        )
 
 	ZMK_ADAPTIVE(_P,
 		defaults = <&kp P>;
-		antecedents = <Q W SEMI FSLH>;
-		bindings = <&m_dqt>, <&m_dge>, <&m_gc>, <&kp B>;
-	)
+		antecedents = <O>;
+		bindings = <&kp O>;
+        )
 
 	ZMK_ADAPTIVE(_SEMI,
 		defaults = <&kp SEMI>;
 		antecedents = <A>;
 		bindings = <&m_dga>;
-	)
+        )
 
 	ZMK_ADAPTIVE(_Z,
 		defaults = <&kp Z>;
 		antecedents = <C FSLH>;
 		bindings = <&m_dgc>, <&kp B>;
-	)
+        )
 
 	ZMK_ADAPTIVE(_X,
 		defaults = <&kp X>;
 		antecedents = <Z>;
 		bindings = <&m_dvy>;
-	)
+        )
 
 	ZMK_ADAPTIVE(_C,
 		defaults = <&kp C>;
 		antecedents = <Z>;
 		bindings = <&kp G>;
-	)
+        )
 
 	ZMK_ADAPTIVE(_M,
 		defaults = <&kp M>;
-		antecedents = <Q FSLH>;
-		bindings = <&kp G>, <&kp J>;
-	)
-
-	ZMK_ADAPTIVE(_FSLH,
-		defaults = <&kp FSLH>;
-		antecedents = <A S C M>;
-		bindings = <&m_dba>, <&m_dbs>, <&m_dbc>, <&m_djm>;
-	)
+		antecedents = <FSLH Q>;
+		bindings = <&kp J>, <&kp G>;
+        )
 
 	ZMK_ADAPTIVE(_DOT,
 		defaults = <&kp DOT>;
 		antecedents = <FSLH>;
 		bindings = <&kp L>;
-	)
+        )
+
+	ZMK_ADAPTIVE(_FSLH,
+		defaults = <&kp FSLH>;
+		antecedents = <A C M S>;
+		bindings = <&m_dba>, <&m_dbc>, <&m_djm>, <&m_dbs>;
+        )
 
 
 	slad: adaptive_l {
