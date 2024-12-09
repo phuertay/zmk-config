@@ -262,16 +262,28 @@
 	ZMK_MACRO_F(m_gc,
 		bindings = <&kp G &kp C>;
 	)
-
-	hms_m_dot: homerow_mod_w_macro {
+	
+	hms_m_x: homerow_mod_x_macro {
 		compatible = "zmk,behavior-hold-tap";
-		label = "HOMEROW_MOD_SLOW_W_MACRO";
+		label = "HOMEROW_MOD_SLOW_X_MACRO";
 		#binding-cells = <2>;
-		tapping-term-ms = <240>;
+		tapping-term-ms = <200>;
 		quick-tap-ms = <0>;
 		flavor = "balanced";
-		bindings = <&kp>, <&ak_DOT>;
+		bindings = <&kp>, <&ad_X>;
 	};
+
+	
+	hm_m_c: homerow_mod_c_macro {
+		compatible = "zmk,behavior-hold-tap";
+		label = "HOMEROW_MOD_SLOW_C_MACRO";
+		#binding-cells = <2>;
+		tapping-term-ms = <160>;
+		quick-tap-ms = <0>;
+		flavor = "balanced";
+		bindings = <&kp>, <&ad_C>;
+	};
+
 
 	hms_m_m: homerow_mod_m_macro {
 		compatible = "zmk,behavior-hold-tap";
@@ -280,7 +292,17 @@
 		tapping-term-ms = <220>;
 		quick-tap-ms = <0>;
 		flavor = "balanced";
-		bindings = <&kp>, <&ak_M>;
+		bindings = <&kp>, <&ad_M>;
+	};
+
+	hms_m_dot: homerow_mod_w_macro {
+		compatible = "zmk,behavior-hold-tap";
+		label = "HOMEROW_MOD_SLOW_W_MACRO";
+		#binding-cells = <2>;
+		tapping-term-ms = <240>;
+		quick-tap-ms = <0>;
+		flavor = "balanced";
+		bindings = <&kp>, <&ad_DOT>;
 	};
 
 
@@ -293,25 +315,7 @@
 		flavor = "balanced";
 		bindings = <&kp>, <&m_ls_rs>;
 	};
-	
-	hms_m_x: homerow_mod_x_macro {
-		compatible = "zmk,behavior-hold-tap";
-		label = "HOMEROW_MOD_SLOW_X_MACRO";
-		#binding-cells = <2>;
-		tapping-term-ms = <200>;
-		quick-tap-ms = <0>;
-		flavor = "balanced";
-		bindings = <&kp>, <&ak_X>;
-	};
-	
-	hm_m_c: homerow_mod_c_macro {
-		compatible = "zmk,behavior-hold-tap";
-		label = "HOMEROW_MOD_SLOW_C_MACRO";
-		#binding-cells = <2>;
-		tapping-term-ms = <160>;
-		quick-tap-ms = <0>;
-		flavor = "balanced";
-		bindings = <&kp>, <&ak_C>;
-	};
+
+
 
 }; };
