@@ -27,13 +27,13 @@
 #define PRE_QUOTE(x) #x
 #define QUOTE(x) PRE_QUOTE(x)
 
-#define ZMK_ADAPTIVE(char, ...) \
-	AD_SNAME(A): AD_LNAME(A) { \
+#define ZMK_ADAPTIVE(the_key, ...) \
+	AD_SNAME(the_key): AD_LNAME(the_key) { \
 		compatible = "zmk,behavior-antecedent-morph"; \
-		label = QUOTE(AD_LBL(A)); \
+		label = QUOTE(AD_LBL(the_key)); \
 		#binding-cells = <0>; \
 		max-delay-ms = <ADAPTIVE_DELAY>; \
-		defaults = <&kp char>;
+		defaults = <&kp the_key>;
 		__VA_ARGS__ \
 	};
 
