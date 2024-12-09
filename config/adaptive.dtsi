@@ -44,7 +44,7 @@
             label = "ADAPTIVE_Q";
             #binding-cells = <0>;
 			defaults = <&kp Q>;
-            bindings = <&m_dqt, &m_dge>;
+            bindings = <&m_dqt>, <&m_dge>;
 			antecedents = <W E>;
 			max-delay-ms = <ADAPTIVE_DELAY>;
         };
@@ -55,7 +55,7 @@
             label = "ADAPTIVE_W";
             #binding-cells = <0>;
 			defaults = <&kp W>;
-            bindings = <&m_dqt, &m_dge>;
+            bindings = <&m_dqt>, <&m_dge>;
 			antecedents = <W E>;
 			max-delay-ms = <ADAPTIVE_DELAY>;
         };
@@ -63,7 +63,7 @@
 
 	ZMK_ADAPTIVE(E,
 		antecedents = <Q W SEMI FSLH>;
-		bindings = <&m_dqt, &m_dge, &m_gc, &kp B>;
+		bindings = <&m_dqt>, <&m_dge>, <&m_gc>, <&kp B>;
 	)
 
 
