@@ -118,6 +118,118 @@
         )
 
 
+	hms_m_x: homerow_mod_x_macro {
+		compatible = "zmk,behavior-hold-tap";
+		label = "HOMEROW_MOD_SLOW_X_MACRO";
+		#binding-cells = <2>;
+		tapping-term-ms = <200>;
+		quick-tap-ms = <0>;
+		flavor = "balanced";
+		bindings = <&kp>, <&ad_X>;
+	};
+	
+	hm_m_c: homerow_mod_c_macro {
+		compatible = "zmk,behavior-hold-tap";
+		label = "HOMEROW_MOD_SLOW_C_MACRO";
+		#binding-cells = <2>;
+		tapping-term-ms = <160>;
+		quick-tap-ms = <0>;
+		flavor = "balanced";
+		bindings = <&kp>, <&ad_C>;
+	};
+
+
+	hms_m_m: homerow_mod_m_macro {
+		compatible = "zmk,behavior-hold-tap";
+		label = "HOMEROW_MOD_SLOW_M_MACRO";
+		#binding-cells = <2>;
+		tapping-term-ms = <220>;
+		quick-tap-ms = <0>;
+		flavor = "balanced";
+		bindings = <&kp>, <&ad_M>;
+	};
+
+	hms_m_dot: homerow_mod_w_macro {
+		compatible = "zmk,behavior-hold-tap";
+		label = "HOMEROW_MOD_SLOW_W_MACRO";
+		#binding-cells = <2>;
+		tapping-term-ms = <240>;
+		quick-tap-ms = <0>;
+		flavor = "balanced";
+		bindings = <&kp>, <&ad_DOT>;
+	};
+
+	hms_m_lsrs: lsrs_m_macro {
+		compatible = "zmk,behavior-hold-tap";
+		label = "LSRS_SLOW_M_MACRO";
+		#binding-cells = <2>;
+		tapping-term-ms = <220>;
+		quick-tap-ms = <0>;
+		flavor = "balanced";
+		bindings = <&kp>, <&m_ls_rs>;
+	};
+
+
+	
+	ZMK_MACRO_F(m_dba,
+		bindings = <&kp BSPC &kp B &kp A>;
+	)
+
+	ZMK_MACRO_F(m_dbc,
+		bindings = <&kp BSPC &kp B &kp C>;
+	)
+	
+	ZMK_MACRO_F(m_dbs,
+		bindings = <&kp BSPC &kp B &kp S>;
+	)
+
+	ZMK_MACRO_F(m_ddw,
+		bindings = <&kp BSPC &kp D &kp W>;
+	)
+
+	ZMK_MACRO_F(m_djm,
+		bindings = <&kp BSPC &kp J &kp M>;
+	)
+
+	ZMK_MACRO_F(m_dga,
+		bindings = <&macro_tap_time 1>
+			, <&macro_wait_time FT>
+			, <&kp BSPC &kp G &kp A>;
+	)
+
+	ZMK_MACRO_F(m_dge,
+		bindings = <&kp BSPC &kp G &kp E>;
+	)
+
+	ZMK_MACRO_F(m_dgc,
+		bindings = <&kp BSPC &kp G &kp C>;
+	)
+
+	ZMK_MACRO_F(m_dvy,
+		bindings = <&kp BSPC &kp V &kp Y>;
+	)
+
+	ZMK_MACRO_F(m_dg_gr,
+		bindings = <&kp BSPC &kp G &kp GRAVE>;
+	)
+
+	ZMK_MACRO_F(m_dkk,
+		bindings = <&kp BSPC &kp Y>;
+	)
+
+	ZMK_MACRO_F(m_dqt,
+		bindings = <&kp BSPC &kp SQT>;
+	)
+
+	ZMK_MACRO_F(m_mk,
+		bindings = <&kp M &kp K>;
+	)
+
+	ZMK_MACRO_F(m_gc,
+		bindings = <&kp G &kp C>;
+	)
+
+
 	slad: adaptive_l {
 		compatible = "zmk,behavior-sticky-key";
 		label = "SL_AL";
@@ -203,119 +315,4 @@
 	ZMK_MACRO_VF(ak_DOT,
 		bindings = <&kp DOT &slad AL_DOT>;
 	)
-
-
-	ZMK_MACRO_F(m_dba,
-		bindings = <&kp BSPC &kp B &kp A>;
-	)
-
-	ZMK_MACRO_F(m_dbc,
-		bindings = <&kp BSPC &kp B &kp C>;
-	)
-	
-	ZMK_MACRO_F(m_dbs,
-		bindings = <&kp BSPC &kp B &kp S>;
-	)
-
-	ZMK_MACRO_F(m_ddw,
-		bindings = <&kp BSPC &kp D &kp W>;
-	)
-
-	ZMK_MACRO_F(m_djm,
-		bindings = <&kp BSPC &kp J &kp M>;
-	)
-
-	ZMK_MACRO_F(m_dga,
-		bindings = <&macro_tap_time 1>
-			, <&macro_wait_time FT>
-			, <&kp BSPC &kp G &kp A>;
-	)
-
-	ZMK_MACRO_F(m_dge,
-		bindings = <&kp BSPC &kp G &kp E>;
-	)
-
-	ZMK_MACRO_F(m_dgc,
-		bindings = <&kp BSPC &kp G &kp C>;
-	)
-
-	ZMK_MACRO_F(m_dvy,
-		bindings = <&kp BSPC &kp V &kp Y>;
-	)
-
-	ZMK_MACRO_F(m_dg_gr,
-		bindings = <&kp BSPC &kp G &kp GRAVE>;
-	)
-
-	ZMK_MACRO_F(m_dkk,
-		bindings = <&kp BSPC &kp Y>;
-	)
-
-	ZMK_MACRO_F(m_dqt,
-		bindings = <&kp BSPC &kp SQT>;
-	)
-
-	ZMK_MACRO_F(m_mk,
-		bindings = <&kp M &kp K>;
-	)
-
-	ZMK_MACRO_F(m_gc,
-		bindings = <&kp G &kp C>;
-	)
-	
-	hms_m_x: homerow_mod_x_macro {
-		compatible = "zmk,behavior-hold-tap";
-		label = "HOMEROW_MOD_SLOW_X_MACRO";
-		#binding-cells = <2>;
-		tapping-term-ms = <200>;
-		quick-tap-ms = <0>;
-		flavor = "balanced";
-		bindings = <&kp>, <&ad_X>;
-	};
-
-	
-	hm_m_c: homerow_mod_c_macro {
-		compatible = "zmk,behavior-hold-tap";
-		label = "HOMEROW_MOD_SLOW_C_MACRO";
-		#binding-cells = <2>;
-		tapping-term-ms = <160>;
-		quick-tap-ms = <0>;
-		flavor = "balanced";
-		bindings = <&kp>, <&ad_C>;
-	};
-
-
-	hms_m_m: homerow_mod_m_macro {
-		compatible = "zmk,behavior-hold-tap";
-		label = "HOMEROW_MOD_SLOW_M_MACRO";
-		#binding-cells = <2>;
-		tapping-term-ms = <220>;
-		quick-tap-ms = <0>;
-		flavor = "balanced";
-		bindings = <&kp>, <&ad_M>;
-	};
-
-	hms_m_dot: homerow_mod_w_macro {
-		compatible = "zmk,behavior-hold-tap";
-		label = "HOMEROW_MOD_SLOW_W_MACRO";
-		#binding-cells = <2>;
-		tapping-term-ms = <240>;
-		quick-tap-ms = <0>;
-		flavor = "balanced";
-		bindings = <&kp>, <&ad_DOT>;
-	};
-
-
-	hms_m_lsrs: lsrs_m_macro {
-		compatible = "zmk,behavior-hold-tap";
-		label = "LSRS_SLOW_M_MACRO";
-		#binding-cells = <2>;
-		tapping-term-ms = <220>;
-		quick-tap-ms = <0>;
-		flavor = "balanced";
-		bindings = <&kp>, <&m_ls_rs>;
-	};
-
-
-
 }; };
