@@ -39,24 +39,16 @@
 
 
 / { behaviors {
-	ad_Q: adaptive_q {
-            compatible = "zmk,behavior-antecedent-morph";
-            label = "ADAPTIVE_Q";
-            #binding-cells = <0>;
-			defaults = <&kp Q>;
-            bindings = <&m_dqt>, <&m_dge>;
-			antecedents = <W E>;
-			max-delay-ms = <ADAPTIVE_DELAY>;
+	ZMK_ADAPTIVE(_Q:
+		defaults = <&kp Q>;
+		antecedents = <W E>;
+		bindings = <&m_dqt>, <&m_dge>;
         };
 
-	ad_W: adaptive_w {
-            compatible = "zmk,behavior-antecedent-morph";
-            label = "ADAPTIVE_W";
-            #binding-cells = <0>;
-			defaults = <&kp W>;
-            bindings = <&m_dqt>, <&m_dge>;
-			antecedents = <W E>;
-			max-delay-ms = <ADAPTIVE_DELAY>;
+	ZMK_ADAPTIVE(_W
+		defaults = <&kp W>;
+		antecedents = <W E>;
+		bindings = <&m_dqt>, <&m_dge>;
         };
 
 	ZMK_ADAPTIVE(_E,
@@ -64,6 +56,8 @@
 		antecedents = <Q W SEMI FSLH>;
 		bindings = <&m_dqt>, <&m_dge>, <&m_gc>, <&kp B>;
 	)
+
+
 
 
 	slad: adaptive_l {
