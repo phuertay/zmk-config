@@ -60,6 +60,10 @@
 			max-delay-ms = <ADAPTIVE_DELAY>;
         };
 
+	ZMK_ADAPTIVE(F,
+		antecedents = <Q>;
+		bindings = <&m_dqt>;
+	)
 
 	ZMK_ADAPTIVE(E,
 		antecedents = <Q W SEMI FSLH>;
