@@ -33,7 +33,7 @@
 		label = QUOTE(AD_LBL(the_key)); \
 		#binding-cells = <0>; \
 		max-delay-ms = <ADAPTIVE_DELAY>; \
-		defaults = <&kp the_key>;
+		defaults = <&kp the_key>; \
 		__VA_ARGS__ \
 	};
 
