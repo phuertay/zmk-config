@@ -24,8 +24,8 @@
 #define AD_SNAME(A) ad_ ## A
 #define AD_LNAME(A) adaptive_ ## A
 #define AD_LBL(A) ADAPTIVE_ ## A
-#define Q(x) #x
-#define QUOTE(x) Q(x)
+#define PRE_QUOTE(x) #x
+#define QUOTE(x) PRE_QUOTE(x)
 
 #define ZMK_ADAPTIVE(char, ...) \
 	AD_SNAME(A): AD_LNAME(A) { \
@@ -33,9 +33,10 @@
 		label = QUOTE(AD_LBL(A)); \
 		#binding-cells = <0>; \
 		max-delay-ms = <ADAPTIVE_DELAY>; \
-		defaults = <&kp name>;
+		defaults = <&kp char>;
 		__VA_ARGS__ \
 	};
+
 
 / { behaviors {
 	ad_Q: adaptive_q {
