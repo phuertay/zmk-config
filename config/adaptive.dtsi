@@ -31,7 +31,6 @@
 #define ZMK_ADAPTIVE(the_key,...) \
 	AD_SNAME(the_key): AD_LNAME(the_key) { \
 		compatible = "zmk,behavior-antecedent-morph"; \
-		label = QUOTE(AD_LBL(the_key)); \
 		#binding-cells = <0>; \
 		max-delay-ms = <ADAPTIVE_DELAY>; \
 		__VA_ARGS__ \
