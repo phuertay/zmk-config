@@ -39,13 +39,13 @@
 
 
 / { behaviors {
-	ZMK_ADAPTIVE(_Q:
+	ZMK_ADAPTIVE(_Q,
 		defaults = <&kp Q>;
 		antecedents = <W E>;
 		bindings = <&m_dqt>, <&m_dge>;
         };
 
-	ZMK_ADAPTIVE(_W
+	ZMK_ADAPTIVE(_W,
 		defaults = <&kp W>;
 		antecedents = <W E>;
 		bindings = <&m_dqt>, <&m_dge>;
