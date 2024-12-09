@@ -105,8 +105,8 @@
 		bindings = <&kp G>, <&kp J>;
 	)
 
-	ZMK_ADAPTIVE(_FLSH,
-		defaults = <&kp FLSH>;
+	ZMK_ADAPTIVE(_FSLH,
+		defaults = <&kp FSLH>;
 		antecedents = <A S C M>;
 		bindings = <&m_dba>, <&m_dbs>, <&m_dbc>, <&m_djm>;
 	)
