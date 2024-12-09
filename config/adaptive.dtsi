@@ -21,9 +21,10 @@
 			__VA_ARGS__ \
 		};
 
-#define AD_SNAME(A) ad_ ## A
-#define AD_LNAME(A) adaptive_ ## A
-#define AD_LBL(A) ADAPTIVE_ ## A
+#define NEV(A) ## A
+#define AD_SNAME(A) ad_ ## NEV(A)
+#define AD_LNAME(A) adaptive_ ## NEV(A)
+#define AD_LBL(A) ADAPTIVE_ ## NEV(A)
 #define PRE_QUOTE(x) #x
 #define QUOTE(x) PRE_QUOTE(x)
 
