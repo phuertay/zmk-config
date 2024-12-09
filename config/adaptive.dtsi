@@ -182,6 +182,10 @@
 		bindings = <&kp BSPC &kp D &kp W>;
 	)
 
+	ZMK_MACRO_F(m_dg_gr,
+		bindings = <&kp BSPC &kp G &kp GRAVE>;
+	)
+
 	ZMK_MACRO_F(m_dga,
 		bindings = <&macro_tap_time 1>
 			, <&macro_wait_time FT>
