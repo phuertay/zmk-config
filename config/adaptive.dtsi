@@ -37,26 +37,20 @@
 / { behaviors {
 	ZMK_ADAPTIVE(_Q,
 		defaults = <&kp Q>;
-		antecedents = <E W>;
-		bindings = <&m_dge>, <&m_dqt>;
+		antecedents = <E M>;
+		bindings = <&kp G>, <&kp G>;
         )
 
 	ZMK_ADAPTIVE(_W,
 		defaults = <&kp W>;
-		antecedents = <E W>;
-		bindings = <&m_dkk>, <&m_dqt>;
+		antecedents = <Q E>;
+		bindings = <&m_dqt>, <&m_ddw>;
         )
 
 	ZMK_ADAPTIVE(_E,
 		defaults = <&kp E>;
-		antecedents = <FSLH Q SEMI W>;
-		bindings = <&kp B>, <&kp G>, <&m_gc>, <&m_ddw>;
-        )
-
-	ZMK_ADAPTIVE(_R,
-		defaults = <&kp R>;
-		antecedents = <E>;
-		bindings = <&kp C>;
+		antecedents = <Q W R>;
+		bindings = <&m_dge>, <&m_dkk>, <&kp C>;
         )
 
 	ZMK_ADAPTIVE(_O,
@@ -65,52 +59,64 @@
 		bindings = <&m_mk>, <&kp L>, <&kp M>;
         )
 
+	ZMK_ADAPTIVE(_U,
+		defaults = <&kp U>;
+		antecedents = <O>;
+		bindings = <&kp M>;
+        )
+
+	ZMK_ADAPTIVE(_I,
+		defaults = <&kp I>;
+		antecedents = <O>;
+		bindings = <&m_mk>;
+        )
+
 	ZMK_ADAPTIVE(_P,
 		defaults = <&kp P>;
 		antecedents = <O>;
-		bindings = <&kp O>;
+		bindings = <&kp L>;
+        )
+
+	ZMK_ADAPTIVE(_A,
+		defaults = <&kp A>;
+		antecedents = <SEMI FSLH>;
+		bindings = <&m_dga>, <&m_dba>;
+        )
+
+	ZMK_ADAPTIVE(_S,
+		defaults = <&kp S>;
+		antecedents = <FSLH>;
+		bindings = <&m_dbs>;
         )
 
 	ZMK_ADAPTIVE(_SEMI,
 		defaults = <&kp SEMI>;
-		antecedents = <A>;
-		bindings = <&m_dga>;
+		antecedents = <E>;
+		bindings = <&m_gc>;
         )
 
 	ZMK_ADAPTIVE(_Z,
 		defaults = <&kp Z>;
-		antecedents = <C FSLH>;
-		bindings = <&m_dgc>, <&kp B>;
-        )
-
-	ZMK_ADAPTIVE(_X,
-		defaults = <&kp X>;
-		antecedents = <Z>;
-		bindings = <&m_dvy>;
+		antecedents = <X C>;
+		bindings = <&m_dvy>, <&kp G>;
         )
 
 	ZMK_ADAPTIVE(_C,
 		defaults = <&kp C>;
-		antecedents = <Z>;
-		bindings = <&kp G>;
+		antecedents = <Z FSLH>;
+		bindings = <&m_dgc>, <&m_dbc>;
         )
 
 	ZMK_ADAPTIVE(_M,
 		defaults = <&kp M>;
-		antecedents = <FSLH Q>;
-		bindings = <&kp J>, <&kp G>;
-        )
-
-	ZMK_ADAPTIVE(_DOT,
-		defaults = <&kp DOT>;
 		antecedents = <FSLH>;
-		bindings = <&kp L>;
+		bindings = <&m_djm>
         )
 
 	ZMK_ADAPTIVE(_FSLH,
 		defaults = <&kp FSLH>;
-		antecedents = <A C M S>;
-		bindings = <&m_dba>, <&m_dbc>, <&m_djm>, <&m_dbs>;
+		antecedents = <E Z M DOT>;
+		bindings = <&kp B>, <&kp B>, <&kp J>, <&kp L>;
         )
 
 
