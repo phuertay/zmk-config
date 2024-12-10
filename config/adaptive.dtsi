@@ -37,8 +37,8 @@
 / { behaviors {
 	ZMK_ADAPTIVE(_Q,
 		defaults = <&kp Q>;
-		antecedents = <E M>;
-		bindings = <&kp G>, <&kp G>;
+		antecedents = <E>;
+		bindings = <&kp G>;
         )
 
 	ZMK_ADAPTIVE(_W,
@@ -115,8 +115,8 @@
 
 	ZMK_ADAPTIVE(_FSLH,
 		defaults = <&kp FSLH>;
-		antecedents = <E Z M DOT>;
-		bindings = <&kp B>, <&kp B>, <&kp J>, <&kp L>;
+		antecedents = <E M DOT>;
+		bindings = <&kp B>, <&kp J>, <&kp L>;
         )
 
 
@@ -182,9 +182,7 @@
 	)
 
 	ZMK_MACRO_F(m_dga,
-		bindings = <&macro_tap_time 1>
-			, <&macro_wait_time FT>
-			, <&kp BSPC &kp G &kp A>;
+		bindings = <&kp BSPC &kp G &kp A>;
 	)
 
 	ZMK_MACRO_F(m_dgc,
