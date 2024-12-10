@@ -53,12 +53,6 @@
 		bindings = <&m_dge>, <&m_dkk>, <&kp C>;
         )
 
-	ZMK_ADAPTIVE(_O,
-		defaults = <&kp O>;
-		antecedents = <I P U>;
-		bindings = <&m_mk>, <&kp L>, <&kp M>;
-        )
-
 	ZMK_ADAPTIVE(_U,
 		defaults = <&kp U>;
 		antecedents = <O>;
@@ -69,6 +63,12 @@
 		defaults = <&kp I>;
 		antecedents = <O>;
 		bindings = <&m_mk>;
+        )
+
+	ZMK_ADAPTIVE(_O,
+		defaults = <&kp O>;
+		antecedents = <I P U>;
+		bindings = <&m_mk>, <&kp L>, <&kp M>;
         )
 
 	ZMK_ADAPTIVE(_P,
