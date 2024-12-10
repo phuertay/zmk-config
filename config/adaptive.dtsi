@@ -101,6 +101,12 @@
 		bindings = <&m_dvy>, <&kp G>;
         )
 
+	ZMK_ADAPTIVE(_X,
+		defaults = <&kp X>;
+		antecedents = <C>;
+		bindings = <&kp Y>;
+        )
+
 	ZMK_ADAPTIVE(_C,
 		defaults = <&kp C>;
 		antecedents = <Z FSLH>;
@@ -138,6 +144,16 @@
 		quick-tap-ms = <0>;
 		flavor = "balanced";
 		bindings = <&kp>, <&ad_C>;
+	};
+
+	hms_m_x: homerow_mod_x_macro {
+		compatible = "zmk,behavior-hold-tap";
+		label = "HOMEROW_MOD_SLOW_X_MACRO";
+		#binding-cells = <2>;
+		tapping-term-ms = <220>;
+		quick-tap-ms = <0>;
+		flavor = "balanced";
+		bindings = <&kp>, <&ad_X>;
 	};
 
 	hms_m_m: homerow_mod_m_macro {
