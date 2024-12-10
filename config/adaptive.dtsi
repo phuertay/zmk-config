@@ -110,7 +110,7 @@
 	ZMK_ADAPTIVE(_M,
 		defaults = <&kp M>;
 		antecedents = <FSLH>;
-		bindings = <&m_djm>
+		bindings = <&m_djm>;
         )
 
 	ZMK_ADAPTIVE(_FSLH,
