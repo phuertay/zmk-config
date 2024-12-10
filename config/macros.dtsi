@@ -31,6 +31,23 @@
             tapping-term-ms = <420>;
             bindings = <&m_phuerta>, <&m_ph>, <&m_pihy>;
 	};
+
+	hms_m_lsrs: lsrs_m_macro {
+		compatible = "zmk,behavior-hold-tap";
+		label = "LSRS_SLOW_M_MACRO";
+		#binding-cells = <2>;
+		tapping-term-ms = <220>;
+		quick-tap-ms = <0>;
+		flavor = "balanced";
+		bindings = <&kp>, <&m_ls_rs>;
+	};
+	
+	ZMK_MACRO_(m_ls_rs,
+		wait-ms = <40>;
+		bindings = <&macro_press &kp LSHFT>,
+				<&macro_tap &kp RSHFT>,
+				<&macro_release &kp LSHFT>;
+	)
 		
 	ZMK_MACRO_(m_eq_sum,
 		bindings = <&kp RBKT &kp S &kp M &kp E &kp MINUS>;
@@ -129,13 +146,6 @@
 		bindings = <&kp SPACE &kp LS(K)>,
 				<&macro_wait_time 9>,
 				<&kp O &kp M &kp L &kp GRAVE &kp DOT>;
-	)
-	
-	ZMK_MACRO_(m_ls_rs,
-		wait-ms = <40>;
-		bindings = <&macro_press &kp LSHFT>,
-				<&macro_tap &kp RSHFT>,
-				<&macro_release &kp LSHFT>;
 	)
 	
 	ZMK_MACRO_(m_calc,
