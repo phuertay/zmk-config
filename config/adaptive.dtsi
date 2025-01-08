@@ -133,7 +133,7 @@
 		tapping-term-ms = <220>;
 		quick-tap-ms = <0>;
 		flavor = "balanced";
-		bindings = <&lt>, <&ad_A>;
+		bindings = <&mo>, <&ad_A>;
 	};
 
 	hm_m_c: homerow_mod_c_macro {
