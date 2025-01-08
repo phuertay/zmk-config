@@ -1,11 +1,11 @@
 manifest:
   remotes:
-    - name: phzmk
+    - name: ph
       url-base: https://github.com/phuertay
   projects:
     - name: zmk
-      remote: phzmk
-      revision: main
+      remote: ph
+      revision: backup
       import: app/west.yml
   self:
     path: config
