@@ -5,7 +5,7 @@ manifest:
   projects:
     - name: zmk
       remote: ph
-      revision: backup
+      revision: main
       import: app/west.yml
   self:
     path: config
