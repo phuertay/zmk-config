@@ -156,6 +156,7 @@
 	
 	ZMK_MACRO_(m_to_steno,
 		bindings = <&tog STENO>,
+				<&out OUT_USB>,
 				<&macro_tap &kp LG(F7)>;
 	)
 	
