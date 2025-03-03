@@ -75,7 +75,7 @@
 				    &hm TILDE RBKT &hm H BSLH									   &kp MINUS		  &kp EQUAL
 						&hmss SPACE GRAVE &lts SPFN_HD BSPC				&lts SPFN_HD ENTER  &kp SPACE
 							&kp LALT &kp DEL				&lay_or_lay NUM_HD_ULTRA NUM_HD_ULTRA &kp LWIN
-							&sl FUNC_MACR &m_calc				&kp C_AC_REFRESH &sl FUNC_HD
+							&sl FUNC_MACR &m_calc				&m_to_steno &sl FUNC_HD
 			>;
 		};
 
@@ -89,7 +89,7 @@
 			&kp RC(ENTER) &hm H RC(X) 												&m_pren    &m_pren_s
 				&kp PLV_A  &kp PLV_O										&kp PLV_E  &kp PLV_U
 					&kp LCTRL &lay_or_lay NUM_HD_ULTRA NUM_HD_ULTRA			&trans &kp LALT
-					&sl FUNC_MACR &m_calc						&kp LG(F7) &sl FUNC_HD
+					&sl FUNC_MACR &m_calc						&m_from_steno &sl FUNC_HD
 			>;
 		};
 
