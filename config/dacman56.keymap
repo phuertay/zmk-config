@@ -327,7 +327,7 @@
 			 &trans	&trans				  			&fm F10 LS(N8) &trans
 				&trans &trans				&kp LS(N8) &lts SPFN_HD TAB
 					&trans &to STENO	&to STENO &trans
-					&trans &trans		&&m_from_steno &trans
+					&trans &trans		&m_from_steno &trans
 			>;
 		};
 
