@@ -8,7 +8,7 @@
 	fn: fn_mod {
 		compatible = "zmk,behavior-hold-tap";
 		label = "F_MOD";
-		tapping-term-ms = <295>;
+		tapping-term-ms = <250>;
 		flavor = "balanced";
 		#binding-cells = <2>;
 		bindings = <&kp>, <&kp>;
