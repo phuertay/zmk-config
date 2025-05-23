@@ -74,7 +74,7 @@
 &hms_m_lsrs LSHFT 0 	&ad_Z		 &hms_m_x LALT 0  &hm_m_c LSHFT 0 &hmms RCTRL V &kp B			&kp N &hms_m_m RCTRL 0	&hmf RSHFT COMMA &hmms LALT DOT &ad_FSLH &hms RSHFT KP_NUM
 				    &hm TILDE RBKT &hm H BSLH									   &kp MINUS		  &kp EQUAL
 						&hmss SPACE GRAVE &lts SPFN_HD BSPC				&lts SPFN_HD ENTER  &kp SPACE
-							&kp LALT &kp DEL			&lay_or_lay NUM_HD_ULTRA NUM_HD_ULTRA &kp LWIN
+							&kp LALT &kp DEL			&lay_or_lay NUM_HD_ULTRA NUM_HD_ULTRA &kp LCTL
 							&sl FUNC_MACR &m_calc			&m_to_steno &sl FUNC_HD
 			>;
 		};
@@ -87,9 +87,9 @@
 &kp PLV_X3  &kp PLV_NM  &kp PLV_TL    &kp PLV_PL &kp PLV_HL 	     &kp PLV_ST 			&kp PLV_ST	&kp PLV_FR		&kp PLV_PR &kp PLV_LR &kp PLV_TR &kp PLV_DR
 &kp PLV_X4  &kp PLV_SL  &kp PLV_KL    &kp PLV_WL &kp PLV_RL 	     &kp PLV_ST 			&kp PLV_ST	&kp PLV_RR		&kp PLV_BR &kp PLV_GR &kp PLV_SR &kp PLV_ZR
 			&kp LSHFT     &hm H RC(X) 										&m_pren    &m_pren_s
-						&kp PLV_A  &kp PLV_O					&kp PLV_E  &kp PLV_U
-							&kp LCTRL &kp DEL			&trans &kp LALT
-							&sl FUNC_MACR &m_calc			&m_from_steno &sl FUNC_HD
+						&kp PLV_A  &kp PLV_O						&kp PLV_E  &kp PLV_U
+								&trans &hms LCTL DEL		&trans &trans
+								&trans &trans			&m_from_steno &trans
 			>;
 		};
 
