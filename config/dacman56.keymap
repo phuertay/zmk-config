@@ -74,8 +74,8 @@
 &hms_m_lsrs LSHFT 0 	&ad_Z		 &hms_m_x LALT 0  &hm_m_c LSHFT 0 &hmms RCTRL V &kp B			&kp N &hms_m_m RCTRL 0	&hmf RSHFT COMMA &hmms LALT DOT &ad_FSLH &hms RSHFT KP_NUM
 				    &hm TILDE RBKT &hm H BSLH									   &kp MINUS		  &kp EQUAL
 						&hmss SPACE GRAVE &lts SPFN_HD BSPC				&lts SPFN_HD ENTER  &kp SPACE
-							&kp LALT &kp DEL				&lay_or_lay NUM_HD_ULTRA NUM_HD_ULTRA &kp LWIN
-							&sl FUNC_MACR &m_calc				&m_to_steno &sl FUNC_HD
+							&kp LALT &kp DEL			&lay_or_lay NUM_HD_ULTRA NUM_HD_ULTRA &kp LWIN
+							&sl FUNC_MACR &m_calc			&m_to_steno &sl FUNC_HD
 			>;
 		};
 
@@ -86,10 +86,10 @@
 &trans	    &kp N1      &kp N2	      &kp N3     &lt NUM_HD_ULTRA N4 &hmss LWIN N5			&hmss RWIN N6	&lt NUM_HD_ULTRA N7     &kp N8     &kp N9	 &kp N0     &fn F12 LS(P)
 &kp PLV_X3  &kp PLV_NM  &kp PLV_TL    &kp PLV_PL &kp PLV_HL 	     &kp PLV_ST 			&kp PLV_ST	&kp PLV_FR		&kp PLV_PR &kp PLV_LR &kp PLV_TR &kp PLV_DR
 &kp PLV_X4  &kp PLV_SL  &kp PLV_KL    &kp PLV_WL &kp PLV_RL 	     &kp PLV_ST 			&kp PLV_ST	&kp PLV_RR		&kp PLV_BR &kp PLV_GR &kp PLV_SR &kp PLV_ZR
-			&kp RC(ENTER) &hm H RC(X) 												&m_pren    &m_pren_s
-				&kp PLV_A  &kp PLV_O										&kp PLV_E  &kp PLV_U
-					&kp LCTRL &lay_or_lay NUM_HD_ULTRA NUM_HD_ULTRA			&trans &kp LALT
-					&sl FUNC_MACR &m_calc						&m_from_steno &sl FUNC_HD
+			&kp LSHFT     &hm H RC(X) 										&m_pren    &m_pren_s
+						&kp PLV_A  &kp PLV_O					&kp PLV_E  &kp PLV_U
+							&kp LCTRL &kp DEL			&trans &kp LALT
+							&sl FUNC_MACR &m_calc			&m_from_steno &sl FUNC_HD
 			>;
 		};
 
@@ -320,14 +320,14 @@
 
 		num_hd_steno_mods {
 			bindings = <
-&trans &trans 	    &trans &trans &trans &trans					&trans &trans &trans &trans &trans &trans
-&trans &trans 	    &trans &trans &trans &trans					&trans &fm F7 LS(N5) &fm F8 LS(N0) &fm F9 LS(N1) &fm F12 N &trans
-&trans &lts LCNUM I &trans &trans &trans &trans					&trans &fm F1 LS(N3) &fm F2 LS(N7) &fm F3 LS(N2) &trans &trans
-&trans &trans 	    &trans &trans &trans &trans					&trans &fm F4 LS(N9) &fm F5 LS(N4) &fm F6 LS(N6) &trans &trans
-			 &trans	&trans				  			&fm F10 LS(N8) &trans
-				&trans &trans				&kp LS(N8) &lts SPFN_HD TAB
-					&trans &to STENO	&to STENO &trans
-					&trans &trans		&m_from_steno &trans
+&trans		&trans 	     &trans &trans &trans &trans				&trans &trans &trans &trans &trans &trans
+&trans		&trans 	     &trans &trans &trans &trans				&trans &fm F7 LS(N5) &fm F8 LS(N0) &fm F9 LS(N1) &fm F12 N &trans
+&cesc RCTRL ESC &lts LCNUM I &trans &trans &trans &trans				&trans &fm F1 LS(N3) &fm F2 LS(N7) &fm F3 LS(N2) &trans &trans
+&trans		&trans 	     &trans &trans &trans &trans				&trans &fm F4 LS(N9) &fm F5 LS(N4) &fm F6 LS(N6) &trans &trans
+			 &trans	&trans				  				&fm F10 LS(N8) &trans
+				&trans &trans						&kp LS(N8) &lts SPFN_HD TAB
+						&trans &trans			&to STENO &trans
+						&trans &trans			&m_from_steno &trans
 			>;
 		};
 
