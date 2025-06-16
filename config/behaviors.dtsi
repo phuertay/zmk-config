@@ -126,14 +126,14 @@
 		bindings = <&mo>, <&tog>;
 	};
 
-	lay_or_lay_s_F21: layer_or_layer_signalled {
+	lay_or_lay_s_F18: layer_or_layer_signalled {
 		compatible = "zmk,behavior-hold-tap";
 		#binding-cells = <2>;
 		tapping-term-ms = <156>;
 		quick-tap-ms = <0>;
 		flavor = "balanced";			// hold behavior when tapping-term-ms has expired or another key is pressed and released
 		bindings = 
-			<&mo_s_LGF21>, <&tog_s_LGF21>;
+			<&mo_s_LGF18>, <&tog_s_LGF18>;
 	};
 
 	hm_m_cspfn: homerow_mod_cspfn {
