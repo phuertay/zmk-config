@@ -161,7 +161,7 @@
 				<&macro_release &kp PLV_PL &kp PLV_RL &kp PLV_E &kp PLV_PR &kp PLV_BR &kp PLV_ST>;
 	)
 
-	mo_s:  {
+	mo_s: mo_s {
 	    compatible = "zmk,behavior-macro-two-param";
 	    wait-ms = <0>;
 	    tap-ms = <0>;
@@ -175,7 +175,7 @@
 	        , <&macro_release &mo MACRO_PLACEHOLDER>;
 	};
 
-	tog_s:  {
+	tog_s: tog_s {
 	    compatible = "zmk,behavior-macro-two-param";
 	    wait-ms = <0>;
 	    tap-ms = <0>;
