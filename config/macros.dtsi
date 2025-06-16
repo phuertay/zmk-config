@@ -172,7 +172,11 @@
 	        , <&macro_press &mo MACRO_PLACEHOLDER>
 	        , <&macro_pause_for_release>
 	        , <&macro_param_1to1>
-	        , <&macro_release &mo MACRO_PLACEHOLDER>;
+	        , <&macro_release &mo MACRO_PLACEHOLDER>
+	        , <&macro_press &kp LSHFT>
+		, <&macro_param_2to1>
+		, <&kp MACRO_PLACEHOLDER>,
+		, <&macro_release &kp LSHFT>;
 	};
 
 	tog_s: tog_s {
