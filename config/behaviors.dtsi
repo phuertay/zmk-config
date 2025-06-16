@@ -126,7 +126,7 @@
 		bindings = <&mo>, <&tog>;
 	};
 
-	lay_or_lay_s: layer_or_layer_signalled {
+	lay_or_lay_s_F21: layer_or_layer_signalled {
 		compatible = "zmk,behavior-hold-tap";
 		#binding-cells = <2>;
 		tapping-term-ms = <156>;
