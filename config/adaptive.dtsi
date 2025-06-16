@@ -128,7 +128,6 @@
 
 	hms_m_a: homerow_mod_a_macro {
 		compatible = "zmk,behavior-hold-tap";
-		label = "HOMEROW_MOD_SLOW_A_MACRO";
 		#binding-cells = <2>;
 		tapping-term-ms = <220>;
 		quick-tap-ms = <0>;
@@ -138,7 +137,6 @@
 
 	hm_m_c: homerow_mod_c_macro {
 		compatible = "zmk,behavior-hold-tap";
-		label = "HOMEROW_MOD_SLOW_C_MACRO";
 		#binding-cells = <2>;
 		tapping-term-ms = <160>;
 		quick-tap-ms = <0>;
@@ -148,7 +146,6 @@
 
 	hms_m_x: homerow_mod_x_macro {
 		compatible = "zmk,behavior-hold-tap";
-		label = "HOMEROW_MOD_SLOW_X_MACRO";
 		#binding-cells = <2>;
 		tapping-term-ms = <220>;
 		quick-tap-ms = <0>;
@@ -158,7 +155,6 @@
 
 	hms_m_m: homerow_mod_m_macro {
 		compatible = "zmk,behavior-hold-tap";
-		label = "HOMEROW_MOD_SLOW_M_MACRO";
 		#binding-cells = <2>;
 		tapping-term-ms = <220>;
 		quick-tap-ms = <0>;
