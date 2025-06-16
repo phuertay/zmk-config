@@ -142,7 +142,7 @@
 	lay_or_lay_s: layer_or_layer_signalled {
 		compatible = "zmk,behavior-hold-tap";
 		label = "K_OR_NUM_SIG";
-		#binding-cells = <3>;
+		#binding-cells = <2>;
 		tapping-term-ms = <156>;
 		quick-tap-ms = <0>;
 		flavor = "balanced";			// hold behavior when tapping-term-ms has expired or another key is pressed and released
