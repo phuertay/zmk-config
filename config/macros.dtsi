@@ -179,7 +179,7 @@
 	};
 
 	mo_s_LGF21: mo_s_F21 {
-	    compatible = "zmk,behavior-macro-two-param";
+	    compatible = "zmk,behavior-macro-one-param";
 	    wait-ms = <0>;
 	    tap-ms = <0>;
 	    #binding-cells = <1>;
@@ -204,7 +204,7 @@
 	};
 
 	tog_s_LGF21: tog_s_F21 {
-	    compatible = "zmk,behavior-macro-two-param";
+	    compatible = "zmk,behavior-macro-one-param";
 	    wait-ms = <0>;
 	    tap-ms = <0>;
 	    #binding-cells = <1>;
@@ -226,7 +226,7 @@
 
 
 	to_s_LGF21: to_s_F21 {
-	    compatible = "zmk,behavior-macro-two-param";
+	    compatible = "zmk,behavior-macro-one-param";
 	    wait-ms = <0>;
 	    tap-ms = <0>;
 	    #binding-cells = <1>;
