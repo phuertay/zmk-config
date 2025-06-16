@@ -175,7 +175,7 @@
 	        , <&macro_release &mo MACRO_PLACEHOLDER>
 	        , <&macro_press &kp LSHFT>
 		, <&macro_param_2to1>
-		, <&kp MACRO_PLACEHOLDER>,
+		, <&kp MACRO_PLACEHOLDER>
 		, <&macro_release &kp LSHFT>;
 	};
 
