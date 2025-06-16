@@ -147,7 +147,7 @@
 		quick-tap-ms = <0>;
 		flavor = "balanced";			// hold behavior when tapping-term-ms has expired or another key is pressed and released
 		bindings = 
-			<&mo_s LG(F21)>, <&tog_s LG(F21)>;
+			<&mo_s_LGF21>, <&tog_s_LGF21>;
 	};
 
 	hm_m_cspfn: homerow_mod_cspfn {
