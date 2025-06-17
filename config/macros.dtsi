@@ -132,12 +132,12 @@
 	ZMK_MACRO_(m_to_steno,
 		bindings = <&tog STENO>,
 				<&out OUT_USB>,
-				<&macro_tap &kp LG(F7)>;
+				<&macro_tap &kp steno_on>;
 	)
 	
 	ZMK_MACRO_(m_from_steno,
 		bindings = <&tog STENO>,
-				<&macro_tap &kp LS(LG(F7))>;
+				<&macro_tap &kp steno_off>;
 	)
 
 	ZMK_MACRO_(m_plo_look,
@@ -182,27 +182,27 @@
 	        , <&macro_tap &tog MACRO_PLACEHOLDER>;
 	};
 
-	tog_s_LGF18: tog_s_F18 {
+	tog_s_num: tog_s_num {
 	    compatible = "zmk,behavior-macro-one-param";
 	    wait-ms = <0>;
 	    tap-ms = <0>;
 	    #binding-cells = <1>;
-	    bindings = <&macro_tap &kp LG(F18)>
+	    bindings = <&macro_tap &kp numpad_on>
 		, <&macro_param_1to1>
-	        , <&macro_tap &tog MACRO_PLACEHOLDER>;
+	        , <&macro_tap &tog_on MACRO_PLACEHOLDER>;
 	};
 
-	mo_s_LGF18: mo_s_F18 {
+	mo_s_num: mo_s_num {
 	    compatible = "zmk,behavior-macro-one-param";
 	    wait-ms = <0>;
 	    tap-ms = <0>;
 	    #binding-cells = <1>;
-	    bindings = <&macro_tap &kp LG(F18)>
+	    bindings = <&macro_tap &kp numpad_on>
 		, <&macro_param_1to1>
 	        , <&macro_press &mo MACRO_PLACEHOLDER>
 	        , <&macro_pause_for_release>
 	        , <&macro_param_1to1>
 	        , <&macro_release &mo MACRO_PLACEHOLDER>
-	        , <&macro_press &kp LC(LG(F18))>;
+	        , <&macro_press &kp numpad_off>;
 	};
 }; };
