@@ -326,7 +326,7 @@
 &trans		&trans 	     &trans &trans &trans &trans				&trans &fm F4 LS(N9) &fm F5 LS(N4) &fm F6 LS(N6) &trans &trans
 			 &trans	&trans				  				&fm F10 LS(N8) &trans
 				&trans &trans						&kp LS(N8) &lts SPFN_HD TAB
-						&trans &trans			&to_s STENO LG(F7) &trans
+						&trans &trans			&to_s STENO LC(LG(F18)) &trans
 						&trans &trans			&m_from_steno &trans
 			>;
 		};
