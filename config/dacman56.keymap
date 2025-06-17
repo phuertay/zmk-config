@@ -5,6 +5,12 @@
 #include <dt-bindings/zmk/outputs.h>
 
 
+#define steno_on LG(F7)
+#define steno_off LS(LG(F7))
+#define numpad_on LG(F18)
+#define numpad_off LC(LG(F18))
+
+
 #define DEFAULT_HD 0
 #define STENO 1
 #define AL_Q 2
@@ -74,7 +80,7 @@
 &hms_m_lsrs LSHFT 0 	&ad_Z		 &hms_m_x LALT 0  &hm_m_c LSHFT 0 &hmms RCTRL V &kp B			&kp N &hms_m_m RCTRL 0	&hmf RSHFT COMMA &hmms LALT DOT &ad_FSLH &hms RSHFT KP_NUM
 				    &hm TILDE RBKT &hm H BSLH									   &kp MINUS		  &kp EQUAL
 						&hmss SPACE GRAVE &lts SPFN_HD BSPC				&lts SPFN_HD ENTER  &kp SPACE
-							&kp LALT &hms LCTL DEL			&lay_or_lay_s_F18 NUM_HD_ULTRA NUM_HD_ULTRA &kp LCTL
+							&kp LALT &hms LCTL DEL			&lay_or_lay_s_num NUM_HD_ULTRA NUM_HD_ULTRA &kp LCTL
 							&sl FUNC_MACR &m_calc			&m_to_steno &sl FUNC_HD
 			>;
 		};
@@ -297,7 +303,7 @@
 &m_excel_go_to &kp LSHFT &hms LALT ESC	&hms LSHFT RC(DEL)  &hms RCTRL RC(BSPC) &kp LA(N7)				&kp LS(INS)	&fm F4 KP_N4 &fm F5 KP_N5 &fm F6 KP_N6 	&td_plus_sum	&lay_or_lay DEFAULT_HD_2 NUM_HD
 						 &kp RC(ENTER)	&hm H RC(X)									 &fm F10 KP_DOT &fm F11 H
 								&kp SPACE &lts SPFN_HD BSPC				&kp KP_N0 &lts SPFN_HD TAB
-											&trans &kp DEL		&to_s DEFAULT_HD LC(LG(F18)) &trans
+											&trans &kp DEL		&to_s DEFAULT_HD numpad_off &trans
 											&trans &trans		&m_to_steno &trans
 			>;
 		};
@@ -326,7 +332,7 @@
 &trans		&trans 	     &trans &trans &trans &trans				&trans &fm F4 LS(N9) &fm F5 LS(N4) &fm F6 LS(N6) &trans &trans
 			 &trans	&trans				  				&fm F10 LS(N8) &trans
 				&trans &trans						&kp LS(N8) &lts SPFN_HD TAB
-						&trans &trans			&to_s STENO LC(LG(F18)) &trans
+						&trans &trans			&to_s STENO numpad_off &trans
 						&trans &trans			&m_from_steno &trans
 			>;
 		};
