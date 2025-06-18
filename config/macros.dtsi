@@ -130,13 +130,14 @@
 	)
 	
 	ZMK_MACRO_(m_to_steno,
-		bindings = <&tog STENO>,
+		bindings = <&tog_on STENO>,
 				<&out OUT_USB>,
 				<&macro_tap &kp steno_on>;
 	)
 	
 	ZMK_MACRO_(m_from_steno,
-		bindings = <&tog STENO>,
+		bindings = <&tog_off STENO>,
+				<&out OUT_USB>,
 				<&macro_tap &kp steno_off>;
 	)
 
