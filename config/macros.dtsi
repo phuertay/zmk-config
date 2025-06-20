@@ -130,15 +130,15 @@
 	)
 
 	ZMK_MACRO_(m_las_n2,
-		bindings = <&macro_tap LALT &kp LS(N2)>;
+		bindings = <&kp LALT &kp LS(N2)>;
 	)
 
 	ZMK_MACRO_(m_las_n3,
-		bindings = <&macro_tap LALT &kp LS(N3)>;
+		bindings = <&kp LALT &kp LS(N3)>;
 	)
 
 	ZMK_MACRO_(m_las_n7,
-		bindings = <&macro_tap LALT &kp LS(N7)>;
+		bindings = <&kp LALT &kp LS(N7)>;
 	)
 	
 	ZMK_MACRO_(m_to_steno,
