@@ -111,7 +111,7 @@
 				<&macro_release &mo SPFN_HD &kp RCTRL>;
 	)
 	
-	ZMK_MACRO_(m_paste_t,
+	ZMK_MACRO_(m_paste_transp,
 		wait-ms = <40>;
 		bindings = <&kp RC(LA(FSLH)) &kp LA(FSLH) &kp K &kp ENTER>;
 	)
