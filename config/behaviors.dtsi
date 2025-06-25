@@ -160,8 +160,7 @@
 		flavor = "hold-preferred";		// hold behavior when tapping-term-ms expired or another key is pressed
             	require-prior-idle-ms = <idle_time_homerow>;
 		tapping-term-ms = <300>;
-		bindings = <&kp>, <&mo_s_num>;
-		retro-tap;						// tap behavior triggered when releasing if no other key was pressed
+		bindings = <&kp>, <&tog_s_num>;
 	};
 
 	hm_m_cspfn: homerow_mod_cspfn {
