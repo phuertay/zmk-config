@@ -146,7 +146,6 @@
 			<&mo_s_num>, <&tog_s_num>;
 	};
 
-
 	lt_s: layer_or_tap_signal {
 		compatible = "zmk,behavior-hold-tap";
 		#binding-cells = <2>;
@@ -155,6 +154,16 @@
 		flavor = "balanced";			// hold behavior when tapping-term-ms has expired or another key is pressed and released
 		bindings = 
 			<&mo_s_num>, <&kp>;
+	};
+
+	tl_s: tap_or_layer_signal {
+		compatible = "zmk,behavior-hold-tap";
+		#binding-cells = <2>;
+		tapping-term-ms = <156>;
+		quick-tap-ms = <0>;
+		flavor = "balanced";			// hold behavior when tapping-term-ms has expired or another key is pressed and released
+		bindings = 
+			<&kp>, <&mo_s_num>;
 	};
 
 	hm_m_cspfn: homerow_mod_cspfn {
