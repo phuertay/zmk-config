@@ -159,11 +159,11 @@
 	tl_s: tap_or_layer_signal {
 		compatible = "zmk,behavior-hold-tap";
 		#binding-cells = <2>;
-		tapping-term-ms = <156>;
-		quick-tap-ms = <0>;
-		flavor = "balanced";			// hold behavior when tapping-term-ms has expired or another key is pressed and released
-		bindings = 
-			<&kp>, <&mo_s_num>;
+		flavor = "hold-preferred";		// hold behavior when tapping-term-ms expired or another key is pressed
+            	require-prior-idle-ms = <idle_time_homerow>;
+		tapping-term-ms = <500>;
+		bindings = <&kp>, <&mo_s_num>;
+		retro-tap;						// tap behavior triggered when releasing if no other key was pressed
 	};
 
 	hm_m_cspfn: homerow_mod_cspfn {
