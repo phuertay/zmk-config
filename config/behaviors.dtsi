@@ -2,7 +2,7 @@
 	release-after-ms = <1500>;
 };
 
-#define idle_time_homerow 150
+#define idle_time_homerow 120
 
 / { behaviors {
 	// Hold-tap for F-keys
