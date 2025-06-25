@@ -142,8 +142,7 @@
 		tapping-term-ms = <156>;
 		quick-tap-ms = <0>;
 		flavor = "balanced";			// hold behavior when tapping-term-ms has expired or another key is pressed and released
-		bindings = 
-			<&mo_s_num>, <&tog_s_num>;
+		bindings = <&mo_s_num>, <&tog_s_num>;
 	};
 
 	lt_s: layer_or_tap_signal {
@@ -152,8 +151,7 @@
 		tapping-term-ms = <156>;
 		quick-tap-ms = <0>;
 		flavor = "balanced";			// hold behavior when tapping-term-ms has expired or another key is pressed and released
-		bindings = 
-			<&mo_s_num>, <&kp>;
+		bindings = <&mo_s_num>, <&kp>;
 	};
 
 	tl_s: tap_or_layer_signal {
@@ -161,7 +159,7 @@
 		#binding-cells = <2>;
 		flavor = "hold-preferred";		// hold behavior when tapping-term-ms expired or another key is pressed
             	require-prior-idle-ms = <idle_time_homerow>;
-		tapping-term-ms = <500>;
+		tapping-term-ms = <300>;
 		bindings = <&kp>, <&mo_s_num>;
 		retro-tap;						// tap behavior triggered when releasing if no other key was pressed
 	};
