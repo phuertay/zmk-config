@@ -159,7 +159,7 @@
 		#binding-cells = <2>;
 		flavor = "hold-preferred";		// hold behavior when tapping-term-ms expired or another key is pressed
             	require-prior-idle-ms = <idle_time_homerow>;
-		tapping-term-ms = <300>;
+		tapping-term-ms = <180>;
 		bindings = <&kp>, <&tog_s_num>;
 	};
 
