@@ -21,9 +21,4 @@
 #    shield: dacman56_right
 include:
   - board: "nice_nano"
-    shield: dacman56_left
-    snippet: studio-rpc-usb-uart
-  - board: "nice_nano"
-    shield: dacman56_right
-  - board: "nice_nano"
-    shield: settings_reset
+    shield: [ "dacman56_left", "dacman56_right", "settings_reset" ]
