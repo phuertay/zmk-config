@@ -8,7 +8,7 @@
 #define steno_on F17
 #define steno_off LC(F17)
 #define numpad_on F18
-#define numpad_off LC(F18)
+#define numpad_off F19
 
 
 #define DEFAULT_HD 0
