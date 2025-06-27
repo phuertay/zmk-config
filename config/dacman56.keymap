@@ -5,10 +5,10 @@
 #include <dt-bindings/zmk/outputs.h>
 
 
-#define steno_on LG(F7)
-#define steno_off LS(LG(F7))
-#define numpad_on LG(F18)
-#define numpad_off LC(LG(F18))
+#define steno_on LG(F17)
+#define steno_off LS(LG(F17))
+#define numpad_on F18
+#define numpad_off LC(F18)
 
 
 #define DEFAULT_HD 0
