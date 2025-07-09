@@ -3,7 +3,7 @@
 };
 
 #define idle_time_homerow 120
-#define idle_time_homerow_short idle_time_homerow-50
+#define idle_time_homerow_short 70
 
 / { behaviors {
 	// Hold-tap for F-keys
