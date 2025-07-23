@@ -202,6 +202,16 @@
 	        , <&macro_tap &to MACRO_PLACEHOLDER>;
 	};
 
+	to_s_num: to_s_num {
+	    compatible = "zmk,behavior-macro-one-param";
+	    wait-ms = <0>;
+	    tap-ms = <0>;
+	    #binding-cells = <1>;
+	    bindings = <&macro_tap &kp numpad_on>
+		, <&macro_param_1to1>
+	        , <&macro_tap &to MACRO_PLACEHOLDER>;
+	};
+
 	tog_s: tog_s {
 	    compatible = "zmk,behavior-macro-two-param";
 	    wait-ms = <7>;
