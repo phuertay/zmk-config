@@ -155,7 +155,7 @@
 		bindings = <&mo_s_num>, <&kp>;
 	};
 
-	to_tap_s: layer_or_tap_signal {
+	to_tap_s: to_layer_or_tap_signal {
 		compatible = "zmk,behavior-hold-tap";
 		#binding-cells = <2>;
 		tapping-term-ms = <156>;
