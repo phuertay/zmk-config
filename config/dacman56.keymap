@@ -304,7 +304,7 @@
 						 &kp RC(ENTER)	&hm H RC(X)									 &fm F10 KP_DOT &fm F11 H
 								&kp SPACE &lts SPFN_HD BSPC				&kp KP_N0 &lts SPFN_HD TAB
 											&trans &kp DEL		&to_s DEFAULT_HD numpad_off &trans
-											&trans &trans		&m_to_steno &trans
+											&trans &trans		&m_to_steno_np_off &trans
 			>;
 		};
 
@@ -333,7 +333,7 @@
 			 &trans	&trans				  				&fm F10 LS(N8) &trans
 				&trans &trans						&kp LS(N8) &lts SPFN_HD TAB
 						&trans &trans			&to_s STENO numpad_off &trans
-						&trans &trans			&m_from_steno &trans
+						&trans &trans			&m_from_steno_np_off &trans
 			>;
 		};
 
