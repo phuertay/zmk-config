@@ -148,27 +148,19 @@
 	)
 	
 	ZMK_MACRO_(m_to_steno,
-		bindings = <&to STENO>,
-				<&out OUT_USB>,
-				<&macro_tap &kp steno_on>;
+		bindings = <&to STENO, &kp steno_on>;
 	)
 	
 	ZMK_MACRO_(m_from_steno,
-		bindings = <&to DEFAULT_HD>,
-				<&out OUT_USB>,
-				<&macro_tap &kp steno_off>;
+		bindings = <&to DEFAULT_HD &kp steno_off>;
 	)
 	
 	ZMK_MACRO_(m_to_steno_np_off,
-		bindings = <&to STENO>,
-				<&out OUT_USB>,
-				<&macro_tap &kp steno_on &kp numpad_off>;
+		bindings = <&to STENO &kp steno_on &kp numpad_off>;
 	)
 	
 	ZMK_MACRO_(m_from_steno_np_off,
-		bindings = <&to DEFAULT_HD>,
-				<&out OUT_USB>,
-				<&macro_tap &kp steno_off &kp numpad_off>;
+		bindings = <&to DEFAULT_HD &kp steno_off &kp numpad_off>;
 	)
 
 	ZMK_MACRO_(m_plo_look,
