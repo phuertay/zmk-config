@@ -148,15 +148,15 @@
 	)
 	
 	ZMK_MACRO_(m_to_steno,
-		bindings = <&tog_on STENO>,
+		bindings = <&to STENO>,
 				<&out OUT_BLE>,
-				<&macro_tap &kp steno_on>;
+				<&macro_tap &kp steno_on &kp num_off>;
 	)
 	
 	ZMK_MACRO_(m_from_steno,
-		bindings = <&tog_off STENO>,
+		bindings = <&to DEFAULT_HD>,
 				<&out OUT_BLE>,
-				<&macro_tap &kp steno_off>;
+				<&macro_tap &kp steno_off &kp num_off>;
 	)
 
 	ZMK_MACRO_(m_plo_look,
