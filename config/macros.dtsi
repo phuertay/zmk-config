@@ -148,7 +148,7 @@
 	)
 	
 	ZMK_MACRO_(m_to_steno,
-		bindings = <&to STENO, &kp steno_on>;
+		bindings = <&to STENO &kp steno_on>;
 	)
 	
 	ZMK_MACRO_(m_from_steno,
