@@ -27,7 +27,7 @@
 	hms_m_KP_N00: KP_N00_m_macro {
 		compatible = "zmk,behavior-hold-tap";
 		#binding-cells = <2>;
-		tapping-term-ms = <220>;
+		tapping-term-ms = <180>;
 		quick-tap-ms = <0>;
 		flavor = "balanced";
 		bindings = <&kp>, <&m_KP_N00>;
@@ -40,7 +40,7 @@
 	hms_m_N88: N88_m_macro {
 		compatible = "zmk,behavior-hold-tap";
 		#binding-cells = <2>;
-		tapping-term-ms = <220>;
+		tapping-term-ms = <180>;
 		quick-tap-ms = <0>;
 		flavor = "balanced";
 		bindings = <&kp>, <&m_N88>;
