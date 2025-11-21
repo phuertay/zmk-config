@@ -23,6 +23,16 @@
 				<&macro_tap &kp RSHFT>,
 				<&macro_release &kp LSHFT>;
 	)
+
+	ZMK_MACRO_(m_KP_N00,
+		bindings = <&kp KP_N0 &kp KP_N0>;
+	)
+
+	ZMK_MACRO_(m_N88,
+		bindings = <&macro_press &kp LSHFT>,
+				<&kp N8 &kp N8>;,
+				<&macro_release &kp LSHFT>;
+	)
 		
 	ZMK_MACRO_(m_eq_sum,
 		bindings = <&kp RBKT &kp S &kp M &kp E &kp MINUS>;
