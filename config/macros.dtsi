@@ -43,7 +43,7 @@
 		tapping-term-ms = <220>;
 		quick-tap-ms = <0>;
 		flavor = "balanced";
-		bindings = <&kp>, <&m_KP_N00>;
+		bindings = <&kp>, <&m_N88>;
 	};
 
 	ZMK_MACRO_(m_N88,
