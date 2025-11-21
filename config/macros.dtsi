@@ -30,7 +30,7 @@
 
 	ZMK_MACRO_(m_N88,
 		bindings = <&macro_press &kp LSHFT>,
-				<&kp N8 &kp N8>;,
+				<&kp N8 &kp N8>,
 				<&macro_release &kp LSHFT>;
 	)
 		
