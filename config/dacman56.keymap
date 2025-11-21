@@ -302,7 +302,7 @@
 &trans			    &lts_tp LCNUM KP_DOT &kp LEFT	   &kp DOWN 	  &kp RIGHT 	  &m_las_n3						&kp RC(INS) &fm F1 KP_N1 &fm F2 KP_N2  &fm F3 KP_N3    &fm TAB ENTER	&fm F24 EQUAL
 &to_s DEFAULT_HD numpad_off &kp LSHFT	     &hms LALT ESC &hms LSHFT RC(DEL) &hms RCTRL RC(BSPC) &m_las_n7			&kp LS(INS) &fm F4 KP_N4 &fm F5 KP_N5  &fm F6 KP_N6    &td_plus_sum	&mo DEFAULT_HD_2
 														 &kp RC(ENTER)	&hm H RC(X)												 &fm F10 KP_DOT &fm F11 H
-																		&kp SPACE &lts SPFN_HD BSPC					&kp KP_0 &hms_m_KP_N00 TAB 0
+																		&kp SPACE &lts SPFN_HD BSPC					&kp KP_N0 &hms_m_KP_N00 TAB 0
 																				&trans &kp DEL					&to_s DEFAULT_HD numpad_off &trans
 																				&trans &trans					&m_to_steno_np_off &trans
 			>;
