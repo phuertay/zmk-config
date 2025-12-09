@@ -93,7 +93,7 @@
 	hmms: homerow_mod_mid_slow {
 		compatible = "zmk,behavior-hold-tap";
 		#binding-cells = <2>;
-		tapping-term-ms = <195>;
+		tapping-term-ms = <210>;
             	require-prior-idle-ms = <idle_time_homerow_short>;
 		quick-tap-ms = <0>;
 		flavor = "balanced";		// hold behavior when tapping-term-ms has expired. tap behavior when another key is pressed
