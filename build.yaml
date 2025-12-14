@@ -20,5 +20,5 @@
 #  - board: nice_nano
 #    shield: dacman56_right
 
-board: [ "nice_nano" ]
+board: [ "nice_nano@1.0.0" ]
 shield: [ "dacman56_left", "dacman56_right", "settings_reset" ]
