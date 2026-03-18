@@ -17,7 +17,7 @@
 include:
   - board: nice_nano@1//zmk
     shield: dacman56_left
-    #snippet: zmk-usb-logging
+    snippet: zmk-usb-logging
   - board: nice_nano@1//zmk
     shield: dacman56_right
   - board: nice_nano@1//zmk
