@@ -160,7 +160,7 @@
 	ZMK_MACRO_(m_equity,
 		wait-ms = <MACRO_WAIT_CHORD>;
 		bindings = <&kp SPACE &kp LS(K)>,
-				<&macro_wait_time MACRO_WAIT_LAYER_SW>,
+				<&macro_wait_time MACRO_WAIT_PAUSE>,
 				<&kp O &kp M &kp L &kp GRAVE &kp DOT>;
 	)
 
@@ -226,7 +226,7 @@
 
 	to_s: to_s {
 		compatible = "zmk,behavior-macro-two-param";
-		wait-ms = <MACRO_WAIT_LAYER_SW>;
+		wait-ms = <MACRO_WAIT_PAUSE>;
 		tap-ms = <MACRO_WAIT_MIN>;
 		#binding-cells = <2>;
 		bindings = <&macro_param_2to1>
@@ -247,7 +247,7 @@
 
 	tog_s: tog_s {
 		compatible = "zmk,behavior-macro-two-param";
-		wait-ms = <MACRO_WAIT_LAYER_SW>;
+		wait-ms = <MACRO_WAIT_PAUSE>;
 		tap-ms = <MACRO_WAIT_MIN>;
 		#binding-cells = <2>;
 		bindings = <&macro_param_2to1>
