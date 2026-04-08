@@ -2,7 +2,7 @@
 #define MACRO_WAIT_DEFAULT        2    // ZMK_MACRO_ wait-ms default
 #define MACRO_TAP_DEFAULT        10    // ZMK_MACRO_ tap-ms default
 
-#define MACRO_WAIT_MIN            1    // minimum meaningful delay; use where 0 was a placeholder
+#define MACRO_WAIT_MIN            0    // minimum meaningful delay; use where 0 was a placeholder
 #define MACRO_WAIT_CHORD         40    // modifier-press macros needing settle time
 #define MACRO_WAIT_PAUSE          7    // mid-macro pause, gap between key and layer switch
 
