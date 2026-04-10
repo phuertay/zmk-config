@@ -155,6 +155,15 @@
 		bindings = <&mo_s_num>, <&kp>;
 	};
 
+	lt_s_tap: layer_or_tap_signal_tap_pref {
+		compatible = "zmk,behavior-hold-tap";
+		#binding-cells = <2>;
+		tapping-term-ms = <136>;
+		quick-tap-ms = <0>;
+		flavor = "tap-preferred";			// hold behavior when tapping-term-ms has expired. tap behavior when another key is pressed
+		bindings = <&mo_s_num>, <&kp>;
+	};
+
 	to_tap_s: to_layer_or_tap_signal {
 		compatible = "zmk,behavior-hold-tap";
 		#binding-cells = <2>;
