@@ -16,8 +16,8 @@
 	name: name { \
 			compatible = "zmk,behavior-macro"; \
 			#binding-cells = <0>; \
-			wait-ms = <2>; \
-			tap-ms = <1>; \
+			wait-ms = <7>; \
+			tap-ms = <2>; \
 			__VA_ARGS__ \
 		};
 
