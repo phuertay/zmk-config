@@ -61,8 +61,8 @@ manifest:
     - name: zmk-hid-io-plover-hid
       remote: petercpark
       revision: main
-      # LAST KNOWN GOOD (fill after first green phase-4 build):
-      # revision:
+      # LAST KNOWN GOOD (verified 2026-06-06 CI): https://github.com/petercpark/zmk-hid-io-plover-hid/commit/d895457418590dddf628c5ae907b39deec7095ff
+      # revision: d895457418590dddf628c5ae907b39deec7095ff
       # LATEST GREEN CI — SHA from West Update after "=== updating zmk-hid-io-plover-hid (zmk-hid-io-plover-hid):"
       # revision: PASTE_FULL_SHA  # zmk-hid-io-plover-hid@main pinned YYYY-MM-DD
   self:
