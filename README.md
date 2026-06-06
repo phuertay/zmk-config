@@ -90,15 +90,17 @@ Renamed from `LCNUM` / `left_ctrl_num_layer` — the layer is nav keys, not a nu
 
 ### `FUNC` layer (settings + macros)
 
-**Activation:** sticky **`&sl FUNC`** on **both** bottom inner thumb keys on `DEFAULT_HD` and `DEFAULT_HD_2` (left: calc/settings side, right: steno side). Tap either thumb to latch; tap again to release.
+**Activation:** sticky **`&sl FUNC`** on **both** bottom inner thumb keys on `DEFAULT_HD` and `DEFAULT_HD_2`. Tap either thumb to latch; tap again to release.
 
-Formerly split into `FUNC_HD` (right sticky) and `FUNC_MACR` (left sticky) with ~90% duplicate bindings. Now one layer:
+Merged from **`FUNC_MACR`** (left sticky) + **`FUNC_HD`** (right sticky). Those were almost identical full layers; the real difference was **which hand** had the unique keys, not different macro nodes:
 
-- **Left half:** bootloader, tap-dance names/emails, macro row (`m_9_16`, …)
-- **Right half:** sys_reset, BT/output, media, browser keys
-- **Thumbs:** `&tog NUM_HD_ULTRA`, **`&m_excel_go_to`**, `&m_9_16`, `&m_to_steno`; `&to DEFAULT_HD`, Insert, SpaceFn toggle
+| Side | Was on `FUNC_MACR` | Was on `FUNC_HD` | Merged `FUNC` |
+|---|---|---|---|
+| Left | `bootloader`, `td_names`, `td_emails` | `sys_reset`, lock keys | Both on rows 1–2 left |
+| Right | BT/output | media, browser keys | Rows 0–3 right |
+| Thumbs | `m_9_16`, `m_to_steno` | Insert, SpaceFn | Macro keys left; home/Insert/SpaceFn right |
 
-**`m_excel_go_to`:** Excel Go To (Ctrl+W) while momentarily showing `DEFAULT_HD_2` for plain-key labels. Previously bound on the **left numpad layer** (`NUM_L_HD`, bottom-right key) and in that layer’s Excel row — that layer was removed; the macro now lives on the **`FUNC`** thumb row.
+Both stickies latch the **same** layer — reach macros on the left hand, settings on the right.
 
 ---
 

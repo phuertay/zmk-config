@@ -56,7 +56,7 @@ Verified **2026-06-06:** ZMK `773dec58…`, urob `e5b335a7…`, petercpark `d895
 |---|---|
 | `phuertay/zmk` + antecedent-morph `&ad_*` | `zmkfirmware/zmk` + urob `&ak_*` |
 | `CONFIG_ZMK_PLOVER_HID` | `CONFIG_ZMK_HID_IO_PLOVER_HID` + `&plv` |
-| `m_excel_go_to` on left numpad (`NUM_L_HD`) | Func thumb + macro (layer removed) |
+| `m_excel_go_to` on left numpad (`NUM_L_HD`) | Removed with left numpad layer |
 | Separate `FUNC_HD` / `FUNC_MACR` stickies | Single **`FUNC`** layer, both thumbs |
 
 Archived planning detail (layer audit, schema mapping) is in git history before this file was trimmed (2026-06).
