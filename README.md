@@ -123,9 +123,25 @@ Keymap bindings look like `&plv PLV_TL`, `&plv PLV_X3`, etc. Include:
 #include <dt-bindings/zmk/hid-io/plover_hid.h>
 ```
 
-Steno mode is toggled via F17 / Ctrl+F17 (`steno_on` / `steno_off`); numpad signaling uses F18 / Ctrl+F18.
+Steno mode is toggled via F17 / Ctrl+F17 (`steno_on` / `steno_off`); numpad signaling uses F18 / Ctrl+F18. Layer-tap behaviors that use `*_s_num` wrappers emit F18 on hold/toggle so host apps can detect numpad mode.
 
-**Plover aliases:** `PLV_X3` and `PLV_X4` map to different HID bit indices than the old fork, but existing Plover aliases (`+-` ← `X3`, `^-` ← `X4`) continue to work. Details in **`docs/vanilla-migration-plan.md`** (Plover HID section).
+---
+
+## Config layout
+
+| File | Role |
+|---|---|
+| `dacman56.keymap` | Layer indices, conditional layers, key bindings |
+| `adaptive.dtsi` | urob `&ak_*` adaptive-key behaviors |
+| `behaviors.dtsi` | Hold-taps, tap dances, Plover `plv`, global `&sl` timeout |
+| `macros.dtsi` | Text/steno macros + F17/F18 signaling helpers (`to_s`, `mo_s_num`, …) |
+| `combos.dtsi` | 18 combos on default layers (+ numpad layers for Tab/Esc) |
+| `dacman56.conf` | Kconfig (HID, adaptive timing, BT/debounce tuning) |
+| `west.yml` | ZMK + module manifest |
+
+Include order in the keymap matters: `combos` → `behaviors` → `macros` → `adaptive`.
+
+--- `PLV_X3` and `PLV_X4` map to different HID bit indices than the old fork, but existing Plover aliases (`+-` ← `X3`, `^-` ← `X4`) continue to work. Details in **`docs/vanilla-migration-plan.md`** (Plover HID section).
 
 ---
 
