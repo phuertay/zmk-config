@@ -50,15 +50,22 @@ Use this when CI turns red after you changed nothing locally — an upstream pus
 
 #### 1. Find the last green build (your config)
 
-1. Open **[phuertay/zmk-config Actions](https://github.com/phuertay/zmk-config/actions)**.
-2. Filter to the **`vanilla`** branch (or whichever branch you build).
-3. Open the most recent **successful** workflow run.
-4. Expand any **Build** job → **West Update** step.
-5. Search the log for `HEAD is now at` under the `zmk` and `zmk-adaptive-key` fetch lines. The short hash (e.g. `773dec5`) is the commit; click through or paste it into the commit URL:
-   - ZMK: `https://github.com/zmkfirmware/zmk/commit/<full-sha>`
-   - urob: `https://github.com/urob/zmk-adaptive-key/commit/<full-sha>`
+1. Open **[phuertay/zmk-config → Actions](https://github.com/phuertay/zmk-config/actions)**.
+2. Click the newest run with a **green checkmark**.
+3. Open any **Build** job, e.g. `Build (nice_nano@1//zmk, dacman56_left)` (right/settings_reset are equivalent).
+4. Expand the **`West Update`** step.
+5. In the log, **Ctrl+F** for the anchor line, then read the **next** `HEAD is now at` line:
 
-The upstream [build-user-config workflow](https://github.com/zmkfirmware/zmk/blob/main/.github/workflows/build-user-config.yml) also prints `ZMK revision: …` after west update, but when `west.yml` says `revision: main` that line shows the string `main`, not the SHA — use the `HEAD is now at` lines instead.
+   | Project | Search for this anchor | Example line after it |
+   |---|---|---|
+   | ZMK | `=== updating zmk (zmk):` | `HEAD is now at 773dec5 docs: …` |
+   | urob | `=== updating zmk-adaptive-key (zmk-adaptive-key):` | `HEAD is now at e5b335a Bump …` |
+
+   Ignore `HEAD is now at` under `zephyr`, `hal_stm32`, `lvgl`, etc.
+
+6. The log shows a **7-character** prefix. Resolve the **full 40-char SHA** on [zmk commits](https://github.com/zmkfirmware/zmk/commits/main) or [urob commits](https://github.com/urob/zmk-adaptive-key/commits/main) — click the matching commit, copy SHA from the URL.
+
+Copy-paste pin lines live in **`config/west.yml`** (header comment + per-project `LAST KNOWN GOOD` / `LATEST GREEN CI` lines).
 
 #### 2. Resolve SHAs locally (optional)
 

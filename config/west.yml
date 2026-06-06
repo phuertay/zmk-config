@@ -1,11 +1,32 @@
 # west.yml — ZMK manifest
 #
-# Pinning (when CI breaks after an upstream push):
-#   1. https://github.com/phuertay/zmk-config/actions → last green run → Build
-#      → "West Update" → search "HEAD is now at" for zmk / zmk-adaptive-key
-#   2. Per project: comment out `revision: main`, uncomment ONE `revision:` line below
-#   3. LAST KNOWN GOOD — pre-filled verified SHAs (2026-06-06)
-#   4. LATEST GREEN CI — replace PASTE_SHA with full 40-char hash from step 1, set date
+# PINNING (when CI breaks and you changed nothing locally)
+# -------------------------------------------------------
+# 1. Open: https://github.com/phuertay/zmk-config/actions
+# 2. Click the newest run with a green checkmark (success).
+# 3. In the left job list, open ANY job named like:
+#      Build (nice_nano@1//zmk, dacman56_left)
+#    (dacman56_right / settings_reset work too — same West Update output)
+# 4. In that job, expand the step:  West Update
+# 5. In the log text box, Ctrl+F and search for the anchor line below.
+#    Take the SHA from the very next "HEAD is now at …" line (7-char prefix).
+# 6. Resolve to a full 40-char SHA:
+#      https://github.com/zmkfirmware/zmk/commits/main
+#      https://github.com/urob/zmk-adaptive-key/commits/main
+#    Click the matching commit; copy SHA from the URL or commit page.
+# 7. In this file: comment out `revision: main` for that project, uncomment
+#    ONE `revision:` line below (LAST KNOWN GOOD or LATEST GREEN CI).
+#
+# ZMK anchor in West Update log:
+#   === updating zmk (zmk):
+#   HEAD is now at 773dec5 docs: Add missing input processor to sidebar (#3372)
+#                                    ^^^^^^^ short SHA — resolve to full on GitHub
+#
+# urob adaptive-key anchor in West Update log:
+#   === updating zmk-adaptive-key (zmk-adaptive-key):
+#   HEAD is now at e5b335a Bump the actions group across 1 directory with 3 updates (#28)
+#
+# Do NOT use "HEAD is now at" lines under zephyr, hal_stm32, lvgl, etc.
 #
 manifest:
   remotes:
@@ -23,16 +44,16 @@ manifest:
       revision: main
       # LAST KNOWN GOOD (verified 2026-06-06): https://github.com/zmkfirmware/zmk/commit/773dec58eaacaef4703b3e4595e50bd71f6cad3d
       # revision: 773dec58eaacaef4703b3e4595e50bd71f6cad3d
-      # LATEST GREEN CI: https://github.com/phuertay/zmk-config/actions
-      # revision: PASTE_SHA  # zmk@main pinned YYYY-MM-DD
+      # LATEST GREEN CI — SHA from West Update after "=== updating zmk (zmk):" (see header)
+      # revision: PASTE_FULL_SHA  # zmk@main pinned YYYY-MM-DD
       import: app/west.yml
     - name: zmk-adaptive-key
       remote: urob
       revision: main
       # LAST KNOWN GOOD (verified 2026-06-06): https://github.com/urob/zmk-adaptive-key/commit/e5b335a7b1076cb122582f5a892b118b02a3be34
       # revision: e5b335a7b1076cb122582f5a892b118b02a3be34
-      # LATEST GREEN CI: https://github.com/phuertay/zmk-config/actions
-      # revision: PASTE_SHA  # zmk-adaptive-key@main pinned YYYY-MM-DD
+      # LATEST GREEN CI — SHA from West Update after "=== updating zmk-adaptive-key (zmk-adaptive-key):" (see header)
+      # revision: PASTE_FULL_SHA  # zmk-adaptive-key@main pinned YYYY-MM-DD
     - name: zmk-keyboard-dacman56
       remote: ph
       revision: main
@@ -42,7 +63,7 @@ manifest:
     #   revision: main
     #   # LAST KNOWN GOOD (fill after first green phase-4 build):
     #   # revision:
-    #   # LATEST GREEN CI: https://github.com/phuertay/zmk-config/actions
-    #   # revision: PASTE_SHA  # zmk-hid-io-plover-hid@main pinned YYYY-MM-DD
+    #   # LATEST GREEN CI — SHA from West Update after "=== updating zmk-hid-io-plover-hid (zmk-hid-io-plover-hid):"
+    #   # revision: PASTE_FULL_SHA  # zmk-hid-io-plover-hid@main pinned YYYY-MM-DD
   self:
     path: config
