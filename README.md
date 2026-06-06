@@ -47,27 +47,24 @@ CONFIG_ZMK_ADAPTIVE_KEY_TAP_MS=2
 
 ---
 
-## Layer map (11 layers)
+## Layer map (10 layers)
 
 | Index | Define | Layer name |
 |---:|---|---|
-| 0 | `DEFAULT_HD` | `default_layer_hd` — primary layout (numpad layer-taps, steno macro) |
+| 0 | `DEFAULT_HD` | `default_layer_hd` — primary (numpad layer-taps, steno macro) |
 | 1 | `STENO` | `steno` |
 | 2 | `NUM_HD_ULTRA` | `numeric_layer_ultra_KP_N` |
 | 3 | `NUM_HD_STENO_MODS` | conditional: steno + ultra numpad |
-| 4 | `LCNUM` | `left_ctrl_num_layer` |
-| 5 | `DEFAULT_HD_2` | `default_layer_hd_2` — alternate default (plain Tab/R, no numpad signals) |
+| 4 | `NAV_OVL` | `nav_overlay_layer` — RC/LA nav cluster overlay |
+| 5 | `DEFAULT_HD_2` | `default_layer_hd_2` — plain Tab/R alt default |
 | 6 | `SPFN_HD` | `spacefn_layer_hd` |
 | 7 | `MOUSE` | `mouse_layer` |
-| 8 | `FUNC_HD` | `function_layer_right` |
-| 9 | `FUNC_MACR` | `function_layer_macros` |
-| 10 | `FUNC_STENO_MODS` | conditional: steno + func layers |
-
-Conditional layers are defined in `config/dacman56.keymap`. Legacy overlay layers (`adaptive_*`) and the left numpad chain were removed during the vanilla migration — see **`docs/vanilla-migration-plan.md`**.
+| 8 | `FUNC` | `function_layer` — settings + macros (merged) |
+| 9 | `FUNC_STENO_MODS` | conditional: steno + func |
 
 ### `DEFAULT_HD` vs `DEFAULT_HD_2`
 
-Both layers share the same adaptive home row (`&ak_*`). **`DEFAULT_HD_2`** is for plain typing without numpad F18 signaling:
+Both share the adaptive home row (`&ak_*`). **`DEFAULT_HD_2`** drops numpad F18 signaling for plain typing:
 
 | | `DEFAULT_HD` | `DEFAULT_HD_2` |
 |---|---|---|
@@ -75,9 +72,33 @@ Both layers share the same adaptive home row (`&ak_*`). **`DEFAULT_HD_2`** is fo
 | R / F | numpad layer-taps | `&kp R`, `&lt NUM_HD_ULTRA F` |
 | RBKT thumb | numpad `to_tap_s` | `&hm TILDE RBKT` |
 | Outer thumb | numpad signal + LCtrl | `&tog NUM_HD_ULTRA`, LWin |
-| Bottom thumb | calc + steno macros | Calc key + refresh |
+| Bottom thumb | calc + steno | Calc key + refresh |
 
-Reach **`DEFAULT_HD_2`** from the ultra numpad layer (`&mo DEFAULT_HD_2` on the bottom-right key). The **`m_excel_go_to`** macro momentarily activates it during Excel Go To (Ctrl+W).
+Reach **`DEFAULT_HD_2`** via `&mo DEFAULT_HD_2` on the ultra numpad bottom-right key.
+
+### `NAV_OVL` (nav overlay)
+
+Momentary overlay with arrow / PgUp / PgDn on the **left-hand nav cluster** (and mirrored trans elsewhere). Hold to activate:
+
+| Trigger | Binding |
+|---|---|
+| Hold **A** homerow | `&hms_m_a NAV_OVL 0` — hold = overlay, tap = `&ak_A` |
+| Hold **.** on ultra numpad | `&lts_tp NAV_OVL KP_DOT` |
+| Hold **I** on steno+numpad mods | `&lts NAV_OVL I` |
+
+Renamed from `LCNUM` / `left_ctrl_num_layer` — the layer is nav keys, not a numpad.
+
+### `FUNC` layer (settings + macros)
+
+**Activation:** sticky **`&sl FUNC`** on **both** bottom inner thumb keys on `DEFAULT_HD` and `DEFAULT_HD_2` (left: calc/settings side, right: steno side). Tap either thumb to latch; tap again to release.
+
+Formerly split into `FUNC_HD` (right sticky) and `FUNC_MACR` (left sticky) with ~90% duplicate bindings. Now one layer:
+
+- **Left half:** bootloader, tap-dance names/emails, macro row (`m_9_16`, …)
+- **Right half:** sys_reset, BT/output, media, browser keys
+- **Thumbs:** `&tog NUM_HD_ULTRA`, **`&m_excel_go_to`**, `&m_9_16`, `&m_to_steno`; `&to DEFAULT_HD`, Insert, SpaceFn toggle
+
+**`m_excel_go_to`:** Excel Go To (Ctrl+W) while momentarily showing `DEFAULT_HD_2` for plain-key labels. Previously bound on the **left numpad layer** (`NUM_L_HD`, bottom-right key) and in that layer’s Excel row — that layer was removed; the macro now lives on the **`FUNC`** thumb row.
 
 ---
 
@@ -141,7 +162,7 @@ Steno mode is toggled via F17 / Ctrl+F17 (`steno_on` / `steno_off`); numpad sign
 
 Include order in the keymap matters: `combos` → `behaviors` → `macros` → `adaptive`.
 
---- `PLV_X3` and `PLV_X4` map to different HID bit indices than the old fork, but existing Plover aliases (`+-` ← `X3`, `^-` ← `X4`) continue to work. Details in **`docs/vanilla-migration-plan.md`** (Plover HID section).
+**Plover aliases:** `PLV_X3` and `PLV_X4` map to different HID bit indices than the old fork, but existing Plover aliases (`+-` ← `X3`, `^-` ← `X4`) continue to work.
 
 ---
 
@@ -172,5 +193,5 @@ Merge **`vanilla` → `Adaptive`** only after on-keyboard validation (adaptives,
 
 ## Further reading
 
-- **`docs/vanilla-migration-plan.md`** — migration history, layer audit, SHA pinning, hardware checklist
+- **`docs/vanilla-migration-plan.md`** — status, checklist, SHA pinning
 - **`config/west.yml`** — manifest and pin comments
