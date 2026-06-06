@@ -15,13 +15,14 @@ Migrates adaptive keys to **[urob/zmk-adaptive-key](https://github.com/urob/zmk-
 | Merge `vanilla` → `Adaptive` | **Blocked** until hardware sign-off ([#16](https://github.com/phuertay/zmk-config/pull/16)) |
 | User-facing docs | **`README.md`** describes the current `vanilla` stack |
 
-Sections below that describe “today” or `&ad_*` / 30 layers document the **pre-migration** fork config and the planning rationale. The live config uses **`&ak_*`**, **10 layers**, and **`&plv PLV_*`**.
+Sections below that describe “today” or `&ad_*` / 30 layers document the **pre-migration** fork config and the planning rationale. The live config uses **`&ak_*`**, **11 layers**, and **`&plv PLV_*`**.
 
 ### Hardware checklist (before merging to `Adaptive`)
 
 - [ ] All 14 adaptive keys morph correctly
 - [ ] Hold-tap adaptives (`hms_m_a`, `hm_m_c`, `hms_m_x`, `hms_m_m`)
 - [ ] Ultra numpad + steno numpad mods (`NUM_HD_ULTRA`, `NUM_HD_STENO_MODS`)
+- [ ] **`DEFAULT_HD_2`** — plain Tab/R layout, reachable via `&mo` from numpad; Excel `m_excel_go_to` overlay
 - [ ] Steno / Plover output (`+-` / `^-` via `PLV_X3` / `PLV_X4`)
 - [ ] Combos and macros on trimmed layer set
 
@@ -191,7 +192,7 @@ Layer indices are assigned **in keymap file order**. Current mapping:
 | 21 | `NUM_L_HD` | `numeric_layer_left_hd` | **DELETE** | Left numpad chain — confirmed drop |
 | 22 | `RCNUM_L` | `right_ctrl_num_layer` | **DELETE** | Part of left numpad chain |
 | 23 | `FN_L` | `fn_layer_left` | **DELETE** | Part of left numpad chain |
-| 24 | `DEFAULT_HD_2` | `default_layer_hd_2` | **DELETE** | User confirmed not needed; see “Dropping default_layer_hd_2” below |
+| 24 | `DEFAULT_HD_2` | `default_layer_hd_2` | **KEEP** | Alternate default (plain Tab/R); see README |
 | 25 | `SPFN_HD` | `spacefn_layer_hd` | **KEEP** | Default thumbs: `&lts SPFN_HD BSPC/ENTER` |
 | 26 | `MOUSE` | `mouse_layer` | **REVIEW** | `&tog MOUSE` from func layers |
 | 27 | `FUNC_HD` | `function_layer_right` | **KEEP** | `&sl FUNC_HD` from default thumb |
@@ -204,18 +205,21 @@ Renumber after deletions — **11 layers** down from 30:
 
 | New idx | Define | Layer | Notes |
 |---|---|---|---|
-| 0 | `DEFAULT_HD` | `default_layer_hd` | |
+| 0 | `DEFAULT_HD` | `default_layer_hd` | Primary; numpad layer-taps |
 | 1 | `STENO` | `steno` | |
 | 2 | `NUM_HD_ULTRA` | `numeric_layer_ultra_KP_N` | Only numpad layer |
 | 3 | `NUM_HD_STENO_MODS` | `num_hd_steno_mods` | Conditional overlay |
 | 4 | `LCNUM` | `left_ctrl_num_layer` | Nav cluster on homerow — confirmed |
-| 5 | `SPFN_HD` | `spacefn_layer_hd` | SpaceFn thumbs |
-| 6 | `MOUSE` | `mouse_layer` | Toggled from func layers — confirmed |
-| 7 | `FUNC_HD` | `function_layer_right` | BT/settings |
-| 8 | `FUNC_MACR` | `function_layer_macros` | Macros/emails |
-| 9 | `FUNC_STENO_MODS` | `function_steno_mods` | Conditional overlay |
+| 5 | `DEFAULT_HD_2` | `default_layer_hd_2` | Alternate default; `&mo` from ultra numpad |
+| 6 | `SPFN_HD` | `spacefn_layer_hd` | SpaceFn thumbs |
+| 7 | `MOUSE` | `mouse_layer` | Toggled from func layers — confirmed |
+| 8 | `FUNC_HD` | `function_layer_right` | BT/settings |
+| 9 | `FUNC_MACR` | `function_layer_macros` | Macros/emails |
+| 10 | `FUNC_STENO_MODS` | `function_steno_mods` | Conditional overlay |
 
-**Dropped (confirmed):** `NUM_HD`, `NUM_HD_MID`, all `adaptive_*`, `FN`, `NUM_L_HD`, `RCNUM_L`, `FN_L`, `DEFAULT_HD_2`.
+**Dropped (confirmed):** `NUM_HD`, `NUM_HD_MID`, all `adaptive_*`, `FN`, `NUM_L_HD`, `RCNUM_L`, `FN_L`.
+
+**Kept:** `DEFAULT_HD_2` (restored after initial migration — plain typing + Excel macro overlay).
 
 **Update after renumbering:** all `#define` indices, combo `COMB_LAY_NUM`, conditional layers, and every `&mo`/`&lt_s`/`&tog`/`&sl` reference.
 
@@ -392,27 +396,25 @@ Stay on `Adaptive` branch (fork) for production until vanilla is hardware-valida
 
 ---
 
-## Dropping `default_layer_hd_2` — what you lose
+## `default_layer_hd_2` — purpose and differences
 
-`default_layer_hd_2` is a near-copy of `default_layer_hd` with these **differences only**:
+`default_layer_hd_2` is a near-copy of `default_layer_hd` for **plain typing** without numpad F18 signaling:
 
-| Position | `default_layer_hd` (keep) | `default_layer_hd_2` (drop) |
+| Position | `default_layer_hd` | `default_layer_hd_2` |
 |---|---|---|
 | Row 1, col 0 | `&lt_s NUM_HD_ULTRA TAB` (tap = Tab, hold = numpad) | `&kp TAB` (plain Tab) |
 | Row 1, col 4 | `&lt_s_tap NUM_HD_ULTRA R` (R with numpad signal) | `&kp R` |
 | Row 2, col 4 | `&lt_s NUM_HD_ULTRA F` | `&lt NUM_HD_ULTRA F` (no numpad signal on hold) |
 | Thumb, RBKT | `&to_tap_s NUM_HD_ULTRA RBKT` | `&hm TILDE RBKT` |
-| Thumb, R-outer | `&lay_or_lay_s_num …` + `&kp LCTL` | `&tog NUM_HD` + `&kp LWIN` |
+| Thumb, R-outer | `&lay_or_lay_s_num …` + `&kp LCTL` | `&tog NUM_HD_ULTRA` + `&kp LWIN` |
 | Thumb, bottom-R | `&m_to_steno` + `&sl FUNC_HD` | `&kp C_AC_REFRESH` + `&sl FUNC_HD` |
 | Thumb, bottom-L | `&m_calc` | `&kp C_AL_CALC` |
 
-**Live references to remove/rewire when dropping the layer:**
+**Live references:**
 
-- `numeric_layer_ultra_KP_N` thumb: `&mo DEFAULT_HD_2` → remove or replace with `&mo DEFAULT_HD` (no-op) / `&to DEFAULT_HD`
-- `m_excel_go_to` macro: momentarily `&mo DEFAULT_HD_2` during Excel shortcut → rewrite to skip layer switch or use `DEFAULT_HD`
-- Dead layers only: `lay_or_lay DEFAULT_HD_2 NUM_HD` on unused numeric layers and `NUM_L_HD`
-
-Nothing on your **primary default** depends on layer 24. The alt layout was mainly for plain-Tab/plain-R typing and legacy `&tog NUM_HD`.
+- `numeric_layer_ultra_KP_N`: `&mo DEFAULT_HD_2` on bottom-right (momentary alt default while in numpad)
+- `m_excel_go_to`: momentarily `&mo DEFAULT_HD_2` during Excel Go To (Ctrl+W)
+- Combos: `COMB_LAY_ALL` includes both `DEFAULT_HD` and `DEFAULT_HD_2`
 
 ---
 
@@ -484,7 +486,7 @@ Standard keys (bits 0–22) are identical on both firmwares.
 
 ## Decisions (confirmed)
 
-1. ~~Drop `DEFAULT_HD_2`?~~ **Yes.**
+1. ~~Drop `DEFAULT_HD_2`?~~ **No — keep.** Restored on `vanilla` (plain Tab/R alt layout + Excel macro).
 2. ~~Drop `NUM_L_HD` / `RCNUM_L` / `FN_L`?~~ **Yes** — remove left numpad chain and func-layer toggles.
 3. ~~Drop `MOUSE` layer?~~ **No — keep.**
 4. ~~Keep `LCNUM` nav cluster?~~ **Yes — keep.**

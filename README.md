@@ -47,22 +47,37 @@ CONFIG_ZMK_ADAPTIVE_KEY_TAP_MS=2
 
 ---
 
-## Layer map (10 layers)
+## Layer map (11 layers)
 
 | Index | Define | Layer name |
 |---:|---|---|
-| 0 | `DEFAULT_HD` | `default_layer_hd` |
+| 0 | `DEFAULT_HD` | `default_layer_hd` — primary layout (numpad layer-taps, steno macro) |
 | 1 | `STENO` | `steno` |
 | 2 | `NUM_HD_ULTRA` | `numeric_layer_ultra_KP_N` |
 | 3 | `NUM_HD_STENO_MODS` | conditional: steno + ultra numpad |
 | 4 | `LCNUM` | `left_ctrl_num_layer` |
-| 5 | `SPFN_HD` | `special_function_layer_hd` |
-| 6 | `MOUSE` | `mouse_layer` |
-| 7 | `FUNC_HD` | `function_layer_right` |
-| 8 | `FUNC_MACR` | `function_layer_macros` |
-| 9 | `FUNC_STENO_MODS` | conditional: steno + func layers |
+| 5 | `DEFAULT_HD_2` | `default_layer_hd_2` — alternate default (plain Tab/R, no numpad signals) |
+| 6 | `SPFN_HD` | `spacefn_layer_hd` |
+| 7 | `MOUSE` | `mouse_layer` |
+| 8 | `FUNC_HD` | `function_layer_right` |
+| 9 | `FUNC_MACR` | `function_layer_macros` |
+| 10 | `FUNC_STENO_MODS` | conditional: steno + func layers |
 
-Conditional layers are defined in `config/dacman56.keymap`. Legacy overlay layers (`adaptive_*`), the left numpad chain, and `DEFAULT_HD_2` were removed during the vanilla migration — see **`docs/vanilla-migration-plan.md`** for the audit and rationale.
+Conditional layers are defined in `config/dacman56.keymap`. Legacy overlay layers (`adaptive_*`) and the left numpad chain were removed during the vanilla migration — see **`docs/vanilla-migration-plan.md`**.
+
+### `DEFAULT_HD` vs `DEFAULT_HD_2`
+
+Both layers share the same adaptive home row (`&ak_*`). **`DEFAULT_HD_2`** is for plain typing without numpad F18 signaling:
+
+| | `DEFAULT_HD` | `DEFAULT_HD_2` |
+|---|---|---|
+| Tab | `&lt_s NUM_HD_ULTRA TAB` | `&kp TAB` |
+| R / F | numpad layer-taps | `&kp R`, `&lt NUM_HD_ULTRA F` |
+| RBKT thumb | numpad `to_tap_s` | `&hm TILDE RBKT` |
+| Outer thumb | numpad signal + LCtrl | `&tog NUM_HD_ULTRA`, LWin |
+| Bottom thumb | calc + steno macros | Calc key + refresh |
+
+Reach **`DEFAULT_HD_2`** from the ultra numpad layer (`&mo DEFAULT_HD_2` on the bottom-right key). The **`m_excel_go_to`** macro momentarily activates it during Excel Go To (Ctrl+W).
 
 ---
 
