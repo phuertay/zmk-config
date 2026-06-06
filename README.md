@@ -1,170 +1,145 @@
-In keybdname.conf you need to add `CONFIG_ZMK_PLOVER_HID=y`
+# phuertay/zmk-config — dacman56
 
-Make sure the west.yaml file compiles against the right repo
+ZMK user config for the [dacman56](https://github.com/phuertay/zmk-keyboard-dacman56) split keyboard (nice!nano v1).
 
-Here's a list of the PloverHID keycodes (from `app/include/dt-bindings/zmk/keys.h`, using `#define PLV_ST (ZMK_HID_USAGE(HID_USAGE_VENDOR_PLOVER, 9))`)
+The **`vanilla`** branch builds against upstream **[zmkfirmware/zmk](https://github.com/zmkfirmware/zmk)** with external modules for adaptive keys and Plover HID. The **`Adaptive`** branch still uses the legacy **`phuertay/zmk`** fork until hardware validation is complete.
 
- | Key | Code | 
- | --- | --- |
- | PLV_SL | 0 | 
- | PLV_TL | 1 | 
- | PLV_KL | 2 | 
- | PLV_PL | 3 | 
- | PLV_WL | 4 | 
- | PLV_HL | 5 | 
- | PLV_RL | 6 | 
- | PLV_A | 7 | 
- | PLV_O | 8 | 
- | PLV_ST | 9 | 
- | PLV_E | 10 | 
- | PLV_U | 11 | 
- | PLV_FR | 12 | 
- | PLV_RR | 13 | 
- | PLV_PR | 14 | 
- | PLV_BR | 15 | 
- | PLV_LR | 16 | 
- | PLV_GR | 17 | 
- | PLV_TR | 18 | 
- | PLV_SR | 19 | 
- | PLV_DR | 20 | 
- | PLV_ZR | 21 | 
- | PLV_NM | 22 | 
- | PLV_X1 | 23 | 
- | PLV_X2 | 24 | 
- | PLV_X3 | 25 | 
- | PLV_X4 | 26 | 
- | PLV_X5 | 27 | 
- | PLV_X6 | 28 | 
- | PLV_X7 | 29 | 
- | PLV_X8 | 30 | 
- | PLV_X9 | 31 | 
- | PLV_X10 | 32 | 
- | PLV_X11 | 33 | 
- | PLV_X12 | 34 | 
- | PLV_X13 | 35 | 
- | PLV_X14 | 36 | 
- | PLV_X15 | 37 | 
- | PLV_X16 | 38 | 
- | PLV_X17 | 39 | 
- | PLV_X18 | 40 | 
- | PLV_X19 | 41 | 
- | PLV_X20 | 42 | 
- | PLV_X21 | 43 | 
- | PLV_X22 | 44 | 
- | PLV_X23 | 45 | 
- | PLV_X24 | 46 | 
- | PLV_X25 | 47 | 
- | PLV_X26 | 48 | 
- | PLV_X27 | 49 | 
- | PLV_X28 | 50 | 
- | PLV_X29 | 51 | 
- | PLV_X30 | 52 | 
- | PLV_X31 | 53 | 
- | PLV_X32 | 54 | 
- | PLV_X33 | 55 | 
- | PLV_X34 | 56 | 
- | PLV_X35 | 57 | 
- | PLV_X36 | 58 | 
- | PLV_X37 | 59 | 
- | PLV_X38 | 60 | 
- | PLV_X39 | 61 | 
- | PLV_X40 | 62 | 
- | PLV_X41 | 63 | 
+---
 
+## Stack (`vanilla` branch)
 
+| Component | Source |
+|---|---|
+| ZMK firmware | [zmkfirmware/zmk](https://github.com/zmkfirmware/zmk) `@main` |
+| Adaptive keys | [urob/zmk-adaptive-key](https://github.com/urob/zmk-adaptive-key) |
+| Plover / steno HID | [petercpark/zmk-hid-io-plover-hid](https://github.com/petercpark/zmk-hid-io-plover-hid) |
+| Keyboard shield | [phuertay/zmk-keyboard-dacman56](https://github.com/phuertay/zmk-keyboard-dacman56) |
 
-## Summary
-
-The Antecedent-Morph behavior (adaptive keys) sends different behaviors, depending on which key was most recently
-released before the antecedent-morph behavior was pressed, if this occurs within a configurable time period.
-
-## Usage
-
-To load the module, either use a ZMK version from phuertay that includes it, or add the following entries
-to `projects` in `config/west.yml`.
+CI uses the official workflow:
 
 ```yaml
-manifest:
-  remotes:
-    - name: phzmk
-      url-base: https://github.com/phuertay
-  projects:
-    - name: zmk
-      remote: phzmk
-      revision: main
-      import: app/west.yml
-    - name: zmk-antecedent-morph
-      remote: phzmk
-      revision: v1
-  self:
-    path: config
+# .github/workflows/build.yml
+uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
 ```
 
+West manifest and SHA pinning instructions live in **`config/west.yml`** (header comment + `LAST KNOWN GOOD` lines per project).
 
-## Antecedent-Morph
+---
 
-The configuration of the behavior consists of an array of `antecedents`, key codes with implicit modifiers, as well as
-of a delay `max-delay-ms` in milli-seconds. If none of the `antecedents` was released during the `max-delay-ms` before
-the antecedent-morph behavior is pressed, the behavior invokes the `defaults` binding. If, however, the `n`-th of the
-key codes (with implicit modifiers) listed in the array `antecedents` was released within `max-delay-ms`, the behavior
-invokes the `n`-th of the bindings of the `bindings` property.
+## Kconfig (`config/dacman56.conf`)
 
-### Configuration
+Plover HID (second USB HID interface):
 
-If the key A is assigned the behavior `&ad_a` defined as follows, for example,
+```
+CONFIG_USB_HID_DEVICE_COUNT=2
+CONFIG_ZMK_HID_IO=y
+CONFIG_ZMK_HID_IO_PLOVER_HID=y
+```
+
+Adaptive key timing (urob module):
+
+```
+CONFIG_ZMK_ADAPTIVE_KEY_WAIT_MS=7
+CONFIG_ZMK_ADAPTIVE_KEY_TAP_MS=2
+```
+
+`CONFIG_ZMK_BEHAVIOR_ADAPTIVE_KEY` is enabled automatically from devicetree when adaptive-key behaviors are present — do not set it in the user config.
+
+---
+
+## Layer map (10 layers)
+
+| Index | Define | Layer name |
+|---:|---|---|
+| 0 | `DEFAULT_HD` | `default_layer_hd` |
+| 1 | `STENO` | `steno` |
+| 2 | `NUM_HD_ULTRA` | `numeric_layer_ultra_KP_N` |
+| 3 | `NUM_HD_STENO_MODS` | conditional: steno + ultra numpad |
+| 4 | `LCNUM` | `left_ctrl_num_layer` |
+| 5 | `SPFN_HD` | `special_function_layer_hd` |
+| 6 | `MOUSE` | `mouse_layer` |
+| 7 | `FUNC_HD` | `function_layer_right` |
+| 8 | `FUNC_MACR` | `function_layer_macros` |
+| 9 | `FUNC_STENO_MODS` | conditional: steno + func layers |
+
+Conditional layers are defined in `config/dacman56.keymap`. Legacy overlay layers (`adaptive_*`), the left numpad chain, and `DEFAULT_HD_2` were removed during the vanilla migration — see **`docs/vanilla-migration-plan.md`** for the audit and rationale.
+
+---
+
+## Adaptive keys (urob)
+
+Adaptive behaviors are defined in **`config/adaptive.dtsi`** using `zmk,behavior-adaptive-key` and referenced as **`&ak_*`** in the keymap (for example `&ak_Q`, `&ak_W`).
+
+Each behavior has a default binding plus one or more trigger nodes (`akt_*`) that morph output when a specific prior key was released within `max-prior-idle-ms`:
 
 ```dts
-/ {
-    behaviors {
-        ad_a: adaptive_a {
-            compatible = "zmk,behavior-antecedent-morph";
-            label = "ADAPTIVE_A";
-            #binding-cells = <0>;
-			defaults = <&kp A>;
-            bindings = <&kp U>, <&kp O>;
-			antecedents = <Q Z>;
-			max-delay-ms = <250>;
-        };
+ak_Q: ak_Q {
+    compatible = "zmk,behavior-adaptive-key";
+    #binding-cells = <0>;
+    bindings = <&kp Q>;
+    akt_q_e {
+        trigger-keys = <E>;
+        max-prior-idle-ms = <200>;
+        bindings = <&kp G>;
     };
 };
 ```
 
-then by default, pressing this key issues the key press `&kp A`. But if it is preceded within 250 milli-seconds by Q or
-Z, then `&kp U` or `&kp O`, respectively, are issued instead.
+Hold-tap wrappers that embed adaptives (`hms_m_a`, `hm_m_c`, `hms_m_x`, `hms_m_m`) also use `&ak_*`.
 
-### Behavior Binding
+Upstream docs: [urob/zmk-adaptive-key](https://github.com/urob/zmk-adaptive-key).
 
-- Reference: `&ad_a`
-- Parameter: None
+---
 
-Example:
+## Steno / Plover HID
 
-```dts
-&ad_a
-```
-
-### Dead Antecedents
-
-If some binding somewhere issues an illegal key code in the range beyond 0x00ff, this illegal key code is recognized and
-tested as an antecedent, but then immediately discarded from the event queue. It therefore functions similarly to a dead
-key. Note that these illegal key codes are specified with the *usage page* 0x07 as in the following example. If some key
-is bound to `&kp DEAD_ANTE`, then it does not print anything, but still turns a subsequent A into a U.
+The steno layer uses the **`plv`** behavior from **`config/behaviors.dtsi`**:
 
 ```dts
-#define DEAD_ANTE 0x070100
-
-/ {
-    behaviors {
-        ad_a: adaptive_a {
-            compatible = "zmk,behavior-antecedent-morph";
-            label = "ADAPTIVE_A";
-            #binding-cells = <0>;
-			defaults = <&kp A>;
-            bindings = <&kp U>, <&kp O>;
-			antecedents = <DEAD_ANTE Z>;
-			max-delay-ms = <250>;
-        };
-    };
+plv: plover_hid {
+    compatible = "zmk,behavior-plover-hid";
+    #binding-cells = <1>;
 };
 ```
 
+Keymap bindings look like `&plv PLV_TL`, `&plv PLV_X3`, etc. Include:
+
+```dts
+#include <dt-bindings/zmk/hid-io/plover_hid.h>
+```
+
+Steno mode is toggled via F17 / Ctrl+F17 (`steno_on` / `steno_off`); numpad signaling uses F18 / Ctrl+F18.
+
+**Plover aliases:** `PLV_X3` and `PLV_X4` map to different HID bit indices than the old fork, but existing Plover aliases (`+-` ← `X3`, `^-` ← `X4`) continue to work. Details in **`docs/vanilla-migration-plan.md`** (Plover HID section).
+
+---
+
+## Building
+
+**GitHub Actions** builds three artifacts from **`build.yaml`**: `dacman56_left`, `dacman56_right`, and `settings_reset` on `nice_nano@1//zmk`.
+
+For local builds, follow [ZMK user setup](https://zmk.dev/docs/user-setup), then:
+
+```bash
+west init -l config
+west update
+west build -s zmk/app -b nice_nano@1//zmk -d build/left -- -DSHIELD=dacman56_left
+```
+
+---
+
+## Branches
+
+| Branch | Purpose |
+|---|---|
+| **`vanilla`** | Upstream ZMK + modules; migration target (CI green) |
+| **`Adaptive`** | Legacy fork-based production until merged from `vanilla` |
+
+Merge **`vanilla` → `Adaptive`** only after on-keyboard validation (adaptives, numpad, steno, combos).
+
+---
+
+## Further reading
+
+- **`docs/vanilla-migration-plan.md`** — migration history, layer audit, SHA pinning, hardware checklist
+- **`config/west.yml`** — manifest and pin comments
