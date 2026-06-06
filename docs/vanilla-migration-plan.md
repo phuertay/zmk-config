@@ -30,6 +30,15 @@ Migrates adaptive keys to **[urob/zmk-adaptive-key](https://github.com/urob/zmk-
 
 Why not `v0.3.0` as the default: your fork and `build.yaml` already use Zephyr 4.1 / `nice_nano@1//zmk`. Pinning to `v0.3.0` would be a downgrade. urob also CI-tests against ZMK `main` on a schedule.
 
+### Verified revisions (2026-06-06)
+
+These are the commits `west update` resolves when both projects use `revision: main` today. They are also the pair urob’s [test-main workflow](https://github.com/urob/zmk-adaptive-key/actions/workflows/test-main.yml) last exercised successfully ([run 26915720317](https://github.com/urob/zmk-adaptive-key/actions/runs/26915720317), 2026-06-03 — still current `main` tips as of this verification).
+
+| Project | SHA | Commit link |
+|---|---|---|
+| [zmkfirmware/zmk](https://github.com/zmkfirmware/zmk) | `773dec58eaacaef4703b3e4595e50bd71f6cad3d` | [773dec58](https://github.com/zmkfirmware/zmk/commit/773dec58eaacaef4703b3e4595e50bd71f6cad3d) |
+| [urob/zmk-adaptive-key](https://github.com/urob/zmk-adaptive-key) | `e5b335a7b1076cb122582f5a892b118b02a3be34` | [e5b335a7](https://github.com/urob/zmk-adaptive-key/commit/e5b335a7b1076cb122582f5a892b118b02a3be34) |
+
 ```yaml
 # config/west.yml (target)
 manifest:
@@ -46,14 +55,14 @@ manifest:
     - name: zmk
       remote: zmkfirmware
       revision: main
-      # If a push breaks CI, pin to the last good commit instead of main:
-      # revision: abc1234deadbeef...  # zmkfirmware/zmk@main (YYYY-MM-DD)
+      # If a push breaks CI, replace main with the last verified SHA:
+      # revision: 773dec58eaacaef4703b3e4595e50bd71f6cad3d  # zmk@main verified 2026-06-06 — https://github.com/zmkfirmware/zmk/commit/773dec58eaacaef4703b3e4595e50bd71f6cad3d
       import: app/west.yml
     - name: zmk-adaptive-key
       remote: urob
       revision: main
-      # If a push breaks CI, pin to the last good commit instead of main:
-      # revision: def5678cafebabe...  # urob/zmk-adaptive-key@main (YYYY-MM-DD)
+      # If a push breaks CI, replace main with the last verified SHA:
+      # revision: e5b335a7b1076cb122582f5a892b118b02a3be34  # zmk-adaptive-key@main verified 2026-06-06 — https://github.com/urob/zmk-adaptive-key/commit/e5b335a7b1076cb122582f5a892b118b02a3be34
     - name: zmk-keyboard-dacman56
       remote: ph
       revision: main
@@ -61,12 +70,56 @@ manifest:
     # - name: zmk-hid-io-plover-hid
     #   remote: petercpark
     #   revision: main
-    #   # revision: ...  # pin SHA here too if needed
+    #   # revision: <sha>  # pin if needed — https://github.com/petercpark/zmk-hid-io-plover-hid/commits/main
   self:
     path: config
 ```
 
-**If CI breaks after an upstream push:** note the failing workflow run, find the last green build, copy the resolved SHAs from that run's west checkout (or from GitHub commit pages), uncomment the `revision:` lines above, and add a date comment. Bump back to `main` when ready to pick up fixes.
+### How to find the newest working revision
+
+Use this when CI turns red after you changed nothing locally — an upstream push on `main` is the usual cause.
+
+#### 1. Find the last green build (your config)
+
+1. Open **[phuertay/zmk-config Actions](https://github.com/phuertay/zmk-config/actions)**.
+2. Filter to the **`vanilla`** branch (or whichever branch you build).
+3. Open the most recent **successful** workflow run.
+4. Expand any **Build** job → **West Update** step.
+5. Search the log for `HEAD is now at` under the `zmk` and `zmk-adaptive-key` fetch lines. The short hash (e.g. `773dec5`) is the commit; click through or paste it into the commit URL:
+   - ZMK: `https://github.com/zmkfirmware/zmk/commit/<full-sha>`
+   - urob: `https://github.com/urob/zmk-adaptive-key/commit/<full-sha>`
+
+The upstream [build-user-config workflow](https://github.com/zmkfirmware/zmk/blob/main/.github/workflows/build-user-config.yml) also prints `ZMK revision: …` after west update, but when `west.yml` says `revision: main` that line shows the string `main`, not the SHA — use the `HEAD is now at` lines instead.
+
+#### 2. Resolve SHAs locally (optional)
+
+From a clean workspace with your `config/west.yml`:
+
+```bash
+west init -l config
+west update --fetch-opt=--filter=tree:0
+cd zmk && git rev-parse HEAD          # full ZMK SHA
+cd ../zmk-adaptive-key && git rev-parse HEAD   # full urob SHA
+```
+
+See [ZMK user setup](https://zmk.dev/docs/user-setup) for a full local environment.
+
+#### 3. Check urob’s module tests against ZMK main
+
+urob runs scheduled CI against ZMK `main`: **[urob/zmk-adaptive-key → Run tests (main)](https://github.com/urob/zmk-adaptive-key/actions/workflows/test-main.yml)**. If your build fails but that workflow is green, the problem is likely in your keymap/config, not the module pairing.
+
+#### 4. Pin in `west.yml`
+
+1. Comment out or remove `revision: main` on the broken project.
+2. Uncomment and set the `revision: <full-sha>` line from step 1 or 2 (use the **full** 40-character SHA).
+3. Add/update the date in the end-of-line comment.
+4. Push and confirm CI is green again.
+
+#### 5. Return to floating `main`
+
+When you want upstream fixes, set `revision: main` again, push, and watch CI. If it breaks, repeat from step 1.
+
+Official background on why pinning matters: **[Pin your ZMK version](https://zmk.dev/blog/2025/06/20/pinned-zmk)** · **[ZMK releases](https://github.com/zmkfirmware/zmk/releases)** · **[Zephyr 4.1 / board variant notes](https://zmk.dev/blog/2025/12/09/zephyr-4-1)** (relevant because this config uses `nice_nano@1//zmk` in `build.yaml`).
 
 ---
 
@@ -438,7 +491,7 @@ Standard keys (bits 0–22) are identical on both firmwares.
 2. ~~Drop `NUM_L_HD` / `RCNUM_L` / `FN_L`?~~ **Yes** — remove left numpad chain and func-layer toggles.
 3. ~~Drop `MOUSE` layer?~~ **No — keep.**
 4. ~~Keep `LCNUM` nav cluster?~~ **Yes — keep.**
-5. ~~ZMK / urob version?~~ **`main` on both** — pin SHAs in `west.yml` if a push breaks CI.
+5. ~~ZMK / urob version?~~ **`main` on both** — pin SHAs in `west.yml` if a push breaks CI (see [verified revisions](#verified-revisions-2026-06-06) and [how to find the newest working revision](#how-to-find-the-newest-working-revision)).
 
 ---
 
