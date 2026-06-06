@@ -3,7 +3,27 @@
 Branch: `vanilla`  
 Target: upstream `zmkfirmware/zmk` with imported modules instead of `phuertay/zmk`.
 
-Migrates adaptive keys to **[urob/zmk-adaptive-key](https://github.com/urob/zmk-adaptive-key)** and simplifies the keymap by removing dead layers. Plover HID is a follow-up via **[petercpark/zmk-hid-io-plover-hid](https://github.com/petercpark/zmk-hid-io-plover-hid)**.
+Migrates adaptive keys to **[urob/zmk-adaptive-key](https://github.com/urob/zmk-adaptive-key)** and simplifies the keymap by removing dead layers. Plover HID via **[petercpark/zmk-hid-io-plover-hid](https://github.com/petercpark/zmk-hid-io-plover-hid)**.
+
+### Status (2026-06-06)
+
+| Item | State |
+|---|---|
+| Implementation on `vanilla` | **Done** — merged in [#17](https://github.com/phuertay/zmk-config/pull/17) |
+| CI | **Green** — `dacman56_left`, `dacman56_right`, `settings_reset` |
+| Hardware validation | **Pending** — see checklist below |
+| Merge `vanilla` → `Adaptive` | **Blocked** until hardware sign-off ([#16](https://github.com/phuertay/zmk-config/pull/16)) |
+| User-facing docs | **`README.md`** describes the current `vanilla` stack |
+
+Sections below that describe “today” or `&ad_*` / 30 layers document the **pre-migration** fork config and the planning rationale. The live config uses **`&ak_*`**, **10 layers**, and **`&plv PLV_*`**.
+
+### Hardware checklist (before merging to `Adaptive`)
+
+- [ ] All 14 adaptive keys morph correctly
+- [ ] Hold-tap adaptives (`hms_m_a`, `hm_m_c`, `hms_m_x`, `hms_m_m`)
+- [ ] Ultra numpad + steno numpad mods (`NUM_HD_ULTRA`, `NUM_HD_STENO_MODS`)
+- [ ] Steno / Plover output (`+-` / `^-` via `PLV_X3` / `PLV_X4`)
+- [ ] Combos and macros on trimmed layer set
 
 ---
 
@@ -38,6 +58,7 @@ These are the commits `west update` resolves when both projects use `revision: m
 |---|---|---|
 | [zmkfirmware/zmk](https://github.com/zmkfirmware/zmk) | `773dec58eaacaef4703b3e4595e50bd71f6cad3d` | [773dec58](https://github.com/zmkfirmware/zmk/commit/773dec58eaacaef4703b3e4595e50bd71f6cad3d) |
 | [urob/zmk-adaptive-key](https://github.com/urob/zmk-adaptive-key) | `e5b335a7b1076cb122582f5a892b118b02a3be34` | [e5b335a7](https://github.com/urob/zmk-adaptive-key/commit/e5b335a7b1076cb122582f5a892b118b02a3be34) |
+| [petercpark/zmk-hid-io-plover-hid](https://github.com/petercpark/zmk-hid-io-plover-hid) | `d895457418590dddf628c5ae907b39deec7095ff` | [d895457](https://github.com/petercpark/zmk-hid-io-plover-hid/commit/d895457418590dddf628c5ae907b39deec7095ff) |
 
 ```yaml
 # config/west.yml — see the file in-repo for copy-paste pin comments
@@ -99,9 +120,9 @@ Official background on why pinning matters: **[Pin your ZMK version](https://zmk
 
 ---
 
-## How adaptives work today (important)
+## How adaptives worked before migration (historical)
 
-There are **two separate mechanisms** in the current keymap, and only one actually does anything:
+There were **two separate mechanisms** in the fork keymap, and only one actually did anything:
 
 ### 1. Runtime behaviors (active)
 
@@ -471,9 +492,8 @@ Standard keys (bits 0–22) are identical on both firmwares.
 
 ---
 
-## Suggested PR sequence
+## PR sequence
 
-1. **PR 1:** Phases 1–2 — vanilla ZMK + urob adaptive-key (keymap unchanged except adaptive.dtsi)
-2. **PR 2:** Phase 3 — layer simplification + renumber
-3. **PR 3:** Phase 4 — Plover module
-4. Merge to `Adaptive` after hardware sign-off
+1. ~~**Planning** ([#16](https://github.com/phuertay/zmk-config/pull/16)) — this document + `west.yml` pin comments~~
+2. ~~**Implementation** ([#17](https://github.com/phuertay/zmk-config/pull/17)) — phases 1–4 merged to `vanilla`~~
+3. **Promote to production** ([#16](https://github.com/phuertay/zmk-config/pull/16)) — merge `vanilla` → `Adaptive` after hardware sign-off
