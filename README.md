@@ -96,7 +96,7 @@ Merged from **`FUNC_MACR`** (left sticky) + **`FUNC_HD`** (right sticky). Those 
 
 | Side | Was on `FUNC_MACR` | Was on `FUNC_HD` | Merged `FUNC` |
 |---|---|---|---|
-| Left | `bootloader`, `C_NEXT`, `td_emails` | `sys_reset`, lock keys | Both on rows 1–2 left |
+| Left | `bootloader`, `C_NEXT`, `td_emails` (emails + names) | `sys_reset`, lock keys | Both on rows 1–2 left |
 | Right | BT/output | media, browser keys | Rows 0–3 right |
 | Thumbs | `m_9_16`, `m_to_steno` | Insert, SpaceFn | Macro keys left; home/Insert/SpaceFn right |
 

@@ -174,14 +174,7 @@
 		compatible = "zmk,behavior-tap-dance";
 		#binding-cells = <0>;
 		tapping-term-ms = <420>;
-		bindings = <&m_email_w>, <&m_email_g>, <&m_email_w_old>, <&m_email_ph>;
-	};
-
-	td_names: tap_dance_names {
-		compatible = "zmk,behavior-tap-dance";
-		#binding-cells = <0>;
-		tapping-term-ms = <420>;
-		bindings = <&m_phuerta>, <&m_ph>, <&m_pihy>;
+		bindings = <&m_email_w>, <&m_email_g>, <&m_email_w_old>, <&m_email_ph>, <&m_phuerta>, <&m_ph>, <&m_pihy>;
 	};
 
 	/* ── Plover HID ────────────────────────────────────────────────────── */
