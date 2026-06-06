@@ -59,17 +59,26 @@ Layers `adaptive_q` … `adaptive_dot` (indices 2–14, `#define AL_Q` … `AL_D
 
 ---
 
-## Adaptive binding naming options
+## Adaptive binding naming — **decision: `&ak_*`**
 
-| Option | Keymap churn | Notes |
-|---|---|---|
-| **A. Keep `&ad_*` node names** | Minimal — only `adaptive.dtsi` changes | Recommended. Behavior nodes stay `ad_Q: adapt_Q { ... }`; keymap keeps `&ad_Q`. |
-| **B. Rename to `&ak_*` (urob convention)** | 14+ keymap edits on default + default_2 | Cosmetic alignment with urob docs. Same firmware, more diff noise. |
-| **C. Inline adaptive-key in keymap** | Large — move all behavior defs into `.keymap` | No benefit; harder to maintain. |
+Rename all adaptive behavior nodes and keymap references from `&ad_*` to `&ak_*` (urob convention).
 
-**Not the same as Plover remapping:** Plover `PLV_X3`/`PLV_X4` **must** change bit indices when switching to petercpark's module (25/26 → 40/41). That is a protocol/index issue, not a naming preference.
+```dts
+// adaptive.dtsi
+ak_Q: ak_Q {
+    compatible = "zmk,behavior-adaptive-key";
+    ...
+};
 
-**Recommendation:** Option A for adaptives. Inline urob trigger bindings (`&kp BSPC &kp G &kp E`) inside `adaptive.dtsi` and delete the `m_d*` macros that exist only for adaptive morphs.
+// dacman56.keymap
+&ak_Q  &ak_W  &ak_E  ...
+```
+
+Also update hold-tap wrappers: `&ad_A` → `&ak_A`, etc. in `hms_m_a`, `hm_m_c`, `hms_m_x`, `hms_m_m`.
+
+Inline urob trigger bindings in `adaptive.dtsi` and delete adaptive-only `m_d*` macros.
+
+**Not the same as Plover remapping:** Plover `PLV_X3`/`PLV_X4` are bit-position changes in the HID report (see Phase 4 / PLV section below), not a naming choice.
 
 ---
 
@@ -103,7 +112,7 @@ Layer indices are assigned **in keymap file order**. Current mapping:
 | 21 | `NUM_L_HD` | `numeric_layer_left_hd` | **REVIEW** | Toggled from func layer; left-hand numpad variant |
 | 22 | `RCNUM_L` | `right_ctrl_num_layer` | **REVIEW** | `&lts RCNUM_L` from NUM_L_HD only |
 | 23 | `FN_L` | `fn_layer_left` | **REVIEW** | `&mo FN_L` from NUM_L_HD only |
-| 24 | `DEFAULT_HD_2` | `default_layer_hd_2` | **REVIEW** | Alt default; `&mo` from num ultra, `&tog NUM_HD` from func |
+| 24 | `DEFAULT_HD_2` | `default_layer_hd_2` | **DELETE** | User confirmed not needed; see “Dropping default_layer_hd_2” below |
 | 25 | `SPFN_HD` | `spacefn_layer_hd` | **KEEP** | Default thumbs: `&lts SPFN_HD BSPC/ENTER` |
 | 26 | `MOUSE` | `mouse_layer` | **REVIEW** | `&tog MOUSE` from func layers |
 | 27 | `FUNC_HD` | `function_layer_right` | **KEEP** | `&sl FUNC_HD` from default thumb |
@@ -289,10 +298,95 @@ Stay on `Adaptive` branch (fork) for production until vanilla is hardware-valida
 
 ---
 
+## Dropping `default_layer_hd_2` — what you lose
+
+`default_layer_hd_2` is a near-copy of `default_layer_hd` with these **differences only**:
+
+| Position | `default_layer_hd` (keep) | `default_layer_hd_2` (drop) |
+|---|---|---|
+| Row 1, col 0 | `&lt_s NUM_HD_ULTRA TAB` (tap = Tab, hold = numpad) | `&kp TAB` (plain Tab) |
+| Row 1, col 4 | `&lt_s_tap NUM_HD_ULTRA R` (R with numpad signal) | `&kp R` |
+| Row 2, col 4 | `&lt_s NUM_HD_ULTRA F` | `&lt NUM_HD_ULTRA F` (no numpad signal on hold) |
+| Thumb, RBKT | `&to_tap_s NUM_HD_ULTRA RBKT` | `&hm TILDE RBKT` |
+| Thumb, R-outer | `&lay_or_lay_s_num …` + `&kp LCTL` | `&tog NUM_HD` + `&kp LWIN` |
+| Thumb, bottom-R | `&m_to_steno` + `&sl FUNC_HD` | `&kp C_AC_REFRESH` + `&sl FUNC_HD` |
+| Thumb, bottom-L | `&m_calc` | `&kp C_AL_CALC` |
+
+**Live references to remove/rewire when dropping the layer:**
+
+- `numeric_layer_ultra_KP_N` thumb: `&mo DEFAULT_HD_2` → remove or replace with `&mo DEFAULT_HD` (no-op) / `&to DEFAULT_HD`
+- `m_excel_go_to` macro: momentarily `&mo DEFAULT_HD_2` during Excel shortcut → rewrite to skip layer switch or use `DEFAULT_HD`
+- Dead layers only: `lay_or_lay DEFAULT_HD_2 NUM_HD` on unused numeric layers and `NUM_L_HD`
+
+Nothing on your **primary default** depends on layer 24. The alt layout was mainly for plain-Tab/plain-R typing and legacy `&tog NUM_HD`.
+
+---
+
+## `numeric_layer_left_hd`, `RCNUM_L`, `FN_L` — what they are
+
+These three layers form a **left-hand numpad mode**, separate from `NUM_HD_ULTRA`:
+
+```
+FUNC_HD / FUNC_MACR  ──&tog NUM_L_HD──►  numeric_layer_left_hd (NUM_L_HD)
+                                              │
+                              hold &lts RCNUM_L ENTER ──►  RCNUM_L (RC arrow overlay)
+                              hold &mo FN_L ──►  FN_L (F-key overlay on right half)
+```
+
+### `numeric_layer_left_hd` (NUM_L_HD)
+
+- **Purpose:** Numpad/operators laid out for the **left side** of the keyboard (vs ultra layer which is right-heavy).
+- **Reachable from:** `&tog NUM_L_HD` on `function_layer_right` and `function_layer_macros` only — not from default or ultra numpad.
+- **Notable bindings:** Excel-style `&fm F*` shifted digits, `&m_excel_go_to`, `&lay_or_lay DEFAULT_HD_2 NUM_HD`, nav cluster on right via `&lts RCNUM_L ENTER`.
+- **If dropped:** You lose the toggleable left-numpad layout; **`NUM_HD_ULTRA` is unaffected** (that is your main num layer).
+
+### `RCNUM_L` (right_ctrl_num_layer)
+
+- **Purpose:** While on `NUM_L_HD`, holding Enter (`&lts RCNUM_L ENTER`) overlays **Ctrl+arrow** navigation on the right half (PgUp, Up, PgDn, etc.).
+- **Only referenced from:** `numeric_layer_left_hd` — not from default or ultra.
+- **If dropped:** Remove the hold-tap on Enter in `NUM_L_HD`; no impact elsewhere.
+
+### `FN_L` (fn_layer_left)
+
+- **Purpose:** While on `NUM_L_HD`, `&mo FN_L` on thumb shows **F13–F24** on the right half (mirror of `fn_layer` concept but for left-numpad context).
+- **Only referenced from:** `numeric_layer_left_hd`.
+- **If dropped:** Remove `&mo FN_L` thumb binding; no impact elsewhere.
+
+**Summary:** This entire chain is optional. If you never toggle `NUM_L_HD` from the func layer, these three layers are effectively unused today.
+
+---
+
+## Plover HID: `PLV_X3` and `PLV_X4` (Phase 4)
+
+Plover HID sends a **64-bit bitmap** — each steno key is one bit index (0–63). Your steno layer uses:
+
+```dts
+&kp PLV_X3  ...  // left column, row 3
+&kp PLV_X4  ...  // left column, row 4
+```
+
+**In your fork** (`phuertay/zmk`), `PLV_X3` = bit **25**, `PLV_X4` = bit **26** (sequential X-key numbering from 23 upward).
+
+**In petercpark's module**, the header assigns standard steno keys 0–22 first, then **extra** keys (SL2, ST2–ST4, NM2–NMC) at indices 23–37, and only then **X-keys**:
+
+| Name | phuertay fork (bit) | petercpark module (bit) |
+|---|---|---|
+| `PLV_X3` | 25 | **40** |
+| `PLV_X4` | 26 | **41** |
+| (at 25–26 in module) | — | `PLV_ST3`, `PLV_ST4` (extra star keys) |
+
+Same key **name**, different **bit in the report**. Plover listens to bit positions, not names — wrong index = wrong key or silence.
+
+**On migration:** Keep using `PLV_X3`/`PLV_X4` symbol names but include petercpark's header; the **numeric values change automatically**. Your physical keys still map to the correct bits as long as you use their header. No manual renumbering in the keymap unless you were hardcoding raw numbers.
+
+If those two keys were intentionally wired to bits 25/26 for extra hardware keys (not “X3/X4” in Plover's sense), verify on hardware after migration — you may need `PLV_ST3`/`PLV_ST4` instead if you meant the lower indices.
+
+---
+
 ## Open questions (confirm before phase 3)
 
-1. **Drop `DEFAULT_HD_2`?** — Nearly identical to default; only reached via func toggle and Excel macro.
-2. **Drop `NUM_L_HD` / `RCNUM_L` / `FN_L`?** — Left-hand numpad; only reachable from func-layer toggles.
+1. ~~Drop `DEFAULT_HD_2`?~~ **Yes — confirmed.**
+2. **Drop `NUM_L_HD` / `RCNUM_L` / `FN_L`?** — Left-hand numpad chain; only from func toggles.
 3. **Drop `MOUSE` layer?** — Only toggled from func layers.
 4. **Keep `LCNUM` nav cluster?** — Used on default homerow (`&hms_m_a LCNUM 0`) and steno-mods overlay.
 
