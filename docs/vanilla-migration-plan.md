@@ -40,39 +40,8 @@ These are the commits `west update` resolves when both projects use `revision: m
 | [urob/zmk-adaptive-key](https://github.com/urob/zmk-adaptive-key) | `e5b335a7b1076cb122582f5a892b118b02a3be34` | [e5b335a7](https://github.com/urob/zmk-adaptive-key/commit/e5b335a7b1076cb122582f5a892b118b02a3be34) |
 
 ```yaml
-# config/west.yml (target)
-manifest:
-  remotes:
-    - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
-    - name: urob
-      url-base: https://github.com/urob
-    - name: ph
-      url-base: https://github.com/phuertay
-    - name: petercpark
-      url-base: https://github.com/petercpark
-  projects:
-    - name: zmk
-      remote: zmkfirmware
-      revision: main
-      # If a push breaks CI, replace main with the last verified SHA:
-      # revision: 773dec58eaacaef4703b3e4595e50bd71f6cad3d  # zmk@main verified 2026-06-06 — https://github.com/zmkfirmware/zmk/commit/773dec58eaacaef4703b3e4595e50bd71f6cad3d
-      import: app/west.yml
-    - name: zmk-adaptive-key
-      remote: urob
-      revision: main
-      # If a push breaks CI, replace main with the last verified SHA:
-      # revision: e5b335a7b1076cb122582f5a892b118b02a3be34  # zmk-adaptive-key@main verified 2026-06-06 — https://github.com/urob/zmk-adaptive-key/commit/e5b335a7b1076cb122582f5a892b118b02a3be34
-    - name: zmk-keyboard-dacman56
-      remote: ph
-      revision: main
-    # Phase 4:
-    # - name: zmk-hid-io-plover-hid
-    #   remote: petercpark
-    #   revision: main
-    #   # revision: <sha>  # pin if needed — https://github.com/petercpark/zmk-hid-io-plover-hid/commits/main
-  self:
-    path: config
+# config/west.yml — see the file in-repo for copy-paste pin comments
+# (LAST KNOWN GOOD + LATEST GREEN CI lines per project)
 ```
 
 ### How to find the newest working revision

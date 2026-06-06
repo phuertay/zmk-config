@@ -1,14 +1,48 @@
+# west.yml — ZMK manifest
+#
+# Pinning (when CI breaks after an upstream push):
+#   1. https://github.com/phuertay/zmk-config/actions → last green run → Build
+#      → "West Update" → search "HEAD is now at" for zmk / zmk-adaptive-key
+#   2. Per project: comment out `revision: main`, uncomment ONE `revision:` line below
+#   3. LAST KNOWN GOOD — pre-filled verified SHAs (2026-06-06)
+#   4. LATEST GREEN CI — replace PASTE_SHA with full 40-char hash from step 1, set date
+#
 manifest:
   remotes:
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+    - name: urob
+      url-base: https://github.com/urob
     - name: ph
       url-base: https://github.com/phuertay
+    - name: petercpark
+      url-base: https://github.com/petercpark
   projects:
     - name: zmk
-      remote: ph
+      remote: zmkfirmware
       revision: main
+      # LAST KNOWN GOOD (verified 2026-06-06): https://github.com/zmkfirmware/zmk/commit/773dec58eaacaef4703b3e4595e50bd71f6cad3d
+      # revision: 773dec58eaacaef4703b3e4595e50bd71f6cad3d
+      # LATEST GREEN CI: https://github.com/phuertay/zmk-config/actions
+      # revision: PASTE_SHA  # zmk@main pinned YYYY-MM-DD
       import: app/west.yml
+    - name: zmk-adaptive-key
+      remote: urob
+      revision: main
+      # LAST KNOWN GOOD (verified 2026-06-06): https://github.com/urob/zmk-adaptive-key/commit/e5b335a7b1076cb122582f5a892b118b02a3be34
+      # revision: e5b335a7b1076cb122582f5a892b118b02a3be34
+      # LATEST GREEN CI: https://github.com/phuertay/zmk-config/actions
+      # revision: PASTE_SHA  # zmk-adaptive-key@main pinned YYYY-MM-DD
     - name: zmk-keyboard-dacman56
       remote: ph
       revision: main
+    # Phase 4 — Plover HID:
+    # - name: zmk-hid-io-plover-hid
+    #   remote: petercpark
+    #   revision: main
+    #   # LAST KNOWN GOOD (fill after first green phase-4 build):
+    #   # revision:
+    #   # LATEST GREEN CI: https://github.com/phuertay/zmk-config/actions
+    #   # revision: PASTE_SHA  # zmk-hid-io-plover-hid@main pinned YYYY-MM-DD
   self:
     path: config
