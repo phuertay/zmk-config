@@ -1,130 +1,218 @@
-#define ADAPTIVE_DELAY 200
-#define ADAPTIVE_DELAY_FAST 155
-#define FT 20
-
-
-#define ZMK_MACRO_VF(name,...) \
-	name: name { \
-			compatible = "zmk,behavior-macro"; \
-			#binding-cells = <0>; \
-			wait-ms = <1>; \
-			tap-ms = <1>; \
-			__VA_ARGS__ \
+/ { behaviors {
+	ak_Q: ak_Q {
+		compatible = "zmk,behavior-adaptive-key";
+		#binding-cells = <0>;
+		bindings = <&kp Q>;
+		akt_q_e {
+			trigger-keys = <E>;
+			max-prior-idle-ms = <200>;
+			bindings = <&kp G>;
 		};
-
-#define ZMK_MACRO_F(name,...) \
-	name: name { \
-			compatible = "zmk,behavior-macro"; \
-			#binding-cells = <0>; \
-			wait-ms = <7>; \
-			tap-ms = <2>; \
-			__VA_ARGS__ \
-		};
-
-
-#define AD_SNAME(x) ad ## x
-#define AD_LNAME(x) adapt ## x
-
-#define ZMK_ADAPTIVE(the_key,...) \
-	AD_SNAME(the_key): AD_LNAME(the_key) { \
-		compatible = "zmk,behavior-antecedent-morph"; \
-		#binding-cells = <0>; \
-		max-delay-ms = <ADAPTIVE_DELAY>; \
-		__VA_ARGS__ \
 	};
 
+	ak_W: ak_W {
+		compatible = "zmk,behavior-adaptive-key";
+		#binding-cells = <0>;
+		bindings = <&kp W>;
+		akt_w_q {
+			trigger-keys = <Q>;
+			max-prior-idle-ms = <200>;
+			bindings = <&kp BSPC &kp SQT>;
+		};
+		akt_w_e {
+			trigger-keys = <E>;
+			max-prior-idle-ms = <200>;
+			bindings = <&kp BSPC &kp D &kp W>;
+		};
+	};
 
-/ { behaviors {
-	ZMK_ADAPTIVE(_Q,
-		defaults = <&kp Q>;
-		antecedents = <E>;
-		bindings = <&kp G>;
-        )
+	ak_E: ak_E {
+		compatible = "zmk,behavior-adaptive-key";
+		#binding-cells = <0>;
+		bindings = <&kp E>;
+		akt_e_q {
+			trigger-keys = <Q>;
+			max-prior-idle-ms = <200>;
+			bindings = <&kp BSPC &kp G &kp E>;
+		};
+		akt_e_w {
+			trigger-keys = <W>;
+			max-prior-idle-ms = <200>;
+			bindings = <&kp BSPC &kp Y>;
+		};
+		akt_e_r {
+			trigger-keys = <R>;
+			max-prior-idle-ms = <200>;
+			bindings = <&kp C>;
+		};
+	};
 
-	ZMK_ADAPTIVE(_W,
-		defaults = <&kp W>;
-		antecedents = <Q E>;
-		bindings = <&m_dqt>, <&m_ddw>;
-        )
+	ak_U: ak_U {
+		compatible = "zmk,behavior-adaptive-key";
+		#binding-cells = <0>;
+		bindings = <&kp U>;
+		akt_u_o {
+			trigger-keys = <O>;
+			max-prior-idle-ms = <200>;
+			bindings = <&kp M>;
+		};
+	};
 
-	ZMK_ADAPTIVE(_E,
-		defaults = <&kp E>;
-		antecedents = <Q W R>;
-		bindings = <&m_dge>, <&m_dkk>, <&kp C>;
-        )
+	ak_I: ak_I {
+		compatible = "zmk,behavior-adaptive-key";
+		#binding-cells = <0>;
+		bindings = <&kp I>;
+		akt_i_o {
+			trigger-keys = <O>;
+			max-prior-idle-ms = <200>;
+			bindings = <&kp M &kp K>;
+		};
+	};
 
-	ZMK_ADAPTIVE(_U,
-		defaults = <&kp U>;
-		antecedents = <O>;
+	ak_O: ak_O {
+		compatible = "zmk,behavior-adaptive-key";
+		#binding-cells = <0>;
+		bindings = <&kp O>;
+		akt_o_i {
+			trigger-keys = <I>;
+			max-prior-idle-ms = <200>;
+			bindings = <&kp M &kp K>;
+		};
+		akt_o_p {
+			trigger-keys = <P>;
+			max-prior-idle-ms = <200>;
+			bindings = <&kp L>;
+		};
+		akt_o_u {
+			trigger-keys = <U>;
+			max-prior-idle-ms = <200>;
+			bindings = <&kp M>;
+		};
+	};
+
+	ak_P: ak_P {
+		compatible = "zmk,behavior-adaptive-key";
+		#binding-cells = <0>;
+		bindings = <&kp P>;
+		akt_p_o {
+			trigger-keys = <O>;
+			max-prior-idle-ms = <200>;
+			bindings = <&kp L>;
+		};
+	};
+
+	ak_A: ak_A {
+		compatible = "zmk,behavior-adaptive-key";
+		#binding-cells = <0>;
+		bindings = <&kp A>;
+		akt_a_semi {
+			trigger-keys = <SEMI>;
+			max-prior-idle-ms = <200>;
+			bindings = <&kp BSPC &kp G &kp A>;
+		};
+		akt_a_fslh {
+			trigger-keys = <FSLH>;
+			max-prior-idle-ms = <200>;
+			bindings = <&kp BSPC &kp B &kp A>;
+		};
+	};
+
+	ak_S: ak_S {
+		compatible = "zmk,behavior-adaptive-key";
+		#binding-cells = <0>;
+		bindings = <&kp S>;
+		akt_s_fslh {
+			trigger-keys = <FSLH>;
+			max-prior-idle-ms = <200>;
+			bindings = <&kp BSPC &kp B &kp S>;
+		};
+	};
+
+	ak_SEMI: ak_SEMI {
+		compatible = "zmk,behavior-adaptive-key";
+		#binding-cells = <0>;
+		bindings = <&kp SEMI>;
+		akt_semi_e {
+			trigger-keys = <E>;
+			max-prior-idle-ms = <200>;
+			bindings = <&kp G &kp C>;
+		};
+	};
+
+	ak_Z: ak_Z {
+		compatible = "zmk,behavior-adaptive-key";
+		#binding-cells = <0>;
+		bindings = <&kp Z>;
+		akt_z_x {
+			trigger-keys = <X>;
+			max-prior-idle-ms = <200>;
+			bindings = <&kp BSPC &kp V &kp Y>;
+		};
+		akt_z_c {
+			trigger-keys = <C>;
+			max-prior-idle-ms = <200>;
+			bindings = <&kp G>;
+		};
+	};
+
+	ak_X: ak_X {
+		compatible = "zmk,behavior-adaptive-key";
+		#binding-cells = <0>;
+		bindings = <&kp X>;
+		akt_x_c {
+			trigger-keys = <C>;
+			max-prior-idle-ms = <200>;
+			bindings = <&kp Y>;
+		};
+	};
+
+	ak_C: ak_C {
+		compatible = "zmk,behavior-adaptive-key";
+		#binding-cells = <0>;
+		bindings = <&kp C>;
+		akt_c_z {
+			trigger-keys = <Z>;
+			max-prior-idle-ms = <200>;
+			bindings = <&kp BSPC &kp G &kp C>;
+		};
+		akt_c_fslh {
+			trigger-keys = <FSLH>;
+			max-prior-idle-ms = <200>;
+			bindings = <&kp BSPC &kp B &kp C>;
+		};
+	};
+
+	ak_M: ak_M {
+		compatible = "zmk,behavior-adaptive-key";
+		#binding-cells = <0>;
 		bindings = <&kp M>;
-        )
+		akt_m_fslh {
+			trigger-keys = <FSLH>;
+			max-prior-idle-ms = <200>;
+			bindings = <&kp BSPC &kp J &kp M>;
+		};
+	};
 
-	ZMK_ADAPTIVE(_I,
-		defaults = <&kp I>;
-		antecedents = <O>;
-		bindings = <&m_mk>;
-        )
-
-	ZMK_ADAPTIVE(_O,
-		defaults = <&kp O>;
-		antecedents = <I P U>;
-		bindings = <&m_mk>, <&kp L>, <&kp M>;
-        )
-
-	ZMK_ADAPTIVE(_P,
-		defaults = <&kp P>;
-		antecedents = <O>;
-		bindings = <&kp L>;
-        )
-
-	ZMK_ADAPTIVE(_A,
-		defaults = <&kp A>;
-		antecedents = <SEMI FSLH>;
-		bindings = <&m_dga>, <&m_dba>;
-        )
-
-	ZMK_ADAPTIVE(_S,
-		defaults = <&kp S>;
-		antecedents = <FSLH>;
-		bindings = <&m_dbs>;
-        )
-
-	ZMK_ADAPTIVE(_SEMI,
-		defaults = <&kp SEMI>;
-		antecedents = <E>;
-		bindings = <&m_gc>;
-        )
-
-	ZMK_ADAPTIVE(_Z,
-		defaults = <&kp Z>;
-		antecedents = <X C>;
-		bindings = <&m_dvy>, <&kp G>;
-        )
-
-	ZMK_ADAPTIVE(_X,
-		defaults = <&kp X>;
-		antecedents = <C>;
-		bindings = <&kp Y>;
-        )
-
-	ZMK_ADAPTIVE(_C,
-		defaults = <&kp C>;
-		antecedents = <Z FSLH>;
-		bindings = <&m_dgc>, <&m_dbc>;
-        )
-
-	ZMK_ADAPTIVE(_M,
-		defaults = <&kp M>;
-		antecedents = <FSLH>;
-		bindings = <&m_djm>;
-        )
-
-	ZMK_ADAPTIVE(_FSLH,
-		defaults = <&kp FSLH>;
-		antecedents = <E M DOT>;
-		bindings = <&kp B>, <&kp J>, <&kp L>;
-        )
-
+	ak_FSLH: ak_FSLH {
+		compatible = "zmk,behavior-adaptive-key";
+		#binding-cells = <0>;
+		bindings = <&kp FSLH>;
+		akt_fslh_e {
+			trigger-keys = <E>;
+			max-prior-idle-ms = <200>;
+			bindings = <&kp B>;
+		};
+		akt_fslh_m {
+			trigger-keys = <M>;
+			max-prior-idle-ms = <200>;
+			bindings = <&kp J>;
+		};
+		akt_fslh_dot {
+			trigger-keys = <DOT>;
+			max-prior-idle-ms = <200>;
+			bindings = <&kp L>;
+		};
+	};
 
 	hms_m_a: homerow_mod_a_macro {
 		compatible = "zmk,behavior-hold-tap";
@@ -132,7 +220,7 @@
 		tapping-term-ms = <220>;
 		quick-tap-ms = <0>;
 		flavor = "balanced";
-		bindings = <&mo>, <&ad_A>;
+		bindings = <&mo>, <&ak_A>;
 	};
 
 	hm_m_c: homerow_mod_c_macro {
@@ -141,7 +229,7 @@
 		tapping-term-ms = <160>;
 		quick-tap-ms = <0>;
 		flavor = "balanced";
-		bindings = <&kp>, <&ad_C>;
+		bindings = <&kp>, <&ak_C>;
 	};
 
 	hms_m_x: homerow_mod_x_macro {
@@ -150,7 +238,7 @@
 		tapping-term-ms = <220>;
 		quick-tap-ms = <0>;
 		flavor = "balanced";
-		bindings = <&kp>, <&ad_X>;
+		bindings = <&kp>, <&ak_X>;
 	};
 
 	hms_m_m: homerow_mod_m_macro {
@@ -159,63 +247,6 @@
 		tapping-term-ms = <220>;
 		quick-tap-ms = <0>;
 		flavor = "balanced";
-		bindings = <&kp>, <&ad_M>;
+		bindings = <&kp>, <&ak_M>;
 	};
-
-
-	ZMK_MACRO_F(m_dba,
-		bindings = <&kp BSPC &kp B &kp A>;
-	)
-
-	ZMK_MACRO_F(m_dbc,
-		bindings = <&kp BSPC &kp B &kp C>;
-	)
-	
-	ZMK_MACRO_F(m_dbs,
-		bindings = <&kp BSPC &kp B &kp S>;
-	)
-
-	ZMK_MACRO_F(m_ddw,
-		bindings = <&kp BSPC &kp D &kp W>;
-	)
-
-	ZMK_MACRO_F(m_dg_gr,
-		bindings = <&kp BSPC &kp G &kp GRAVE>;
-	)
-
-	ZMK_MACRO_F(m_dga,
-		bindings = <&kp BSPC &kp G &kp A>;
-	)
-
-	ZMK_MACRO_F(m_dgc,
-		bindings = <&kp BSPC &kp G &kp C>;
-	)
-
-	ZMK_MACRO_F(m_dge,
-		bindings = <&kp BSPC &kp G &kp E>;
-	)
-
-	ZMK_MACRO_F(m_djm,
-		bindings = <&kp BSPC &kp J &kp M>;
-	)
-
-	ZMK_MACRO_F(m_dkk,
-		bindings = <&kp BSPC &kp Y>;
-	)
-
-	ZMK_MACRO_F(m_dqt,
-		bindings = <&kp BSPC &kp SQT>;
-	)
-
-	ZMK_MACRO_F(m_dvy,
-		bindings = <&kp BSPC &kp V &kp Y>;
-	)
-
-	ZMK_MACRO_F(m_gc,
-		bindings = <&kp G &kp C>;
-	)
-
-	ZMK_MACRO_F(m_mk,
-		bindings = <&kp M &kp K>;
-	)
 }; };

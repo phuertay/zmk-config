@@ -226,4 +226,9 @@
             bindings = <&m_phuerta>, <&m_ph>, <&m_pihy>;
 	};
 
+	plv: plover_hid {
+		compatible = "zmk,behavior-plover-hid";
+		#binding-cells = <1>;
+	};
+
 }; };
