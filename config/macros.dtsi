@@ -139,10 +139,7 @@
 	)
 
 	ZMK_MACRO_(m_excel_go_to,
-		bindings = <&kp RC(W)>,
-				<&macro_press &mo DEFAULT_HD_2>,
-				<&macro_pause_for_release>,
-				<&macro_release &mo DEFAULT_HD_2>;
+		bindings = <&kp RC(W)>;
 	)
 
 	ZMK_MACRO_(m_c_spfn,
@@ -205,23 +202,23 @@
 	)
 
 	ZMK_MACRO_(m_plo_look,
-		bindings = <&macro_press &kp PLV_PL &kp PLV_HL &kp PLV_RL &kp PLV_U &kp PLV_PR>,
-				<&macro_release &kp PLV_PL &kp PLV_HL &kp PLV_RL &kp PLV_U &kp PLV_PR>;
+		bindings = <&macro_press &plv PLV_PL &plv PLV_HL &plv PLV_RL &plv PLV_U &plv PLV_PR>,
+				<&macro_release &plv PLV_PL &plv PLV_HL &plv PLV_RL &plv PLV_U &plv PLV_PR>;
 	)
 
 	ZMK_MACRO_(m_plo_add,
-		bindings = <&macro_press &kp PLV_TL &kp PLV_KL &kp PLV_U &kp PLV_PR &kp PLV_TR>,
-				<&macro_release &kp PLV_TL &kp PLV_KL &kp PLV_U &kp PLV_PR &kp PLV_TR>;
+		bindings = <&macro_press &plv PLV_TL &plv PLV_KL &plv PLV_U &plv PLV_PR &plv PLV_TR>,
+				<&macro_release &plv PLV_TL &plv PLV_KL &plv PLV_U &plv PLV_PR &plv PLV_TR>;
 	)
 
 	ZMK_MACRO_(m_pren,
-		bindings = <&macro_press &kp PLV_PL &kp PLV_RL &kp PLV_E &kp PLV_PR &kp PLV_BR>,
-				<&macro_release &kp PLV_PL &kp PLV_RL &kp PLV_E &kp PLV_PR &kp PLV_BR>;
+		bindings = <&macro_press &plv PLV_PL &plv PLV_RL &plv PLV_E &plv PLV_PR &plv PLV_BR>,
+				<&macro_release &plv PLV_PL &plv PLV_RL &plv PLV_E &plv PLV_PR &plv PLV_BR>;
 	)
 
 	ZMK_MACRO_(m_pren_s,
-		bindings = <&macro_press &kp PLV_PL &kp PLV_RL &kp PLV_E &kp PLV_PR &kp PLV_BR &kp PLV_ST>,
-				<&macro_release &kp PLV_PL &kp PLV_RL &kp PLV_E &kp PLV_PR &kp PLV_BR &kp PLV_ST>;
+		bindings = <&macro_press &plv PLV_PL &plv PLV_RL &plv PLV_E &plv PLV_PR &plv PLV_BR &plv PLV_ST>,
+				<&macro_release &plv PLV_PL &plv PLV_RL &plv PLV_E &plv PLV_PR &plv PLV_BR &plv PLV_ST>;
 	)
 
 	to_s: to_s {
