@@ -1,26 +1,23 @@
-// ─── Macro timing parameters ──────────────────────────────────────────────────
-#define MACRO_WAIT_DEFAULT        2    // ZMK_MACRO_ wait-ms default
-#define MACRO_TAP_DEFAULT        10    // ZMK_MACRO_ tap-ms default
-
-#define MACRO_WAIT_MIN            0    // minimum meaningful delay; use where 0 was a placeholder
-#define MACRO_WAIT_CHORD         40    // modifier-press macros needing settle time
-#define MACRO_WAIT_PAUSE          7    // mid-macro pause, gap between key and layer switch
-
-#define MACRO_WAIT_ALT_LONG      50    // m_9_16*: initial LALT settle
-#define MACRO_WAIT_ALT_SHORT     30    // m_9_16*: after LALT, before keys
-#define MACRO_WAIT_LAS           15    // m_las_n2/n3/n7: LALT → shifted digit gap
-// ──────────────────────────────────────────────────────────────────────────────
+#define MACRO_WAIT_DEFAULT        2
+#define MACRO_TAP_DEFAULT        10
+#define MACRO_WAIT_MIN            0
+#define MACRO_WAIT_CHORD         40
+#define MACRO_WAIT_PAUSE          7
+#define MACRO_WAIT_ALT_LONG      50
+#define MACRO_WAIT_ALT_SHORT     30
+#define MACRO_WAIT_LAS           15
 
 #define ZMK_MACRO_(name,...) \
 	name: name { \
-			compatible = "zmk,behavior-macro"; \
-			#binding-cells = <0>; \
-			wait-ms = <MACRO_WAIT_DEFAULT>; \
-			tap-ms = <MACRO_TAP_DEFAULT>; \
-			__VA_ARGS__ \
-		};
+		compatible = "zmk,behavior-macro"; \
+		#binding-cells = <0>; \
+		wait-ms = <MACRO_WAIT_DEFAULT>; \
+		tap-ms = <MACRO_TAP_DEFAULT>; \
+		__VA_ARGS__ \
+	};
 
 / { behaviors {
+	/* Hold-tap wrappers that invoke a macro on hold */
 	hms_m_lsrs: lsrs_m_macro {
 		compatible = "zmk,behavior-hold-tap";
 		#binding-cells = <2>;
@@ -33,8 +30,8 @@
 	ZMK_MACRO_(m_ls_rs,
 		wait-ms = <MACRO_WAIT_CHORD>;
 		bindings = <&macro_press &kp LSHFT>,
-				<&macro_tap &kp RSHFT>,
-				<&macro_release &kp LSHFT>;
+			<&macro_tap &kp RSHFT>,
+			<&macro_release &kp LSHFT>;
 	)
 
 	hms_m_KP_N00: KP_N00_m_macro {
@@ -61,95 +58,13 @@
 
 	ZMK_MACRO_(m_N88,
 		bindings = <&macro_press &kp LSHFT>,
-				<&macro_tap &kp N8 &kp N8>,
-				<&macro_release &kp LSHFT>;
+			<&macro_tap &kp N8 &kp N8>,
+			<&macro_release &kp LSHFT>;
 	)
 
-	ZMK_MACRO_(m_eq_sum,
-		bindings = <&kp RBKT &kp S &kp M &kp E &kp MINUS>;
-	)
-
+	/* Numpad / Excel helpers */
 	ZMK_MACRO_(m_sum,
 		bindings = <&kp S &kp M &kp E &kp MINUS>;
-	)
-
-	ZMK_MACRO_(m_9_16,
-		bindings = <&macro_wait_time MACRO_WAIT_ALT_LONG>,
-				<&kp LALT>,
-				<&macro_wait_time MACRO_WAIT_ALT_SHORT>,
-				<&kp Q &kp J &kp SEMI &kp KP_N9 &kp TAB &kp KP_N1 &kp KP_N6 &kp ENTER &kp ESC>;
-	)
-
-	ZMK_MACRO_(m_9_16_steno,
-		bindings = <&macro_wait_time MACRO_WAIT_ALT_LONG>,
-				<&kp LALT>,
-				<&macro_wait_time MACRO_WAIT_ALT_SHORT>,
-				<&kp Q &kp J &kp SEMI &kp LS(N1) &kp TAB &kp LS(N3) &kp LS(N6) &kp ENTER &kp ESC>;
-	)
-
-	ZMK_MACRO_(m_email_w,
-		bindings = <&kp G &kp SEMI &kp M &kp K &kp A &kp GRAVE &kp J>,
-				<&kp LS(I)>,
-				<&kp T &kp J &kp S &kp J &kp GRAVE &kp V &kp SEMI>,
-				<&kp W &kp C &kp COMMA &kp B &kp J &kp C>,
-				<&kp I &kp V &kp COMMA &kp E>;
-	)
-
-	ZMK_MACRO_(m_email_g,
-		bindings = <&kp G &kp SEMI &kp M &kp K &kp A &kp GRAVE &kp J &kp DOT>,
-				<&kp LS(I)>,
-				<&kp W &kp E &kp J &kp L &kp C>,
-				<&kp I &kp V &kp COMMA &kp E>;
-	)
-
-	ZMK_MACRO_(m_email_w_old,
-		bindings = <&kp G &kp SEMI &kp M &kp K &kp A &kp GRAVE &kp J>,
-				<&kp LS(I)>,
-				<&kp T &kp J &kp S &kp J &kp GRAVE &kp V &kp SEMI &kp J>,
-				<&kp F &kp FSLH &kp L &kp S &kp COMMA &kp A &kp S>,
-				<&kp I &kp V &kp COMMA &kp E>;
-	)
-
-	ZMK_MACRO_(m_email_ph,
-		bindings = <&kp G &kp SEMI>,
-				<&kp LS(I)>,
-				<&kp T &kp J &kp S &kp J &kp GRAVE &kp V &kp SEMI>,
-				<&kp W &kp C &kp COMMA &kp B &kp J &kp C>,
-				<&kp I &kp V &kp COMMA &kp E>;
-	)
-
-	ZMK_MACRO_(m_phuerta,
-		bindings = <&kp G &kp SEMI &kp M &kp K &kp A &kp GRAVE &kp J>;
-	)
-
-	ZMK_MACRO_(m_ph,
-		bindings = <&kp LS(G) &kp K &kp F &kp A &kp COMMA>,
-				<&kp SPACE>,
-				<&kp LS(SEMI) &kp M &kp K &kp A &kp GRAVE &kp J>;
-	)
-
-	ZMK_MACRO_(m_pihy,
-		bindings = <&kp LS(G) &kp K &kp F &kp A &kp COMMA>,
-				<&kp SPACE>,
-				<&kp LS(L) &kp I>,
-				<&kp SPACE>,
-				<&kp LS(SEMI) &kp M &kp K &kp A &kp GRAVE &kp J>,
-				<&kp SPACE>,
-				<&kp LS(DOT) &kp M &kp E &kp SEMI &kp J>;
-	)
-
-	ZMK_MACRO_(m_excel_go_to,
-		bindings = <&kp RC(W)>,
-				<&macro_press &mo DEFAULT_HD_2>,
-				<&macro_pause_for_release>,
-				<&macro_release &mo DEFAULT_HD_2>;
-	)
-
-	ZMK_MACRO_(m_c_spfn,
-		wait-ms = <MACRO_WAIT_CHORD>;
-		bindings = <&macro_press &mo SPFN_HD &kp RCTRL>,
-					<&macro_pause_for_release>,
-				<&macro_release &mo SPFN_HD &kp RCTRL>;
 	)
 
 	ZMK_MACRO_(m_paste_transp,
@@ -157,37 +72,31 @@
 		bindings = <&kp RC(LA(FSLH)) &kp LA(FSLH) &kp K &kp ENTER>;
 	)
 
-	ZMK_MACRO_(m_equity,
-		wait-ms = <MACRO_WAIT_CHORD>;
-		bindings = <&kp SPACE &kp LS(K)>,
-				<&macro_wait_time MACRO_WAIT_PAUSE>,
-				<&kp O &kp M &kp L &kp GRAVE &kp DOT>;
-	)
-
 	ZMK_MACRO_(m_calc,
 		bindings = <&macro_press &kp RGUI &kp RSHFT>,
-				<&macro_tap &kp N3>,
-				<&macro_release &kp RGUI &kp RSHFT>;
+			<&macro_tap &kp N3>,
+			<&macro_release &kp RGUI &kp RSHFT>;
 	)
 
 	ZMK_MACRO_(m_las_n2,
 		bindings = <&kp LALT>,
-				<&macro_wait_time MACRO_WAIT_LAS>,
-				<&kp LS(N2)>;
+			<&macro_wait_time MACRO_WAIT_LAS>,
+			<&kp LS(N2)>;
 	)
 
 	ZMK_MACRO_(m_las_n3,
 		bindings = <&kp LALT>,
-				<&macro_wait_time MACRO_WAIT_LAS>,
-				<&kp LS(N3)>;
+			<&macro_wait_time MACRO_WAIT_LAS>,
+			<&kp LS(N3)>;
 	)
 
 	ZMK_MACRO_(m_las_n7,
 		bindings = <&kp LALT>,
-				<&macro_wait_time MACRO_WAIT_LAS>,
-				<&kp LS(N7)>;
+			<&macro_wait_time MACRO_WAIT_LAS>,
+			<&kp LS(N7)>;
 	)
 
+	/* Layer + F17/F18 signaling */
 	ZMK_MACRO_(m_to_steno,
 		bindings = <&to STENO &kp steno_on>;
 	)
@@ -204,26 +113,84 @@
 		bindings = <&to DEFAULT_HD &kp steno_off &kp numpad_off>;
 	)
 
-	ZMK_MACRO_(m_plo_look,
-		bindings = <&macro_press &plv PLV_PL &plv PLV_HL &plv PLV_RL &plv PLV_U &plv PLV_PR>,
-				<&macro_release &plv PLV_PL &plv PLV_HL &plv PLV_RL &plv PLV_U &plv PLV_PR>;
-	)
-
-	ZMK_MACRO_(m_plo_add,
-		bindings = <&macro_press &plv PLV_TL &plv PLV_KL &plv PLV_U &plv PLV_PR &plv PLV_TR>,
-				<&macro_release &plv PLV_TL &plv PLV_KL &plv PLV_U &plv PLV_PR &plv PLV_TR>;
-	)
-
+	/* Steno word macros (Plover HID press/release) */
 	ZMK_MACRO_(m_pren,
-		bindings = <&macro_press &plv PLV_PL &plv PLV_RL &plv PLV_E &plv PLV_PR &plv PLV_BR>,
-				<&macro_release &plv PLV_PL &plv PLV_RL &plv PLV_E &plv PLV_PR &plv PLV_BR>;
+		bindings = <&macro_press &plv PLV_PL &plv PLV_HL &plv PLV_RL &plv PLV_E &plv PLV_PR &plv PLV_BR>,
+			<&macro_release &plv PLV_PL &plv PLV_HL &plv PLV_RL &plv PLV_E &plv PLV_PR &plv PLV_BR>;
 	)
 
 	ZMK_MACRO_(m_pren_s,
-		bindings = <&macro_press &plv PLV_PL &plv PLV_RL &plv PLV_E &plv PLV_PR &plv PLV_BR &plv PLV_ST>,
-				<&macro_release &plv PLV_PL &plv PLV_RL &plv PLV_E &plv PLV_PR &plv PLV_BR &plv PLV_ST>;
+		bindings = <&macro_press &plv PLV_PL &plv PLV_HL &plv PLV_RL &plv PLV_E &plv PLV_PR &plv PLV_BR &plv PLV_ST>,
+			<&macro_release &plv PLV_PL &plv PLV_HL &plv PLV_RL &plv PLV_E &plv PLV_PR &plv PLV_BR &plv PLV_ST>;
 	)
 
+	/* Email / name tap-dance targets */
+	ZMK_MACRO_(m_email_w,
+		bindings = <&kp G &kp SEMI &kp M &kp K &kp A &kp GRAVE &kp J>,
+			<&kp LS(I)>,
+			<&kp T &kp J &kp S &kp J &kp GRAVE &kp V &kp SEMI>,
+			<&kp W &kp C &kp COMMA &kp B &kp J &kp C>,
+			<&kp I &kp V &kp COMMA &kp E>;
+	)
+
+	ZMK_MACRO_(m_email_g,
+		bindings = <&kp G &kp SEMI &kp M &kp K &kp A &kp GRAVE &kp J &kp DOT>,
+			<&kp LS(I)>,
+			<&kp W &kp E &kp J &kp L &kp C>,
+			<&kp I &kp V &kp COMMA &kp E>;
+	)
+
+	ZMK_MACRO_(m_email_w_old,
+		bindings = <&kp G &kp SEMI &kp M &kp K &kp A &kp GRAVE &kp J>,
+			<&kp LS(I)>,
+			<&kp T &kp J &kp S &kp J &kp GRAVE &kp V &kp SEMI &kp J>,
+			<&kp F &kp FSLH &kp L &kp S &kp COMMA &kp A &kp S>,
+			<&kp I &kp V &kp COMMA &kp E>;
+	)
+
+	ZMK_MACRO_(m_email_ph,
+		bindings = <&kp G &kp SEMI>,
+			<&kp LS(I)>,
+			<&kp T &kp J &kp S &kp J &kp GRAVE &kp V &kp SEMI>,
+			<&kp W &kp C &kp COMMA &kp B &kp J &kp C>,
+			<&kp I &kp V &kp COMMA &kp E>;
+	)
+
+	ZMK_MACRO_(m_phuerta,
+		bindings = <&kp G &kp SEMI &kp M &kp K &kp A &kp GRAVE &kp J>;
+	)
+
+	ZMK_MACRO_(m_ph,
+		bindings = <&kp LS(G) &kp K &kp F &kp A &kp COMMA>,
+			<&kp SPACE>,
+			<&kp LS(SEMI) &kp M &kp K &kp A &kp GRAVE &kp J>;
+	)
+
+	ZMK_MACRO_(m_pihy,
+		bindings = <&kp LS(G) &kp K &kp F &kp A &kp COMMA>,
+			<&kp SPACE>,
+			<&kp LS(L) &kp I>,
+			<&kp SPACE>,
+			<&kp LS(SEMI) &kp M &kp K &kp A &kp GRAVE &kp J>,
+			<&kp SPACE>,
+			<&kp LS(DOT) &kp M &kp E &kp SEMI &kp J>;
+	)
+
+	ZMK_MACRO_(m_9_16,
+		bindings = <&macro_wait_time MACRO_WAIT_ALT_LONG>,
+			<&kp LALT>,
+			<&macro_wait_time MACRO_WAIT_ALT_SHORT>,
+			<&kp Q &kp J &kp SEMI &kp KP_N9 &kp TAB &kp KP_N1 &kp KP_N6 &kp ENTER &kp ESC>;
+	)
+
+	ZMK_MACRO_(m_9_16_steno,
+		bindings = <&macro_wait_time MACRO_WAIT_ALT_LONG>,
+			<&kp LALT>,
+			<&macro_wait_time MACRO_WAIT_ALT_SHORT>,
+			<&kp Q &kp J &kp SEMI &kp LS(N1) &kp TAB &kp LS(N3) &kp LS(N6) &kp ENTER &kp ESC>;
+	)
+
+	/* Parametric layer + signal macros (F17/F18) */
 	to_s: to_s {
 		compatible = "zmk,behavior-macro-two-param";
 		wait-ms = <MACRO_WAIT_PAUSE>;
@@ -243,17 +210,6 @@
 		bindings = <&macro_tap &kp numpad_on>
 			, <&macro_param_1to1>
 			, <&macro_tap &to MACRO_PLACEHOLDER>;
-	};
-
-	tog_s: tog_s {
-		compatible = "zmk,behavior-macro-two-param";
-		wait-ms = <MACRO_WAIT_PAUSE>;
-		tap-ms = <MACRO_WAIT_MIN>;
-		#binding-cells = <2>;
-		bindings = <&macro_param_2to1>
-			, <&macro_tap &kp MACRO_PLACEHOLDER>
-			, <&macro_param_1to1>
-			, <&macro_tap &tog MACRO_PLACEHOLDER>;
 	};
 
 	tog_s_num: tog_s_num {

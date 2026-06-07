@@ -1,3 +1,4 @@
+/* Global sticky-layer timeout (applies to all &sl bindings). */
 &sl {
 	release-after-ms = <1500>;
 };
@@ -6,143 +7,114 @@
 #define idle_time_homerow_short 70
 
 / { behaviors {
-	// Hold-tap for F-keys
+	/* ── Mod / layer hold-taps ─────────────────────────────────────────── */
+
 	fn: fn_mod {
 		compatible = "zmk,behavior-hold-tap";
 		tapping-term-ms = <250>;
 		flavor = "balanced";
-            	require-prior-idle-ms = <idle_time_homerow>;
+		require-prior-idle-ms = <idle_time_homerow>;
 		#binding-cells = <2>;
 		bindings = <&kp>, <&kp>;
 	};
-	
-	// Hold-tap for Upper F-keys
+
 	fm: high_fn_mod {
 		compatible = "zmk,behavior-hold-tap";
 		tapping-term-ms = <580>;
 		flavor = "balanced";
-            	require-prior-idle-ms = <idle_time_homerow>;
+		require-prior-idle-ms = <idle_time_homerow>;
 		#binding-cells = <2>;
 		bindings = <&kp>, <&kp>;
 	};
 
-	// Hold-tap for layer-space with retro-tap
 	lts: layer_tap_sfn {
 		compatible = "zmk,behavior-hold-tap";
 		#binding-cells = <2>;
-		flavor = "hold-preferred";		// hold behavior when tapping-term-ms expired or another key is pressed
-            	require-prior-idle-ms = <idle_time_homerow>;
+		flavor = "hold-preferred";
+		require-prior-idle-ms = <idle_time_homerow>;
 		tapping-term-ms = <500>;
 		bindings = <&mo>, <&kp>;
-		retro-tap;						// tap behavior triggered when releasing if no other key was pressed
+		retro-tap;
 	};
 
-	// Hold-tap for layer-space with retro-tap
 	lts_tp: layer_tap_sfn_tp {
 		compatible = "zmk,behavior-hold-tap";
 		#binding-cells = <2>;
-		flavor = "tap-preferred";		// hold behavior when tapping-term-ms expired or another key is pressed
-            	require-prior-idle-ms = <idle_time_homerow>;
+		flavor = "tap-preferred";
+		require-prior-idle-ms = <idle_time_homerow>;
 		tapping-term-ms = <250>;
 		bindings = <&mo>, <&kp>;
-		retro-tap;						// tap behavior triggered when releasing if no other key was pressed
+		retro-tap;
 	};
-	
-	// Hold-tap for ctlr/esc
+
 	cesc: hold_tap_ctrl_esc {
 		compatible = "zmk,behavior-hold-tap";
 		#binding-cells = <2>;
-            	require-prior-idle-ms = <idle_time_homerow>;
+		require-prior-idle-ms = <idle_time_homerow>;
 		tapping-term-ms = <240>;
-		flavor = "balanced";		// hold behavior when tapping-term-ms expired or another key is pressed
+		flavor = "balanced";
 		bindings = <&kp>, <&kp>;
 	};
-	
-	
+
+	/* ── Homerow mods (tapping-term / idle tuning) ───────────────────────── */
+
 	hmf: homerow_mods_fast {
 		compatible = "zmk,behavior-hold-tap";
 		#binding-cells = <2>;
 		tapping-term-ms = <170>;
-            	require-prior-idle-ms = <idle_time_homerow>;
+		require-prior-idle-ms = <idle_time_homerow>;
 		quick-tap-ms = <0>;
-		flavor = "balanced";			// hold behavior when tapping-term-ms has expired or another key is pressed and released
+		flavor = "balanced";
 		bindings = <&kp>, <&kp>;
 	};
-	
+
 	hm: homerow_mods {
 		compatible = "zmk,behavior-hold-tap";
 		#binding-cells = <2>;
 		tapping-term-ms = <175>;
-            	require-prior-idle-ms = <idle_time_homerow>;
+		require-prior-idle-ms = <idle_time_homerow>;
 		quick-tap-ms = <0>;
-		flavor = "balanced";			// hold behavior when tapping-term-ms has expired or another key is pressed and released
+		flavor = "balanced";
 		bindings = <&kp>, <&kp>;
 	};
-	
+
 	hms: homerow_mod_slow {
 		compatible = "zmk,behavior-hold-tap";
 		#binding-cells = <2>;
 		tapping-term-ms = <180>;
 		quick-tap-ms = <0>;
-		flavor = "balanced";			// hold behavior when tapping-term-ms has expired or another key is pressed and released
+		flavor = "balanced";
 		bindings = <&kp>, <&kp>;
 	};
-	
-	
-	// For that almost-zpecial finger
+
 	hmms: homerow_mod_mid_slow {
 		compatible = "zmk,behavior-hold-tap";
 		#binding-cells = <2>;
 		tapping-term-ms = <225>;
-            	require-prior-idle-ms = <idle_time_homerow_short>;
+		require-prior-idle-ms = <idle_time_homerow_short>;
 		quick-tap-ms = <0>;
-		flavor = "balanced";		// hold behavior when tapping-term-ms has expired. tap behavior when another key is pressed
+		flavor = "balanced";
 		bindings = <&kp>, <&kp>;
 	};
 
-	// For that zpecial finger
 	hmss: homerow_mod_sup_slow {
 		compatible = "zmk,behavior-hold-tap";
 		#binding-cells = <2>;
 		tapping-term-ms = <249>;
-            	require-prior-idle-ms = <idle_time_homerow>;
+		require-prior-idle-ms = <idle_time_homerow>;
 		quick-tap-ms = <0>;
-		flavor = "tap-preferred";		// hold behavior when tapping-term-ms has expired. tap behavior when another key is pressed
+		flavor = "tap-preferred";
 		bindings = <&kp>, <&kp>;
 	};
-		
-	sq: sticky_q {
-		compatible = "zmk,behavior-sticky-key";
-		quick-release;
-		#binding-cells = <1>;
-		release-after-ms = <1500>;
-		bindings = <&kp>;
-	};
-	
-	k_or_lay: key_or_layer {
-		compatible = "zmk,behavior-hold-tap";
-		#binding-cells = <2>;
-		tapping-term-ms = <156>;
-		quick-tap-ms = <0>;
-		flavor = "balanced";			// hold behavior when tapping-term-ms has expired or another key is pressed and released
-		bindings = <&kp>, <&tog>;
-	};
-		
-	lay_or_lay: layer_or_layer {
-		compatible = "zmk,behavior-hold-tap";
-		#binding-cells = <2>;
-		tapping-term-ms = <156>;
-		quick-tap-ms = <0>;
-		flavor = "balanced";			// hold behavior when tapping-term-ms has expired or another key is pressed and released
-		bindings = <&mo>, <&tog>;
-	};
+
+	/* ── Numpad F18 signal wrappers (see macros.dtsi to_s_num / mo_s_num) ─ */
 
 	lay_or_lay_s_num: layer_or_layer_with_num_signal {
 		compatible = "zmk,behavior-hold-tap";
 		#binding-cells = <2>;
 		tapping-term-ms = <136>;
 		quick-tap-ms = <0>;
-		flavor = "balanced";			// hold behavior when tapping-term-ms has expired or another key is pressed and released
+		flavor = "balanced";
 		bindings = <&mo_s_num>, <&tog_s_num>;
 	};
 
@@ -151,7 +123,7 @@
 		#binding-cells = <2>;
 		tapping-term-ms = <136>;
 		quick-tap-ms = <0>;
-		flavor = "balanced";			// hold behavior when tapping-term-ms has expired or another key is pressed and released
+		flavor = "balanced";
 		bindings = <&mo_s_num>, <&kp>;
 	};
 
@@ -160,7 +132,7 @@
 		#binding-cells = <2>;
 		tapping-term-ms = <186>;
 		quick-tap-ms = <0>;
-		flavor = "tap-preferred";			// hold behavior when tapping-term-ms has expired. tap behavior when another key is pressed
+		flavor = "tap-preferred";
 		bindings = <&mo_s_num>, <&kp>;
 	};
 
@@ -169,66 +141,53 @@
 		#binding-cells = <2>;
 		tapping-term-ms = <156>;
 		quick-tap-ms = <0>;
-		flavor = "balanced";			// hold behavior when tapping-term-ms has expired or another key is pressed and released
+		flavor = "balanced";
 		bindings = <&to_s_num>, <&kp>;
 	};
 
 	tl_s: tap_or_layer_signal {
 		compatible = "zmk,behavior-hold-tap";
 		#binding-cells = <2>;
-		flavor = "hold-preferred";		// hold behavior when tapping-term-ms expired or another key is pressed
-            	require-prior-idle-ms = <idle_time_homerow>;
+		flavor = "hold-preferred";
+		require-prior-idle-ms = <idle_time_homerow>;
 		tapping-term-ms = <180>;
 		bindings = <&kp>, <&tog_s_num>;
 	};
 
-	hm_m_cspfn: homerow_mod_cspfn {
-		compatible = "zmk,behavior-hold-tap";
-		#binding-cells = <2>;
-		tapping-term-ms = <186>;
-		quick-tap-ms = <0>;
-		flavor = "balanced";
-		bindings = <&m_c_spfn>, <&kp>;
-	};
-
 	tog_on: toggle_layer_on_only {
-            compatible = "zmk,behavior-toggle-layer";
-            #binding-cells = <1>;
-            display-name = "Toggle Layer On";
-            toggle-mode = "on";
-        };
+		compatible = "zmk,behavior-toggle-layer";
+		#binding-cells = <1>;
+		display-name = "Toggle Layer On";
+		toggle-mode = "on";
+	};
 
-	tog_off: toggle_layer_off_only {
-            compatible = "zmk,behavior-toggle-layer";
-            #binding-cells = <1>;
-            display-name = "Toggle Layer Off";
-            toggle-mode = "off";
-        };
+	/* ── Tap dances ────────────────────────────────────────────────────── */
 
-        td_plus_sum: tap_dance_plus_sum {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp KP_PLUS>, <&m_sum>;
+	td_plus_sum: tap_dance_plus_sum {
+		compatible = "zmk,behavior-tap-dance";
+		#binding-cells = <0>;
+		tapping-term-ms = <200>;
+		bindings = <&kp KP_PLUS>, <&m_sum>;
 	};
-		
-        td_emails: tap_dance_emails {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <420>;
-            bindings = <&m_email_w>, <&m_email_g>, <&m_email_w_old>, <&m_email_ph>;
+
+	td_emails: tap_dance_emails {
+		compatible = "zmk,behavior-tap-dance";
+		#binding-cells = <0>;
+		tapping-term-ms = <420>;
+		bindings = <&m_email_w>, <&m_email_g>, <&m_email_w_old>, <&m_email_ph>;
 	};
-		
-        td_names: tap_dance_namess {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <420>;
-            bindings = <&m_phuerta>, <&m_ph>, <&m_pihy>;
+
+	td_names: tap_dance_names {
+		compatible = "zmk,behavior-tap-dance";
+		#binding-cells = <0>;
+		tapping-term-ms = <420>;
+		bindings = <&m_phuerta>, <&m_ph>, <&m_pihy>;
 	};
+
+	/* ── Plover HID ────────────────────────────────────────────────────── */
 
 	plv: plover_hid {
 		compatible = "zmk,behavior-plover-hid";
 		#binding-cells = <1>;
 	};
-
 }; };
