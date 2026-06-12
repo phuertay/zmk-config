@@ -2,11 +2,11 @@
 
 ZMK user config for the [dacman56](https://github.com/phuertay/zmk-keyboard-dacman56) split keyboard (nice!nano v1).
 
-The **`vanilla`** branch builds against upstream **[zmkfirmware/zmk](https://github.com/zmkfirmware/zmk)** with external modules for adaptive keys and Plover HID. The **`Adaptive`** branch still uses the legacy **`phuertay/zmk`** fork until hardware validation is complete.
+The default **`main`** branch builds against upstream **[zmkfirmware/zmk](https://github.com/zmkfirmware/zmk)** with external modules for adaptive keys and Plover HID. **`adaptive-legacy`** keeps the old **`phuertay/zmk`** fork snapshot for reference.
 
 ---
 
-## Stack (`vanilla` branch)
+## Stack (`main` branch)
 
 | Component | Source |
 |---|---|
@@ -186,10 +186,10 @@ west build -s zmk/app -b nice_nano@1//zmk -d build/left -- -DSHIELD=dacman56_lef
 
 | Branch | Purpose |
 |---|---|
-| **`vanilla`** | Upstream ZMK + modules; migration target (CI green) |
-| **`Adaptive`** | Legacy fork-based production until merged from `vanilla` |
+| **`main`** | Default — upstream ZMK + modules (CI green) |
+| **`adaptive-legacy`** | Archived fork-based config (pre-migration snapshot) |
 
-Merge **`vanilla` → `Adaptive`** only after on-keyboard validation (adaptives, numpad, steno, combos).
+Validate on hardware from **`main`** before deleting **`adaptive-legacy`** (adaptives, numpad, steno, combos).
 
 ---
 

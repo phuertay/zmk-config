@@ -1,6 +1,6 @@
 # Vanilla ZMK migration
 
-**Branch:** `vanilla` · **Production until sign-off:** `Adaptive` (legacy `phuertay/zmk` fork)
+**Default branch:** `main` (renamed from `vanilla`) · **Archive:** `adaptive-legacy` (renamed from `Adaptive`, legacy `phuertay/zmk` fork)
 
 This config builds on **[zmkfirmware/zmk](https://github.com/zmkfirmware/zmk)** with **[urob/zmk-adaptive-key](https://github.com/urob/zmk-adaptive-key)** and **[petercpark/zmk-hid-io-plover-hid](https://github.com/petercpark/zmk-hid-io-plover-hid)**. User-facing docs live in **`README.md`**.
 
@@ -11,7 +11,7 @@ This config builds on **[zmkfirmware/zmk](https://github.com/zmkfirmware/zmk)** 
 | Implementation | Done ([#17](https://github.com/phuertay/zmk-config/pull/17)) |
 | CI | Green — `dacman56_left`, `dacman56_right`, `settings_reset` |
 | Hardware validation | Pending |
-| Merge to `Adaptive` | After sign-off ([#16](https://github.com/phuertay/zmk-config/pull/16)) |
+| Default branch | `main` (2026-06) — planning PR [#16](https://github.com/phuertay/zmk-config/pull/16) superseded by [#17](https://github.com/phuertay/zmk-config/pull/17)–[#22](https://github.com/phuertay/zmk-config/pull/22) |
 
 ## Current layer stack (10 layers)
 
