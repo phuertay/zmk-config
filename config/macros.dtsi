@@ -115,13 +115,13 @@
 
 	/* Steno word macros (Plover HID press/release) */
 	ZMK_MACRO_(m_pren,
-		bindings = <&macro_press &plv PLV_PL &plv PLV_HL &plv PLV_RL &plv PLV_E &plv PLV_PR &plv PLV_BR>,
-			<&macro_release &plv PLV_PL &plv PLV_HL &plv PLV_RL &plv PLV_E &plv PLV_PR &plv PLV_BR>;
+		bindings = <&macro_press &plv PLV_PL &plv PLV_RL &plv PLV_E &plv PLV_PR &plv PLV_BR>,
+			<&macro_release &plv PLV_PL &plv PLV_RL &plv PLV_E &plv PLV_PR &plv PLV_BR>;
 	)
 
 	ZMK_MACRO_(m_pren_s,
-		bindings = <&macro_press &plv PLV_PL &plv PLV_HL &plv PLV_RL &plv PLV_E &plv PLV_PR &plv PLV_BR &plv PLV_ST>,
-			<&macro_release &plv PLV_PL &plv PLV_HL &plv PLV_RL &plv PLV_E &plv PLV_PR &plv PLV_BR &plv PLV_ST>;
+		bindings = <&macro_press &plv PLV_PL &plv PLV_RL &plv PLV_E &plv PLV_PR &plv PLV_BR &plv PLV_ST>,
+			<&macro_release &plv PLV_PL &plv PLV_RL &plv PLV_E &plv PLV_PR &plv PLV_BR &plv PLV_ST>;
 	)
 
 	/* Email / name tap-dance targets */
