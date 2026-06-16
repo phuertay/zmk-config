@@ -64,7 +64,7 @@
 				&trans                   &kp N1                   &kp N2                   &kp N3                   &lt_s NUM_HD_ULTRA N4    &hmss LWIN N5            &hmss RWIN N6            &lt_s NUM_HD_ULTRA N7    &kp N8                   &kp N9                   &kp N0                   &fn F12 LS(P)
 				&plv PLV_X3              &plv PLV_NM              &plv PLV_TL              &plv PLV_PL              &plv PLV_HL              &plv PLV_ST              &plv PLV_ST              &plv PLV_FR              &plv PLV_PR              &plv PLV_LR              &plv PLV_TR              &plv PLV_DR
 				&plv PLV_X4              &plv PLV_SL              &plv PLV_KL              &plv PLV_WL              &plv PLV_RL              &plv PLV_ST              &plv PLV_ST              &plv PLV_RR              &plv PLV_BR              &plv PLV_GR              &plv PLV_SR              &plv PLV_ZR
-				&tl_s LSHFT NUM_HD_ULTRA &hmms RCTRL RC(X)                               &m_pren                  &m_pren_s
+				&lay_or_lay_s_num NUM_HD_ULTRA NUM_HD_ULTRA &hmms RCTRL RC(X)                               &m_pren                  &m_pren_s
 				&plv PLV_A             &plv PLV_O                                      &plv PLV_E              &plv PLV_U
 				&trans                 &trans                                          &trans                  &trans
 				&trans                 &trans                                          &m_from_steno           &trans
