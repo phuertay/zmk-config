@@ -66,7 +66,7 @@
 				&plv PLV_X4              &plv PLV_SL              &plv PLV_KL              &plv PLV_WL              &plv PLV_RL              &plv PLV_ST              &plv PLV_ST              &plv PLV_RR              &plv PLV_BR              &plv PLV_GR              &plv PLV_SR              &plv PLV_ZR
 				&tl_s LSHFT NUM_HD_ULTRA &hmms RCTRL RC(X)                               &m_pren                  &m_pren_s
 				&plv PLV_A             &plv PLV_O                                      &plv PLV_E              &plv PLV_U
-				&trans                 &trans                                          &trans                  &trans
+				&trans                 &trans                                          &lay_or_lay_steno_num NUM_HD_ULTRA NUM_HD_ULTRA &trans
 				&trans                 &trans                                          &m_from_steno           &trans
 			>;
 		};

@@ -222,6 +222,22 @@
 			, <&macro_tap &tog_on MACRO_PLACEHOLDER>;
 	};
 
+	/* Latch numpad via mo then locking toggle so STENO+NUM tri-layer stays active */
+	tog_s_steno_num: tog_s_steno_num {
+		compatible = "zmk,behavior-macro-one-param";
+		wait-ms = <MACRO_WAIT_MIN>;
+		tap-ms = <MACRO_WAIT_MIN>;
+		#binding-cells = <1>;
+		bindings = <&macro_tap &kp numpad_on>
+			, <&macro_param_1to1>
+			, <&macro_press &mo MACRO_PLACEHOLDER>
+			, <&macro_wait_time MACRO_WAIT_PAUSE>
+			, <&macro_param_1to1>
+			, <&macro_tap &tog_lock MACRO_PLACEHOLDER>
+			, <&macro_release &mo MACRO_PLACEHOLDER>
+			, <&macro_tap &kp numpad_off>;
+	};
+
 	mo_s_num: mo_s_num {
 		compatible = "zmk,behavior-macro-one-param";
 		wait-ms = <MACRO_WAIT_MIN>;
