@@ -161,6 +161,12 @@
 		toggle-mode = "on";
 	};
 
+	tog_lock: toggle_layer_lock {
+		compatible = "zmk,behavior-toggle-layer";
+		#binding-cells = <1>;
+		locking;
+	};
+
 	/* ── Tap dances ────────────────────────────────────────────────────── */
 
 	td_plus_sum: tap_dance_plus_sum {

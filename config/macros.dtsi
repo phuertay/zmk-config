@@ -219,7 +219,12 @@
 		#binding-cells = <1>;
 		bindings = <&macro_tap &kp numpad_on>
 			, <&macro_param_1to1>
-			, <&macro_tap &tog_on MACRO_PLACEHOLDER>;
+			, <&macro_press &mo MACRO_PLACEHOLDER>
+			, <&macro_wait_time MACRO_WAIT_PAUSE>
+			, <&macro_param_1to1>
+			, <&macro_tap &tog_lock MACRO_PLACEHOLDER>
+			, <&macro_release &mo MACRO_PLACEHOLDER>
+			, <&macro_tap &kp numpad_off>;
 	};
 
 	mo_s_num: mo_s_num {
