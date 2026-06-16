@@ -84,6 +84,8 @@
 			>;
 		};
 
+		/* STENO+numpad: right cluster uses fm+LS(N*) tap (top-row digits), never KP_N*.
+		 * Requires STENO+NUM_HD_ULTRA → NUM_HD_STENO_MODS (tri-layer). */
 		num_hd_steno_mods {
 			bindings = <
 				&trans                   &trans                   &trans                   &trans                   &trans                   &trans                   &trans                   &trans                   &trans                   &trans                   &trans                   &trans
