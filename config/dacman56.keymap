@@ -157,8 +157,8 @@
 				&kp C_AL_CONTACTS        &kp C_AL_MAIL            &kp C_AL_CCC             &kp C_AL_CAL             &kp C_AL_WWW             &td_names                &kp C_AC_STOP            &kp C_AL_CALC            &kp C_AC_FAVORITES       &kp LG(F13)              &kp C_AC_SEND            &kp C_AL_MY_COMPUTER
 				&kp C_BRI_DN             &kp C_BRI_UP                                     &kp C_AC_BACK            &kp C_AC_FORWARD
 				&kp C_AL_SELECT_TASK     &kp INS                                          &kp C_AC_HOME           &kp C_AC_BACK
-				&trans                   &trans                                          &m_9_16                 &m_to_steno
-				&to DEFAULT_HD           &kp INS                                          &trans                   &tog SPFN_HD
+				&m_9_16                 &kp INS                                          &trans                   &tog SPFN_HD
+				&to DEFAULT_HD           &m_to_steno                                      &trans                   &to DEFAULT_HD
 			>;
 		};
 
