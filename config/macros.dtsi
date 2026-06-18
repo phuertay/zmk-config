@@ -3,8 +3,9 @@
 #define MACRO_WAIT_MIN            0
 #define MACRO_WAIT_CHORD         40
 #define MACRO_WAIT_PAUSE          7
-#define MACRO_WAIT_ALT_LONG      50
-#define MACRO_WAIT_ALT_SHORT     30
+#define MACRO_WAIT_ALT_LONG      65
+#define MACRO_WAIT_ALT_SHORT     40
+#define MACRO_TAP_9_16           18
 #define MACRO_WAIT_LAS           15
 
 #define ZMK_MACRO_(name,...) \
@@ -177,6 +178,7 @@
 	)
 
 	ZMK_MACRO_(m_9_16,
+		tap-ms = <MACRO_TAP_9_16>;
 		bindings = <&macro_wait_time MACRO_WAIT_ALT_LONG>,
 			<&kp LALT>,
 			<&macro_wait_time MACRO_WAIT_ALT_SHORT>,
@@ -184,6 +186,7 @@
 	)
 
 	ZMK_MACRO_(m_9_16_steno,
+		tap-ms = <MACRO_TAP_9_16>;
 		bindings = <&macro_wait_time MACRO_WAIT_ALT_LONG>,
 			<&kp LALT>,
 			<&macro_wait_time MACRO_WAIT_ALT_SHORT>,
