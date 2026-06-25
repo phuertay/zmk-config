@@ -7,7 +7,8 @@
 #define MACRO_WAIT_ALT_SHORT     40
 #define MACRO_TAP_9_16           18
 #define MACRO_WAIT_LAS           15
-#define MACRO_WAIT_SPACE_DELAY   20
+#define MACRO_WAIT_SPACE_DELAY   22
+#define MACRO_WAIT_SPACE_PRIOR   80
 
 #define ZMK_MACRO_(name,...) \
 	name: name { \
