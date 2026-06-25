@@ -199,11 +199,7 @@
 		compatible = "zmk,behavior-adaptive-key";
 		#binding-cells = <0>;
 		bindings = <&kp SPACE>;
-		akt_ldw_l {
-			trigger-keys = <L>;
-			max-prior-idle-ms = <MACRO_WAIT_SPACE_ROLL>;
-			bindings = <&m_space_delayed_roll>;
-		};
+		/* No akt_ldw_l — prior L alone is just i; delaying space there caused i ng */
 		akt_ldw_d {
 			trigger-keys = <D>;
 			max-prior-idle-ms = <MACRO_WAIT_SPACE_ROLL>;
