@@ -225,7 +225,7 @@
 	/* Suppress space tap while ldw roll keys still active; then ak_SPACE delays */
 	space_tui: space_tap_unless_interrupted {
 		compatible = "zmk,behavior-hold-tap";
-		#binding-cells = <0>;
+		#binding-cells = <2>;
 		flavor = "tap-unless-interrupted";
 		tapping-term-ms = <120>;
 		bindings = <&none>, <&ak_SPACE>;
