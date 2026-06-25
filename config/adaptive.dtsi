@@ -14,6 +14,7 @@
 		compatible = "zmk,behavior-adaptive-key";
 		#binding-cells = <0>;
 		bindings = <&kp W>;
+		/* Term lew→ing: W after E rewrites prior char to ng (ew step). */
 		akt_w_e_ng {
 			trigger-keys = <E>;
 			max-prior-idle-ms = <200>;
@@ -23,11 +24,6 @@
 			trigger-keys = <Q>;
 			max-prior-idle-ms = <200>;
 			bindings = <&kp BSPC &kp SQT>;
-		};
-		akt_w_e {
-			trigger-keys = <E>;
-			max-prior-idle-ms = <200>;
-			bindings = <&kp BSPC &kp D &kp W>;
 		};
 	};
 
@@ -198,22 +194,22 @@
 		};
 	};
 
-	/* Term -ing roll (L→E→W): delay space slightly; never swallow. */
+	/* Term lew→ing: delay right-thumb space during the roll (L, E, W keys). */
 	ak_SPACE: ak_SPACE {
 		compatible = "zmk,behavior-adaptive-key";
 		#binding-cells = <0>;
 		bindings = <&kp SPACE>;
-		akt_after_l {
+		akt_lew_l {
 			trigger-keys = <L>;
 			max-prior-idle-ms = <MACRO_WAIT_SPACE_ROLL>;
 			bindings = <&m_space_delayed_roll>;
 		};
-		akt_after_e {
+		akt_lew_e {
 			trigger-keys = <E>;
 			max-prior-idle-ms = <MACRO_WAIT_SPACE_ROLL>;
 			bindings = <&m_space_delayed_roll>;
 		};
-		akt_after_w {
+		akt_lew_w {
 			trigger-keys = <W>;
 			max-prior-idle-ms = <MACRO_WAIT_SPACE_PRIOR>;
 			bindings = <&m_space_delayed>;

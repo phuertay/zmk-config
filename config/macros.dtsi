@@ -101,7 +101,7 @@
 			<&kp LS(N7)>;
 	)
 
-	/* Brief pause before space when a morph may still be in flight (ak_SPACE). */
+	/* Term lew roll: brief pause before space (ak_SPACE). */
 	ZMK_MACRO_(m_space_delayed,
 		wait-ms = <MACRO_WAIT_MIN>;
 		tap-ms = <MACRO_WAIT_MIN>;
