@@ -14,6 +14,11 @@
 		compatible = "zmk,behavior-adaptive-key";
 		#binding-cells = <0>;
 		bindings = <&kp W>;
+		akt_w_e_ng {
+			trigger-keys = <E>;
+			max-prior-idle-ms = <200>;
+			bindings = <&kp BSPC &kp N &kp G>;
+		};
 		akt_w_q {
 			trigger-keys = <Q>;
 			max-prior-idle-ms = <200>;
@@ -193,11 +198,21 @@
 		};
 	};
 
-	/* Term MG roll: delay right-thumb space only after quick W (ak_W slot). */
+	/* Term -ing roll (I→E→W): swallow mid-roll space; delay only after W. */
 	ak_SPACE: ak_SPACE {
 		compatible = "zmk,behavior-adaptive-key";
 		#binding-cells = <0>;
 		bindings = <&kp SPACE>;
+		akt_after_i {
+			trigger-keys = <I>;
+			max-prior-idle-ms = <MACRO_WAIT_SPACE_ROLL>;
+			bindings = <&none>;
+		};
+		akt_after_e {
+			trigger-keys = <E>;
+			max-prior-idle-ms = <MACRO_WAIT_SPACE_ROLL>;
+			bindings = <&none>;
+		};
 		akt_after_w {
 			trigger-keys = <W>;
 			max-prior-idle-ms = <MACRO_WAIT_SPACE_PRIOR>;
