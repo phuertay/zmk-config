@@ -150,6 +150,7 @@ Use **`ldw`** for the suffix. Example **`thing`**: type labels for `t` `h` `i` `
 | D | `&kp D` |
 | E | `&ak_E` |
 | W | `&ak_W` |
+| left thumb | `&hmss SPACE GRAVE` (unchanged) |
 | right thumb | `&ak_SPACE` |
 
 ## `ak_SPACE` (right thumb)
@@ -158,13 +159,14 @@ Left thumb `&hmss SPACE GRAVE` unchanged. Delays space during rolls so morphs ca
 
 | Trigger | Prior label | Roll | Delay |
 |---------|-------------|------|-------|
+| `akt_ldw_l` | `L` (within 55 ms) | early thumb during `ldw` | 90 ms |
 | `akt_ldw_d` | `D` | `ldw` / `-ing` | 65 ms |
 | `akt_ew_e` | `E` | `ew` → `ng` | 65 ms |
 | `akt_after_w` | `W` | `ldw` or `ew` | 50 ms |
 
-No trigger on prior `L` alone — that is just `i`; delaying space after `L` produced `i ng` when rolling `ldw` for `-ing`.
+`akt_ldw_l` only fires when space follows `L` within **55 ms** (roll start). Intentional `i` + space after a pause uses immediate space. The **90 ms** delay lets `D` and `W` finish first.
 
-Tunables in `config/macros.dtsi`: `MACRO_WAIT_SPACE_DELAY` (50), `MACRO_WAIT_SPACE_DELAY_ROLL` (65), `MACRO_WAIT_SPACE_PRIOR` / `MACRO_WAIT_SPACE_ROLL` (120).
+Tunables in `config/macros.dtsi`: `MACRO_WAIT_SPACE_DELAY` (50), `MACRO_WAIT_SPACE_DELAY_ROLL` (65), `MACRO_WAIT_SPACE_DELAY_LDW` (90), `MACRO_WAIT_SPACE_L_PRIOR` (55), prior windows (120).
 
 Space is always sent after the delay — never swallowed.
 

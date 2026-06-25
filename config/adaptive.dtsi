@@ -199,7 +199,12 @@
 		compatible = "zmk,behavior-adaptive-key";
 		#binding-cells = <0>;
 		bindings = <&kp SPACE>;
-		/* No akt_ldw_l — prior L alone is just i; delaying space there caused i ng */
+		/* Early space after L (thumb during ldw roll): long delay so D,W finish first */
+		akt_ldw_l {
+			trigger-keys = <L>;
+			max-prior-idle-ms = <MACRO_WAIT_SPACE_L_PRIOR>;
+			bindings = <&m_space_delayed_ldw_l>;
+		};
 		akt_ldw_d {
 			trigger-keys = <D>;
 			max-prior-idle-ms = <MACRO_WAIT_SPACE_ROLL>;
