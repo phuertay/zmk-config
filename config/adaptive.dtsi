@@ -208,7 +208,7 @@
 		akt_ldw_d {
 			trigger-keys = <D>;
 			max-prior-idle-ms = <MACRO_WAIT_SPACE_ROLL>;
-			bindings = <&m_space_delayed_roll>;
+			bindings = <&m_space_delayed_ldw_l>;
 		};
 		akt_ew_e {
 			trigger-keys = <E>;
@@ -220,6 +220,15 @@
 			max-prior-idle-ms = <MACRO_WAIT_SPACE_PRIOR>;
 			bindings = <&m_space_delayed_roll>;
 		};
+	};
+
+	/* Suppress space tap while ldw roll keys still active; then ak_SPACE delays */
+	space_tui: space_tap_unless_interrupted {
+		compatible = "zmk,behavior-hold-tap";
+		#binding-cells = <0>;
+		flavor = "tap-unless-interrupted";
+		tapping-term-ms = <120>;
+		bindings = <&none>, <&ak_SPACE>;
 	};
 
 	ak_FSLH: ak_FSLH {

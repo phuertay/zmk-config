@@ -151,24 +151,26 @@ Use **`ldw`** for the suffix. Example **`thing`**: type labels for `t` `h` `i` `
 | E | `&ak_E` |
 | W | `&ak_W` |
 | left thumb | `&hmss SPACE GRAVE` (unchanged) |
-| right thumb | `&ak_SPACE` |
+| right thumb | `&space_tui` → `&ak_SPACE` |
 
 ## `ak_SPACE` (right thumb)
 
-Left thumb `&hmss SPACE GRAVE` unchanged. Delays space during rolls so morphs can finish. Triggers on the **label last pressed**:
+Right thumb uses **`&space_tui`**: `tap-unless-interrupted` with hold `&none` — if another key is pressed during the 120 ms tapping term (mid-roll), space is **not** sent. Clean tap after the roll reaches `&ak_SPACE` for adaptive delays.
+
+Left thumb `&hmss SPACE GRAVE` unchanged. Triggers on the **label last pressed**:
 
 | Trigger | Prior label | Roll | Delay |
 |---------|-------------|------|-------|
-| `akt_ldw_l` | `L` (within 180 ms) | early thumb during `ldw` | 150 ms |
-| `akt_ldw_d` | `D` | `ldw` / `-ing` | 100 ms |
-| `akt_ew_e` | `E` | `ew` → `ng` | 100 ms |
-| `akt_after_w` | `W` | `ldw` or `ew` | 100 ms |
+| `akt_ldw_l` | `L` (within 220 ms) | early thumb during `ldw` | 220 ms |
+| `akt_ldw_d` | `D` | `ldw` / `-ing` | 220 ms |
+| `akt_ew_e` | `E` | `ew` → `ng` | 120 ms |
+| `akt_after_w` | `W` | `ldw` or `ew` | 120 ms |
 
-`akt_ldw_l` fires when space follows `L` within **180 ms** (full roll window). The tight **65 ms** window missed slower rolls and caused immediate space → `i ng`. Intentional `i` + pause + space (>180 ms) stays immediate. The **150 ms** delay lets `D` and `W` finish first.
+`akt_ldw_l` / `akt_ldw_d` use the long **220 ms** delay so `D` and `W` can finish if space still gets through.
 
-Tunables in `config/macros.dtsi`: `MACRO_WAIT_SPACE_DELAY_ROLL` (100), `MACRO_WAIT_SPACE_DELAY_LDW` (150), prior windows (180).
+Tunables in `config/macros.dtsi`: `MACRO_WAIT_SPACE_DELAY_ROLL` (120), `MACRO_WAIT_SPACE_DELAY_LDW` (220), prior windows (220).
 
-Space is always sent after the delay — never swallowed.
+Mid-roll space taps are suppressed (`space_tui` hold `none`). Post-roll taps always send space after the adaptive delay.
 
 ## Morph summary
 
