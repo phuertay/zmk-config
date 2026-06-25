@@ -193,6 +193,23 @@
 		};
 	};
 
+	/* Term MG roll: M (ak_E slot) then G (ak_W slot). Delay space so morph can finish. */
+	ak_SPACE: ak_SPACE {
+		compatible = "zmk,behavior-adaptive-key";
+		#binding-cells = <0>;
+		bindings = <&kp SPACE>;
+		akt_after_e {
+			trigger-keys = <M>;
+			max-prior-idle-ms = <200>;
+			bindings = <&m_space_delayed>;
+		};
+		akt_after_w {
+			trigger-keys = <G>;
+			max-prior-idle-ms = <200>;
+			bindings = <&m_space_delayed>;
+		};
+	};
+
 	ak_FSLH: ak_FSLH {
 		compatible = "zmk,behavior-adaptive-key";
 		#binding-cells = <0>;
