@@ -193,6 +193,18 @@
 		};
 	};
 
+	/* Term MG roll: delay right-thumb space only after quick W (ak_W slot). */
+	ak_SPACE: ak_SPACE {
+		compatible = "zmk,behavior-adaptive-key";
+		#binding-cells = <0>;
+		bindings = <&kp SPACE>;
+		akt_after_w {
+			trigger-keys = <W>;
+			max-prior-idle-ms = <MACRO_WAIT_SPACE_PRIOR>;
+			bindings = <&m_space_delayed>;
+		};
+	};
+
 	ak_FSLH: ak_FSLH {
 		compatible = "zmk,behavior-adaptive-key";
 		#binding-cells = <0>;

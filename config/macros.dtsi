@@ -7,6 +7,8 @@
 #define MACRO_WAIT_ALT_SHORT     40
 #define MACRO_TAP_9_16           18
 #define MACRO_WAIT_LAS           15
+#define MACRO_WAIT_SPACE_DELAY   22
+#define MACRO_WAIT_SPACE_PRIOR   80
 
 #define ZMK_MACRO_(name,...) \
 	name: name { \
@@ -95,6 +97,13 @@
 		bindings = <&kp LALT>,
 			<&macro_wait_time MACRO_WAIT_LAS>,
 			<&kp LS(N7)>;
+	)
+
+	/* Brief pause before space when a morph may still be in flight (ak_SPACE). */
+	ZMK_MACRO_(m_space_delayed,
+		wait-ms = <MACRO_WAIT_MIN>;
+		tap-ms = <MACRO_WAIT_MIN>;
+		bindings = <&macro_wait_time MACRO_WAIT_SPACE_DELAY &kp SPACE>;
 	)
 
 	/* Layer + F17/F18 signaling */
