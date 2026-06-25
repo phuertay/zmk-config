@@ -159,14 +159,14 @@ Left thumb `&hmss SPACE GRAVE` unchanged. Delays space during rolls so morphs ca
 
 | Trigger | Prior label | Roll | Delay |
 |---------|-------------|------|-------|
-| `akt_ldw_l` | `L` (within 65 ms) | early thumb during `ldw` | 110 ms |
-| `akt_ldw_d` | `D` | `ldw` / `-ing` | 80 ms |
-| `akt_ew_e` | `E` | `ew` → `ng` | 80 ms |
-| `akt_after_w` | `W` | `ldw` or `ew` | 65 ms |
+| `akt_ldw_l` | `L` (within 180 ms) | early thumb during `ldw` | 150 ms |
+| `akt_ldw_d` | `D` | `ldw` / `-ing` | 100 ms |
+| `akt_ew_e` | `E` | `ew` → `ng` | 100 ms |
+| `akt_after_w` | `W` | `ldw` or `ew` | 100 ms |
 
-`akt_ldw_l` only fires when space follows `L` within **65 ms** (roll start). Intentional `i` + space after a pause uses immediate space. The **110 ms** delay lets `D` and `W` finish first.
+`akt_ldw_l` fires when space follows `L` within **180 ms** (full roll window). The tight **65 ms** window missed slower rolls and caused immediate space → `i ng`. Intentional `i` + pause + space (>180 ms) stays immediate. The **150 ms** delay lets `D` and `W` finish first.
 
-Tunables in `config/macros.dtsi`: `MACRO_WAIT_SPACE_DELAY` (65), `MACRO_WAIT_SPACE_DELAY_ROLL` (80), `MACRO_WAIT_SPACE_DELAY_LDW` (110), `MACRO_WAIT_SPACE_L_PRIOR` (65), prior windows (150).
+Tunables in `config/macros.dtsi`: `MACRO_WAIT_SPACE_DELAY_ROLL` (100), `MACRO_WAIT_SPACE_DELAY_LDW` (150), prior windows (180).
 
 Space is always sent after the delay — never swallowed.
 

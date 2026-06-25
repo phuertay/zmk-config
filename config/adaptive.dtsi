@@ -199,10 +199,10 @@
 		compatible = "zmk,behavior-adaptive-key";
 		#binding-cells = <0>;
 		bindings = <&kp SPACE>;
-		/* Early space after L (thumb during ldw roll): long delay so D,W finish first */
+		/* Early space after L: wide prior window + long delay so D,W finish first */
 		akt_ldw_l {
 			trigger-keys = <L>;
-			max-prior-idle-ms = <MACRO_WAIT_SPACE_L_PRIOR>;
+			max-prior-idle-ms = <MACRO_WAIT_SPACE_ROLL>;
 			bindings = <&m_space_delayed_ldw_l>;
 		};
 		akt_ldw_d {
@@ -218,7 +218,7 @@
 		akt_after_w {
 			trigger-keys = <W>;
 			max-prior-idle-ms = <MACRO_WAIT_SPACE_PRIOR>;
-			bindings = <&m_space_delayed>;
+			bindings = <&m_space_delayed_roll>;
 		};
 	};
 
