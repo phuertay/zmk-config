@@ -2,27 +2,49 @@
 
 **Authoritative source:** [`docs/reference/kbdterm.c`](reference/kbdterm.c) — Windows keyboard layout tables from `kbtrm001.dll`.
 
+## Labels → layout → output
+
+Everything goes through this pipeline:
+
+```
+Keycap label pressed  →  Term layout (kbdterm.c)  →  character on screen
+       (E, W, D, …)         maps label → glyph            (m, g, n, …)
+```
+
+- **Labels** = QWERTY keycap names / HID keycodes the firmware sends (`&kp D`, `&kp W`, …).
+- **Layout** = `kbdterm.c` on the host (plus Windows scan→VK if applicable).
+- **Output** = the glyph you see.
+
+**Never read morph bindings as output letters.** Read them as **labels** and look up what Term makes of each:
+
+| Morph binding | Label | Term output |
+|---------------|-------|-------------|
+| `&kp D` | D | `n` |
+| `&kp W` | W | `g` |
+| `&kp E` | E | `m` |
+| `&kp L` | L | `i` |
+
+So `akt_w_e` with `BSPC` `D` `W` is **not** “type d and w” — it is “send labels **D** and **W**, which Term outputs as **`ng`**” (after backspace).
+
+Adaptives and morphs are specified in **labels**. Triggers use **labels** of keys pressed (`<E>`, `<W>`, …). The layout converts labels to output.
+
 ## The one rule
 
-**Think in QWERTY keycap labels** (what is printed on the keys you press), **not** in the characters that appear on screen.
-
-Term remaps each physical key position (scan code) to a different output character. The label on the cap and the glyph typed are usually **different**.
+**Think in keycap labels you press and send**, not in the characters that appear on screen.
 
 | Wrong | Right |
 |-------|-------|
+| “`&kp D` types `d`.” | “Label **D** → Term outputs **`n`**.” |
+| “`akt_w_e` sends dw.” | “`akt_w_e` sends labels **D** **W** → output **`ng`**.” |
 | “To type `test`, press `T` `E` `S` `T`.” | “To type `test`, press `` ` `` `K` `S` `` ` ``.” |
-| “To type `i`, press `I`.” | “To type `i`, press `L`.” |
-| “HID `T` always means `t`.” | “The `` ` `` cap (scan `0x29`) means `t`.” |
 
-## How to find the keys for a word
+## How to find labels for a word
 
-For each character you want on screen:
+For each output character you want:
 
-1. Look up which **scan code** produces it in `kbdterm.c` (`scancode_to_vk` → `vk_to_wchar5`, Base column).
-2. Convert that scan code to the **US QWERTY keycap label** at that position (table below).
-3. Write down the **keycap labels in order** — that is your typing sequence.
-
-Firmware adaptives (see below) may change what the host receives for some rolls; they still key off **which key was pressed last** (the HID / keycap side), not the glyph.
+1. Find which **label** produces it in the keycap → output table below (from `kbdterm.c`).
+2. Write those **labels in order** — that is the typing sequence.
+3. If a firmware **morph** already maps a label roll to the right output (e.g. `ew` → `ng`), use the morph’s label trigger, not the output letters.
 
 ## US QWERTY scan code → keycap label
 
@@ -41,12 +63,12 @@ Standard AT set 1 positions used by `kbdterm.c`:
 | `0x18` | O | `0x26` | L | `0x29` | `` ` `` |
 | `0x19` | P | `0x27` | ; | | |
 
-## Term: keycap label → output (base layer)
+## Term: label → output (base layer)
 
-Derived from `kbdterm.c` (scan → VK → character). Alpha keys only — see `kbdterm.c` for punctuation, AltGr, dead keys.
+From `kbdterm.c` (`scancode_to_vk` → `vk_to_wchar5`, Base column):
 
-| Press cap | Output | Press cap | Output | Press cap | Output |
-|-----------|--------|-----------|--------|-----------|--------|
+| Label | Output | Label | Output | Label | Output |
+|-------|--------|-------|--------|-------|--------|
 | Q | j | A | r | Z | x |
 | W | g | S | s | X | z |
 | E | m | D | n | C | l |
@@ -60,89 +82,87 @@ Derived from `kbdterm.c` (scan → VK → character). Alpha keys only — see `k
 | `` ` `` | **t** | M | u | | |
 | , | **o** | | | | |
 
-**Shift+Space** → `_` (see `VK_SPACE` in `kbdterm.c`).
+**Shift+Space** → `_`.
 
 ## Worked examples
 
 ### `test` → `` `KS` ``
 
-| Output | Scan | Press cap |
-|--------|------|-----------|
-| t | `0x29` | `` ` `` |
-| e | `0x25` | K |
-| s | `0x1F` | S |
-| t | `0x29` | `` ` `` |
+| Output | Label |
+|--------|-------|
+| t | `` ` `` |
+| e | K |
+| s | S |
+| t | `` ` `` |
 
 ### `soup` → `S,M,G`
 
-| Output | Scan | Press cap |
-|--------|------|-----------|
-| s | `0x1F` | S |
-| o | `0x33` | , |
-| u | `0x32` | M |
-| p | `0x22` | G |
+| Output | Label |
+|--------|-------|
+| s | S |
+| o | , |
+| u | M |
+| p | G |
 
-(comma is the **`,`** keycap, not the letter `C`.)
+### `ng` → `ew` (adaptive morph)
 
-### `ing` → `ldw`
+| Step | Label | Firmware | Output |
+|------|-------|----------|--------|
+| 1 | E | `&ak_E` | `m` |
+| 2 | W | `&ak_W` + **`akt_w_e`** | **`ng`** |
 
-| Output | Scan | Press cap | Binding |
-|--------|------|-----------|---------|
-| i | `0x26` | L | `&kp L` |
-| n | `0x20` | D | `&kp D` |
-| g | `0x11` | W | `&ak_W` |
+Roll: **`E` → `W`**. Morph on `ak_W` when prior label is `E`:
 
-Keycap sequence: **`L` → `D` → `W`** (written **`ldw`**). No firmware morph — Term maps each key directly.
-
-```
-Caps:  L  →  D  →  W  →  SPACE (optional)
-       │     │     │
-       │     │     └─ &ak_W
-       │     └─ &kp D
-       └─ &kp L
+```dts
+akt_w_e {
+    trigger-keys = <E>;
+    bindings = <&kp BSPC &kp D &kp W>;  /* labels D,W → ng */
+};
 ```
 
-## Firmware + host
+### `ing` → `ldw` (no morph)
+
+| Output | Label | Binding |
+|--------|-------|---------|
+| i | L | `&kp L` |
+| n | D | `&kp D` |
+| g | W | `&ak_W` |
+
+**`L` → `D` → `W`**. Each label maps through Term directly.
+
+## Firmware layers
 
 | Layer | Role |
 |-------|------|
-| **Term (`kbdterm.c`)** | Maps key **positions** (scan codes) to glyphs on the host. |
-| **ZMK keymap** | Each physical position has a binding (`&kp L`, `&ak_W`, …) that sends an HID keycode. |
-| **Adaptives (`adaptive.dtsi`)** | Delayed space on rolls; triggers use **HID keycodes of keys pressed** (`<L>`, `<D>`, `<W>`, …). |
+| **Term (`kbdterm.c`)** | label → output on the host |
+| **ZMK keymap** | physical position → binding → label sent |
+| **Adaptives** | morphs and delayed space; **labels in, labels for triggers** |
 
-When editing adaptives, ask: **which keycap label did I just press?** — not “what letter appeared?”
+### dacman56 bindings (default layer)
 
-### dacman56 bindings (default layer, main rolls)
-
-| Keycap | Binding | Default HID sent |
-|--------|---------|------------------|
-| L | `&kp L` | `L` |
-| D | `&kp D` | `D` |
-| E | `&ak_E` | `E` |
-| W | `&ak_W` | `W` |
-| S | `&ak_S` | `S` |
-| G | `&hms RALT G` | `G` |
-| M | `&hms_m_m` | `M` |
-| `` ` `` | `&hmss SPACE GRAVE` (hold) | `GRAVE` |
-| right thumb | `&ak_SPACE` | `SPACE` (delayed after `L`/`D`/`W`) |
-
-If a binding sends the same HID code as the keycap label, adaptive `trigger-keys` use that letter (e.g. `<L>` for the `L` key).
+| Label | Binding |
+|-------|---------|
+| L | `&kp L` |
+| D | `&kp D` |
+| E | `&ak_E` |
+| W | `&ak_W` |
+| right thumb | `&ak_SPACE` |
 
 ## `ak_SPACE` (right thumb)
 
-| Trigger | Prior key pressed | Window | Delay |
-|---------|-------------------|--------|-------|
-| `akt_ldw_l` | `L` | 80 ms | 40 ms |
-| `akt_ldw_d` | `D` | 80 ms | 40 ms |
-| `akt_ldw_w` | `W` | 80 ms | 25 ms |
+Delays space during rolls so morphs can finish. Triggers on **labels** last pressed:
 
-Tunables in `config/macros.dtsi`: `MACRO_WAIT_SPACE_DELAY`, `MACRO_WAIT_SPACE_DELAY_ROLL`, `MACRO_WAIT_SPACE_PRIOR`, `MACRO_WAIT_SPACE_ROLL`.
+| Trigger | Prior label | Delay |
+|---------|-------------|-------|
+| `akt_ldw_l` / `akt_ldw_d` | `L` / `D` | 40 ms |
+| `akt_ldw_w` / `akt_ew_w` | `W` | 25 ms |
+| `akt_ew_e` | `E` | 40 ms |
 
-Space is always sent after the delay — never swallowed.
+Tunables: `MACRO_WAIT_SPACE_*` in `config/macros.dtsi`. Space is always sent — never swallowed.
 
 ## Updating
 
-1. Refresh [`docs/reference/kbdterm.c`](reference/kbdterm.c) from `kbtrm001.dll`.
-2. Rebuild the keycap → output table from `scancode_to_vk` + `vk_to_wchar5`.
-3. Re-check `config/adaptive.dtsi` triggers against **keycap / HID keys pressed**.
-4. Re-check `config/dacman56.keymap` bindings.
+1. Refresh [`docs/reference/kbdterm.c`](reference/kbdterm.c).
+2. Rebuild label → output table.
+3. Specify morphs with **labels**; verify output via the table.
+4. Match `trigger-keys` to **labels pressed**, not glyphs.

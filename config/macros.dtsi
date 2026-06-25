@@ -101,7 +101,7 @@
 			<&kp LS(N7)>;
 	)
 
-	/* Term ldw roll — see docs/term-layout.md (ak_SPACE). */
+	/* Term rolls — see docs/term-layout.md (ak_SPACE). */
 	ZMK_MACRO_(m_space_delayed,
 		wait-ms = <MACRO_WAIT_MIN>;
 		tap-ms = <MACRO_WAIT_MIN>;
