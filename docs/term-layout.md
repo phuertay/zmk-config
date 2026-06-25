@@ -63,9 +63,9 @@ Standard AT set 1 positions used by `kbdterm.c`:
 | `0x18` | O | `0x26` | L | `0x29` | `` ` `` |
 | `0x19` | P | `0x27` | ; | | |
 
-## Term: label → output (base layer)
+## Term: keycap label → output (base layer)
 
-From `kbdterm.c` (`scancode_to_vk` → `vk_to_wchar5`, Base column):
+Each **keycap label** is the US QWERTY name at a physical position. Term maps that position’s scan code to a virtual key, then to a glyph (`scancode_to_vk` → `vk_to_wchar5` in `kbdterm.c`). Firmware `&kp X` should send the same label `X` as the keycap it sits on.
 
 | Label | Output | Label | Output | Label | Output |
 |-------|--------|-------|--------|-------|--------|
@@ -126,9 +126,13 @@ akt_w_e {
 |--------|-------|---------|
 | i | L | `&kp L` |
 | n | D | `&kp D` |
-| g | W | `&ak_W` |
+| g | W | `&ak_W` (prior `D`, not `E` — **`akt_w_e` does not fire**) |
 
 **`L` → `D` → `W`**. Each label maps through Term directly.
+
+### `-ing` word endings
+
+Use **`ldw`** for the suffix. Example **`thing`**: type labels for `t` `h` `i` `n` `g` via `` ` `` … `L` `D` `W` (see tables above), or roll the stem then **`ldw`**.
 
 ## Firmware layers
 
@@ -150,15 +154,25 @@ akt_w_e {
 
 ## `ak_SPACE` (right thumb)
 
-Delays space during rolls so morphs can finish. Triggers on **labels** last pressed:
+Left thumb `&hmss SPACE GRAVE` unchanged. Delays space during rolls so morphs can finish. Triggers on the **label last pressed**:
 
-| Trigger | Prior label | Delay |
-|---------|-------------|-------|
-| `akt_ldw_l` / `akt_ldw_d` | `L` / `D` | 40 ms |
-| `akt_ldw_w` / `akt_ew_w` | `W` | 25 ms |
-| `akt_ew_e` | `E` | 40 ms |
+| Trigger | Prior label | Roll | Delay |
+|---------|-------------|------|-------|
+| `akt_ldw_l` | `L` | `ldw` / `-ing` | 40 ms |
+| `akt_ldw_d` | `D` | `ldw` / `-ing` | 40 ms |
+| `akt_ew_e` | `E` | `ew` → `ng` | 40 ms |
+| `akt_after_w` | `W` | `ldw` or `ew` | 25 ms |
 
-Tunables: `MACRO_WAIT_SPACE_*` in `config/macros.dtsi`. Space is always sent — never swallowed.
+Tunables in `config/macros.dtsi`: `MACRO_WAIT_SPACE_DELAY` (25), `MACRO_WAIT_SPACE_DELAY_ROLL` (40), `MACRO_WAIT_SPACE_PRIOR` / `MACRO_WAIT_SPACE_ROLL` (80).
+
+Space is always sent after the delay — never swallowed.
+
+## Morph summary
+
+| Output | Labels pressed | Adaptive | Morph bindings (labels → output) |
+|--------|----------------|----------|----------------------------------|
+| `ng` | `E` `W` | `akt_w_e` on `ak_W` | `BSPC` `D` `W` → `ng` |
+| `ing` | `L` `D` `W` | none | each key via layout |
 
 ## Updating
 

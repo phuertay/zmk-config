@@ -209,17 +209,12 @@
 			max-prior-idle-ms = <MACRO_WAIT_SPACE_ROLL>;
 			bindings = <&m_space_delayed_roll>;
 		};
-		akt_ldw_w {
-			trigger-keys = <W>;
-			max-prior-idle-ms = <MACRO_WAIT_SPACE_PRIOR>;
-			bindings = <&m_space_delayed>;
-		};
 		akt_ew_e {
 			trigger-keys = <E>;
 			max-prior-idle-ms = <MACRO_WAIT_SPACE_ROLL>;
 			bindings = <&m_space_delayed_roll>;
 		};
-		akt_ew_w {
+		akt_after_w {
 			trigger-keys = <W>;
 			max-prior-idle-ms = <MACRO_WAIT_SPACE_PRIOR>;
 			bindings = <&m_space_delayed>;

@@ -163,7 +163,7 @@ Steno mode is toggled via F17 / Ctrl+F17 (`steno_on` / `steno_off`); numpad sign
 | `combos.dtsi` | 18 combos on default layers (+ numpad layers for Tab/Esc) |
 | `dacman56.conf` | Kconfig (HID, adaptive timing, BT/debounce tuning) |
 | `west.yml` | ZMK + module manifest |
-| `docs/term-layout.md` | Hands Down Term: HID keys sent vs glyphs (`kbdterm.c`) |
+| `docs/term-layout.md` | Term layout: labels → layout → output (`kbdterm.c`) |
 | `docs/reference/kbdterm.c` | Authoritative Windows Term layout tables |
 
 Include order in the keymap matters: `combos` → `behaviors` → `macros` → `adaptive`.
