@@ -198,7 +198,7 @@
 		};
 	};
 
-	/* Term -ing roll (I→E→W): swallow mid-roll space; delay only after W. */
+	/* Term -ing roll (I→E→W): delay space slightly; never swallow. */
 	ak_SPACE: ak_SPACE {
 		compatible = "zmk,behavior-adaptive-key";
 		#binding-cells = <0>;
@@ -206,12 +206,12 @@
 		akt_after_i {
 			trigger-keys = <I>;
 			max-prior-idle-ms = <MACRO_WAIT_SPACE_ROLL>;
-			bindings = <&none>;
+			bindings = <&m_space_delayed_roll>;
 		};
 		akt_after_e {
 			trigger-keys = <E>;
 			max-prior-idle-ms = <MACRO_WAIT_SPACE_ROLL>;
-			bindings = <&none>;
+			bindings = <&m_space_delayed_roll>;
 		};
 		akt_after_w {
 			trigger-keys = <W>;

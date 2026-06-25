@@ -7,9 +7,10 @@
 #define MACRO_WAIT_ALT_SHORT     40
 #define MACRO_TAP_9_16           18
 #define MACRO_WAIT_LAS           15
-#define MACRO_WAIT_SPACE_DELAY   25
-#define MACRO_WAIT_SPACE_PRIOR   80
-#define MACRO_WAIT_SPACE_ROLL    80
+#define MACRO_WAIT_SPACE_DELAY       25
+#define MACRO_WAIT_SPACE_DELAY_ROLL  40
+#define MACRO_WAIT_SPACE_PRIOR       80
+#define MACRO_WAIT_SPACE_ROLL        80
 
 #define ZMK_MACRO_(name,...) \
 	name: name { \
@@ -105,6 +106,12 @@
 		wait-ms = <MACRO_WAIT_MIN>;
 		tap-ms = <MACRO_WAIT_MIN>;
 		bindings = <&macro_wait_time MACRO_WAIT_SPACE_DELAY &kp SPACE>;
+	)
+
+	ZMK_MACRO_(m_space_delayed_roll,
+		wait-ms = <MACRO_WAIT_MIN>;
+		tap-ms = <MACRO_WAIT_MIN>;
+		bindings = <&macro_wait_time MACRO_WAIT_SPACE_DELAY_ROLL &kp SPACE>;
 	)
 
 	/* Layer + F17/F18 signaling */
