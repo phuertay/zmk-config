@@ -198,13 +198,13 @@
 		};
 	};
 
-	/* Term -ing roll (I→E→W): delay space slightly; never swallow. */
+	/* Term -ing roll (L→E→W): delay space slightly; never swallow. */
 	ak_SPACE: ak_SPACE {
 		compatible = "zmk,behavior-adaptive-key";
 		#binding-cells = <0>;
 		bindings = <&kp SPACE>;
-		akt_after_i {
-			trigger-keys = <I>;
+		akt_after_l {
+			trigger-keys = <L>;
 			max-prior-idle-ms = <MACRO_WAIT_SPACE_ROLL>;
 			bindings = <&m_space_delayed_roll>;
 		};
