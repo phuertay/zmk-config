@@ -108,6 +108,8 @@ Both stickies latch the **same** layer — reach macros on the left hand, settin
 
 Adaptive behaviors are defined in **`config/adaptive.dtsi`** using `zmk,behavior-adaptive-key` and referenced as **`&ak_*`** in the keymap (for example `&ak_Q`, `&ak_W`).
 
+**Hands Down Term:** **labels → layout → output** — see **`docs/term-layout.md`**. Morphs use labels (`akt_w_e`: `D` `W` → `ng`); typing uses keycap sequences (`test` → `` `KS` ``, `ing` → `ldw`).
+
 Each behavior has a default binding plus one or more trigger nodes (`akt_*`) that morph output when a specific prior key was released within `max-prior-idle-ms`:
 
 ```dts
@@ -161,6 +163,8 @@ Steno mode is toggled via F17 / Ctrl+F17 (`steno_on` / `steno_off`); numpad sign
 | `combos.dtsi` | 18 combos on default layers (+ numpad layers for Tab/Esc) |
 | `dacman56.conf` | Kconfig (HID, adaptive timing, BT/debounce tuning) |
 | `west.yml` | ZMK + module manifest |
+| `docs/term-layout.md` | Term layout: labels → layout → output (`kbdterm.c`) |
+| `docs/reference/kbdterm.c` | Authoritative Windows Term layout tables |
 
 Include order in the keymap matters: `combos` → `behaviors` → `macros` → `adaptive`.
 
@@ -195,5 +199,6 @@ Validate on hardware from **`main`** before deleting **`adaptive-legacy`** (adap
 
 ## Further reading
 
+- **`docs/term-layout.md`** — labels → layout → output; morphs, `ak_SPACE` ([`kbdterm.c`](docs/reference/kbdterm.c))
 - **`docs/vanilla-migration-plan.md`** — status, checklist, SHA pinning
 - **`config/west.yml`** — manifest and pin comments

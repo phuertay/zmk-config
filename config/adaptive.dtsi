@@ -14,15 +14,16 @@
 		compatible = "zmk,behavior-adaptive-key";
 		#binding-cells = <0>;
 		bindings = <&kp W>;
-		akt_w_q {
-			trigger-keys = <Q>;
-			max-prior-idle-ms = <200>;
-			bindings = <&kp BSPC &kp SQT>;
-		};
+		/* Term ew→ng: labels D,W through layout → ng. See docs/term-layout.md */
 		akt_w_e {
 			trigger-keys = <E>;
 			max-prior-idle-ms = <200>;
 			bindings = <&kp BSPC &kp D &kp W>;
+		};
+		akt_w_q {
+			trigger-keys = <Q>;
+			max-prior-idle-ms = <200>;
+			bindings = <&kp BSPC &kp SQT>;
 		};
 	};
 
@@ -193,11 +194,26 @@
 		};
 	};
 
-	/* Term MG roll: delay right-thumb space only after quick W (ak_W slot). */
+	/* Term rolls — see docs/term-layout.md; right-thumb space only. */
 	ak_SPACE: ak_SPACE {
 		compatible = "zmk,behavior-adaptive-key";
 		#binding-cells = <0>;
 		bindings = <&kp SPACE>;
+		akt_ldw_l {
+			trigger-keys = <L>;
+			max-prior-idle-ms = <MACRO_WAIT_SPACE_ROLL>;
+			bindings = <&m_space_delayed_roll>;
+		};
+		akt_ldw_d {
+			trigger-keys = <D>;
+			max-prior-idle-ms = <MACRO_WAIT_SPACE_ROLL>;
+			bindings = <&m_space_delayed_roll>;
+		};
+		akt_ew_e {
+			trigger-keys = <E>;
+			max-prior-idle-ms = <MACRO_WAIT_SPACE_ROLL>;
+			bindings = <&m_space_delayed_roll>;
+		};
 		akt_after_w {
 			trigger-keys = <W>;
 			max-prior-idle-ms = <MACRO_WAIT_SPACE_PRIOR>;
