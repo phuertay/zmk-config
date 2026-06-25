@@ -108,7 +108,7 @@ Both stickies latch the **same** layer — reach macros on the left hand, settin
 
 Adaptive behaviors are defined in **`config/adaptive.dtsi`** using `zmk,behavior-adaptive-key` and referenced as **`&ak_*`** in the keymap (for example `&ak_Q`, `&ak_W`).
 
-**Hands Down Term:** think in **QWERTY keycap labels** (what you press), not screen output — see **`docs/term-layout.md`**. Authoritative map: **`docs/reference/kbdterm.c`**. Example: `test` → `` `KS` ``, `soup` → `S,M,G`, `-ing` → `lew` + morphs + `&ak_SPACE`.
+**Hands Down Term:** think in **QWERTY keycap labels** (what you press), not screen output — see **`docs/term-layout.md`**. Authoritative map: **`docs/reference/kbdterm.c`**. Examples: `test` → `` `KS` ``, `soup` → `S,M,G`, `ing` → `ldw`.
 
 Each behavior has a default binding plus one or more trigger nodes (`akt_*`) that morph output when a specific prior key was released within `max-prior-idle-ms`:
 
@@ -199,6 +199,6 @@ Validate on hardware from **`main`** before deleting **`adaptive-legacy`** (adap
 
 ## Further reading
 
-- **`docs/term-layout.md`** — Term layout, `lew`→`ing`, `ak_SPACE` (authoritative: `docs/reference/kbdterm.c`)
+- **`docs/term-layout.md`** — Term layout, keycap labels, `ldw`→`ing`, `ak_SPACE` (authoritative: `docs/reference/kbdterm.c`)
 - **`docs/vanilla-migration-plan.md`** — status, checklist, SHA pinning
 - **`config/west.yml`** — manifest and pin comments

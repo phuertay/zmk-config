@@ -14,12 +14,6 @@
 		compatible = "zmk,behavior-adaptive-key";
 		#binding-cells = <0>;
 		bindings = <&kp W>;
-		/* Term lew→ing — see docs/term-layout.md (keys sent: L, E, W). */
-		akt_w_e_ng {
-			trigger-keys = <E>;
-			max-prior-idle-ms = <200>;
-			bindings = <&kp BSPC &kp N &kp G>;
-		};
 		akt_w_q {
 			trigger-keys = <Q>;
 			max-prior-idle-ms = <200>;
@@ -194,22 +188,22 @@
 		};
 	};
 
-	/* Term lew→ing — see docs/term-layout.md; right-thumb space only. */
+	/* Term ldw→ing — see docs/term-layout.md; right-thumb space only. */
 	ak_SPACE: ak_SPACE {
 		compatible = "zmk,behavior-adaptive-key";
 		#binding-cells = <0>;
 		bindings = <&kp SPACE>;
-		akt_lew_l {
+		akt_ldw_l {
 			trigger-keys = <L>;
 			max-prior-idle-ms = <MACRO_WAIT_SPACE_ROLL>;
 			bindings = <&m_space_delayed_roll>;
 		};
-		akt_lew_e {
-			trigger-keys = <E>;
+		akt_ldw_d {
+			trigger-keys = <D>;
 			max-prior-idle-ms = <MACRO_WAIT_SPACE_ROLL>;
 			bindings = <&m_space_delayed_roll>;
 		};
-		akt_lew_w {
+		akt_ldw_w {
 			trigger-keys = <W>;
 			max-prior-idle-ms = <MACRO_WAIT_SPACE_PRIOR>;
 			bindings = <&m_space_delayed>;
