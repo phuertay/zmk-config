@@ -14,7 +14,7 @@
 		compatible = "zmk,behavior-adaptive-key";
 		#binding-cells = <0>;
 		bindings = <&kp W>;
-		/* Term lew→ing: W after E rewrites prior char to ng (ew step). */
+		/* Term lew→ing — see docs/term-layout.md (keys sent: L, E, W). */
 		akt_w_e_ng {
 			trigger-keys = <E>;
 			max-prior-idle-ms = <200>;
@@ -194,7 +194,7 @@
 		};
 	};
 
-	/* Term lew→ing: delay right-thumb space during the roll (L, E, W keys). */
+	/* Term lew→ing — see docs/term-layout.md; right-thumb space only. */
 	ak_SPACE: ak_SPACE {
 		compatible = "zmk,behavior-adaptive-key";
 		#binding-cells = <0>;
