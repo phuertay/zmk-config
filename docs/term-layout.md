@@ -151,7 +151,7 @@ Use **`ldw`** for the suffix. Example **`thing`**: type labels for `t` `h` `i` `
 | E | `&ak_E` |
 | W | `&ak_W` |
 | left thumb | `&hmss SPACE GRAVE` (unchanged) |
-| right thumb | `&space_tui` → `&ak_SPACE` |
+| right thumb | `&space_tui 0 0` → `&ak_SPACE` |
 
 ## `ak_SPACE` (right thumb)
 
