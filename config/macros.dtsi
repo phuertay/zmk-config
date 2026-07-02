@@ -1,4 +1,4 @@
-#define MACRO_WAIT_DEFAULT        0
+#define MACRO_WAIT_DEFAULT        2
 #define MACRO_TAP_DEFAULT         1
 #define MACRO_WAIT_MIN            0
 #define MACRO_WAIT_CHORD         40
