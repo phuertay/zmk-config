@@ -140,8 +140,8 @@
 		mouse_layer {
 			bindings = <
 				&to DEFAULT_HD           &trans                   &trans                   &trans                   &trans                   &trans                   &trans                   &trans                   &trans                   &trans                   &trans                   &trans
-				&trans                   &trans                   &kp PG_UP                &msc MOVE_UP             &kp PG_DN                &trans                   &trans                   &kp PG_UP                &msc MOVE_UP             &kp PG_DN                &trans                   &trans
-				&trans                   &trans                   &msc MOVE_LEFT           &msc MOVE_DOWN           &msc MOVE_RIGHT          &trans                   &trans                   &msc MOVE_LEFT           &msc MOVE_DOWN           &msc MOVE_RIGHT          &trans                   &trans
+				&trans                   &trans                   &kp PG_UP                &msc MOVE_DOWN           &kp PG_DN                &trans                   &trans                   &kp PG_UP                &msc MOVE_DOWN           &kp PG_DN                &trans                   &trans
+				&trans                   &trans                   &msc MOVE_LEFT           &msc MOVE_UP             &msc MOVE_RIGHT          &trans                   &trans                   &msc MOVE_LEFT           &msc MOVE_UP             &msc MOVE_RIGHT          &trans                   &trans
 				&trans                   &trans                   &trans                   &trans                   &trans                   &trans                   &trans                   &trans                   &trans                   &trans                   &trans                   &trans
 				&msc MOVE_DOWN           &msc MOVE_UP                                    &msc MOVE_DOWN           &msc MOVE_UP
 				&trans                 &trans                                          &trans                  &trans
