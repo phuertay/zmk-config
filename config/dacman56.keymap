@@ -3,6 +3,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/hid-io/plover_hid.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define steno_on F17
 #define steno_off LC(F17)
@@ -139,10 +140,10 @@
 		mouse_layer {
 			bindings = <
 				&to DEFAULT_HD           &trans                   &trans                   &trans                   &trans                   &trans                   &trans                   &trans                   &trans                   &trans                   &trans                   &trans
-				&trans                   &trans                   &trans                   &kp LG(RC(UP))           &trans                   &trans                   &trans                   &trans                   &kp RG(RC(UP))           &trans                   &trans                   &trans
-				&trans                   &trans                   &kp LG(RC(LEFT))         &kp LG(RC(DOWN))         &kp LG(RC(RIGHT))        &trans                   &trans                   &kp RG(RC(LEFT))         &kp RG(RC(DOWN))         &kp RG(RC(RIGHT))        &trans                   &trans
+				&trans                   &trans                   &kp PG_UP                &msc MOVE_UP             &kp PG_DN                &trans                   &trans                   &kp PG_UP                &msc MOVE_UP             &kp PG_DN                &trans                   &trans
+				&trans                   &trans                   &msc MOVE_LEFT           &msc MOVE_DOWN           &msc MOVE_RIGHT          &trans                   &trans                   &msc MOVE_LEFT           &msc MOVE_DOWN           &msc MOVE_RIGHT          &trans                   &trans
 				&trans                   &trans                   &trans                   &trans                   &trans                   &trans                   &trans                   &trans                   &trans                   &trans                   &trans                   &trans
-				&kp LG(RC(DOWN))         &kp LG(RC(UP))                                  &kp RG(RC(DOWN))         &kp RG(RC(UP))
+				&msc MOVE_DOWN           &msc MOVE_UP                                    &msc MOVE_DOWN           &msc MOVE_UP
 				&trans                 &trans                                          &trans                  &trans
 				&trans                 &trans                                          &trans                  &trans
 				&trans                 &trans                                          &trans                  &trans
