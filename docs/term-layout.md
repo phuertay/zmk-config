@@ -150,14 +150,18 @@ Use **`ldw`** for the suffix. Example **`thing`**: type labels for `t` `h` `i` `
 | D | `&kp D` |
 | E | `&ak_E` |
 | W | `&ak_W` |
-| left thumb | `&hmss SPACE GRAVE` (unchanged) |
+| left thumb | `&hmss_thumb SPACE GRAVE` (hold=space, tap=grave → Term `t`; both `DEFAULT_HD` and `DEFAULT_HD_2`) |
 | right thumb | `&space_tui 0 0` → `&ak_SPACE` |
+
+## Left thumb (`hmss_thumb`)
+
+Hold = `SPACE`, tap = `GRAVE` (Term **`t`**). Same dual-function as `&hmss`, with tap-biased timing (`tapping-term-ms` 320, `require-prior-idle-ms` 180, `quick-tap-ms` 200, `tap-preferred`) so word-initial `the` does not resolve as hold-space (`he`). Used on **both** default layers.
 
 ## `ak_SPACE` (right thumb)
 
 Right thumb uses **`&space_tui`**: `tap-unless-interrupted` with hold `&none` — if another key is pressed during the 120 ms tapping term (mid-roll), space is **not** sent. Clean tap after the roll reaches `&ak_SPACE` for adaptive delays.
 
-Left thumb `&hmss SPACE GRAVE` unchanged. Triggers on the **label last pressed**:
+Triggers on the **label last pressed**:
 
 | Trigger | Prior label | Roll | Delay |
 |---------|-------------|------|-------|

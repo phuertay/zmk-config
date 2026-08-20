@@ -107,6 +107,22 @@
 		bindings = <&kp>, <&kp>;
 	};
 
+	/*
+	 * Left thumb: hold = SPACE, tap = GRAVE (Term t).
+	 * Same dual-function as hmss, but biased for reliable letter taps:
+	 * longer tapping-term + prior-idle + quick-tap so word-initial "the"
+	 * does not resolve as hold-SPACE (the → he).
+	 */
+	hmss_thumb: thumb_space_grave {
+		compatible = "zmk,behavior-hold-tap";
+		#binding-cells = <2>;
+		tapping-term-ms = <320>;
+		require-prior-idle-ms = <180>;
+		quick-tap-ms = <200>;
+		flavor = "tap-preferred";
+		bindings = <&kp>, <&kp>;
+	};
+
 	/* ── Numpad F18 signal wrappers (see macros.dtsi to_s_num / mo_s_num) ─ */
 
 	lay_or_lay_s_num: layer_or_layer_with_num_signal {

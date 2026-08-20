@@ -71,8 +71,11 @@ Both share the adaptive home row (`&ak_*`). **`DEFAULT_HD_2`** drops numpad F18 
 | Tab | `&lt_s NUM_HD_ULTRA TAB` | `&kp TAB` |
 | R / F | numpad layer-taps | `&kp R`, `&lt NUM_HD_ULTRA F` |
 | RBKT thumb | numpad `to_tap_s` | `&hm TILDE RBKT` |
+| Left thumb | `&hmss_thumb SPACE GRAVE` (shared) | same |
 | Outer thumb | numpad signal + LCtrl | `&tog NUM_HD_ULTRA`, LWin |
 | Bottom thumb | calc + steno | Calc key + refresh |
+
+Everything else on `DEFAULT_HD_2` tracks `DEFAULT_HD` (adaptives, nav, DEL hold-tap, right-thumb `space_tui`, etc.).
 
 Reach **`DEFAULT_HD_2`** via `&mo DEFAULT_HD_2` on the ultra numpad bottom-right key.
 
