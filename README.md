@@ -108,7 +108,7 @@ Both stickies latch the **same** layer — reach macros on the left hand, settin
 
 Adaptive behaviors are defined in **`config/adaptive.dtsi`** using `zmk,behavior-adaptive-key` and referenced as **`&ak_*`** in the keymap (for example `&ak_Q`, `&ak_W`).
 
-**Hands Down Term:** **labels → layout → output** — see **`docs/term-layout.md`**. Morphs use labels (`akt_w_e`: `D` `W` → `ng`); typing uses keycap sequences (`test` → `` `KS` ``, `ing` → `ldw`).
+**Hands Down Term:** **labels → layout → output** — see **`docs/term-layout.md`**. Morphs use labels (`akt_w_e`: `D` `W` → `ng`); typing uses keycap sequences (`test` → `` `KS` ``, `ing` → `ldw`). Term **`t`** is left-thumb **`&kp GRAVE`** (not a space hold-tap — that binding was dropping taps in words like `the`).
 
 Each behavior has a default binding plus one or more trigger nodes (`akt_*`) that morph output when a specific prior key was released within `max-prior-idle-ms`:
 

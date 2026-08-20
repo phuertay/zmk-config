@@ -150,8 +150,10 @@ Use **`ldw`** for the suffix. Example **`thing`**: type labels for `t` `h` `i` `
 | D | `&kp D` |
 | E | `&ak_E` |
 | W | `&ak_W` |
-| left thumb | `&hmss SPACE GRAVE` (unchanged) |
+| left thumb | `&kp GRAVE` (Term `t`; plain tap — not hold-tap) |
 | right thumb | `&space_tui 0 0` → `&ak_SPACE` |
+
+**Why left thumb is plain GRAVE:** Term `t` is label `` ` ``. Old `&hmss SPACE GRAVE` (hold=space, tap=grave) regularly dropped the tap when the thumb lingered or rolled into the next key — word `the` became `he`. Both `DEFAULT_HD` and `DEFAULT_HD_2` use `&kp GRAVE`; space lives on the right thumb only.
 
 ## `ak_SPACE` (right thumb)
 
